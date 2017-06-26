@@ -8,7 +8,9 @@ define([
     init();
     // 初始化页面
     function init() {
+        $("#nav li").eq(0).addClass("active")
         base.showLoading();
+        
         getInitData()
             .then(() => {
                 base.hideLoading();
@@ -22,18 +24,22 @@ define([
         );
     }
     // 初始化swiper
-    function initSwiper(){
+    function initSwiperBanner(){
         var _swiper = $("#swiper");
         if(_swiper.find('.swiper-slide').length <= 1){
             _swiper.find('.swiper-pagination').hide();
         }
         new Swiper('#swiper', {
-            'direction': 'horizontal',
             'autoplay': 4000,
+            'pagination': '#swiper',
+            'pagination' : '#swiper .swiper-pagination',
+            'paginationClickable' :true,
             'autoplayDisableOnInteraction': false,
-            'pagination': '.swiper-pagination'
+            'preventClicksPropagation': true,
+            'loop' : true,
         });
     }
+    
     
     // 获取banner
     function getBanner(refresh){
@@ -43,11 +49,11 @@ define([
                 data.forEach((d) => {
                     var pics = base.getPicArr(d.pic);
                     pics.forEach((pic) => {
-                        bannerHtml += `<div class='swiper-slide'><img data-url='${d.url || ""}' class='wp100' src='${pic}'></div>`;
+                        bannerHtml += `<div class='swiper-slide'><a href="${d.url || ""}" style="background-image:url(${pic});"></div>`;
                     });
                 });
-//              $("#swiper .swiper-wrapper").html(bannerHtml);
-                initSwiper();
+                $("#swiper .swiper-wrapper").html(bannerHtml);
+                initSwiperBanner();
             }, (msg) => {
                 base.showMsg(msg || "加载失败");
             });

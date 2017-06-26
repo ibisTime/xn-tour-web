@@ -38,7 +38,7 @@ define([
             (isAvatar && !isAvatar.name) ? defaultAvatar : "";
     });
     Handlebars.registerHelper('formatListImage', function(pic, options){
-    	var defaultImg = __inline("../images/default.jpg");
+    	var defaultImg = "";
         if(!pic)
             return defaultImg;
         pic = pic.split(/\|\|/)[0];
