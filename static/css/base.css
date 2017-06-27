@@ -1,5 +1,5 @@
 @charset "utf-8";
-* {
+* ,input{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     /* Firefox */
@@ -113,7 +113,6 @@ body {
     font-family: Microsoft YaHei, '宋体', Tahoma, Arial, sans-serif;
     color: #484848;
     background-color: #fafafa;
-    line-height: 150%;
     min-height: 100%;
     -webkit-overflow-scrolling: touch;
 }

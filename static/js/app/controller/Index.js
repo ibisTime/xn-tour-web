@@ -21,6 +21,7 @@ define([
     function getInitData() {
     	return $.when(
 			getBanner(true),
+			initSwiperTraffic()
         );
     }
     // 初始化swiper
@@ -37,6 +38,21 @@ define([
             'autoplayDisableOnInteraction': false,
             'preventClicksPropagation': true,
             'loop' : true,
+        });
+    }
+    
+    
+    // 初始化swiper
+    function initSwiperTraffic(){
+        var _swiper = $("#traffic");
+        if(_swiper.find('.swiper-slide').length <= 1){
+            _swiper.find('.swiper-pagination').hide();
+        }
+        new Swiper('#traffic', {
+            'slidesPerView' : 6,
+			'slidesPerGroup' : 1,
+			'prevButton' :'#traffic .swiper-button-prev',
+			'nextButton' :'#traffic .swiper-button-next',
         });
     }
     

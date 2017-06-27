@@ -47,7 +47,13 @@ img{
 .mb10{
     margin-bottom: 10px;
 }
-
+.pt25{
+    padding-top: 25px;
+}
+.plr10{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 
 /*header*/
@@ -153,9 +159,10 @@ img{
     
     ul{
         li{
+            width: 100px;
             height: 40px;
             float: left;
-            width: 100px;
+            margin-right: 10px;
             
             a{
                 display: inline-block;
@@ -368,10 +375,9 @@ img{
 
 .index-wrap {
     .index-wrap-title{
-        width: 100%;
-        height: 40px;
+        height: 80px;
         border-bottom: 2px solid #f2f2f2;
-        margin-top: 40px;
+        padding-top: 40px;
     }
     
     
@@ -428,7 +434,6 @@ img{
 }
 
 .index-tuijian{
-    height: 343px;
     
     .index-nav{
         height: 64px;
@@ -463,76 +468,656 @@ img{
         }
     }
     
-    .index-nav-content{
-        ul{
-            width: 1225px;
-            overflow: hidden;
+}
+
+.conl-tourismList{
+    ul{
+        width: 1225px;
+        overflow: hidden;
+        
+        li{
+            float: left;
+            margin-right: 25px;
             
-            li{
-                float: left;
+            a{
+                display: block;
                 width: 280px;
-                margin-right: 25px;
                 
-                a{
-                    display: block;
+                .img{
                     width: 100%;
+                    height: 175px;
+                    overflow: hidden;
                     
-                    .img{
+                    img{
                         width: 100%;
-                        height: 175px;
-                        overflow: hidden;
-                        
-                        img{
-                            width: 100%;
-                        }
-                    } 
+                    }
+                } 
+                
+                .title{
+                    font-size: 16px;
+                    color: #000;
+                    margin-top: 12px;
+                }
+                
+                .con {
+                    width: 100%;
+                    overflow: hidden;
+                    margin-top: 10px;
                     
-                    .title{
+                    img{
+                        height: 18px;
+                    }
+                    p{
+                        display: inline-block;
                         font-size: 16px;
-                        color: #000;
-                        margin-top: 12px;
-                    }
-                    
-                    .datetime{
-                        width: 100%;
-                        overflow: hidden;
-                        margin-top: 10px;
-                        
-                        img{
-                            height: 18px;
-                        }
-                        p{
-                            display: inline-block;
-                            font-size: 16px;
-                            line-height: 18px;
-                            color: #a0a0a0;
-                            padding-left: 5px;
-                        }
-                    }
-                    
-                    .price{
-                        margin-top: 10px;
-                        text-align: right;
-                        
-                        p{
-                            font-size: 14px;
-                            color: #787878;
-                            
-                            i{
-                                font-size: 20px;
-                                font-style: normal;
-                                color: #ff9c00;
-                                display: inline-block;
-                                margin-right: 5px;
-                            }
-                        }
+                        line-height: 18px;
+                        color: #a0a0a0;
+                        padding-left: 5px;
                     }
                 }
                 
+                .price{
+                    margin-top: 10px;
+                    text-align: right;
+                    
+                    p{
+                        font-size: 14px;
+                        color: #787878;
+                        
+                        i{
+                            font-size: 20px;
+                            font-style: normal;
+                            color: #ff9c00;
+                            display: inline-block;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}
+
+.index-traffic{
+    height: 294px;
+}
+
+#traffic{
+    height: 235px;
+    overflow: hidden;
+    
+    .swiper-slide{
+        text-align: center;
+        padding-top: 50px;
+        
+        a{
+            width: 108px;
+            display: inline-block;
+            
+            
+            .title{
+                font-size: 15px;
+                color: #7a7a7a;
+                margin-top: 15px;
+            }
+            
+            .icon{
+                width: 108px;
+                height: 125px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+            }
+            
+            .icon-lvyou{
+                background-image: url('../images/旅游专线-灰.png');
+            }
+            .icon-jichang{
+                background-image: url('../images/机场专线-灰.png');
+            }
+            .icon-changtu{
+                background-image: url('../images/长途班车-灰.png');
+            }
+            .icon-daba{
+                background-image: url('../images/大巴预订-灰.png');
+            }
+            .icon-fabu{
+                background-image: url('../images/发布拼车-灰.png');
+            }
+            .icon-canyu{
+                background-image: url('../images/参与拼车-灰.png');
+            }
+            .icon-feiji{
+                background-image: url('../images/飞机查询-灰.png');
+            }
+            .icon-huoche{
+                background-image: url('../images/火车查询-灰.png');
+            }
+            .icon-gongjiao{
+                background-image: url('../images/公交查询-灰.png');
+            }
+            
+        }
+        
+        a:hover{
+            .title{
+                color: #484848;
+            }
+            
+            .icon-lvyou{
+                background-image: url('../images/旅游专线.png');
+            }
+            .icon-jichang{
+                background-image: url('../images/机场专线.png');
+            }
+            .icon-changtu{
+                background-image: url('../images/长途班车.png');
+            }
+            .icon-daba{
+                background-image: url('../images/大巴预订.png');
+            }
+            .icon-fabu{
+                background-image: url('../images/发布拼车.png');
+            }
+            .icon-canyu{
+                background-image: url('../images/参与拼车.png');
+            }
+            .icon-feiji{
+                background-image: url('../images/飞机查询.png');
+            }
+            .icon-huoche{
+                background-image: url('../images/火车查询.png');
+            }
+            .icon-gongjiao{
+                background-image: url('../images/公交查询.png');
+            }
+        }
+        
+    } 
+    
+    
+    .swiper-button-prev,
+    .swiper-button-next{
+        width: 21px;
+        height: 33px;
+        background-size: inherit;
+        z-index: 999;
+    }
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled{
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+    
+    .swiper-button-prev{
+        left: 0;
+        background-image: url('../images/left-灰.png');
+    }
+    .swiper-button-prev:hover{
+        background-image: url('../images/left.png');
+    }
+    .swiper-button-next{
+        right: 0;
+        background-image: url('../images/right-灰.png');
+    }
+    .swiper-button-next:hover{
+        background-image: url('../images/right.png');
+    }
+    
+    
+}
+
+#hotel{
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    .index-wrap-title .more a{
+        color: #fff;
+    }
+    
+    .index-hotel{
+        height: 520px;
+        
+        .index-nav{
+            height: 84px;
+            padding: 30px 0;
+            
+            ul li{
+                width: 88px;
+                color: #fff;
+            }
+        }
+    }
+    .conl-tourismList{
+        padding-top: 20px;
+        
+        ul li{
+            background-color: #fff;
+            
+            .title {
+                padding-bottom: 5px;
+            }
+            .price {
+                margin-top: 18px;
+                padding-bottom: 15px;
+            }
+            .con p{
+                font-size: 15px;
+            }
+        }
+    }
+    
+}
+
+/*login.html*/
+.login-bg{
+    height: 600px;
+    background-image: url('../images/loginBg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loginForm{
+    width: 415px;
+    height: 456px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
+    -ms-box-shadow: 0 0 5px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    
+    .title{
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        
+        h3{
+            font-size: 22px;
+            color: #616161;
+        }
+        a{
+            font-size: 14px;
+            color: #06cdb8;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            
+            img{
+                height: 16px;
+                margin-right: 4px;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+    
+    .input-wrap{
+        width: 100%;
+        height: 46px;
+        border: 1px solid #e3e3e3;
+        position: relative;
+        margin-bottom: 15px;
+        padding-top: 15px;
+        
+        .icon{
+            width: 46px;
+            height: 16px;
+            border-right: 1px solid #e3e3e3;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            text-align: center;
+            
+            img{
+                height: 100%;
+            }
+            
+        }
+        
+        .input-text{
+            width: 100%;
+            height: 16px;
+            line-height: 16px;
+            font-size: 14px;
+            padding-left: 56px;
+        }
+        
+    }
+    
+    .input-vfCode{
+        width: 235px;
+    }
+    .input-telVfCode{
+        width: 200px;
+    }
+    
+    .telVfCode{
+        width: 120px;
+        height: 46px;
+        line-height: 46px;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        background-color: #ffba00;
+        cursor: pointer;
+    }
+    
+    .input-info{
+        width: 100%;
+        overflow: hidden;
+        
+        .check{
+            width: 17px;
+            height: 17px;
+            border: 1px solid #e3e3e3;
+            margin-right: 8px;
+        }
+        .check.active{
+            border: 1px solid #fff;
+            background-repeat: no-repeat;
+            background-image: url('../images/勾.png');
+            background-size: 100% 100%;
+        }
+        
+        .txt{
+            font-size: 14px;
+            color: #6a6a6a;
+            line-height: 17px;
+        }
+    }
+    
+    .input-btn{
+        width: 100%;
+        height: 46px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #06CDB8;
+        margin-top: 50px;
+        cursor: pointer;
+    }
+    
+}
+
+/*register.html*/
+    
+.register-bg{
+    height: 600px;
+    background-image: url('../images/registerBg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.registerForm{
+    .input-btn{
+        margin-top: 30px;
+    }
+}
+
+.nav{
+    
+    .nav-class{
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 35px;
+        overflow: hidden;
+        
+        ul{
+            width: 1279px;
+            overflow: hidden;
+            
+            li{
+                width: 80px;
+                float: left;
+                margin-right: 79px;
+                text-align: center;
+                cursor: pointer;
+                
+                p{
+                    font-size: 14px;
+                    color: #858585;
+                    margin-top: 14px;
+                }
+                
+                .icon{
+                    width: 80px;
+                    height: 80px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                }
+                
+                .icon-chunyou{
+                    background-image: url('../images/春游.png');
+                }
+                .icon-qiuyou{
+                    background-image: url('../images/秋游.png');
+                }
+                .icon-guonei{
+                    background-image: url('../images/国内游.png');
+                }
+                .icon-jingwai{
+                    background-image: url('../images/境外游.png');
+                }
+                .icon-qinzi{
+                    background-image: url('../images/亲子游.png');
+                }
+                .icon-sheying{
+                    background-image: url('../images/摄影游.png');
+                }
+                .icon-zhoubian{
+                    background-image: url('../images/周边游.png');
+                }
+                .icon-zhuti{
+                    background-image: url('../images/主题游.png');
+                }
+                
+                
+            }
+            
+            li.active{
+                .icon-chunyou{
+                    background-image: url('../images/春游-点击.png');
+                }
+                .icon-qiuyou{
+                    background-image: url('../images/秋游-点击.png');
+                }
+                .icon-guonei{
+                    background-image: url('../images/国内游-点击.png');
+                }
+                .icon-jingwai{
+                    background-image: url('../images/境外游-点击.png');
+                }
+                .icon-qinzi{
+                    background-image: url('../images/亲子游-点击.png');
+                }
+                .icon-sheying{
+                    background-image: url('../images/摄影游-点击.png');
+                }
+                .icon-zhoubian{
+                    background-image: url('../images/周边游-点击.png');
+                }
+                .icon-zhuti{
+                    background-image: url('../images/主题游-点击.png');
+                }
+            }
+        }
+    }
+    
+    .navSearch-wrap{
+        width: 100%;
+        position: relative;
+        
+        .tit{
+            width: 60px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 15px;
+            color: #a0a0a0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .navSearch-list{
+            width: 100%;
+            padding-left: 60px;
+            
+            ul{
+                width: 100%;
+                overflow: hidden;
+                
+                li{
+                    height: 24px;
+                    line-height: 24px;
+                    overflow: hidden;
+                    float: left;
+                    font-size: 15px;
+                    color: #a0a0a0;
+                    padding: 0 15px;
+                    margin-right: 10px;
+                    margin-bottom: 15px;
+                    border-radius: 12px;
+                    cursor: pointer;
+                }
+                
+                li:hover{
+                    color: #06CDB8;
+                }
+                
+                li.active{
+                    color: #fff;
+                    background-color: #06CDB8;
+                }
             }
         }
         
     }
     
+    .navSearch-wrap1{
+        .tit{
+            width: 90px;
+        }
+        .navSearch-list{
+            padding-left: 90px;
+        }
+    }
 }
 
+.content{
+    padding-bottom: 30px;
+    
+    .conl-tourismList ul{
+        width: 1235px;
+        margin-left: -5px;
+        
+        li{
+            width: 290px;
+            padding: 25px 5px 5px;
+            margin-right: 15px;
+            
+            a{
+                padding-bottom: 25px;
+            }
+            
+            a:hover{
+                box-shadow: 0 0 5px rgba(0,0,0,.3);
+                -ms-box-shadow: 0 0 5px rgba(0,0,0,.3);
+                -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
+                -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
+            }
+        }
+    }
+    
+}
+
+/*分页*/
+#pagination{
+    padding: 20px 0 50px;
+    overflow: hidden;
+    
+    p{
+        display: inline-block;
+        overflow: hidden;
+        height: 38px;
+        
+        a,span{
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            line-height: 38px;
+            font-size: 15px;
+            color: #a9a9a9;
+            background-color: #fff;
+            border-top: 1px solid #e7e7e7;
+            border-bottom: 1px solid #e7e7e7;
+            border-right: 1px solid #e7e7e7;
+            float: left;
+        }
+        
+        samp{
+            display: inline-block;
+            line-height: 38px;
+            font-size: 15px;
+            color: #393939;
+            float: left;
+            margin: 0 8px;
+        }
+        
+        .active{
+            color: #fff;
+            background-color: #06CDB8;
+            border-top: 1px solid #06CDB8;
+            border-bottom: 1px solid #06CDB8;
+        }
+        
+        .prev{
+            border-left: 1px solid #e7e7e7;
+        }
+        .prev,
+        .next{
+            line-height: inherit;
+            
+            img{
+                height: 14px;
+                margin-top: 12px;
+            }
+        }
+        .pagination-btn{
+            width: 60px;
+            border: 1px solid #15ba92;
+            font-size: 16px;
+            color: #fff;
+            background-color: #06CDB8;
+            border-radius: 3px;
+        }
+        .pagination-ipt{
+            width: 66px;
+            height: 38px;
+            font-size: 15px;
+            border: 1px solid #E7E7E7;
+            text-align: center;
+            background-color: transparent;
+        }
+        
+        a:hover,
+        span:hover{
+            color: #06CDB8;
+        }
+        .active:hover,
+        .pagination-btn:hover{
+            cursor: pointer;
+            color: #fff !important;
+        }
+    }
+}
