@@ -7,12 +7,11 @@ define([
     
     // 初始化页面
     function init() {
-        $("#nav li").eq(1).addClass("active");
+        $("#nav li").eq(7).addClass("active");
         addListener();
     }
 
     function addListener() {
-    	
     	$(".navSearch-list ul li").click(function(){
 			if($(this).hasClass("active")){
 				$(this).removeClass("active");

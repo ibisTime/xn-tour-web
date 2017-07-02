@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>交通出行-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="nav wrap traffic-nav">
+    		<div class="nav-class">
+    			<ul>
+    				<li class="active"><div class="icon icon-lvyou"></div><p>旅游专线</p></li>
+					<li><div class="icon icon-jichang"></div><p class="title">机场专线</p></li>
+					<li><div class="icon icon-changtu"></div><p class="title">长途班车</p></li>
+					<li><a href="traffic-bus.html">
+						<div class="icon icon-daba"></div><p class="title">大巴预订</p>
+					</a></li>
+					<li><a href="">
+						<div class="icon icon-fabu"></div><p class="title">发布拼车</p>
+					</a></li>
+					<li><a href="">
+						<div class="icon icon-canyu"></div><p class="title">参与拼车</p>
+					</a></li>
+					<li><div class="icon icon-feiji"></div><p class="title">飞机查询</p></li>
+					<li><div class="icon icon-huoche"></div><p class="title">火车查询</p></li>
+					<li><div class="icon icon-gongjiao"></div><p class="title">公交查询</p></li>
+    			</ul>
+    		</div>
+    		
+    		<div class="traffic-search wp100">
+    			<div class="trfSearch-wrap mr60">
+	    			<div class="tit fl">出发地：</div>
+	    			<div class="search-txt fl">
+	    				<select>
+	    					<option>温州</option>
+	    				</select>
+	    			</div>
+    			</div>
+    			
+    			<div class="trfSearch-wrap mr60">
+	    			<div class="tit fl">目的地：</div>
+	    			<div class="search-txt fl">
+	    				<select>
+	    					<option>海宁</option>
+	    				</select>
+	    			</div>
+    			</div>
+    			
+    			<div class="trfSearch-wrap">
+	    			<div class="tit fl">出行日期：</div>
+	    			<div class="search-txt fl">
+	    				<select>
+	    					<option>2017-05-11</option>
+	    				</select>
+	    			</div>
+    			</div>
+	    		<div class="searchBtn">搜索</div>
+    			
+    		</div>
+    		
+    	</div>
+    	
+    	<div class="content wrap">
+    		<table class="traffic-table wp100" border="0" cellpadding="0" cellspacing="0">
+    			<thead>
+    				<tr>
+    					<th width="112px">出发时间</th>
+    					<th width="260px">出发/到达站</th>
+    					<th width="145px">车次</th>
+    					<th width="234px">价格</th>
+    					<th width="206px" class="tl pl30 ">余票</th>
+    					<th width="250px">购买</th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td class="time">17:00</td>
+    					<td class="beginEnd">
+    						<div><p><samp class="begin">起</samp>温州客运站</p></div>
+    						<div class="mt10"><p><samp class="end">达</samp>海宁汽车站</p></div>
+    					</td>
+    					<td class="trainNum">大高/30330</td>
+    					<td class="price">￥124</td>
+    					<td class="remainNum">20张</td>
+    					<td class="purchase">
+							<div class="number">
+								<div class="icon icon-sub"></div>
+								<div class="num">1</div>
+								<div class="icon icon-add"></div>
+							</div>
+							<div class="btn-wrap">
+								<input class="btn-booking" type="button" value="立即预订" />
+							</div>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td class="time">17:00</td>
+    					<td class="beginEnd">
+    						<div><p><samp class="begin">起</samp>温州客运站</p></div>
+    						<div class="mt10"><p><samp class="end">达</samp>海宁汽车站</p></div>
+    					</td>
+    					<td class="trainNum">大高/30330</td>
+    					<td class="price">￥124</td>
+    					<td class="remainNum">20张</td>
+    					<td class="purchase">
+							<div class="number">
+								<div class="icon icon-sub"></div>
+								<div class="num">1</div>
+								<div class="icon icon-add"></div>
+							</div>
+							<div class="btn-wrap">
+								<input class="btn-booking" type="button" value="立即预订" />
+							</div>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td class="time">17:00</td>
+    					<td class="beginEnd">
+    						<div><p><samp class="begin">起</samp>温州客运站</p></div>
+    						<div class="mt10"><p><samp class="end">达</samp>海宁汽车站</p></div>
+    					</td>
+    					<td class="trainNum">大高/30330</td>
+    					<td class="price">￥124</td>
+    					<td class="remainNum">20张</td>
+    					<td class="purchase">
+							<div class="number">
+								<div class="icon icon-sub"></div>
+								<div class="num">1</div>
+								<div class="icon icon-add"></div>
+							</div>
+							<div class="btn-wrap">
+								<input class="btn-booking" type="button" value="立即预订" />
+							</div>
+    					</td>
+    				</tr>
+    			</tbody>
+    		</table>
+    		
+    	</div>
+    	
+		<div id="pagination" class="wrap tc">
+			<p class="pagination"></p>
+		</div>
+		
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/tourism/Tourism']);
+        </script>
+    </body>
+</html>

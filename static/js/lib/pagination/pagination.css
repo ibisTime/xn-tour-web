@@ -63,7 +63,7 @@
 	max-width: 800px;
 	min-height: 500px;
 }
-input{
+.M-box input,.M-box1 input,.M-box2 input,.M-box3 input,.M-box4 input{
     float: left;
     margin:0 5px;
     width: 38px;

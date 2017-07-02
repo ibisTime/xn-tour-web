@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>我的积分-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的订单</p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="fl user-left conStyle">
+    			<link rel="import" href="./userLeft.html?__inline">
+    		</div>
+    		<div class="fr user-right conStyle ">
+	    		<div class="mall-top wp100">
+		    		<div class="fl account"><p>当前可用余额:</p><samp>4568</samp></div>
+		    	</div>
+		    	
+		    	<div class="integralList plr27">
+		    		<h4>积分明细</h4>
+		    		<ul>
+		    			<li>
+		    				<p>线路订单奖励<i class="add">+5</i></p>
+		    				<samp>2017-01-01 12:00:00</samp>
+		    			</li>
+		    			
+		    			<li>
+		    				<p>兑换礼品<i class="sub">-15</i></p>
+		    				<samp>2017-01-01 12:00:00</samp>
+		    			</li>
+
+		    		</ul>
+		    	</div>
+		    	
+				<div id="pagination" class="wp100 tc">
+					<p class="pagination"></p>
+				</div>
+    			
+    		</div>
+    	</div>
+    	
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/user/Integral']);
+        </script>
+    </body>
+</html>

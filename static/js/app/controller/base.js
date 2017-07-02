@@ -282,6 +282,13 @@ define([
 				}
 			}
 		},
+		format2line: function(num,cont){//超过num个字符多余"..."显示
+	        return cont
+	            ? cont.length > num
+	                ? cont.substring(0, num) + "..."
+	                : cont
+	            : "";
+	    }
     };
 //  // 判断是否登录
 //  if(!/\/redirect\.html/.test(location.href)){

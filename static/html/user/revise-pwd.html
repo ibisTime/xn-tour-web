@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>修改资料-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a><a href="user.html">我的资料></a>修改密码</p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="userInfo-wrap conStyle revise-pwd">
+    			<div>
+    				<div class="over-hide">
+    					<div class="txt fl">原密码</div>
+    					<input type="password" class="input-text fl" placeholder="请输入原密码" />
+    					<label class="error fl"></label>
+    				</div>
+    				<div class="over-hide mt20">
+    					<div class="txt fl">新密码</div>
+    					<input type="password" class="input-text fl" placeholder="请输入新密码" />
+    					<label class="error fl"></label>
+    				</div>
+    				<div class="over-hide mt20">
+    					<div class="txt fl">新密码确认</div>
+    					<input type="password" class="input-text fl" placeholder="请输入新密码" />
+    					<label class="error fl"></label>
+    				</div>
+    				<div class="mt50">
+    					<input type="button" class="input-btn" value="提交" />
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/user/User']);
+        </script>
+    </body>
+</html>
