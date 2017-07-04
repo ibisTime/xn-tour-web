@@ -2,7 +2,8 @@
 <html lang="zh-CN">
     <head>
         <link rel="import" href="../head.html?__inline">
-        <title>发布拼车</title>
+        <title>大巴预订-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
     </head>
 
     <body>
@@ -14,62 +15,48 @@
     		<div class="traffic-search wp100">
     			<div class="trfSearch-wrap mr60">
 	    			<div class="tit fl">上车地点：</div>
-	    			<div class="search-txt fl">
+                    <div class="search-txt fl">
                         <div class="my-laydate-icon cur-pointer" id="startSite"></div>
                     </div>
     			</div>
 
     			<div class="trfSearch-wrap mr60">
 	    			<div class="tit fl">下车地点：</div>
-	    			<div class="search-txt fl">
-	    			    <div class="my-laydate-icon cur-pointer" id="endSite"></div>
-	    			</div>
+                    <div class="search-txt fl">
+                        <div class="my-laydate-icon cur-pointer" id="endSite"></div>
+                    </div>
     			</div>
 
     			<div class="trfSearch-wrap">
-	    			<div class="tit fl">人数：</div>
-	    			<div class="search-txt fl">
-	    				<input class="my-laydate-icon" id="totalNum" type="number"/>
+	    			<div class="tit fl">当前拼车人数：</div>
+                    <div class="search-txt fl">
+	    				<input class="my-laydate-icon" disabled id="takePartNum" type="text"/>
 	    			</div>
     			</div>
 
     			<div class="trfSearch-wrap mr60">
 	    			<div class="tit fl">出行时间：</div>
-	    			<div class="search-txt search-datetime fl">
-    	    			<input class="my-laydate-icon" id="choseDate"/>
+                    <div class="search-txt fl">
+	    				<input class="my-laydate-icon" disabled id="outDatetime" type="text"/>
+	    			</div>
+    			</div>
+                <div class="trfSearch-wrap">
+	    			<div class="tit fl">拼车总人数：</div>
+                    <div class="search-txt fl">
+	    				<input class="my-laydate-icon" disabled id="totalNum" type="text"/>
 	    			</div>
     			</div>
 
     		</div>
     	</div>
 
-    	<div class="traffic-btn wrap">
-    		<input type="button" id="submitBtn" value="发布拼车" />
+    	<div class="content wrap">
+    		<div class="bus-price"><samp>价格：</samp><i id="nextPrice"></i></div>
     	</div>
 
-        <div class="content wrap traffic-content">
-    		<table class="traffic-table wp100 carpool-table" border="0" cellpadding="0" cellspacing="0">
-    			<thead>
-    				<tr>
-    					<th>上车地点</th>
-    					<th>下车地点</th>
-    					<th>拼车人数</th>
-    					<th>价格</th>
-    					<th>状态</th>
-    					<th>出行时间</th>
-    				</tr>
-    			</thead>
-    			<tbody id="body"></tbody>
-    		</table>
-            <div id="loadingSpin" class="ant-spin-nested-loading">
-                <div class="ant-spin-blur ant-spin-container">
-                    <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
-                </div>
-            </div>
+    	<div class="traffic-btn wrap">
+    		<input type="button" value="参与拼车" id="submitBtn"/>
     	</div>
-        <div id="pagination" class="wrap tc">
-			<p class="pagination"></p>
-		</div>
 
         <div id="modal" class="ant-modal-wraper hidden">
             <div class="ant-modal-mask"></div>
@@ -83,21 +70,14 @@
                             <div class="ant-modal-title"></div>
                         </div>
                         <div class="ant-modal-body">
-                            <div class="modal-place-wrap">
-                                <label>地点：</label>
-                                <input id="J_SearchMapInput" type="text" class="modal-place-input"/>
-                            </div>
                             <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading hidden">
                                 <div class="ant-spin-blur ant-spin-container">
                                     <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
                                 </div>
                             </div>
-                            <div id="J_SearchMapCont" class="hidden" style="height:400px;"></div>
+                            <div id="J_SearchMapCont" style="height:400px;"></div>
                         </div>
                         <div class="ant-modal-footer">
-                            <button type="button" class="ant-btn ant-btn-lg" id="ant-modal-close">
-                                <span>关闭</span>
-                            </button>
                             <button type="button" class="ant-btn ant-btn-primary ant-btn-lg" id="ant-modal-confirm">
                                 <span>确认</span>
                             </button>
@@ -108,10 +88,9 @@
         </div>
 
         <link rel="import" href="../footer.html?__inline">
-        <script src="../../js/lib/laydate/laydate.dev.js"></script>
         <script src="//api.map.baidu.com/api?v=2.0&ak=GtNrG008U04GONzKSDHiW70GxurUUhlU&s=1"></script>
         <script>
-            require(['app/controller/go/Carpool']);
+            require(['app/controller/go/CarpoolDetail']);
         </script>
     </body>
 </html>

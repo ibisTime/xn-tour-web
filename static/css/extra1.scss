@@ -48,11 +48,22 @@
     width: 100%;
     height: 100%;
 
+    &.modal-map-ant-spin-loading {
+        top: 64px;
+        left: 16px;
+        right: 16px;
+        height: inherit;
+        width: inherit;
+        bottom: 16px;
+        z-index: 1002;
+    }
+
     .ant-spin-dot {
         position: absolute;
         top: 50%;
         left: 50%;
-        margin: -20px -10px -10px;
+        margin-top: -15px;
+        margin-left: -14px;
         position: relative;
         display: inline-block;
         width: 20px;
@@ -221,6 +232,7 @@
                 padding: 16px;
                 font-size: 12px;
                 line-height: 1.5;
+                position: relative;
             }
 
             .ant-modal-footer {
@@ -315,11 +327,46 @@
     border-color: #ecc267;
 }
 
+.ant-btn.disabled,
+.ant-btn.disabled.active,
+.ant-btn.disabled:active,
+.ant-btn.disabled:focus,
+.ant-btn.disabled:hover,
+.ant-btn[disabled],
+.ant-btn[disabled].active,
+.ant-btn[disabled]:active,
+.ant-btn[disabled]:focus,
+.ant-btn[disabled]:hover {
+    color: rgba(0,0,0,.25);
+    background-color: #f7f7f7;
+    border-color: #d9d9d9;
+}
+
+.ant-btn-primary.disabled,
+.ant-btn-primary.disabled.active,
+.ant-btn-primary.disabled:active,
+.ant-btn-primary.disabled:focus,
+.ant-btn-primary.disabled:hover,
+.ant-btn-primary[disabled],
+.ant-btn-primary[disabled].active,
+.ant-btn-primary[disabled]:active,
+.ant-btn-primary[disabled]:focus,
+.ant-btn-primary[disabled]:hover {
+    color: rgba(0,0,0,.25);
+    background-color: #f7f7f7;
+    border-color: #d9d9d9;
+}
+
+.ant-btn.disabled,
+.ant-btn[disabled] {
+    cursor: not-allowed;
+}
+
 .tangram-suggestion-main {
     z-index: 1001;
 }
 
-input[disabled] {
+input[type=button][disabled] {
     cursor: not-allowed;
 }
 
@@ -329,7 +376,9 @@ input[disabled] {
     border-color: #cccccc;
 }
 
-.ui-dialog-footer button:hover, .ui-dialog-footer button:focus, .ui-dialog-footer button:active {
+.ui-dialog-footer button:active,
+.ui-dialog-footer button:focus,
+.ui-dialog-footer button:hover {
     color: #FFAE00;
     background-color: #fff;
     border-color: #FFAE00;
@@ -341,9 +390,9 @@ input[disabled] {
     border-color: #FFAE00;
 }
 
-.ui-dialog-footer button.ui-dialog-autofocus:hover,
+.ui-dialog-footer button.ui-dialog-autofocus:active,
 .ui-dialog-footer button.ui-dialog-autofocus:focus,
-.ui-dialog-footer button.ui-dialog-autofocus:active {
+.ui-dialog-footer button.ui-dialog-autofocus:hover {
     color: #fff;
     background-color: #ecc267;
     border-color: #ecc267;
@@ -354,7 +403,42 @@ input[disabled] {
     outline: 0;
     box-shadow: none;
 }
-.ui-dialog-footer button:focus{
+
+.ui-dialog-footer button:focus {
     outline: 5px auto #FFAE00;
     outline-offset: -2px;
+}
+
+.smf {
+    color: #787878;
+    font-size: 9px;
+    padding-left: 4px;
+}
+
+.traffic-table.carpool-table {
+    text-align: left;
+
+    thead tr th {
+        padding: 0 8px;
+        min-width: 62px;
+    }
+
+    tbody tr {
+        cursor: pointer;
+
+        &:hover {
+            background: #f7f3f3;
+        }
+
+        td {
+            padding: 16px 8px;
+        }
+    }
+}
+
+.traffic-btn input:hover,
+.traffic-btn input:focus {
+    color: #fff;
+    background-color: #ecc267;
+    border-color: #ecc267;
 }

@@ -2,32 +2,32 @@ define([
     'app/controller/base',
     'app/interface/trafficCtr',
     'app/interface/userCtr',
-    'app/interface/menuCtr',
-    'app/util/dict',
-    'pagination'
-], function(base, trafficCtr, userCtr, menuCtr, Dict, pagination) {
+    'app/interface/menuCtr'
+], function(base, trafficCtr, userCtr, menuCtr) {
 
     var startSite = {
-    		name: "",
-    		point: {
-    			lng: "",
-    			lat: ""
-    		},
-            type: "start"
-    	}, endSite = {
-    		name: "",
-    		point: {
-    			lng: "",
-    			lat: ""
-    		},
-            type: "end"
-    	}, currentSite;
-    var map, config = {},
-        pageConfig = {
-            start: 1,
-            limit: 10
-        },
-        carpoolStatus = Dict.get("carpoolStatus");
+		name: "",
+		point: {
+			lng: "",
+			lat: ""
+		},
+        type: "start"
+	}, endSite = {
+		name: "",
+		point: {
+			lng: "",
+			lat: ""
+		},
+        type: "end"
+	}, midSite = {
+		name: "",
+		point: {
+			lng: "",
+			lat: ""
+		},
+        type: "mid"
+	}, currentSite;
+    var map, config = {};
 
     init();
 
@@ -35,7 +35,6 @@ define([
     function init() {
         $("#nav li").eq(3).addClass("active");
         getModules();
-        getPageCarpool();
         setTimeout(function(){
             addListener();
         }, 1);
@@ -65,62 +64,6 @@ define([
             });
     }
 
-    var _loadingSpin = $("#loadingSpin");
-    // 分页获取拼车信息
-    function getPageCarpool(refresh){
-        return trafficCtr.getPageCarpool(pageConfig, refresh)
-            .then((data) => {
-                _loadingSpin.addClass("hidden");
-                pageConfig.start == 1 && initPagination(data);
-                var html = '';
-                if(data.list.length){
-                    $.each(data.list, function(i, d){
-                        html += buildHtml(d);
-                    });
-                } else {
-                    html = '<tr><td colspan="6">暂无数据</td></tr>';
-                }
-                $("#body").html(html);
-                pageConfig.start++;
-            }, () => {
-                _loadingSpin.addClass("hidden");
-            });
-    }
-    // 生成table到html
-    function buildHtml(data){
-        return `<tr data-code="${data.code}">
-                    <td class="trainNum">${data.startSite}</td>
-                    <td class="trainNum">${data.endSite}</td>
-                    <td class="trainNum">${data.totalNum}</td>
-                    <td class="trainNum">${base.formatMoney(data.nextPrice)}<span class="smf">起</span></td>
-                    <td class="trainNum">${carpoolStatus[data.status]}</td>
-                    <td class="trainNum">${base.formatDate(data.outDatetime, "yyyy-MM-dd hh:mm:ss")}</td>
-                </tr>`;
-    }
-    // 初始化分页器
-    function initPagination(data){
-        $("#pagination .pagination").pagination({
-            pageCount: data.totalPage,
-            showData: pageConfig.limit,
-            jump: true,
-            coping: true,
-            prevContent: '<img src="/static/images/arrow---left.png" />',
-            nextContent: '<img src="/static/images/arrow---right.png" />',
-            keepShowPN: true,
-            totalData: data.totalCount,
-            jumpIptCls: 'pagination-ipt',
-            jumpBtnCls: 'pagination-btn',
-            jumpBtn: '确定',
-            callback: function(_this){
-                if(_this.getCurrent() != pageConfig.start){
-                    _loadingSpin.removeClass("hidden");
-                    pageConfig.start = _this.getCurrent();
-                    getPageCarpool();
-                }
-            }
-        });
-    }
-
     function addListener() {
         // 出行时间
         laydate({
@@ -141,6 +84,13 @@ define([
             showPoint();
             $("#modal").removeClass("hidden");
         });
+        // 途经站点
+        $("#midSite").click(function(){
+            currentSite = midSite;
+            showPoint();
+            $("#modal").removeClass("hidden");
+        });
+
         /*modal start*/
         // 关闭modal的图标
         $(".ant-modal-close-x").click(function(){
@@ -152,11 +102,7 @@ define([
         });
         // modal的确认按钮
         $("#ant-modal-confirm").click(function(){
-            if(currentSite.type == "start"){
-                $("#startSite").html(currentSite.name);
-            }else{
-                $("#endSite").html(currentSite.name);
-            }
+            $(`#${currentSite.type}Site`).html(currentSite.name);
             $("#modal").addClass("hidden");
         });
         // 地图listener
@@ -196,10 +142,7 @@ define([
                     }, unDisabledButton);
             }
         });
-        // 点击tr拼车详情
-        $("#body").on("click", "tr", function(){
-            window.open("./carpool-detail.html?code=" + $(this).attr("data-code"));
-        });
+
         $(window).scroll(function(e){
             $(".tangram-suggestion-main").hide();
         });
@@ -213,6 +156,8 @@ define([
     function showPoint(){
         if(currentSite.type == "start"){
             _modalTitle.text("上车地点");
+        }else if(currentSite.type == "mid"){
+            _modalTitle.text("途经站点");
         }else{
             _modalTitle.text("下车地点");
         }
@@ -276,19 +221,24 @@ define([
             return false;
         }
         config.endSite = endSite.name;
+        if(!midSite.name){
+            base.showMsg("途经站点不能为空");
+            return false;
+        }
+        config.midSite = midSite.name;
         var totalNum = $("#totalNum").val();
         if(totalNum == undefined){
-            base.showMsg("人数不能为空");
+            base.showMsg("预定人数不能为空");
             return false;
         }
         if(!$.isNumeric(totalNum) || !/\d+/.test(totalNum)){
-            base.showMsg("人数必须为正整数");
+            base.showMsg("预定人数必须为正整数");
             return false;
         }
         config.totalNum = totalNum;
         var outDatetime = $("#choseDate").val();
         if(!outDatetime){
-            base.showMsg("出行时间不能为空");
+            base.showMsg("预定时间不能为空");
             return false;
         }
         if(!/\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}/.test(outDatetime)){
@@ -302,7 +252,7 @@ define([
     function calculateDistance() {
         var p1 = new BMap.Point(startSite.point.lng, startSite.point.lat);
         var p2 = new BMap.Point(endSite.point.lng, endSite.point.lat);
-        var p3 = [];
+        var p3 = [new BMap.Point(midSite.point.lng, midSite.point.lat)];
 
         var transit = new BMap.DrivingRoute(map, {
             onSearchComplete: function(results){
@@ -312,37 +262,37 @@ define([
                     return;
                 }
                 var plan = results.getPlan(0);
-                publish(plan.dg);
+                dueBus(plan.dg);
             }
         });
         transit.search(p1, p2, {
             waypoints: p3
         });
     }
-    // 发布拼车
-    function publish(distance) {
+    // 预约大巴
+    function dueBus(distance) {
         config.distance = distance;
-        trafficCtr.publishCarpool(config)
+        trafficCtr.dueBus(config)
             .then((data) => {
-                getCarpool(data.code, data.orderCode);
+                getOrderDetail(data.code, data.orderCode);
             }, (error) => {
                 unDisabledButton();
             });
     }
-    // 获取拼车信息
-    function getCarpool(code, orderCode){
-        trafficCtr.getCarpool(code)
+    // 获取大巴订单信息
+    function getOrderDetail(code, orderCode){
+        trafficCtr.getBusOrderDetail(code)
             .then((data) => {
-                base.confirm("拼车申请提交成功，总价为：" + base.formatMoney(data.distancePrice) + "元。<br/>点击确认前往支付定金")
+                base.confirm("大巴预定成功，总价为：" + base.formatMoney(data.distancePrice) + "元。<br/>点击确认前往支付")
                     .then(function () {
                         alert("进入支付页面（未实现）");
-                        // location.href = "../pay/pay.html?code=" + orderCode + "&type=4";
+                        // location.href = "../pay/pay.html?code=" + code + "&type=3";
                     }, function () {
                         location.reload(true);
                         unDisabledButton();
                     });
             }, (error) => {
-                base.showMsg("拼车申请提交成功");
+                base.showMsg("大巴预定成功");
                 setTimeout(() => location.reload(true), 1000);
                 unDisabledButton();
             })

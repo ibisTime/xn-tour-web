@@ -86,7 +86,7 @@ define([
     var _loadingSpin = $("#loadingSpin");
     // 分页获取旅游专线
     function getPageTravelSpecialLine(refresh){
-        return trafficCtr.getPageTravelSpecialLine(config)
+        return trafficCtr.getPageTravelSpecialLine(config, refresh)
             .then((data) => {
                 _loadingSpin.addClass("hidden");
                 config.start == 1 && initPagination(data);

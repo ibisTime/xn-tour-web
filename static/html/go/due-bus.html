@@ -2,11 +2,12 @@
 <html lang="zh-CN">
     <head>
         <link rel="import" href="../head.html?__inline">
-        <title>发布拼车</title>
+        <title>大巴预订-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
     </head>
 
     <body>
-    	<div class="nav wrap traffic-nav">
+        <div class="nav wrap traffic-nav">
     		<div class="nav-class">
     			<ul id="navUl"></ul>
     		</div>
@@ -26,15 +27,22 @@
 	    			</div>
     			</div>
 
-    			<div class="trfSearch-wrap">
-	    			<div class="tit fl">人数：</div>
+                <div class="trfSearch-wrap">
+	    			<div class="tit fl">途经站点：</div>
+	    			<div class="search-txt fl">
+	    			    <div class="my-laydate-icon cur-pointer" id="midSite"></div>
+	    			</div>
+    			</div>
+
+    			<div class="trfSearch-wrap mr60">
+	    			<div class="tit fl">预定人数：</div>
 	    			<div class="search-txt fl">
 	    				<input class="my-laydate-icon" id="totalNum" type="number"/>
 	    			</div>
     			</div>
 
     			<div class="trfSearch-wrap mr60">
-	    			<div class="tit fl">出行时间：</div>
+	    			<div class="tit fl">预定时间：</div>
 	    			<div class="search-txt search-datetime fl">
     	    			<input class="my-laydate-icon" id="choseDate"/>
 	    			</div>
@@ -43,33 +51,13 @@
     		</div>
     	</div>
 
-    	<div class="traffic-btn wrap">
-    		<input type="button" id="submitBtn" value="发布拼车" />
+    	<div class="content wrap hidden" id="priceWrap">
+    		<div class="bus-price"><samp>价格：</samp><i>￥2340</i></div>
     	</div>
 
-        <div class="content wrap traffic-content">
-    		<table class="traffic-table wp100 carpool-table" border="0" cellpadding="0" cellspacing="0">
-    			<thead>
-    				<tr>
-    					<th>上车地点</th>
-    					<th>下车地点</th>
-    					<th>拼车人数</th>
-    					<th>价格</th>
-    					<th>状态</th>
-    					<th>出行时间</th>
-    				</tr>
-    			</thead>
-    			<tbody id="body"></tbody>
-    		</table>
-            <div id="loadingSpin" class="ant-spin-nested-loading">
-                <div class="ant-spin-blur ant-spin-container">
-                    <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
-                </div>
-            </div>
+    	<div class="traffic-btn wrap">
+    		<input type="button" id="submitBtn" value="立即预定" />
     	</div>
-        <div id="pagination" class="wrap tc">
-			<p class="pagination"></p>
-		</div>
 
         <div id="modal" class="ant-modal-wraper hidden">
             <div class="ant-modal-mask"></div>
@@ -111,7 +99,7 @@
         <script src="../../js/lib/laydate/laydate.dev.js"></script>
         <script src="//api.map.baidu.com/api?v=2.0&ak=GtNrG008U04GONzKSDHiW70GxurUUhlU&s=1"></script>
         <script>
-            require(['app/controller/go/Carpool']);
+            require(['app/controller/go/DueBus']);
         </script>
     </body>
 </html>
