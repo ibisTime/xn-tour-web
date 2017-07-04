@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>个人中心-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的资料</p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="fl user-left conStyle">
+    			<link rel="import" href="./userLeft.html?__inline">
+    		</div>
+    		<div class="fr user-right conStyle">
+	    		<div class="userInfo-wrap">
+	    			<div class="myPic fl"></div>
+	    			<div class="fl ml30">
+	    				<div class="name"></div>
+	    				<div class="tel">手机号：<i></i></div>
+	    			</div>
+	    			<div class="fr userRevise">
+	    				<a class="con" href="revise-Info.html">
+	    					<div class="icon fl"><img src="../../images/修改资料.png"/></div>
+	    					<p class="fl">修改资料</p>
+	    				</a>
+	    				<a class="con" href="revise-pwd.html">
+	    					<div class="icon fl"><img src="../../images/修改密码.png"/></div>
+	    					<p class="fl">修改密码</p>
+	    				</a>
+	    			</div>
+	    		</div>
+	    	</div>
+    	</div>
+    	
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/user/User']);
+        </script>
+    </body>
+</html>

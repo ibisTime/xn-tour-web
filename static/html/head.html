@@ -6,21 +6,59 @@
 <link rel="shortcut icon" href="../images/favicon.ico" />
 <link rel="stylesheet" href="../css/base.css" />
 <link rel="stylesheet" href="../css/extra.scss" />
-<!--<script data-loader type="text/javascript">
-    (function(doc, win) {
-        var docEl = doc.documentElement,
-            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
-            recalc = function() {
-                var clientWidth = docEl.clientWidth;
-                if (!clientWidth) return;
-                if(clientWidth < 750)
-                    docEl.style.fontSize = clientWidth / 7.5 + 'px';
-                else
-                    docEl.style.fontSize = '100px';
-            };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false)
-    })(document, window);
-</script>-->
+<link rel="stylesheet" href="../css/extra1.scss" />
 <script data-loader src="../js/app/config.js"></script>
+
+<div id="head" class="wp100 bg_fff">
+	<div class="head-top wp100">
+		<div class="wrap">
+			<div class="head-top-fl">欢迎来到大元云</div>
+			<div class="fr">
+				<div class="WeChat-icon fr"><img src="../images/微信logo.png"/></div>
+				<div class="fr">
+					<div id="telephone" class="fr"></div>
+					<div class="fs14 t_8e fr">客服电话：</div>
+					<div class="tel_icon fr"><img src="../images/phone.png"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="head-middle wrap">
+		<div class="logo fl"><a href="index.html" ><img src="../images/图层-87.png"/></a></div>
+		<div class="search">
+			<input type="text" placeholder="输入关键字" />
+			<input type="button" value="" />
+		</div>
+		<div class="fr img"><a href="#"><img src="../images/img.png"/></a></div>
+	</div>
+	
+	<div class="head-nav wp100">
+		<div class="wrap">
+			<ul class="fl" id="nav">
+				<li><a href="../index.html">首页</a></li>
+				<li><a href="../tourism/tourism.html">全域旅游</a></li>
+				<li><a href="../hotel/hotel.html">酒店住宿</a></li>
+				<li><a href="../go/special-line.html">交通出行</a></li>
+				<li><a href="../index.html">汽车票</a></li>
+				<li><a href="../index.html">火车票</a></li>
+				<li><a href="../index.html">机票</a></li>
+				<li><a href="../cate/cate.html">美食小吃</a></li>
+				<li><a href="../mall/mall.html">积分商城</a></li>
+			</ul>
+			
+			<div class="fr userInfo">
+				<div class="user-icon fl">
+					<img src="../images/user.png"/>
+				</div>
+				<div class="fl hidden" id="goLogin"><a class="gologin" href="../user/login.html">立即登录</a>|<a class="goregister"  href="../user/register.html">注册</a></div>
+				
+				<div class="fl hidden" id="goUser"><a class="gologin" href="../user/user.html">个人中心</a>|<a id="returnBtn" class="goregister"  href="../user/login.html">退出</a></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    require(['app/controller/Head']);
+</script>

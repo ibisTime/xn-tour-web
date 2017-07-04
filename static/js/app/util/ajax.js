@@ -5,8 +5,7 @@ define([
     'app/util/cookie'
 ], function($, dialog, loading, CookieUtil) {
     var cache = {};
-
-    function _showMsg(msg, time){
+	function showMsg(msg, time) {
         var d = dialog({
             content: msg,
             quickClose: true
@@ -15,8 +14,7 @@ define([
         setTimeout(function() {
             d.close().remove();
         }, time || 1500);
-    }
-
+    };
     var Ajax = {
         get: function(code, json, reload) {
             reload = reload || false;
@@ -26,7 +24,7 @@ define([
             reload = reload == undefined ? true : reload;
             json = json || {};
             json["systemCode"] = SYSTEM_CODE;
-            var token =  sessionStorage.getItem("token");
+            var token =   CookieUtil.get("token");
             token && (json["token"] = token);
             var param = {
                 code: code,
@@ -50,22 +48,20 @@ define([
                     .then(function(res) {
                         if(res.errorCode == "0"){
                             resolve(res.data);
-                        } else if(res.errorCode == "4" || res.errorInfo.indexOf("token") != -1){
-                            loading.hideLoading();
-                            _showMsg("登录超时");
-                            sessionStorage.setItem("login-return", encodeURIComponent(location.pathname + location.search));
-                            setTimeout(function(){
-                                location.href = "../user/redirect.html";
-                            }, 1000);
-                            reject(res.errorInfo);
+//                      } else if(res.errorCode == "4" || res.errorInfo.indexOf("token") != -1){
+//                          loading.hideLoading();
+//                          _showMsg("登录超时");
+//                          sessionStorage.setItem("login-return", encodeURIComponent(location.pathname + location.search));
+//                          setTimeout(function(){
+//                              location.href = "../user/redirect.html";
+//                          }, 1000);
+//                          reject(res.errorInfo);
                         } else{
-                            loading.hideLoading();
-                            _showMsg(res.errorInfo);
+                            showMsg(res.errorInfo);
                             reject(res.errorInfo);
                         }
                     }, function(error) {
-                        loading.hideLoading();
-                        _showMsg(error.toString());
+                        showMsg(error);
                         reject(error);
                     });
             });

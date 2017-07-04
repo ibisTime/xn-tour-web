@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>注册-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	
+    	<div class="wp100 register-bg">
+    		<div class="loginForm-wrap wrap hp100 re">
+	    		<form class="loginForm registerForm" id="registerForm">
+	    			<div class="title">
+	    				<h3>用户注册</h3>
+	    			</div>
+	    			
+	    			<div class="wp100 pt45">
+	    				<div class="input-wrap">
+		    				<div class="icon"><img src="../../images/手机号.png"/></div>
+		    				<input id="loginName" name="loginName" class="input-text" type="text" placeholder="手机号" />
+		    			</div>
+		    			<div class="wp100 over-hide">
+		    				<div class="input-wrap input-telVfCode fl">
+			    				<div class="icon"><img src="../../images/手机验证码.png"/></div>
+			    				<input id="smsCode" name="smsCode" class="input-text" type="text" placeholder="手机验证码" />
+			    			</div>
+			    			
+		    				<input class="telVfCode fr" id="getSmsCode" type="button" value="获取验证码">
+		    			</div>
+	    				
+		    			<div class="input-wrap">
+		    				<div class="icon"><img src="../../images/输入密码.png"/></div>
+		    				<input id="password" name="password" class="input-text" type="password" placeholder="设置密码" />
+		    			</div>
+	    			</div>
+	    			
+	    			<input  id="regsBtn" class="input-btn mt40" type="button" value="立即注册" />
+	    		</form>	
+    		</div>
+    	</div>
+    	
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/user/Register']);
+        </script>
+    </body>
+</html>

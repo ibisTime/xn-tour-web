@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>修改资料-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a><a href="user.html">我的资料></a>修改资料</p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="userInfo-wrap conStyle revise-info">
+    			<div class="revise-myPic fl">
+    				<div class="myPic"><img id="showAvatar" src=""/></div>
+    				<div class="file" id="photoFile-wrap">
+    					<p>[修改头像]</p>
+    					<input id="photoFile" type="file" class="input-file photoFile" accept="image/png,image/gif,image/jpg,image/jpeg" />
+    				</div>
+    			</div>
+    			<div class="fl ml30">
+    				<form class="wp100" id="editInfo">
+	    				<div class="over-hide mt20">
+	    					<div class="txt fl">昵称</div>
+	    					<input type="text" name="name" class="input-text name fl" />
+	    				</div>
+	    				<!--<div class="over-hide mt20">
+	    					<div class="txt fl">手机号</div>
+	    					<input type="text" name="mobile" class="input-text fl mobile" />
+	    				</div>-->
+	    				<div class="mt50">
+	    					<input id="subBtn" type="button" class="input-btn" value="提交" />
+	    				</div>
+    				</form>
+    			</div>
+    		</div>
+    	</div>
+    	
+        <link rel="import" href="../footer.html?__inline">
+        
+        <script type="text/javascript" src="../../js/lib/qiniu/plupload.full.min.js"></script>
+    	<script type="text/javascript" src="../../js/lib/qiniu/qiniu.min.js"></script>
+        <script>
+            require(['app/controller/user/ReviseInfo']);
+        </script>
+    </body>
+</html>

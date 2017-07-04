@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>全域旅游-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="nav wrap">
+    		<div class="nav-class" id="tourismClass">
+    			<ul>
+    				<li class="active"><div class="icon"><img src=""></div><p>春游</p></li>
+    			</ul>
+    		</div>
+    		
+    		<div class="nav-search wp100">
+    			<div class="navSearch-wrap">
+	    			<div class="tit">地域：</div>
+	    			<div class="navSearch-list">
+	    				<ul>
+	    					<li class="active">不限</li>
+	    					<li>嘉兴</li>
+	    				</ul>
+	    			</div>
+    			</div>
+    			
+    			<div class="navSearch-wrap">
+	    			<div class="tit">类别：</div>
+	    			<div class="navSearch-list" id="typeList">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    			
+    			<div class="navSearch-wrap">
+	    			<div class="tit">时间：</div>
+	    			<div class="navSearch-list" id="travelTimeList">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    			
+    			<div class="navSearch-wrap">
+	    			<div class="tit">形式：</div>
+	    			<div class="navSearch-list" id="styleList">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    			
+    			<!--<div class="navSearch-wrap navSearch-wrap1">
+	    			<div class="tit">组团线路：</div>
+	    			<div class="navSearch-list" id="teamList">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    			-->
+    		</div>
+    		
+    	</div>
+    	
+    	<div class="content wrap">
+    		<div class="conl-tourismList wp100" id="tourismNavCon">
+				<ul></ul>
+			</div>
+    	</div>
+    	
+		<div id="pagination" class="wrap tc">
+			<p class="pagination"></p>
+		</div>
+		
+		<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/tourism/Tourism']);
+        </script>
+    </body>
+</html>

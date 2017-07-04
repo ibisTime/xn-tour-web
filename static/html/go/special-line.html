@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>交通出行</title>
+    </head>
+
+    <body>
+    	<div class="nav wrap traffic-nav">
+    		<div class="nav-class">
+    			<ul id="navUl"></ul>
+    		</div>
+
+    		<div class="traffic-search wp100">
+    			<div class="trfSearch-wrap mr60">
+	    			<div class="tit fl">出发地：</div>
+	    			<div class="search-txt fl">
+	    				<select id="startSite" name="startSite">
+	    					<option value="">全部</option>
+	    				</select>
+	    			</div>
+    			</div>
+
+    			<div class="trfSearch-wrap mr60">
+	    			<div class="tit fl">目的地：</div>
+	    			<div class="search-txt fl">
+	    				<select id="endSite" name="endSite">
+	    					<option value="">全部</option>
+	    				</select>
+	    			</div>
+    			</div>
+
+    			<div class="trfSearch-wrap">
+	    			<div class="tit fl">出行日期：</div>
+	    			<div class="search-txt fl">
+                        <input class="my-laydate-icon" id="choseDate"/>
+	    			</div>
+    			</div>
+	    		<div class="searchBtn" id="searchBtn">搜索</div>
+    		</div>
+
+    	</div>
+
+    	<div class="content wrap traffic-content">
+    		<table class="traffic-table wp100" border="0" cellpadding="0" cellspacing="0">
+    			<thead>
+    				<tr>
+    					<th width="112px">出发时间</th>
+    					<th width="260px">出发/到达站</th>
+    					<th width="145px">车次</th>
+    					<th width="234px">价格</th>
+    					<th width="206px" class="tl pl30 ">余票</th>
+    					<th width="250px">购买</th>
+    				</tr>
+    			</thead>
+    			<tbody id="body"></tbody>
+    		</table>
+            <div id="loadingSpin" class="ant-spin-nested-loading">
+                <div class="ant-spin-blur ant-spin-container">
+                    <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                </div>
+            </div>
+    	</div>
+
+		<div id="pagination" class="wrap tc">
+			<p class="pagination"></p>
+		</div>
+
+        <link rel="import" href="../footer.html?__inline">
+        <script src="../../js/lib/laydate/laydate.dev.js"></script>
+        <script>
+            require(['app/controller/go/SpecialLine']);
+        </script>
+    </body>
+</html>
