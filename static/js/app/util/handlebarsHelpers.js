@@ -42,7 +42,7 @@ define([
         if(!pic)
             return defaultImg;
         pic = pic.split(/\|\|/)[0];
-        return (PIC_PREFIX + pic + '?imageMogr2/auto-orient/thumbnail/!123x100r');
+        return (PIC_PREFIX + pic + '?imageMogr2/auto-orient/thumbnail/!280x175r');
     });
     Handlebars.registerHelper('formateDateTime', function(date, options){
         return date ? new Date(date).format("yyyy-MM-dd hh:mm:ss") : "--";
@@ -65,14 +65,14 @@ define([
     Handlebars.registerHelper('formatAddress', function(addr, options){
         if(!addr)
             return "";
-        var province = options.data.root.province,
-            city = options.data.root.city,
-            area = options.data.root.area,
-            address = options.data.root.address;
+        var province = options.data.root.items[0].province,
+            city = options.data.root.items[0].city,
+            area = options.data.root.items[0].area,
+            address = options.data.root.items[0].detail;
         if(province == city){
             province = "";
         }
-        return province + city + area + address;
+        return province + city + area +" "+ address;
     });
     Handlebars.registerHelper('format2line', function(cont, options){
         return cont

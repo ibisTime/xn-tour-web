@@ -3,6 +3,7 @@ define([
 ], function (generalCtr) {
 
     var swfUrl = __uri("../../lib/qiniu/Moxie.swf");
+    
 
     return {
         getQiniuToken: function (){
@@ -13,6 +14,8 @@ define([
             // 触发选择文件的按钮的id
             var btnId = option.btnId;
             var token = option.token;
+            //触发上传的按钮id
+            var starBtnId = option.starBtnId;
 
             // 触发选择文件的按钮的父容器的id
             var containerId = option.containerId;
@@ -45,7 +48,7 @@ define([
                         //只允许上传图片文件 （注意，extensions中，逗号后面不要加空格）
                         {
                             title: "图片文件",
-                            extensions: "jpg,gif,png,bmp"
+                            extensions: "jpg,jpeg,gif,png,bmp"
                         }
             //             , {
                         //  title: '文件',
@@ -93,8 +96,8 @@ define([
                         var sourceLink = domain + res.key; //获取上传成功后的文件的Url
 
                         // console.log(sourceLink);
-
-                        // $("#showAvatar").attr("src", sourceLink).attr("data-src", res.key);
+						//上传后的图片显示
+                        $("#showAvatar").attr("src", sourceLink).attr("data-src", res.key);
                         option.fileUploaded && option.fileUploaded(up, sourceLink, res.key, file);
                     },
                     'Error': function(up, err, errTip) {
@@ -122,6 +125,7 @@ define([
             });
             // domain 为七牛空间（bucket)对应的域名，选择某个空间后，可通过"空间设置->基本设置->域名设置"查看获取
             // uploader 为一个plupload对象，继承了所有plupload的方法，参考http://plupload.com/docs
+        	
         }
     }
 });

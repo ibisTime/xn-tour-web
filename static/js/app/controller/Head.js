@@ -12,5 +12,18 @@ define([
     			$("#telephone1").text(data.note);
     			
     		},()=>{})
+    		
+    	if(base.isLogin()){
+    		$("#goUser").removeClass("hidden")
+    	}else{
+    		$("#goLogin").removeClass("hidden")
+    	}
+    	
+    	$("#returnBtn").click(function(){
+    		base.showLoading();
+    		base.clearSessionUser();
+    		base.hideLoading();
+    		location.href = "./login.html"
+    	})
     }
 });

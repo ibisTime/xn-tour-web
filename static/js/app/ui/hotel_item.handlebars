@@ -1,0 +1,9 @@
+{{#each items}}
+<li><a href="../hotel/hotel-detail.html?code={{code}}">
+	<div class="img"><img src="{{formatListImage pic1}}"/></div>
+	<div class="title t-3dot plr10">{{name}}</div>
+	<div class="con wp100 plr10"><img class="fl" src="/static/images/地址.png"><p class="fl">{{formatAddress province}}</p></div>
+	<div class="con wp100 plr10"><img class="fl" src="/static/images/电话.png"><p class="fl">{{telephone}}</p></div>
+	<div class="price plr10"><p><i>￥{{formatMoney lowPrice}}</i>起</p></div>
+</a></li>
+{{/each}}

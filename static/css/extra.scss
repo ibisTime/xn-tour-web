@@ -63,8 +63,14 @@ select{
 .mt30{
     margin-top: 30px;
 }
+.mt40{
+    margin-top: 40px;
+}
 .mt50{
     margin-top: 50px;
+}
+.mt80{
+    margin-top: 80px;
 }
 .mb10{
     margin-bottom: 10px;
@@ -83,6 +89,9 @@ select{
 }
 .pt25{
     padding-top: 25px;
+}
+.pt45{
+    padding-top: 45px;
 }
 .ptb10{
     padding-top: 10px;
@@ -795,8 +804,18 @@ select{
             font-size: 16px;
             color: #fff;
             background-color: #06CDB8;
-            margin-top: 50px;
             cursor: pointer;
+        }
+        label.error{
+            color: #F14E4F;
+            font-size: 13px;
+            line-height: 1;
+            width: 100%;
+            height: 13px;
+            padding-left: 56px;
+            position: absolute;
+            bottom: -19px;
+            left: 0;
         }
     }
 }
@@ -833,7 +852,7 @@ select{
         height: 46px;
         border: 1px solid #e3e3e3;
         position: relative;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         padding-top: 15px;
         background-color: #fff;
         
@@ -879,6 +898,9 @@ select{
         background-color: #ffba00;
         cursor: pointer;
     }
+    .telVfCode:disabled{
+        background-color: #ccc;
+    }
     
     .input-info{
         width: 100%;
@@ -914,11 +936,6 @@ select{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.registerForm{
-    .input-btn{
-        margin-top: 30px;
-    }
 }
 
 .nav{
@@ -1064,6 +1081,10 @@ select{
             }
             
             li.active{
+                p{
+                    color: #06CDB8;
+                }
+                
                 /*全域旅游*/
                 .icon-chunyou{
                     background-image: url('../images/春游-点击.png');
@@ -1192,6 +1213,7 @@ select{
         
         .navSearch-list{
             width: 100%;
+            min-height: 29px;
             padding-left: 60px;
             
             ul{
@@ -1354,6 +1376,10 @@ select{
         a{
             color: #06CDB8;
         }
+        samp{
+            font-size: 15px;
+            color: #c9c9c9;
+        }
     }
 }
 
@@ -1366,8 +1392,37 @@ select{
     .dconTop-left{
         width: 528px;
         height: 100%;
+        overflow: hidden;
         float: left;
-        border: 1px solid #A9A9A9;
+        
+        .swiper-container {
+            width: 100%;
+            height: 296px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-top {
+            height: 80%;
+            width: 100%;
+        }
+        .gallery-thumbs {
+            height: 20%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+        .gallery-thumbs .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+        .gallery-thumbs .swiper-slide-active {
+            opacity: 1;
+        }
+        
     }
     
     .dconTop-right{
@@ -2198,7 +2253,8 @@ select{
         background-color: #f3f3f3;
     }
     
-    .error{
+    label.error{
+        float: left;
         line-height: 42px;
         margin-left: 10px;
         color: #F14E4F;
@@ -2772,3 +2828,4 @@ select{
         cursor: pointer;
     }
 }
+

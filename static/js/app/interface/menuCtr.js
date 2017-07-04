@@ -14,7 +14,7 @@ define([
         getIndexBanner: (refresh) => (
             menuCtr.getBanner("index_banner", refresh)
         ),
-        // 获取模块
+         // 获取模块
         getModules: (location, refresh) => (
             Ajax.get('806052', {
                 type: 3,

@@ -22,7 +22,7 @@ define([
             });
     }
     initSms.prototype.defaultOptions = {
-        id: "getVerification",
+        id: "getSmsCode",
         mobile: "mobile",
         checkInfo: function () {
             return $("#" + this.options.mobile).valid();

@@ -161,7 +161,7 @@ define([
         },
         getAvatar: function(pic){
             var defaultAvatar = __inline("../images/default-avatar.png");
-            var suffix = '?imageMogr2/auto-orient/thumbnail/!65x65r';
+            var suffix = PHOTO_SUFFIX;
             if(!pic){
                 pic = defaultAvatar;
             }
@@ -205,37 +205,35 @@ define([
             }
             return encodeURIComponent(url);
         },
-        goBackUrl: function(url) {
-            var returnUrl = sessionStorage.getItem("l-return");
-            sessionStorage.removeItem("l-return");
-            location.href = returnUrl || url || "../index.html";
-        },
         goBack: function() {
             window.history.back();
         },
         isLogin: function() {
-            return !!sessionStorage.getItem("userId");
+            return !!CookieUtil.get("userId");
         },
         goLogin: function(){
             loading.hideLoading();
-//          sessionStorage.setItem("l-return", location.pathname + location.search);
-//          // login.addCont().showCont();
-//          location.href = "../user/redirect.html";
+            sessionStorage.setItem("l-return", location.pathname + location.search);
+            location.href = "../user/login.html";
         },
         getUserId: function() {
-            return sessionStorage.getItem("userId");
+            return CookieUtil.get("userId");
         },
         getToken: function() {
-            return sessionStorage.getItem("token");
+            return CookieUtil.get("token");
         },
         setSessionUser: function(data, isSession) {
-            sessionStorage.setItem("userId", data.userId);
-            sessionStorage.setItem("token", data.token);
+	        // localStorage["userId"] = data.userId;
+	        // localStorage["token"] = data.token;
+	        CookieUtil.set("userId", data.userId, isSession);
+	        CookieUtil.set("token", data.token, isSession);
         },
         //清除cookie中和用户相关的数据
         clearSessionUser: function() {
-            sessionStorage.removeItem("userId");
-            sessionStorage.removeItem("token");
+            // localStorage.removeItem("userId");
+	        // localStorage.removeItem("token");
+	        CookieUtil.set("userId", "");
+	        CookieUtil.set("token", "");
         },
         //登出
         logout: function() {
@@ -290,11 +288,5 @@ define([
 	            : "";
 	    }
     };
-//  // 判断是否登录
-//  if(!/\/redirect\.html/.test(location.href)){
-//      if(!Base.isLogin()){
-//          Base.goLogin();
-//      }
-//  }
     return Base;
 });

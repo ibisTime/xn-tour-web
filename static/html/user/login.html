@@ -10,34 +10,30 @@
     	
     	<div class="wp100 login-bg">
     		<div class="loginForm-wrap wrap hp100 re">
-	    		<form class="loginForm">
+	    		<form class="loginForm" id="loginForm">
 	    			<div class="title">
 	    				<h3>用户登录</h3>
 	    				<a href="register.html"><img src="../../images/立即注册.png"/>立即注册</a>
 	    			</div>
 	    			
-	    			<div class="wp100 pt25">
+	    			<div class="wp100 pt45">
 	    				<div class="input-wrap">
 		    				<div class="icon"><img src="../../images/手机号.png"/></div>
-		    				<input class="input-text" type="text" placeholder="手机号" />
+		    				<input id="loginName"  name="loginName" class="input-text" type="text" placeholder="手机号" />
 		    			</div>
 		    			<div class="input-wrap">
 		    				<div class="icon"><img src="../../images/输入密码.png"/></div>
-		    				<input class="input-text" type="password" placeholder="请输入密码" />
-		    			</div>
-		    			<div class="input-wrap input-vfCode">
-		    				<div class="icon"><img src="../../images/验证码.png"/></div>
-		    				<input class="input-text" type="text" placeholder="验证码" />
+		    				<input id="password"  name="password" class="input-text" type="password" placeholder="请输入密码" />
 		    			</div>
 	    			</div>
 	    			
 	    			<div class="input-info">
-	    				<div class="check active fl"></div>
+	    				<div id="isRem" class="check active fl"></div>
 	    				<div class="txt fl">请保存我这次的登录信息</div>
 	    				<div class="txt fr"><a href="findpwd.html">忘记密码？</a></div>
 	    			</div>
 	    			
-	    			<input class="input-btn" type="button" value="立即登录" />
+	    			<input id="loginBtn" class="input-btn mt80" type="button" value="立即登录" />
 	    		</form>	
     		</div>
     	</div>

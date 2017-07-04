@@ -20,46 +20,42 @@ define([
 			}
 		})
 		
-		$("#loginForm").validate({
+		$("#revisePwd").validate({
             'rules': {
-                "password": {
+                "oldPwd": {
                     required: true,
                     minlength: 6
                 },
-                "loginName": {
+                "newPwd": {
                     required: true,
-                    mobile: true
-                }
+                    minlength: 6
+                },
+                "reNewPwd": {
+                    required: true,
+                    equalTo:"#newPwd"
+                },
             },
             onkeyup: false
         });
 		
-		$("#loginBtn").click(function(){
-			var loginName = $("#loginName").val();
-			var pwd = $("#password").val();
+		$("#subBtn").click(function(){
+			var oldPwd = $("#oldPwd").val();
+			var newPwd = $("#newPwd").val();
 			
-			if(loginName&&pwd){
+			if($("#revisePwd").valid()){
 				base.showLoading();
 			
-				userCtr.login({
-					"loginName": loginName,
-					"loginPwd": pwd,
-					"kind": "f1"
+				userCtr.changePwd({
+					"oldLoginPwd": oldPwd,
+					"newLoginPwd": newPwd
 				}).then((data)=>{
-					
-					if($("#isRem").hasClass("active")){
-						base.setSessionUser(data,true)
-					}else{
-						base.setSessionUser(data)
-					}
-					
 					base.hideLoading();
-					location.href = '../index.html';
-				},()=>{})
-			}else{
-				base.showMsg("请输入手机号或密码！")
+					base.clearSessionUser();
+					location.href = './login.html';
+				},()=>{
+					base.hideLoading();
+				})
 			}
-			
 		})
 		
     }

@@ -13,32 +13,29 @@
     	
     	<div class="content-user">
     		<div class="userInfo-wrap conStyle revise-pwd">
-    			<div>
+    			<form id="revisePwd">
     				<div class="over-hide">
     					<div class="txt fl">原密码</div>
-    					<input type="password" class="input-text fl" placeholder="请输入原密码" />
-    					<label class="error fl"></label>
+    					<input type="password" name="oldPwd" id="oldPwd" class="input-text fl" placeholder="请输入原密码" />
     				</div>
     				<div class="over-hide mt20">
     					<div class="txt fl">新密码</div>
-    					<input type="password" class="input-text fl" placeholder="请输入新密码" />
-    					<label class="error fl"></label>
+    					<input type="password" name="newPwd" id="newPwd" class="input-text fl" placeholder="请输入新密码" />
     				</div>
     				<div class="over-hide mt20">
     					<div class="txt fl">新密码确认</div>
-    					<input type="password" class="input-text fl" placeholder="请输入新密码" />
-    					<label class="error fl"></label>
+    					<input type="password" name="reNewPwd" id="reNewPwd" class="input-text fl" placeholder="请输入新密码" />
     				</div>
     				<div class="mt50">
-    					<input type="button" class="input-btn" value="提交" />
+    					<input type="button" id="subBtn" class="input-btn" value="提交" />
     				</div>
-    			</div>
+    			</form>
     		</div>
     	</div>
     	
         <link rel="import" href="../footer.html?__inline">
         <script>
-            require(['app/controller/user/User']);
+            require(['app/controller/user/RevisePwd']);
         </script>
     </body>
 </html>

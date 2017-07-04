@@ -44,6 +44,6 @@ define([
                 account: "ACCESS_KEY",
                 type: "3"
             })
-        )
+        ),
     }
 });

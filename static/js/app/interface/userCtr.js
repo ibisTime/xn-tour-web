@@ -8,15 +8,12 @@ define([
             params.kind = "f1";
             return Ajax.post("805043", params);
         },
-        // 微信登录
-        wxLogin: (params) => (
-            Ajax.post("805152", params)
-        ),
         // 注册
         register: (params) => {
-            // params.loginPwdStrength = base.calculateSecurityLevel(params.loginPwd);
-            // params.isRegHx = "1";
-            // return Ajax.post("805076", params);
+        	params.loginPwdStrength = base.calculateSecurityLevel(params.loginPwd);
+        	params.isRegHx = 0;
+        	params.kind = 'f1';
+        	return Ajax.post("805041", params);
         },
         // 找回密码
         findPwd: (params) => {
@@ -27,7 +24,6 @@ define([
         // 修改密码
         changePwd: (params) => {
             params.loginPwdStrength = base.calculateSecurityLevel(params.newLoginPwd);
-            params.kind = "f1";
             params.userId = base.getUserId();
             return Ajax.post("805049", params);
         },
@@ -66,6 +62,35 @@ define([
                 userId: base.getUserId()
             }, refresh)
         ),
+        // 修改用户昵称
+        setNickName: (nickname) => {
+        	if(nickname){
+        		Ajax.post("805075", {
+	                userId: base.getUserId(),
+	                nickname
+	            }, true)
+        	}
+        },
+        // 修改手机号
+        setMobile: (mobile) => {
+        	if(mobile){
+        		Ajax.post("805150", {
+		            userId: base.getUserId(),
+		            loginName: mobile
+		        }, true)
+        	}
+        },
+        // 修改头像
+        setPhoto: (photo) => {
+        	if(photo){
+        		
+        		
+	    		Ajax.post("805077", {
+	                userId: base.getUserId(),
+	                photo
+	            }, true)
+        	}
+        },
         // 实名认证
         identity: (params) => {
             params.idKind = 1;
