@@ -4,17 +4,17 @@ define([
 ], function(base, pagination) {
 
     init();
-    
+
     // 初始化页面
     function init() {
         $("#userNav li").eq(3).addClass("active");
         
-        
+
         addListener();
     }
 
     function addListener() {
-    	
+
     	$("#pagination .pagination").pagination({
 		    pageCount:10,
 		    jump:true,

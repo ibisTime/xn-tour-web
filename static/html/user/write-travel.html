@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>编写游记-来来旺旺</title>
+    </head>
+
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a>
+                <a href="user.html">个人中心></a>
+                <a href="travels.html">我的游记></a>编写游记
+            </p>
+    	</div>
+
+    	<div class="content-user">
+    		<div class="fl user-left conStyle">
+    			<link rel="import" href="./userLeft.html?__inline">
+    		</div>
+    		<div class="fr user-right plr27 conStyle">
+                <div class="pt27">
+                    <div class="traffic-search wp100">
+                        <div class="trfSearch-wrap">
+        	    			<div class="tit fl">*针对线路：</div>
+        	    			<div class="search-txt fl">
+        	    				<select id="lineCode" name="lineCode"></select>
+        	    			</div>
+            			</div>
+                    </div>
+                    <div class="traffic-search wp100">
+                        <div class="trfSearch-wrap">
+        	    			<div class="tit fl">*游记标题：</div>
+                            <div class="search-txt fl">
+                                <input class="my-laydate-icon" id="name" name="name"/>
+        	    			</div>
+            			</div>
+                    </div>
+                    <div class="traffic-search wp100">
+                        <div class="trfSearch-wrap">
+        	    			<div class="tit fl">*上传图片：</div>
+                            <div class="fl pt9">
+                                <div class="ant-upload ant-upload-select ant-upload-select-text" id="uploadContainer">
+                                    <span tabindex="0" class="ant-upload" role="button">
+                                        <input type="file" accept="" style="display: none;">
+                                        <button type="button" class="ant-btn" id="uploadBtn">
+                                            <span>点击上传图片</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="ant-upload-list ant-upload-list-picture-card">
+                                    <div class="ant-upload-list-item ant-upload-list-item-error">
+                                        <div class="ant-upload-list-item-info">
+                                            <span>
+                                                <a href="" class="ant-upload-list-item-thumbnail">
+                                                    <img src="http://oq4vi26fi.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170614142257_1497421398783_1499247720650.jpg"/>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <span class="ant-upload-list-item-actions">
+                                            <a href=""><i></i></a>
+                                            <i></i>
+                                        </span>
+                                    </div>
+                                </div>
+        	    			</div>
+            			</div>
+                    </div>
+                    <div class="traffic-search wp100">
+                        <div class="trfSearch-wrap">
+        	    			<div class="tit fl">*游记内容：</div>
+                            <div class="fl pt10 w400p">
+                                <textarea id="description" name="description" type="textarea" rows="8" class="ant-input" placeholder="请填写游记内容"></textarea>
+        	    			</div>
+            			</div>
+                    </div>
+                    <div class="traffic-search wp100">
+                        <div class="trfSearch-wrap">
+                            <div class="fl pl85">
+                                <button type="submit" class="ant-btn ant-btn-primary ant-btn-lg"><span>发表游记</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    		</div>
+    	</div>
+        <link rel="import" href="../footer.html?__inline">
+        <script type="text/javascript" src="../../js/lib/qiniu/plupload.full.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/qiniu/qiniu.min.js"></script>
+        <script>
+            require(['app/controller/user/WriteTravel']);
+        </script>
+    </body>
+</html>
