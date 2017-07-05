@@ -5,93 +5,96 @@
         <title>我的订单-来来旺旺</title>
         <!--SCRIPT_PLACEHOLDER-->
     </head>
-    
+
     <body>
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的订单</p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="fl user-left conStyle">
     			<link rel="import" href="./userLeft.html?__inline">
     		</div>
     		<div class="fr user-right plr27 conStyle ">
-    			
+
     			<div class="orderSearch">
     				<div class="search-wrap">
-    					<select>
-    						<option>全部状态</option>
-    						<option>酒店订单</option>
-    						<option>线路订单</option>
-    						<option>出行订单</option>
+    					<select id="orderType">
+    						<option value="0">商品订单</option>
+    						<option value="1">线路订单</option>
+    						<option value="2">酒店订单</option>
+    						<option value="3">专线订单</option>
+                            <option value="4">大巴订单</option>
+                            <option value="5">拼车订单</option>
     					</select>
     				</div>
-    				
+
     				<div class="search-wrap">
-    					<select>
-    						<option>全部状态</option>
-    						<option>待支付</option>
-    						<option>已支付</option>
-    						<option>待退款</option>
-    						<option>退款中</option>
-    						<option>已结算</option>
+    					<select id="orderStatus">
+    						<option value="0">全部状态</option>
+    						<option value="1">待支付</option>
+    						<option value="2">已支付</option>
+    						<option value="3">退款</option>
     					</select>
     				</div>
+                    <button type="button" class="ant-btn ant-btn-primary ant-btn-lg" id="searchBtn">
+                        <span>搜索</span>
+                    </button>
     			</div>
-    			
+
     			<div class="orderList">
-    				<ul>
-    					<li>
-    						<div class="top wp100 over-hide ptb10">
-    							<div class="fl">订单编号：O186135468531832</div>
-    							<div class="fr">2017-05-11 12:00:00</div>
-    						</div>
-    						<div class="con wp100">
-    							<div class="img fl"><a href="#"><img src="../../images/图层-78.png"/></a></div>
-    							<div class="txt fl">
-    								<p>千岛湖景区2日游</p>
-    								<span>杭州出发</span>
-    								<samp>数量X2</samp>
-    							</div>
-    							<div class="status status0">待支付</div>
-    							<div class="btn-wrap">
-    								<input type="button" value="取消订单" class="btn1" />
-    								<input type="button" value="去付款" class="btn2" />
-    							</div>
-    						</div>
-    					</li>
-    					<li>
-    						<div class="top wp100 over-hide ptb10">
-    							<div class="fl">订单编号：O186135468531832</div>
-    							<div class="fr">2017-05-11 12:00:00</div>
-    						</div>
-    						<div class="con wp100">
-    							<div class="img fl"><a href="#"><img src="../../images/图层-78.png"/></a></div>
-    							<div class="txt fl">
-    								<p>千岛湖景区2日游</p>
-    								<span>杭州出发</span>
-    								<samp>数量X2</samp>
-    							</div>
-    							<div class="status status0">待支付</div>
-    							<div class="btn-wrap">
-    								<input type="button" value="取消订单" class="btn1" />
-    								<input type="button" value="去付款" class="btn2" />
-    							</div>
-    						</div>
-    					</li>
-    				</ul>
+    				<ul id="orderList"></ul>
+                    <div id="loadingSpin" class="ant-spin-nested-loading">
+                        <div class="ant-spin-blur ant-spin-container">
+                            <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                        </div>
+                    </div>
     			</div>
-	    	
-				<div id="pagination" class="wp100 tc">
+
+				<div id="pagination" class="wp100 tc hidden pagination-wrap">
 					<p class="pagination"></p>
 				</div>
-    			
+
     		</div>
     	</div>
-    	
+        <div id="modal" class="ant-modal-wraper hidden">
+            <div class="ant-modal-mask"></div>
+            <div tabindex="-1" class="ant-modal-wrap">
+                <div role="document" class="ant-modal" style="width: 540px;">
+                    <div class="ant-modal-content">
+                        <button aria-label="Close" class="ant-modal-close">
+                            <span class="ant-modal-close-x"></span>
+                        </button>
+                        <div class="ant-modal-header">
+                            <div class="ant-modal-title">退款理由</div>
+                        </div>
+                        <div class="ant-modal-body">
+                            <div class="modal-place-wrap">
+                                <textarea id="refundArea" type="textarea" rows="4" class="ant-input" placeholder="请填写退款理由"></textarea>
+                            </div>
+                            <span id="error-span"></span>
+                            <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading hidden">
+                                <div class="ant-spin-blur ant-spin-container">
+                                    <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ant-modal-footer">
+                            <button type="button" class="ant-btn ant-btn-lg" id="ant-modal-close">
+                                <span>关闭</span>
+                            </button>
+                            <button type="button" class="ant-btn ant-btn-primary ant-btn-lg" disabled id="ant-modal-confirm">
+                                <span>确认</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <link rel="import" href="../footer.html?__inline">
         <script>
-            require(['app/controller/user/Order']);
+            require(['app/controller/user/order/Order']);
         </script>
     </body>
 </html>

@@ -53,7 +53,7 @@ define([
                             url = url + ".html";
                         }
                     }
-                    html += `<li class="${d.url == "page:go/carpool" ? "active" : ''}">
+                    html += `<li class="${d.url == "page:go/due-bus" ? "active" : ''}">
                         <a class="wp100 show" href="${url}">
                             <img src="${base.getPic(d.pic)}"/>
                             <p>${d.name}</p>
@@ -116,26 +116,13 @@ define([
                 disabledButton();
                 userCtr.getUserInfo()
                     .then(function (data) {
-                        var isBindMobile = !!data.mobile,
-                            isIdentity = !!data.realName;
-                        if(!isBindMobile || !isIdentity){
+                        var isIdentity = !!data.realName;
+                        if(!isIdentity){
                             unDisabledButton();
-                            if(!isBindMobile && !isIdentity){
-                                base.confirm("您还未实名认证，点击确认前往实名认证，并绑定手机号")
-                                    .then(function () {
-                                        alert("去实名认证并绑定手机号");
-                                    }, () => {});
-                            }else if(!isIdentity){
-                                base.confirm("您还未实名认证，点击确认前往实名认证")
-                                    .then(function () {
-                                        alert("去实名认证");
-                                    }, () => {});
-                            }else if(!isBindMobile){
-                                base.confirm("您还未绑定手机号，点击确认前往绑定手机号")
-                                    .then(function () {
-                                        alert("去绑定手机号");
-                                    }, () => {});
-                            }
+                            base.confirm("您还未实名认证，点击确认前往实名认证")
+                                .then(function () {
+                                    alert("去实名认证");
+                                }, () => {});
                             return;
                         }
                         calculateDistance();
@@ -163,10 +150,13 @@ define([
         }
         if(currentSite.name){
             _searchMapInput.val(currentSite.name);
-            var point = new BMap.Point(currentSite.point.lng, currentSite.point.lat);
-            map.centerAndZoom(point, 18);
-            map.addOverlay(new BMap.Marker(point));
-            _modalConfirm.prop("disabled", false);
+            setTimeout(function(){
+                _searchMapInput.blur();
+                var point = new BMap.Point(currentSite.point.lng, currentSite.point.lat);
+                map.centerAndZoom(point, 18);
+                map.addOverlay(new BMap.Marker(point));
+                _modalConfirm.prop("disabled", false);
+            }, 100);
         }else{
             _searchMapInput.val("");
             $("#J_SearchMapCont").addClass("hidden");

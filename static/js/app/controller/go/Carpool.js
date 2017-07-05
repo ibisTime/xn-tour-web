@@ -218,10 +218,13 @@ define([
         }
         if(currentSite.name){
             _searchMapInput.val(currentSite.name);
-            var point = new BMap.Point(currentSite.point.lng, currentSite.point.lat);
-            map.centerAndZoom(point, 18);
-            map.addOverlay(new BMap.Marker(point));
-            _modalConfirm.prop("disabled", false);
+            setTimeout(function(){
+                _searchMapInput.blur();
+                var point = new BMap.Point(currentSite.point.lng, currentSite.point.lat);
+                map.centerAndZoom(point, 18);
+                map.addOverlay(new BMap.Marker(point));
+                _modalConfirm.prop("disabled", false);
+            }, 100);
         }else{
             _searchMapInput.val("");
             $("#J_SearchMapCont").addClass("hidden");
