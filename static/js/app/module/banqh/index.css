@@ -1,5 +1,5 @@
 .ban-wrap {
-	width: 100%;
+	width: 528px;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
@@ -14,7 +14,7 @@
 }
 
 .ban ul {
-	height: 100%;
+	height: 296px;
 	overflow: hidden;
 	position: absolute;
 	left: 0;
@@ -22,9 +22,13 @@
 }
 
 .ban ul li {
-	width: 100%;
+	width: 528px;
 	height: 100%;
 	overflow: hidden;
+}
+.ban ul li a{
+	display: block;
+	width: 100%;
 }
 
 .ban ul li img {
@@ -37,7 +41,7 @@
 }
 
 .num {
-	height: 82px;
+	height: 68px;
 	overflow: hidden;
 	width: 600px;
 	position: relative;
@@ -45,7 +49,7 @@
 }
 
 .min_pic {
-	padding-top: 15px;
+	padding-top: 8px;
 	width: 660px;
 	margin: 0 auto;
 }
@@ -57,10 +61,10 @@
 }
 
 .num ul li {
-	width: 110px;
-	height: 75px;
+	width: 125px;
+	height: 68px;
 	overflow: hidden;
-	margin-right: 12px;
+	margin-right: 9px;
 	padding: 1px;
 }
 
@@ -73,41 +77,22 @@
 	padding: 0;
 }
 
-.prev_btn1 {
-	width: 12px;
-	text-align: center;
-	height: 22px;
-	margin-top: 30px;
-	margin-right: 20px;
-	cursor: pointer;
-	float: left;
-}
-
-.next_btn1 {
-	width: 12px;
-	text-align: center;
-	height: 22px;
-	margin-top: 30px;
-	cursor: pointer;
-	float: right;
-}
-
 .prev {
 	position: absolute;
-	top: 180px;
-	left: 20px;
-	width: 28px;
-	height: 51px;
+	top: 125px;
+	left: 0;
+	width: 39px;
+	height: 48px;
 	z-index: 9;
 	cursor: pointer;
 }
 
 .next {
 	position: absolute;
-	top: 180px;
-	right: 20px;
-	width: 28px;
-	height: 51px;
+	top: 125px;
+	right: 0;
+	width: 39px;
+	height: 48px;
 	z-index: 9;
 	cursor: pointer;
 }

@@ -38,7 +38,7 @@ define([
 			var loginName = $("#loginName").val();
 			var pwd = $("#password").val();
 			
-			if(loginName&&pwd){
+			if($("#loginForm").valid()){
 				base.showLoading();
 			
 				userCtr.login({
@@ -55,9 +55,9 @@ define([
 					
 					base.hideLoading();
 					location.href = '../index.html';
-				},()=>{})
-			}else{
-				base.showMsg("请输入手机号或密码！")
+				},()=>{
+					base.hideLoading();
+				})
 			}
 			
 		})

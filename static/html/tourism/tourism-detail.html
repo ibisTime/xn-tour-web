@@ -16,27 +16,13 @@
     		<div class="dconTop-left">
 				<div class="ban-wrap" id="banqh1">
 					<div class="ban" id="ban_pic1">
-						<div class="prev" id="prev_btn1"><img src="../../images/left-灰.png"/></div>
-						<ul>
-							<li><a href="javascript:;"><img src="../../images/图层-80.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-78.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-90.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-83.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-90.png" alt=""/></a></li>
-						</ul>
-						
-						<div class="next" id="next_btn1"><img src="../../images/right-灰.png"/></div>
+						<div class="prev" id="prev"><img src="../../images/con-left.png"/></div>
+						<ul></ul>
+						<div class="next" id="next"><img src="../../images/con-right.png"/></div>
 					</div>
 					<div class="min_pic">
-						
-						<div class="num clearfix" id="ban_num1">
-							<ul>
-							<li><a href="javascript:;"><img src="../../images/图层-80.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-78.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-90.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-83.png" alt=""/></a></li>
-							<li><a href="javascript:;"><img src="../../images/图层-90.png" alt=""/></a></li>
-							</ul>
+						<div class="num" id="ban_num1">
+							<ul></ul>
 						</div>
 					</div>
 				</div>
@@ -46,25 +32,24 @@
     			
     			<div class="title-wrap">
     				
-    				<h2 class="title">千岛湖景区＋梅峰岛日游2日游</h2>
+    				<h2 class="title"></h2>
     				
     				<div class="collect">
     					<div class="icon-star"></div><div class="txt">收藏</div>
     				</div>
     			</div>
     			
-				<div class="con"><div class="fl"><img src="../images/时间.png"></div><p class="fl">出行日期:2016-11-11</p></div>
-				<div class="con"><div class="fl"><img src="../../images/那里出发.png"></div><p class="fl">杭州出发</p></div>
+				<div class="con"><div class="fl"><img src="../images/时间.png"></div><p class="fl datetime"></p></div>
+				<div class="con"><div class="fl"><img src="../../images/那里出发.png"></div><p class="fl joinPlace"></p></div>
+				<div class="con"><div class="fl"></div><p class="fl groupName"></p></div>
+				<div class="con"><div class="fl"></div><p class="fl groupMobile"></p></div>
 				
-				<div class="description">
-					<p>杭州，简称“杭”，浙江省省会、副省级市，位于中国东南沿海、浙江省北部、钱塘江下游、京杭大运河南端，
-						是浙江省的政治、经济、文化、教育、交通和金融中心，长江三角洲城市群中心城市之一、长三角宁杭生态经济带节点城市、
-						[1]  中国重要的电子商务中心之一，新一线城市</p>
-				</div>
+				<!--<div class="description">
+				</div>-->
 				
 				<div class="price-wrap">
-					<div class="price"><p><i>￥2340</i>/人起</p></div>
-					<div class="btn-booking"><p>立即预订</p></div>
+					<div class="price"><p><i></i>/人起</p></div>
+					<div class="btn-booking" id="bookingBtn"><p>立即预订</p></div>
 				</div>
     		</div>
     	</div>
@@ -345,7 +330,53 @@
     		</div>
     	</div>
     	
+    	<!--加载动画-->
+    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+    	
+    	<!--预订弹窗-->
+    	<div class="detail-chose-dialog hidden" id="Dialog">
+	        <div class="am-modal-mask"></div>
+	        <div class="am-modal-wrap">
+	            <div role="document" class="am-modal am-modal-operation am-modal-transparent">
+	                <div class="am-modal-content">
+	                	<div class="am-modal-head">
+	                		<div class="am-modal-title">确认线路订单</div>
+	                	</div>
+	                    <div class="am-modal-body">
+	                    	<form id="submitForm">
+		                    	<div class="wp100 over-hide">
+		                    		<div class="title fl">出行日期:</div>
+					    			<div class="am-input-wrap mylaydate fl">
+				                        <input class="my-laydate-icon input-text" id="choseDate"/>
+				                        <div class="icon-laydate"></div>
+					    			</div>
+		                    	</div>
+		                    	
+		                    	<div class="wp100 over-hide mt10">
+		                    		<div class="title fl">特殊要求:</div>
+					    			<div class="am-textarea-wrap fl">
+					    				<textarea id="applyNote" name="applyNote" style="resize: 0;" placeholder="有什么特殊要求，请写在这里"></textarea>
+					    			</div>
+		                    	</div>
+	                    	</form>
+	                    </div>
+	                    <div class="am-modal-footer">
+	                        <div class="am-modal-button-group">
+	                            <input class="am-modal-button am-modal-button-ca" id="cancel" type="button" value="取消"/>
+	                            <input class="am-modal-button am-modal-button-co" id="confirm" type="button" value="提交订单"/>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    	
     	<link rel="import" href="../footer.html?__inline">
+        <script src="../../js/lib/laydate/laydate.dev.js"></script>
         <script>
             require(['app/controller/tourism/TourismDetail']);
         </script>

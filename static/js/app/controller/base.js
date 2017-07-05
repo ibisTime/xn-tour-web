@@ -286,7 +286,10 @@ define([
 	                ? cont.substring(0, num) + "..."
 	                : cont
 	            : "";
-	    }
+	    },
+	    emptyFun: function () {
+
+        },
     };
     return Base;
 });

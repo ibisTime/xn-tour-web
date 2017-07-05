@@ -14,7 +14,7 @@ define([
     }
 	
 	function getUserInfo(){
-		userCtr.getUserInfo(base.getUserId(),true).then((data)=>{
+		userCtr.getUserInfo(true).then((data)=>{
 			$(".myPic").html("<img src='"+base.getAvatar(data.userExt.photo)+"'/>")
 			$(".name").html(data.nickname)
 			$(".tel i").html(data.mobile)

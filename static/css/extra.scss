@@ -1541,6 +1541,7 @@ select{
                 background-repeat: no-repeat;
                 background-size: 100%;
                 text-align: center;
+                cursor: pointer;
                 
                 p{
                     color: #fff;
@@ -2828,4 +2829,162 @@ select{
         cursor: pointer;
     }
 }
+//弹窗
+.am-modal-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, .4);
+}
 
+.am-modal-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.am-modal {
+    position: relative;
+    width: 500px;
+    height: auto;
+}
+
+.am-modal-content {
+    position: relative;
+    background-color: #fff;
+    border: 0;
+    background-clip: padding-box;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.am-modal.am-modal-operation .am-modal-content {
+    border-radius: 4px;
+    height: auto;
+    padding-top: 0;
+}
+.am-modal-head{
+    border-bottom: 1px solid #eee;
+}
+.am-modal-title{
+    text-align: left;
+    padding: 20px 30px;
+    font-size: 16px;
+}
+.am-modal-body {
+    font-size: 15px;
+    color: #484848;
+    height: 100%;
+    overflow: auto;
+    padding: 20px 70px 0;
+}
+.am-modal-body .title{
+    font-size: 16px;
+    line-height: 44px;
+    overflow: hidden;
+    margin-right: 25px;
+}
+
+.am-input-wrap{
+    width: 245px;
+    height: 44px;
+    padding-top: 7px;
+    border: 1px solid #e9e9e9;
+    background-color: #f3f3f3;
+    position: relative;
+    
+}
+.am-input-wrap .input-text{
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.am-modal-button-group{
+    min-height: 44px;
+    padding: 20px 0;
+}
+.am-modal-button-group .am-modal-button {
+    -webkit-touch-callout: none;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+}
+.am-modal-button-group .am-modal-button-co{
+    background-color: #FFA200;
+    margin-left: 80px;
+}
+.am-modal-button-group .am-modal-button-ca{
+    background-color: #ccc;
+}
+
+.am-textarea-wrap{
+    width: 245px;
+    height: 210px;
+    padding-bottom: 25px;
+}
+.am-textarea-wrap textarea{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e9e9e9;
+    background-color: #f3f3f3;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 10px;
+}
+.am-textarea-wrap textarea.error{
+    border: 1px solid #F14E4F;
+}
+.am-textarea-wrap  label.error{
+    color: #F14E4F;
+    text-align: left;
+}
+
+//日期
+.mylaydate{
+    .icon-laydate{
+        width: 40px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 23px;
+        background-image: url('../images/calendar.png');
+    }
+}

@@ -95,7 +95,7 @@ define([
         identity: (params) => {
             params.idKind = 1;
             params.userId = base.getUserId();
-            return Ajax.post("805044", params);
+            return Ajax.post("805193", params);
         }
     }
 });

@@ -45,5 +45,14 @@ define([
                 type: "3"
             })
         ),
+        // 收藏
+        getCollect: (code,toType, refresh) => (
+            Ajax.get("618320", {
+        		toEntity: code,
+                toType: toType,
+                type: 2,
+                interacter: base.getUserId()
+            }, refresh)
+        ),
     }
 });

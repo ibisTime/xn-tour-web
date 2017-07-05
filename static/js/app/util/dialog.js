@@ -689,7 +689,7 @@ define(['jquery'], function($) {
         backdropBackground: '#000',
 
         // 设置遮罩透明度
-        backdropOpacity: 0.7,
+        backdropOpacity: 0.5,
 
         // 消息内容
         content: '<span class="ui-dialog-loading">Loading..</span>',

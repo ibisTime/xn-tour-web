@@ -12,7 +12,8 @@ define([
         loading.createLoading("认证中...");
         userCtr.identity({
             realName: $("#identityRealName").val(),
-            idNo: $("#identityIdNo").val()
+            idNo: $("#identityIdNo").val(),
+            isReal: '0'
         }).then(function(){
             loading.hideLoading();
             identity.hideCont(defaultOpt.success);
