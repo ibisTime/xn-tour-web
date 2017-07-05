@@ -54,5 +54,28 @@ define([
                 interacter: base.getUserId()
             }, refresh)
         ),
+        // 微信支付
+        payWeChat: (bizType,params) => {
+        	params.payType = "3";
+            return Ajax.get(bizType, params, true)
+        },
+        // 查询订单详情
+        getOrderDetail: (bizType,code) => {
+            return Ajax.get(bizType, {code:code}, true)
+        },
+        // 分页查询评论
+        getPageComment: (params) => {
+        	params.start = params.start||'1';
+        	params.limit = params.limit||'10';
+            params.orderColumn = "comm_datetime";
+            params.orderDir = "desc";
+            params.status = 1;
+            return Ajax.get("618315", params, true);
+        },
+        // 分页查询评论
+        getCommentPull: (params) => {
+        	params.commer = base.getUserId();
+            return Ajax.get("618310", params, true);
+        },
     }
 });

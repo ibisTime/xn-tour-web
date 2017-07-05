@@ -144,7 +144,7 @@ define(['jquery'], function($) {
             backdrop: null,
 
             /** 是否开启固定定位[*] */
-            fixed: false,
+            fixed: true,
 
             /** 判断对话框是否删除[*] */
             destroyed: true,

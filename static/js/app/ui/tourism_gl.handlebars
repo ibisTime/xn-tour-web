@@ -1,0 +1,18 @@
+{{#each items}}
+<li>
+	<a href="./tourism-note-gl.html?code={{code}}">
+		<div class="img">
+			<img src="{{formatListImage pic}}"/>
+		</div>
+		<div class="tit t-3dot">{{title}}</div>
+		<div class="icon">
+			<div class="fl">
+				<img class="fl" src="/static/images/时间.png"><p class="fl">{{formateDate updateDatetime}}</p>
+			</div>
+			<div class="fr">
+				<img class="fl star" src="/static/images/点赞-小.png"><p class="fl">{{collectionTimes}}</p>
+			</div>
+		</div>
+	</a>
+</li>
+{{/each}}

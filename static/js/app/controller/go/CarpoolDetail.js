@@ -7,7 +7,7 @@ define([
 
     var map, carpoolStatus = Dict.get("carpoolStatus"),
         code = base.getUrlParam("code"),
-        startSite, endSite, currentSite;
+        startSite, endSite, currentSite,nextPrice;
 
     init();
 
@@ -127,7 +127,7 @@ define([
             .then((data) => {
                 base.confirm("申请提交成功，点击确认前往支付")
                     .then(function () {
-                        // location.href = "../pay/pay.html?code=" + data.code + "&type=4";
+//                         location.href = "../pay/pay.html?code=" + orderCode + "&p="+data.distancePrice;
                     }, function () {
                         location.href = "./carpool.html";
                     })
@@ -140,6 +140,7 @@ define([
         trafficCtr.getCarpool(code)
             .then((data) => {
                 addListener();
+                nextPrice = data.nextPrice
                 $("#startSite").text(data.startSite);
                 $("#endSite").text(data.endSite);
                 $("#takePartNum").val(data.takePartNum);

@@ -34,8 +34,11 @@ define([
         if(pic){
             pic = pic.split(/\|\|/)[0];
         }
-        return pic ? (PIC_PREFIX + pic) :
+        if(!/^http/i.test(pic)){
+            pic = pic ? (PIC_PREFIX + pic + PHOTO_SUFFIX) :
             (isAvatar && !isAvatar.name) ? defaultAvatar : "";
+        }
+        return pic;
     });
     Handlebars.registerHelper('formatListImage', function(pic, options){
     	var defaultImg = "";

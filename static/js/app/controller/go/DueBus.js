@@ -285,8 +285,8 @@ define([
             .then((data) => {
                 base.confirm("大巴预定成功，总价为：" + base.formatMoney(data.distancePrice) + "元。<br/>点击确认前往支付")
                     .then(function () {
-                        alert("进入支付页面（未实现）");
-                        // location.href = "../pay/pay.html?code=" + code + "&type=3";
+//                      alert("进入支付页面（未实现）");
+                           location.href = "../pay/pay.html?code=" + orderCode + "&p="+data.distancePrice;
                     }, function () {
                         location.reload(true);
                         unDisabledButton();

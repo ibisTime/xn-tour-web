@@ -120,7 +120,7 @@ define([
             jumpIptCls: 'pagination-ipt',
             jumpBtnCls: 'pagination-btn',
             jumpBtn: '确定',
-            isHide: true,
+//          isHide: true,
             callback: function(_this){
                 if(_this.getCurrent() != config.start){
     				_loadingSpin.removeClass("hidden");

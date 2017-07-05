@@ -177,17 +177,17 @@ define([
                             if(!isBindMobile && !isIdentity){
                                 base.confirm("您还未实名认证，点击确认前往实名认证，并绑定手机号")
                                     .then(function () {
-                                        alert("去实名认证并绑定手机号");
+                                        location.href = "../user/identity.html"
                                     }, () => {});
                             }else if(!isIdentity){
                                 base.confirm("您还未实名认证，点击确认前往实名认证")
                                     .then(function () {
-                                        alert("去实名认证");
+                                        location.href = "../user/identity.html"
                                     }, () => {});
                             }else if(!isBindMobile){
                                 base.confirm("您还未绑定手机号，点击确认前往绑定手机号")
                                     .then(function () {
-                                        alert("去绑定手机号");
+                                        location.href = "../user/user.html"
                                     }, () => {});
                             }
                             return;
@@ -335,7 +335,7 @@ define([
             .then((data) => {
                 base.confirm("拼车申请提交成功，总价为：" + base.formatMoney(data.distancePrice) + "元。<br/>点击确认前往支付定金")
                     .then(function () {
-                        alert("进入支付页面（未实现）");
+//                      alert("进入支付页面（未实现）");
                         // location.href = "../pay/pay.html?code=" + orderCode + "&type=4";
                     }, function () {
                         location.reload(true);

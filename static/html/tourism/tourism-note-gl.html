@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>攻略-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="tourism.html">全域旅游></a><samp id="NowName"></samp></p>
+    	</div>
+    	
+    	<div class="content-user">
+	    	<div class="userInfo-wrap conStyle noteCon-wrap">
+	    		<div class="title"></div>
+	    		<div class="updateDatetime"></div>
+	    		<div class="pic"></div>
+	    		<div class="description"></div>
+	    		<div class="btn-wrap"></div>
+	    	</div>
+    	</div>
+    	
+    	<!--加载动画-->
+    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+        
+    	<link rel="import" href="../footer.html?__inline">
+        <script src="../../js/lib/laydate/laydate.dev.js"></script>
+        <script>
+            require(['app/controller/tourism/TourismDetailGL']);
+        </script>
+    </body>
+</html>

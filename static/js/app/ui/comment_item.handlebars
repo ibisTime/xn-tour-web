@@ -1,0 +1,10 @@
+{{#each items}}
+<li>
+	<div class="img"><img src="{{formatImage res.userExt.photo}}"/></div>
+	<div class="comment-wrap">
+		<div class="name">{{res.nickname}}</div>
+		<div class="txt">{{content}}</div>
+		<div class="datetime">{{formateDateTime commDatetime}}</div>
+	</div>
+</li>
+{{/each}}

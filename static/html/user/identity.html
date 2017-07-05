@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>实名认证-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>实名认证</p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="userInfo-wrap conStyle revise-pwd identity-wrap">
+    			<div class="title">
+    				<h3>实名认证</h3>
+    			</div>
+    			<form id="identityForm">
+    				<div class="over-hide">
+    					<div class="txt fl">真实姓名</div>
+    					<input type="text" name="realName" id="realName" class="input-text fl" placeholder="请输入真实姓名" />
+    				</div>
+    				<div class="over-hide mt20">
+    					<div class="txt fl">身份证号</div>
+    					<input type="text" name="idNo" id="idNo" class="input-text fl" placeholder="请输入身份证号" />
+    				</div>
+    				<div class="mt50">
+    					<input type="button" id="subBtn" class="input-btn" value="提交" />
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+    	
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/user/Identity']);
+        </script>
+    </body>
+</html>
