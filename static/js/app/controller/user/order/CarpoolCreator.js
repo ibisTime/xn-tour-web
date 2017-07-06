@@ -34,7 +34,7 @@ define([
                 </div>
                 <div class="status status0">${carpoolOrderStatus[item.status]}</div>
                 ${
-                    item.status == "0" || item.status == "1" || d.status == "2" || d.status == "97"
+                    item.status == "0" || item.status == "1" || item.status == "2" || item.status == "97"
                         ? `<div class="btn-wrap">
                             <input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
                             <input type="button" value="去付款" class="btn2 pay-order-btn"/>

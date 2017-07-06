@@ -3,12 +3,17 @@ define([
     'app/interface/trafficCtr',
     'app/interface/menuCtr',
     'app/interface/mallCtr',
+    'app/interface/tourismCtr',
+    'app/interface/hotelCtr',
     'app/controller/user/order/MallCreator',
     'app/controller/user/order/SpecialLineCreator',
     'app/controller/user/order/BusCreator',
     'app/controller/user/order/CarpoolCreator',
+    'app/controller/user/order/LineCreator',
+    'app/controller/user/order/HotelCreator',
     'pagination'
-], function(base, trafficCtr, menuCtr, mallCtr, MallCreator, SpecialLineCreator, BusCreator, CarpoolCreator, pagination) {
+], function(base, trafficCtr, menuCtr, mallCtr, tourismCtr, hotelCtr, MallCreator,
+    SpecialLineCreator, BusCreator, CarpoolCreator, LineCreator, HotelCreator, pagination) {
 
     var config = {
             start: 1,
@@ -41,6 +46,7 @@ define([
     }
     // 分页查询商品订单
     function getPageMallOrders(refresh) {
+        _loadingSpin.removeClass("hidden");
         mallCtr.getPageMallOrders({
             statusList: statusList[currentType][currentStatusIndex],
             ...config
@@ -55,11 +61,31 @@ define([
     }
     // 分页查询线路订单
     function getPageLineOrders(refresh) {
-        setTimeout(() => _loadingSpin.addClass("hidden"), 1000);
+        _loadingSpin.removeClass("hidden");
+        tourismCtr.getPageTourismOrders({
+            statusList: statusList[currentType][currentStatusIndex],
+            ...config
+        }, refresh).then((data) => {
+            _loadingSpin.addClass("hidden");
+            config.start == 1 && initPagination(data);
+            $("#orderList").html(LineCreator.buildLine(data));
+        }, () => {
+            _loadingSpin.addClass("hidden");
+        });
     }
     // 分页查询酒店订单
     function getPageHotelOrders(refresh) {
-        setTimeout(() => _loadingSpin.addClass("hidden"), 1000);
+        _loadingSpin.removeClass("hidden");
+        hotelCtr.getPageHotelOrders({
+            statusList: statusList[currentType][currentStatusIndex],
+            ...config
+        }, refresh).then((data) => {
+            _loadingSpin.addClass("hidden");
+            config.start == 1 && initPagination(data);
+            $("#orderList").html(HotelCreator.buildHotel(data));
+        }, () => {
+            _loadingSpin.addClass("hidden");
+        });
     }
     //专线数据字典
     function getSDict() {
@@ -132,13 +158,15 @@ define([
     }
     // 取消线路订单
     function cancelLine(code, ele) {
-        alert("取消线路订单");
-        // 618141
+        LineCreator.cancelOrder(code, () => {
+            getPageLineOrders(true);
+        }, ele);
     }
     // 取消酒店订单
     function cancelHotel(code, ele) {
-        alert("取消酒店订单");
-        // 618041
+        HotelCreator.cancelOrder(code, () => {
+            getPageHotelOrders(true);
+        }, ele);
     }
     // 取消专线订单
     function cancelSpecialLine(code, ele) {
@@ -166,13 +194,15 @@ define([
     }
     // 线路订单退款
     function refundLine(code, remark, ele) {
-        alert("线路订单退款");
-        // 618145
+        LineCreator.refund(code, () => {
+            getPageLineOrders(true);
+        }, remark, ele);
     }
     // 酒店订单退款
     function refundHotel(code, remark, ele) {
-        alert("酒店订单退款");
-        // 618045
+        HotelCreator.refund(code, () => {
+            getPageHotelOrders(true);
+        }, remark, ele);
     }
     // 专线订单退款
     function refundSpecialLine(code, remark, ele) {

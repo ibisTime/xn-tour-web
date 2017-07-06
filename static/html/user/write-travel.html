@@ -18,7 +18,7 @@
     			<link rel="import" href="./userLeft.html?__inline">
     		</div>
     		<div class="fr user-right plr27 conStyle">
-                <div class="pt27">
+                <form id="travelForm" class="travelForm pt27">
                     <div class="traffic-search wp100">
                         <div class="trfSearch-wrap">
         	    			<div class="tit fl">*针对线路：</div>
@@ -46,22 +46,9 @@
                                             <span>点击上传图片</span>
                                         </button>
                                     </span>
+                                    <input id="pic" name="pic" style="width:0;"/>
                                 </div>
-                                <div class="ant-upload-list ant-upload-list-picture-card">
-                                    <div class="ant-upload-list-item ant-upload-list-item-error">
-                                        <div class="ant-upload-list-item-info">
-                                            <span>
-                                                <a href="" class="ant-upload-list-item-thumbnail">
-                                                    <img src="http://oq4vi26fi.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170614142257_1497421398783_1499247720650.jpg"/>
-                                                </a>
-                                            </span>
-                                        </div>
-                                        <span class="ant-upload-list-item-actions">
-                                            <a href=""><i></i></a>
-                                            <i></i>
-                                        </span>
-                                    </div>
-                                </div>
+                                <div class="ant-upload-list ant-upload-list-picture-card" id="picture-card"></div>
         	    			</div>
             			</div>
                     </div>
@@ -75,14 +62,29 @@
                     </div>
                     <div class="traffic-search wp100">
                         <div class="trfSearch-wrap">
-                            <div class="fl pl85">
-                                <button type="submit" class="ant-btn ant-btn-primary ant-btn-lg"><span>发表游记</span></button>
+                            <div class="fl pl91">
+                                <button id="publish" class="ant-btn ant-btn-primary ant-btn-lg"><span>发表游记</span></button>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
     		</div>
     	</div>
+        <div id="modal" class="ant-modal-wraper hidden">
+            <div class="ant-modal-mask"></div>
+            <div tabindex="-1" class="ant-modal-wrap">
+                <div role="document" class="ant-modal" style="width: 540px;">
+                    <div class="ant-modal-content">
+                        <button aria-label="Close" class="ant-modal-close">
+                            <span class="ant-modal-close-x"></span>
+                        </button>
+                        <div class="ant-modal-body">
+                            <img id="ant-modal-img" src="" class="wp100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <link rel="import" href="../footer.html?__inline">
         <script type="text/javascript" src="../../js/lib/qiniu/plupload.full.min.js"></script>
         <script type="text/javascript" src="../../js/lib/qiniu/qiniu.min.js"></script>

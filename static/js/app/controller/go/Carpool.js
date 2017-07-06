@@ -81,7 +81,6 @@ define([
                     html = '<tr><td colspan="6">暂无数据</td></tr>';
                 }
                 $("#body").html(html);
-                pageConfig.start++;
             }, () => {
                 _loadingSpin.addClass("hidden");
             });

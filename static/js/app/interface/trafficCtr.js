@@ -95,7 +95,7 @@ define([
          */
         getPageBusOrders: (config, refresh) => (
             Ajax.get("618220", {
-                applyUser: base.getUserId(),
+                booker: base.getUserId(),
                 ...config
             }, refresh)
         ),
