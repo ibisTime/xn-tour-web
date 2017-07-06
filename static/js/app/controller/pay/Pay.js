@@ -55,9 +55,9 @@ define([
     }
 
     function addListener() {
-    	$(".price i").html('￥'+base.formatMoney(price))
     	
     	generalCtr.getOrderDetail(bizType,code).then((data)=>{
+    		$(".price i").html('￥'+base.formatMoney(data.line.price))
 			if(data.status=='1'){
 				
 				$(".paySuccess").removeClass("hidden")
