@@ -41,5 +41,9 @@ define([
         	
             return Ajax.get("618130", params , true);
         },
+        // 游记详情
+        getDetailYJ: (code) => (
+            Ajax.get("618132", {code})
+        ),
     }
 });
