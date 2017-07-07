@@ -46,6 +46,7 @@ define([
             })
         ),
         // 收藏
+        //1 线路,2 攻略,3 酒店,4 美食
         getCollect: (code,toType, refresh) => (
             Ajax.get("618320", {
         		toEntity: code,

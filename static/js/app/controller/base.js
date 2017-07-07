@@ -290,6 +290,29 @@ define([
 	    emptyFun: function () {
 
         },
+        //获取地址json
+        getAddress: function() {
+            var addr = localStorage.getItem("addr");
+            if (addr) {
+                var defer = jQuery.Deferred();
+                addr = $.parseJSON(addr);
+                if (!addr.citylist) {
+                    addr = $.parseJSON(addr);
+                }
+                defer.resolve(addr);
+                return defer.promise();
+            } else {
+                return $.get("/static/js/lib/city.min.json")
+                    .then(function(res) {
+                        if (res.citylist) {
+                            localStorage.setItem("addr", JSON.stringify(res));
+                            return res;
+                        }
+                        localStorage.setItem("addr", JSON.stringify(res));
+                        return $.parseJSON(res);
+                    });
+            }
+        },
     };
     return Base;
 });

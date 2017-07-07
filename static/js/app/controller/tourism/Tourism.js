@@ -7,6 +7,7 @@ define([
     'app/interface/generalCtr',
 ], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr) {
 	
+    var category = base.getUrlParam("category") || 17;
     var tourismTmpl = __inline('../../ui/tourism_item.handlebars');
     var totalPage=1;
 	var config = {
@@ -25,7 +26,8 @@ define([
         	getModules(),
         	getTypeList(),
         	getTravelTimeList(),
-        	getStyleList()
+        	getStyleList(),
+        	getCity()
    		).then(()=>{
    			getSearch();
    		})
@@ -46,12 +48,12 @@ define([
                             url = url + ".html";
                         }
                     }
-                    html += `<li data-code="${d.code}">
+                    html += `<li class="${d.code == category ? "active" : ''}">
+                    		<a class="wp100 show" href="${url}">
                     		<div class="icon"><img src="${base.getPic(d.pic)}"/></div>
-                            <p>${d.name}</p></li>`;
+                            <p>${d.name}</p></a></li>`;
                 });
 			$("#tourismClass ul").html(html);
-			$("#tourismClass ul").find('li').eq(0).addClass("active");
 			
 		},()=>{})
 	}
@@ -106,6 +108,26 @@ define([
 		},()=>{})
 	}
 	
+	//地区
+	function getCity(){
+		base.getAddress().then((data)=>{
+			var citylist = data.citylist;
+			var html = '<option>不限</option>'
+			$.each(citylist, function(i, prov) {
+				if(prov.c[0].a){
+					$.each(prov.c, function(i, city) {
+						html+=`<option value="${city.n}">${city.n}</option>`
+	            	});
+				}else{
+					html+=`<option value="${prov.p}">${prov.p}</option>`
+				}
+				
+            });
+            $("#cityList select").html(html);
+            
+		},()=>{})
+	}
+	
 	// 初始化分页器
     function initPagination(data){
         $("#pagination .pagination").pagination({
@@ -120,7 +142,7 @@ define([
             jumpIptCls: 'pagination-ipt',
             jumpBtnCls: 'pagination-btn',
             jumpBtn: '确定',
-//          isHide: true,
+            isHide: true,
             callback: function(_this){
                 if(_this.getCurrent() != config.start){
     				_loadingSpin.removeClass("hidden");
@@ -134,8 +156,9 @@ define([
 	//根据搜索条件获取数据
 	function getSearch(){
 		_loadingSpin.removeClass("hidden");
-		config.category = $("#tourismClass ul li.active").attr("data-code");
+		config.category = category;
 		config.type = $("#typeList ul li.active").attr("data-code");
+		config.name = $("#cityList select option:selected").attr("value");
 		config.travelTime = $("#travelTimeList ul li.active").attr("data-code");
 		config.style = $("#styleList ul li.active").attr("data-code");
 		getTourism(config);
@@ -151,14 +174,8 @@ define([
 			}
     	})
     	
-    	$(".nav-class ul").on("click","li",function(){
-			if(!$(this).hasClass("active")){
-				
-				$(this).addClass("active").siblings("li").removeClass("active");
-				getSearch();
-			}
-			
+    	$("#cityList select").bind("change",function(){
+    		getSearch();
     	})
-    	
     }
 });

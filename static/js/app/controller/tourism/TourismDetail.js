@@ -2,15 +2,14 @@ define([
     'app/controller/base',
     'pagination',
     'app/util/handlebarsHelpers',
-    'swiper',
     'app/module/validate',
     'app/module/banqh',
     'app/interface/tourismCtr',
     'app/interface/generalCtr',
     'app/interface/userCtr',
-], function(base, pagination, Handlebars, Swiper, validate, Banqh, tourismCtr, generalCtr, userCtr) {
+], function(base, pagination, Handlebars, validate, Banqh, tourismCtr, generalCtr, userCtr) {
 	var code = base.getUrlParam("code");
-	var isIdentity,price;
+	var isIdentity;
 	
 	var glTmpl = __inline('../../ui/tourism_gl.handlebars'),
 		yjTmpl = __inline('../../ui/tourism_yj.handlebars'),
@@ -45,9 +44,9 @@ define([
         addListener();
     }
 	
+	//获取线路详情
 	function getTourismDetail(){
-		return tourismCtr.getTourismDetail(code,base.getUserId()).then((data)=>{
-			price = data.price;
+		return tourismCtr.getTourismDetail(code).then((data)=>{
 			var pic = data.pathPic.split(/\|\|/), html = "";
             $.each(pic, function(i, p){
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
@@ -146,7 +145,7 @@ define([
         data.lineCode = code;
         
         tourismCtr.setOrder(data).then((d)=>{
-        	location.href = "../pay/pay.html?code="+d.code+"&type=1&p="+price;
+        	location.href = "../pay/pay.html?code="+d.code+"&type=1";
         },()=>{})
 	}
 	

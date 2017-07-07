@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>酒店住宿-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="nav wrap">
+    		<div class="nav-class" id="hotelClass">
+    			<ul></ul>
+    		</div>
+    		
+    		<div class="nav-search wp100">
+    			<div class="navSearch-wrap">
+	    			<div class="tit">价格：</div>
+	    			<div class="navSearch-list" id="hotelPrice">
+	    				<ul>
+	    					<li class="active" data-price="">不限</li>
+	    					<li data-price="200000">200以下</li>
+			                <li data-price="500000">500以下</li>
+			                <li data-price="1000000">1000以下</li>
+			                <li data-price="5000000">5000以下</li>
+	    				</ul>
+	    			</div>
+    			</div>
+    			
+    			<div class="navSearch-wrap navSearch-wrap1">
+	    			<div class="tit">设施服务：</div>
+	    			<div class="navSearch-list" id="hotelDropDescription">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    		</div>
+    	</div>
+    	
+    	<div class="content wrap content-hotel">
+    		<div class="conl-tourismList wp100" id="hotelList">
+				<ul>
+					<!--<li><a href="hotel-detail.html">
+						<div class="img"><img src="../images/酒店.png"/></div>
+						<div class="title t-3dot plr10">如家酒店</div>
+						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
+						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
+						<div class="price plr10"><p><i>￥2340</i>起</p></div>
+					</a></li>-->
+				</ul>
+			</div>
+    	</div>
+    	
+		<div id="pagination" class="wrap pagination-wrap tc">
+			<p class="pagination"></p>
+		</div>
+		
+		<!--加载动画-->
+		<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/hotel/Hotel']);
+        </script>
+    </body>
+</html>
