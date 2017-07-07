@@ -121,8 +121,8 @@ define([
                             unDisabledButton();
                             base.confirm("您还未实名认证，点击确认前往实名认证")
                                 .then(function () {
-                                    alert("去实名认证");
-                                }, () => {});
+                                    location.href = "../user/identity.html"
+                                }, base.emptyFun);
                             return;
                         }
                         calculateDistance();

@@ -5,43 +5,45 @@
         <title>支付-来来旺旺</title>
         <!--SCRIPT_PLACEHOLDER-->
     </head>
-    
+
     <body>
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="../user/user.html">个人中心></a>支付</p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="userInfo-wrap conStyle identity-wrap">
     			<div class="title">
     				<h3>微信支付</h3>
     			</div>
-    			
+
     			<div class="show-wrap">
     				<div class="pay-wrap hidden">
 	    				<div class="qrcode"><div id="qrcode"></div></div>
 	    				<div class="txt">请打开微信扫码支付</div>
-	    				<div class="price">支付金额：<i></i></div>
-	    				<div class="payBtn">
-	    					<input id="isPayBtn" type="button" value="已支付成功" />
-	    				</div>
-	    			</div>
-	    			<div class="paySuccess hidden">
-	    				<img src="../../images/paySuccess.png" />
-	    				<p>已支付成功三秒后跳转<a href="../user/order.html">订单中心...</a></p>
+	    				<div id="price" class="price">支付金额：<i></i></div>
 	    			</div>
     			</div>
-    			
-    		</div>
+                <div class="jfpay-wrap hidden">
+                    <div id="jfPrice" class="price">支付积分：<i></i></div>
+                    <button type="button" id="mallPay" class="ant-btn ant-btn-primary ant-btn-lg" id="ant-modal-confirm">
+                        <span>立即支付</span>
+                    </button>
+                </div>
+                <div class="paySuccess hidden">
+                    <img src="../../images/paySuccess.png" />
+                    <p>已支付成功三秒后跳转<a href="../user/order.html">订单中心...</a></p>
+                </div>
+                <!--加载动画-->
+                <div id="loadingSpin" class="ant-spin-nested-loading">
+                    <div class="ant-spin-blur ant-spin-container">
+                        <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                    </div>
+                </div>
+        	</div>
     	</div>
-    	
-    	<!--加载动画-->
-    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
-            <div class="ant-spin-blur ant-spin-container">
-                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
-            </div>
-        </div>
-    	
+
+
         <link rel="import" href="../footer.html?__inline">
 		<script src="../../js/lib/qrcode.js"></script>
         <script>

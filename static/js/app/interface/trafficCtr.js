@@ -23,6 +23,17 @@ define([
                 ...config
             }, refresh)
         ),
+        /*
+         * 预定专线
+         * config: {specialLineCode, quantity}
+         */
+        bookSpecialLine: (config) => (
+            Ajax.get("618180", {
+            	"applyUser": base.getUserId(),
+            	"applyNote": "",
+                ...config
+            })
+        ),
         // 取消专线订单
         cancelSpecialLineOrder: (orderCodeList) => (
             Ajax.post("618181", {orderCodeList})

@@ -3,15 +3,15 @@ define([
     'app/interface/generalCtr',
 ], function(base, generalCtr) {
 	var code = base.getUrlParam("code"),
-		price = base.getUrlParam("p"),
-	// 0:酒店 1:线路 2:专线 3:大巴 4:拼车 5:商品
-    	type = base.getUrlParam("type");
-	
+	   // 0:酒店 1:线路 2:专线 3:大巴 4:拼车 5:商品
+    	type = base.getUrlParam("type"),
+        currentStatus;
+
     var _loadingSpin = $("#loadingSpin");
-	
-	var payBizType , bizType ,
-		config = {orderCodeList: [code]}
-    	
+
+	var payBizType, bizType,
+		config = {orderCodeList: [code]};
+
 	// 0:酒店 1:线路 2:专线 3:大巴 4:拼车 5:商品
 	if (type == 0) {
         bizType = "618052";
@@ -32,70 +32,122 @@ define([
         bizType = "618472";
         payBizType = "618453";
     }
-	
+
     init();
-    
+
     // 初始化页面
     function init() {
-    	
-        _loadingSpin.removeClass("hidden");
+        if(type == 5){
+            $(".title").find("h3").text("积分支付");
+        }
         addListener();
+        getOrderDetail();
     }
-    
-    function pay(){
-		generalCtr.payWeChat(payBizType,config).then((data)=>{
+    // 微信二维码支付
+    function payWeChat(){
+		generalCtr.payWeChat(payBizType, config).then((data)=>{
 			var qrcode = new QRCode('qrcode',data.codeUrl);
 		 	qrcode.makeCode(data.codeUrl);
-		 	
         	_loadingSpin.addClass("hidden");
 		},()=>{
-			
         	_loadingSpin.addClass("hidden");
 		})
+    }
+    // 余额支付（积分 或 余额）
+    function normalPay(){
+        generalCtr.normalPay(payBizType, config)
+            .then(showSuccess, function() {});
+    }
+
+    function getOrderDetail() {
+        generalCtr.getOrderDetail(bizType,code).then((data)=>{
+            // 0:酒店 1:线路 2:专线 3:大巴 4:拼车 5:商品
+            var price = type == 0
+                        ? data.hotalOrder.amount
+                        : type == 2
+                            ? data.amount
+                            : type == 3
+                                ? data.distancePrice
+                                : type == 5
+                                    ? data.amount1 : 0;
+            if(type == 1){
+                var p1 = +data.amount;
+                var p2 = data.hotalOrder && +data.hotalOrder.amount || 0;
+                var p3 = data.specialLineOrder && +data.specialLineOrder.amount || 0;
+                price = p1 + p2 + p3;
+            }
+            // 商品是积分支付
+            if(type == 5){
+                $(".show-wrap").addClass("hidden");
+                $(".jfpay-wrap").removeClass("hidden");
+                $("#jfPrice").find('i').html(base.formatMoney(price));
+            }else if(type == 4){
+                if(data.status == "0" || data.status == "97"){
+                    str = "支付定金";
+                    price = data.firstAmount;
+                }
+                else if(data.status == "2"){
+                    str = "支付尾款";
+                    price = data.secondAmount;
+                    payBizType = "618246";
+                }
+                $("#price").html(`${str}：<i>￥${base.formatMoney(price)}</i>`);
+            }else {
+                $("#price").find('i').html(`￥${base.formatMoney(price)}`);
+            }
+            if(type != 5){
+                if(type == 4) {
+                    if(currentStatus == undefined){
+                        // 带支付
+                        if(data.status == "0" || data.status == "1" || data.status == "2" || data.status == "97"){
+                            showPayQCode();
+                        }
+                        currentStatus = data.status;
+                    }else if(data.status !== currentStatus){
+                        showSuccess();
+                    }
+                }else {
+                    if(currentStatus == undefined){
+                        if(data.status == '0'){
+                            showPayQCode();
+            			}
+                        currentStatus = data.status;
+                    }else if(data.status !== currentStatus){
+                        showSuccess();
+                    }
+                }
+                getOrderDetail.timer = setTimeout(getOrderDetail, 3000);
+            }
+		},()=>{
+        	_loadingSpin.addClass("hidden");
+		});
+    }
+    // 线上支付二维码
+    function showPayQCode(){
+        $(".pay-wrap").removeClass("hidden");
+        currentStatus == undefined && payWeChat();
+    }
+    // 支付成功
+    function showSuccess(){
+        $(".pay-wrap").addClass("hidden");
+        $(".jfpay-wrap").addClass("hidden");
+        $(".paySuccess").removeClass("hidden")
+        _loadingSpin.addClass("hidden");
+        setTimeout(function(){
+            location.href="../user/order.html";
+        }, 3000);
     }
 
     function addListener() {
-    	
-    	generalCtr.getOrderDetail(bizType,code).then((data)=>{
-    		$(".price i").html('￥'+base.formatMoney(data.line.price))
-			if(data.status=='1'){
-				
-				$(".paySuccess").removeClass("hidden")
-        		_loadingSpin.addClass("hidden");
-        		
-        		setTimeout(function(){
-        			location.href="../user/order.html";
-        		},3000)
-			}else{
-				$(".pay-wrap").removeClass("hidden")
-				pay();
-			}
-		},()=>{
-			
-        	_loadingSpin.addClass("hidden");
-		})
-    	
-    	$("#isPayBtn").click(function(){
-    		_loadingSpin.removeClass("hidden");
-    		generalCtr.getOrderDetail(bizType,code).then((data)=>{
-				if(data.status=='1'){
-					$(".pay-wrap").addClass("hidden")
-					$(".paySuccess").removeClass("hidden")
-	        		_loadingSpin.addClass("hidden");
-	        		
-	        		setTimeout(function(){
-	        			location.href="../user/order.html";
-	        		},3000)
-	        		
-				}else{
-					
-	        		_loadingSpin.addClass("hidden");
-					base.showMsg("尚未付款成功")
-				}
-			},()=>{
-				
-	        	_loadingSpin.addClass("hidden");
-			})
-    	})
+        var _mallPay = $("#mallPay");
+        _mallPay.click(function(){
+            _loadingSpin.removeClass("hidden")
+            _mallPay.prop("disabled", true).find("span").text("支付中...");
+            _loadingSpin.removeClass("hidden");
+            normalPay();
+        }, () => {
+            _mallPay.prop("disabled", false).find("span").text("立即支付");
+            _loadingSpin.addClass("hidden");
+        });
     }
 });

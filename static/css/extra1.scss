@@ -789,23 +789,28 @@ textarea.ant-input {
     padding-left: 56px;
     margin-top: 0;
 }
+
 .ant-upload-list-picture-card .ant-upload-list-item-progress {
     padding-left: 0;
 }
+
 .ant-progress {
     display: inline-block;
 }
+
 .ant-progress-line {
     width: 100%;
     font-size: 12px;
     position: relative;
 }
+
 .ant-progress-outer {
     display: inline-block;
     width: 100%;
     margin-right: 0;
     padding-right: 0;
 }
+
 .ant-progress-inner {
     display: inline-block;
     width: 100%;
@@ -817,8 +822,8 @@ textarea.ant-input {
 .ant-progress-bg {
     border-radius: 100px;
     background-color: #06cdb8;
-    -webkit-transition: all .4s cubic-bezier(.08,.82,.17,1) 0s;
-    transition: all .4s cubic-bezier(.08,.82,.17,1) 0s;
+    -webkit-transition: all 0.4s cubic-bezier(.08,.82,.17,1) 0s;
+    transition: all 0.4s cubic-bezier(.08,.82,.17,1) 0s;
     position: relative;
 }
 
@@ -830,4 +835,49 @@ form.travelForm {
 
 select {
     cursor: pointer;
+}
+
+.carpool-table.traffic-table tbody .purchase .number {
+    float: none;
+    margin-left: 0;
+}
+
+.carpool-table.traffic-table tbody .beginEnd p samp {
+    text-align: center;
+}
+
+.spl-table.traffic-table tbody .beginEnd div {
+    text-align: left;
+}
+
+.traffic-table.carpool-table.spl-table tbody tr {
+    cursor: default;
+}
+
+.traffic-table .icon-add,
+.traffic-table .icon-sub {
+    cursor: pointer;
+}
+
+.spl-table .ant-btn {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.jfpay-wrap {
+    padding-left: 30px;
+    .price{
+        font-size: 22px;
+        color: #FF9C00;
+        padding: 10px 0 60px;
+
+        i{
+            font-size: 24px;
+            font-style: normal;
+            margin-left: 5px;
+        }
+    }
+}
+.userInfo-wrap {
+    position: relative;
 }

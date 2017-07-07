@@ -169,26 +169,13 @@ define([
                 disabledButton();
                 userCtr.getUserInfo()
                     .then(function (data) {
-                        var isBindMobile = !!data.mobile,
-                            isIdentity = !!data.realName;
-                        if(!isBindMobile || !isIdentity){
+                        var isIdentity = !!data.realName;
+                        if(!isIdentity){
                             unDisabledButton();
-                            if(!isBindMobile && !isIdentity){
-                                base.confirm("您还未实名认证，点击确认前往实名认证，并绑定手机号")
-                                    .then(function () {
-                                        location.href = "../user/identity.html"
-                                    }, () => {});
-                            }else if(!isIdentity){
-                                base.confirm("您还未实名认证，点击确认前往实名认证")
-                                    .then(function () {
-                                        location.href = "../user/identity.html"
-                                    }, () => {});
-                            }else if(!isBindMobile){
-                                base.confirm("您还未绑定手机号，点击确认前往绑定手机号")
-                                    .then(function () {
-                                        location.href = "../user/user.html"
-                                    }, () => {});
-                            }
+                            base.confirm("您还未实名认证，点击确认前往实名认证")
+                                .then(function () {
+                                    location.href = "../user/identity.html"
+                                }, base.emptyFun);
                             return;
                         }
                         calculateDistance();
