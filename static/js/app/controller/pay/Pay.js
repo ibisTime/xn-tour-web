@@ -3,7 +3,6 @@ define([
     'app/interface/generalCtr',
 ], function(base, generalCtr) {
 	var code = base.getUrlParam("code"),
-		price = base.getUrlParam("p"),
 	// 0:酒店 1:线路 2:专线 3:大巴 4:拼车 5:商品
     	type = base.getUrlParam("type");
 	

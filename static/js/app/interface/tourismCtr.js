@@ -12,8 +12,8 @@ define([
             return Ajax.get("618100", params , true);
         },
         // 线路详情
-        getTourismDetail: (code,userId) => (
-            Ajax.get("618102", {code,userId:userId})
+        getTourismDetail: (code) => (
+            Ajax.get("618102", {code,userId:base.getUserId()})
         ),
         // 线路下单
         setOrder: (params) => {

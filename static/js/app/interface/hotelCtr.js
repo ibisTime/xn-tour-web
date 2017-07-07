@@ -7,6 +7,7 @@ define([
         getHotelPage: (params) => {
         	params.start = params.start||'1';
         	params.limit = params.limit||'12';
+        	params.status = 1;
 
             return Ajax.get("618010", params , true);
         },
@@ -32,6 +33,10 @@ define([
                 updater: base.getUserId(),
                 userId: base.getUserId()
             })
+        ),
+        // 酒店详情
+        getHotelDetail: (code) => (
+            Ajax.get("618012", {code,userId:base.getUserId()})
         ),
     }
 });

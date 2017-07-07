@@ -8,98 +8,43 @@
     
     <body>
     	<div class="nav wrap">
-    		<div class="nav-class">
-    			<ul>
-    				<li class="active"><div class="icon icon-haohua"></div><p>豪华酒店</p></li>
-    				<li><div class="icon icon-shushi"></div><p>舒适酒店</p></li>
-    				<li><div class="icon icon-jngji"></div><p>经济酒店</p></li>
-    				<li><div class="icon icon-zhuti"></div><p>主题酒店</p></li>
-    				<li><div class="icon icon-minsu"></div><p>民宿</p></li>
-    				<li><div class="icon icon-wuxing"></div><p>五星酒店</p></li>
-    				<li><div class="icon icon-sixing"></div><p>四星酒店</p></li>
-    				<li><div class="icon icon-sanxing"></div><p>三星酒店</p></li>
-    			</ul>
+    		<div class="nav-class" id="hotelClass">
+    			<ul></ul>
     		</div>
     		
     		<div class="nav-search wp100">
     			<div class="navSearch-wrap">
 	    			<div class="tit">价格：</div>
-	    			<div class="navSearch-list">
+	    			<div class="navSearch-list" id="hotelPrice">
 	    				<ul>
-	    					<li class="active">不限</li>
-	    					<li>200元以下</li>
-	    					<li>200-300</li>
+	    					<li class="active" data-price="">不限</li>
+	    					<li data-price="200000">200以下</li>
+			                <li data-price="500000">500以下</li>
+			                <li data-price="1000000">1000以下</li>
+			                <li data-price="5000000">5000以下</li>
 	    				</ul>
 	    			</div>
     			</div>
     			
     			<div class="navSearch-wrap navSearch-wrap1">
 	    			<div class="tit">设施服务：</div>
-	    			<div class="navSearch-list">
-	    				<ul>
-	    					<li class="active">不限</li>
-	    					<li>SPA</li>
-	    					<li>免费WIFI</li>
-	    				</ul>
+	    			<div class="navSearch-list" id="hotelDropDescription">
+	    				<ul></ul>
 	    			</div>
     			</div>
-    			
     		</div>
-    		
     	</div>
     	
     	<div class="content wrap content-hotel">
-    		<div class="conl-tourismList wp100">
+    		<div class="conl-tourismList wp100" id="hotelList">
 				<ul>
-					<li><a href="hotel-detail.html">
+					<!--<li><a href="hotel-detail.html">
 						<div class="img"><img src="../images/酒店.png"/></div>
 						<div class="title t-3dot plr10">如家酒店</div>
 						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
 						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
 						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
-					<li><a href="hotel-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">如家酒店</div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
-						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
-					<li><a href="hotel-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">如家酒店</div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
-						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
-					<li><a href="hotel-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">如家酒店</div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
-						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
-					<li><a href="hotel-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">如家酒店</div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
-						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
-					<li><a href="hotel-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">如家酒店</div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
-						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
-					<li><a href="hotel-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">如家酒店</div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/地址.png"><p class="fl">温州市香园1号</p></div>
-						<div class="con wp100 plr10"><img class="fl" src="../images/电话.png"><p class="fl">0577-6221823578</p></div>
-						<div class="price plr10"><p><i>￥2340</i>起</p></div>
-					</a></li>
+					</a></li>-->
 				</ul>
 			</div>
     	</div>
@@ -108,6 +53,12 @@
 			<p class="pagination"></p>
 		</div>
 		
+		<!--加载动画-->
+		<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/hotel/Hotel']);

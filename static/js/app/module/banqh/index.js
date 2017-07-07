@@ -33,19 +33,19 @@ define([
 			}, settings || {});
 					
 			var picnum = $(settings.pic).find('ul li').length;
-			var picw = $(settings.pic).find('ul li').outerWidth(true);
-			var pich = $(settings.pic).find('ul li').outerHeight(true);
-			var poppicw = $(settings.pop_pic).find('ul li').outerWidth(true);
+			var picw = $(settings.pic).find('ul li').width();
+			var pich = $(settings.pic).find('ul li').height();
+			var poppicw = $(settings.pop_pic).find('ul li').width();
 			var picminnum = $(settings.pnum).find('ul li').length;
 			var picpopnum = $(settings.pop_pic).find('ul li').length;
-			var picminw = $(settings.pnum).find('ul li').outerWidth(true);
-			var picminh = $(settings.pnum).find('ul li').outerHeight(true);
+			var picminw = $(settings.pnum).find('ul li').width();
+			var picminh = $(settings.pnum).find('ul li').height();
 			var pictime;
 			var tpqhnum=0;
 			var xtqhnum=0;
 			var popnum=0;
-			$(settings.pic).find('ul').width(picnum*picw).height(picnum*pich);
-			$(settings.pnum).find('ul').width(picminnum*picminw).height(picminnum*picminh);
+			$(settings.pic).find('ul').width(picnum*picw);
+			$(settings.pnum).find('ul').width(picminnum*picminw);
 			$(settings.pop_pic).find('ul').width(picpopnum*poppicw);
 		
 			//点击小图切换大图

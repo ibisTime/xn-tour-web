@@ -25,9 +25,9 @@ define([
     function getInitData() {
     	return $.when(
 			getBanner(true),
-			initSwiperTraffic(),
 			getTourismNav(),
-			getHotelNav()
+			getHotelNav(),
+			getModules()
         );
     }
     // 初始化swiper
@@ -135,6 +135,28 @@ define([
 			base.hideLoading();
 		},()=>{})
 	}
+	
+	// 获取八大模块
+    function getModules(){
+        return menuCtr.getModules("goout")
+            .then((data) => {
+                var html = "";
+                $.each(data, function(i, d){
+                    var url = d.url;
+                    if(/^page:/.test(url)){
+                        url = url.replace(/^page:/, "../").replace(/\?/, ".html?");
+                        if(!/\?/.test(url)){
+                            url = url + ".html";
+                        }
+                    }
+                    html += `<li class="swiper-slide"><a href="${url}">
+                            <div class="icon"><img src="${base.getPic(d.pic)}"/></div>
+                            <p class="title">${d.name}</p></a></li>`;
+                });
+                $("#traffic ul").html(html);
+                initSwiperTraffic();
+            });
+    }
 	
     function addListener() {
 		$("#tourismNav ul").on('click','li',function(){

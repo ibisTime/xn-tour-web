@@ -25,6 +25,7 @@
 	width: 528px;
 	height: 100%;
 	overflow: hidden;
+	float: left;
 }
 .ban-wrap .ban ul li a{
 	display: block;
@@ -66,6 +67,7 @@
 	overflow: hidden;
 	margin-right: 9px;
 	padding: 1px;
+	float: left;
 }
 
 .ban-wrap .num ul li img {
