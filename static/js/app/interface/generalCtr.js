@@ -58,8 +58,15 @@ define([
         // 微信支付
         payWeChat: (bizType,params) => {
         	params.payType = "3";
-            return Ajax.get(bizType, params, true)
+            return Ajax.post(bizType, params)
         },
+        // 普通支付
+        normalPay: (bizType, params) => (
+            Ajax.post(bizType, {
+                payType: "2",
+                ...params
+            }, true)
+        ),
         // 查询订单详情
         getOrderDetail: (bizType,code) => {
             return Ajax.get(bizType, {code:code}, true)
