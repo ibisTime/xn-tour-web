@@ -1,0 +1,24 @@
+{{#each items}}
+<li>
+	<div class="img"><img src="{{formatListImage picture}}"/></div>
+	<div class="txt">
+		<div class="name">{{name}}</div>
+		<div class="service">{{formatHotelRoomDescription description}}</div>
+		<div class="price-wrap">
+			<p class="price">{{formatMoney price}}</p>
+			<p class="fs14">剩余：{{remain}}间</p>
+		</div>
+	</div>
+	
+	<div class="booking-wrap">
+		<div class="number">
+			<div class="icon icon-sub"></div>
+			<div class="num" data-remain="{{remain}}">1</div>
+			<div class="icon icon-add"></div>
+		</div>
+		<div class="btn-wrap">
+			<input data-roomName="{{name}}" data-quantity="1" data-roomCode="{{code}}" class="btn-booking subBtn" type="button" value="立即预订" />
+		</div>
+	</div>
+</li>
+{{/each}}
