@@ -2032,19 +2032,15 @@ select{
 }
 .content-mall .conl-tourismList .mall-price,
 .mallDetail .mall-price{
-    padding-bottom: 10px;
+    padding-top: 5px;
     
     .p1{
+        font-size: 17px !important;
         color: #FF9C00 !important;
         i{
             font-style: normal;
             padding-right: 5px;
         }
-    }
-    
-    .p2{
-        font-size: 14px;
-        color: #929292 !important;
     }
 }
 
@@ -2310,14 +2306,16 @@ select{
     }
 }
 .findPwd-wrap{
-    width: 330px;
     padding: 50px 15px;
     
-    .input-telVfCode{
-        width: 180px;  
+    .findPwd-input{
+        width: 330px;
     }
     .telVfCode{
         width: 110px;
+    }
+    .input-wrap{
+        margin-bottom: 30px;
     }
     
     .input-btn{
@@ -2327,6 +2325,17 @@ select{
         color: #fff;
         background-color: #06CDB8;
         border-radius: 3px;
+    }
+    label.error{
+        display: inline-block;
+        width: 330px;
+        color: #F14E4F;
+        font-size: 14px;
+        line-height: 1;
+        padding-left: 56px;
+        position: absolute;
+        left: 0;
+        bottom: -20px;
     }
 }
 
@@ -2924,6 +2933,36 @@ select{
     padding: 20px 30px;
     font-size: 16px;
 }
+.am-modal-close {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    color: rgba(0,0,0,.43);
+    outline: 0;
+
+    .am-modal-close-x {
+        display: block;
+        font-style: normal;
+        vertical-align: baseline;
+        text-align: center;
+        text-transform: none;
+        text-rendering: auto;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        font-size: 14px;
+        background: url("../images/close.png") no-repeat center;
+    }
+}
 .am-modal-body {
     font-size: 15px;
     color: #484848;
@@ -3191,5 +3230,18 @@ select{
 .hotelRoomDialog{
     .am-textarea-wrap{
         height: 120px;
+    }
+}
+.mallRuleDialog{
+    .am-modal-title{
+        padding: 15px 30px;
+    }
+    .am-modal-body{
+        padding: 20px 30px 30px;
+        .am-modal-div{
+            max-height: 500px;
+            overflow-y: auto;
+            text-align: initial;
+        }
     }
 }

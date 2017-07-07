@@ -56,40 +56,33 @@ define([
         getUserIdDetail: (userId,refresh) => (
             Ajax.get("805256", {userId: userId}, refresh)
         ),
-        // 获取用户账户信息
+        // 获取用户虚拟币账户信息
         getUserAccount: (refresh) => (
             Ajax.get("802503", {
-                userId: base.getUserId()
+                userId: base.getUserId(),
+                currency:"XNB"
             }, refresh)
         ),
         // 修改用户昵称
         setNickName: (nickname) => {
-        	if(nickname){
-        		Ajax.post("805075", {
-	                userId: base.getUserId(),
-	                nickname
-	            }, true)
-        	}
+    		Ajax.post("805075", {
+                userId: base.getUserId(),
+                nickname
+            }, true)
         },
         // 修改手机号
         setMobile: (mobile) => {
-        	if(mobile){
-        		Ajax.post("805150", {
-		            userId: base.getUserId(),
-		            loginName: mobile
-		        }, true)
-        	}
+    		Ajax.post("805150", {
+	            userId: base.getUserId(),
+	            loginName: mobile
+	        }, true)
         },
         // 修改头像
         setPhoto: (photo) => {
-        	if(photo){
-        		
-        		
-	    		Ajax.post("805077", {
-	                userId: base.getUserId(),
-	                photo
-	            }, true)
-        	}
+    		Ajax.post("805077", {
+                userId: base.getUserId(),
+                photo
+            }, true)
         },
         // 实名认证
         identity: (params) => {

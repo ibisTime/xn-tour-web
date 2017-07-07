@@ -49,9 +49,15 @@ define([
 					"oldLoginPwd": oldPwd,
 					"newLoginPwd": newPwd
 				}).then((data)=>{
-					base.hideLoading();
+					
 					base.clearSessionUser();
-					location.href = './login.html';
+		        	base.showLoading("修改成功");
+		        	
+		        	setTimeout(function(){
+		        		base.hideLoading();
+						location.href = './login.html';
+		        	},1000)
+					
 				},()=>{
 					base.hideLoading();
 				})

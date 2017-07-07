@@ -50,9 +50,13 @@ define([
         			"smsCaptcha": $("#smsCode").val()
         		}).then((data)=>{
         			
-        			base.hideLoading();
         			base.setSessionUser(data);
-        			location.href="./user.html"
+		        	base.showLoading("注册成功");
+		        	
+		        	setTimeout(function(){
+		        		base.hideLoading();
+						location.href = './login.html';
+		        	},1000)
         			
         		},()=>{
         			base.hideLoading();

@@ -36,6 +36,8 @@ define([
         	getPageHotelRoom(configRoom)
         )
         addListener();
+        
+        _loadingSpin.addClass("hidden");
     }
     
     //酒店详情

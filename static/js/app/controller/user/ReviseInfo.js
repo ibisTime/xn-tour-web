@@ -39,12 +39,14 @@ define([
 	function getQiniuToken(){
 		generalCtr.getQiniuToken().then((data)=>{
 			token = data.uploadToken;
+			base.showLoading();
 			QiniuUpdata.uploadInit({
 	        	btnId:'photoFile',
 	        	containerId:'photoFile-wrap',
 	        	starBtnId: 'subBtn',
 	        	token: token
 	        })
+        	base.hideLoading();
 		},()=>{
         	base.hideLoading();
 		})
@@ -52,12 +54,15 @@ define([
 	
 	function setUserInfo(){
 		$.when(
-			userCtr.setNickName(dname==$(".name").val()?"":$(".name").val()),
-//			userCtr.setMobile(dmobile==$(".mobile").val()?"":$(".mobile").val()),
-			userCtr.setPhoto(dimgSrc==$(".myPic img").attr("data-src")?"":$(".myPic img").attr("data-src"))
+			userCtr.setNickName($(".name").val()),
+			userCtr.setPhoto($(".myPic img").attr("data-src"))
 		).then(()=>{
-        	base.hideLoading();
-        	location.href = "./user.html"
+        	base.showLoading("修改成功");
+        	
+        	setTimeout(function(){
+        		base.hideLoading();
+        		location.href = "./user.html"
+        	},1000)
 		})
 	}
 	

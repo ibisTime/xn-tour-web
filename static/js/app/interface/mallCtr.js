@@ -25,6 +25,13 @@ define([
                 updater: base.getUserId(),
                 userId: base.getUserId()
             })
-        )
+        ),
+        //分页查询商品
+        getPageMallList: (params) => {
+        	params.start = params.start||'1';
+        	params.limit = params.limit||'12';
+
+            return Ajax.get("618420", params , true);
+        },
     };
 });

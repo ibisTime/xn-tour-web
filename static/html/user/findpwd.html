@@ -13,35 +13,35 @@
     				<h3>忘记密码</h3>
     			</div>
     			
-    			<div class="wp100 pt25">
-    				<div class="input-wrap">
+    			<form class="wp100 pt25" id="findPwdForm">
+    				<div class="input-wrap findPwd-input">
 	    				<div class="icon"><img src="../../images/手机号.png"/></div>
-	    				<input class="input-text" type="text" placeholder="手机号" />
+	    				<input id="loginName" name="loginName" class="input-text" type="text" placeholder="手机号" />
 	    			</div>
-	    			<div class="wp100 over-hide">
+	    			<div class="wp100 over-hide  findPwd-input">
 	    				<div class="input-wrap input-telVfCode fl">
 		    				<div class="icon"><img src="../../images/手机验证码.png"/></div>
-		    				<input class="input-text" type="text" placeholder="手机验证码" />
+		    				<input id="smsCode" name="smsCode" class="input-text" type="text" placeholder="手机验证码" />
 		    			</div>
 		    			
-	    				<div class="telVfCode fr">获取验证码</div>
+	    				<input class="telVfCode fr" id="getSmsCode" type="button" value="获取验证码">
 	    			</div>
     				
-	    			<div class="input-wrap">
+	    			<div class="input-wrap  findPwd-input">
 	    				<div class="icon"><img src="../../images/输入密码.png"/></div>
-	    				<input class="input-text" type="password" placeholder="设置密码" />
+	    				<input id="newLoginPwd" name="newLoginPwd" class="input-text" type="password" placeholder="设置密码" />
 	    			</div>
-    			</div>
+    			</form>
     			
 				<div class="mt50">
-					<input type="button" class="input-btn" value="提交" />
+					<input id="subBtn" type="button" class="input-btn" value="提交" />
 				</div>
     		</div>
     	</div>
     	
         <link rel="import" href="../footer.html?__inline">
         <script>
-            require(['app/controller/user/User']);
+            require(['app/controller/user/FindPwd']);
         </script>
     </body>
 </html>
