@@ -147,11 +147,15 @@ define([
         
         tourismCtr.setOrder(data).then((d)=>{
         	location.href = "../pay/pay.html?code="+d.code+"&type=1";
-        },()=>{})
+        },()=>{
+    		_loadingSpin.addClass("hidden");
+        })
 	}
 	
 	// 初始化攻略分页器
     function initPaginationGL(data){
+    	
+    	$("#paginationGL .pagination").show();
         $("#paginationGL .pagination").pagination({
             pageCount: data.totalPage,
             showData: configGL.limit,

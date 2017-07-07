@@ -56,7 +56,9 @@ define([
     // 余额支付（积分 或 余额）
     function normalPay(){
         generalCtr.normalPay(payBizType, config)
-            .then(showSuccess, function() {});
+            .then(showSuccess, function() {
+    			_loadingSpin.addClass("hidden");
+            });
     }
 
     function getOrderDetail() {

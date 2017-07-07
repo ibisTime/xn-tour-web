@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>美食小吃-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body>
+    	<div class="nav wrap">
+    		<div class="nav-class" id="foodClass">
+    			<ul></ul>
+    		</div>
+    		
+    		<div class="nav-search wp100">
+    			<!--<div class="navSearch-wrap">
+	    			<div class="tit">价格：</div>
+	    			<div class="navSearch-list" id="dining-price">
+	    				<ul>
+	    					<li class="active" data-price="">不限</li>
+	    					<li data-code="50000">50以下</li>
+			                <li data-code="100000">100以下</li>
+			                <li data-code="300000">300以下</li>
+			                <li data-code="500000">500以下</li>
+	    				</ul>
+	    			</div>
+    			</div>-->
+    			
+    			<div class="navSearch-wrap navSearch-wrap1">
+	    			<div class="tit">用餐人数：</div>
+	    			<div class="navSearch-list" id="dining-num">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    			
+    			<div class="navSearch-wrap navSearch-wrap1">
+	    			<div class="tit">用餐时段：</div>
+	    			<div class="navSearch-list" id="dining-time">
+	    				<ul></ul>
+	    			</div>
+    			</div>
+    			
+    		</div>
+    		
+    	</div>
+    	
+    	<div class="content wrap">
+    		<div class="conl-tourismList wp100" id="foodList">
+				<ul></ul>
+			</div>
+    	</div>
+    	
+    	<div class="noData hidden">
+			<img src="../../images/noData.png" />
+			<p>暂无数据...</p>
+		</div>
+		
+		<div id="pagination" class="wrap pagination-wrap tc">
+			<p class="pagination"></p>
+		</div>
+		
+		<!--加载动画-->
+		<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+		
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/food/Food']);
+        </script>
+    </body>
+</html>

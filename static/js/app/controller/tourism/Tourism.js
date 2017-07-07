@@ -107,10 +107,11 @@ define([
             	
 				$("#tourismNavCon ul").empty();
 				$("#tourismNavCon ul").html(tourismTmpl({items: data.list}));
+				
             }else{
-            	
 				$("#tourismNavCon ul").empty();
             	$(".noData").removeClass("hidden");
+            	initPagination(data);
             }
     		_loadingSpin.addClass("hidden");
 		},()=>{})
@@ -138,6 +139,7 @@ define([
 	
 	// 初始化分页器
     function initPagination(data){
+    	$("#pagination .pagination").show();
         $("#pagination .pagination").pagination({
             pageCount: data.totalPage,
             showData: config.limit,

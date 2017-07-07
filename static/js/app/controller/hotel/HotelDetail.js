@@ -141,11 +141,15 @@ define([
         
         hotelCtr.setOrder(data).then((d)=>{
         	location.href = "../pay/pay.html?code="+d.code+"&type=0";
-        },()=>{})
+        },()=>{
+    		_loadingSpin.addClass("hidden");
+        })
 	}
 	
 	// 初始化评论分页器
     function initPaginationCom(data){
+    	
+    	$("#paginationCom .pagination").show();
         $("#paginationCom .pagination").pagination({
             pageCount: data.totalPage,
             showData: configCom.limit,
@@ -182,6 +186,8 @@ define([
 	
 	// 初始化房间分页器
     function initPaginationRoom(data){
+    	
+    	$("#paginationRoom .pagination").show();
         $("#paginationRoom .pagination").pagination({
             pageCount: data.totalPage,
             showData: configRoom.limit,
@@ -213,7 +219,7 @@ define([
         
 			$("#roomList ul").empty();
 			$("#roomList ul").html(roomTmpl({items: data.list}));
-            if(data.list.length>4){
+            if(data.totalPage>1){
             	$("#paginationRoom").removeClass("hidden")
             }else{
             	

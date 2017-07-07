@@ -54,7 +54,9 @@ define([
         			base.setSessionUser(data);
         			location.href="./user.html"
         			
-        		},()=>{})
+        		},()=>{
+        			base.hideLoading();
+        		})
         	}
         })
     }

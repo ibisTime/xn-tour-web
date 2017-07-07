@@ -45,7 +45,9 @@ define([
 	        	starBtnId: 'subBtn',
 	        	token: token
 	        })
-		},()=>{})
+		},()=>{
+        	base.hideLoading();
+		})
 	}
 	
 	function setUserInfo(){

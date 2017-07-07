@@ -222,6 +222,8 @@ define([
             $("#pagination").addClass("hidden");
             return;
         }
+        
+    	$("#pagination .pagination").show();
         $("#pagination").removeClass("hidden")
             .find(".pagination").pagination({
                 pageCount: data.totalPage,

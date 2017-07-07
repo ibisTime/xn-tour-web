@@ -4,37 +4,39 @@ define([
     'pagination',
     'app/interface/menuCtr',
     'app/interface/generalCtr',
-    'app/interface/hotelCtr'
-], function(base, Handlebars, pagination, menuCtr, generalCtr, hotelCtr) {
-    var category = base.getUrlParam("category") || 1,
-    	totalPage=1,
+    'app/interface/foodCtr',
+], function(base, Handlebars, pagination, menuCtr, generalCtr, foodCtr) {
+	var category = base.getUrlParam("category") || 9,
+		totalPage=1,
 		config = {
-	        start: 1
+	        start: 1,
 		},
-    	hotelTmpl = __inline('../../ui/hotel_item.handlebars');
-		
+    	foodTmpl = __inline('../../ui/food_item.handlebars');
+	
+	
     var _loadingSpin = $("#loadingSpin");
-    
+	
     init();
     
     // 初始化页面
     function init() {
-        $("#nav li").eq(2).addClass("active");
-        
+        $("#nav li").eq(7).addClass("active");
         _loadingSpin.removeClass("hidden");
-   		$.when(
+        
+        $.when(
         	getModules(),
-        	getDropDescription()
+        	getDiningNumList(),
+        	getDiningTimeList()
    		).then(()=>{
    			getSearch();
    		})
-		addListener();
+        addListener();
 		_loadingSpin.addClass("hidden");
     }
     
     //获取类别
 	function getModules(){
-		return menuCtr.getModules("depart_hotel").then((data)=>{
+		return menuCtr.getModules("depart_deli").then((data)=>{
 			var html = "";
 			// 获取八大模块
                 $.each(data, function(i, d){
@@ -51,26 +53,12 @@ define([
                             <p>${d.name}</p></a></li>`;
                 });
                 
-			$("#hotelClass ul").html(html);
-		},()=>{})
-	}
-	
-	//获取设施服务
-	function getDropDescription(){
-		return generalCtr.getDictList("hotel_ss",true).then((data)=>{
-			var html = '<li class="active none">不限</li>';
-			
-			$.each(data, function(i, d){
-                html += `<li class="hdc-item" data-description="${d.dkey}">${d.dvalue}</li>`;
-            });
-                
-			$("#hotelDropDescription ul").html(html)
+			$("#foodClass ul").html(html);
 		},()=>{})
 	}
 	
 	// 初始化分页器
     function initPagination(data){
-    	
     	$("#pagination .pagination").show();
         $("#pagination .pagination").pagination({
             pageCount: data.totalPage,
@@ -89,25 +77,24 @@ define([
                 if(_this.getCurrent() != config.start){
     				_loadingSpin.removeClass("hidden");
                     config.start = _this.getCurrent();
-                    getHotelPage(config);
+                    getPageFoodList(config);
                 }
             }
         });
     }
 	
 	//分页查询酒店
-	function getHotelPage(params){
-		hotelCtr.getHotelPage(params,true).then((data)=>{
+	function getPageFoodList(params){
+		foodCtr.getPageFoodList(params,true).then((data)=>{
 			
 			if(data.list.length){
             	$(".noData").addClass("hidden");
             	config.start == 1 && initPagination(data);
             	
-				$("#hotelList ul").empty();
-				$("#hotelList ul").html(hotelTmpl({items: data.list}));
-				
+				$("#foodList ul").empty();
+				$("#foodList ul").html(foodTmpl({items: data.list}));
             }else{
-				$("#hotelList ul").empty();
+				$("#foodList ul").empty();
             	$(".noData").removeClass("hidden");
             	initPagination(data);
             }
@@ -118,51 +105,47 @@ define([
 	//根据搜索条件获取数据
 	function getSearch(){
 		_loadingSpin.removeClass("hidden");
-		config.category = category;
-		config.price = $("#hotelPrice ul li.active").attr("data-price");
+		config.type = category;
+		config.price = $("#dining-price ul li.active").attr("data-code");
+		config.supplyTime = $("#dining-time ul li.active").attr("data-code");
+		config.maxSeat = $("#dining-num ul li.active").attr("data-code");
 		
-		var desc="";
-		$("#hotelDropDescription").find(".hdc-item.active").each(function(){
-            var _self = $(this);
-            if( _self.hasClass("active") ){
-                desc += _self.attr("data-description") + ",";
-            }
-        });
-		config.description = desc && desc.substr(0, desc.length - 1) || "";
-		getHotelPage(config);
+		getPageFoodList(config);
 	}
 	
+	//获取用餐人数
+	function getDiningNumList(){
+		return generalCtr.getDictList("dining_num",true).then((data)=>{
+			var html = '';
+			
+			$.each(data, function(i, d){
+                html += `<li class="${i==0?"active":''}" data-code="${d.dkey!=0?d.dkey:''}">${d.dvalue}</li>`;
+            });
+                
+			$("#dining-num ul").html(html)
+		},()=>{})
+	}
+	
+	//获取用餐时段
+	function getDiningTimeList(){
+		return generalCtr.getDictList("dining_time",true).then((data)=>{
+			var html = '';
+			
+			$.each(data, function(i, d){
+                html += `<li  class="${i==0?"active":''}"  data-code="${d.dkey!=0?d.dkey:''}">${d.dvalue}</li>`;
+            });
+                
+			$("#dining-time ul").html(html)
+		},()=>{})
+	}
+
     function addListener() {
-    	$("#hotelPrice ul li").click(function(){
+    	$(".navSearch-list ul").on("click","li",function(){
 			if(!$(this).hasClass("active")){
 				
 				$(this).addClass("active").siblings("li").removeClass("active");
 				getSearch();
 			}
-    	})
-    	
-    	$("#hotelDropDescription").on("click",".hdc-item",function(){
-    		$(this).toggleClass("active");
-    		$("#hotelDropDescription").find(".hdc-item").each(function(){
-	            var _self = $(this);
-	            
-	            if(_self.hasClass("active")){
-	            	$("#hotelDropDescription").find(".none").removeClass("active");
-	            	return false;
-	            }else{
-	                $("#hotelDropDescription").find(".none").addClass("active");
-	                return false;
-	            }
-	        });
-    		getSearch();
-    	})
-    	
-    	$("#hotelDropDescription").on("click",".none",function(){
-    		if(!$(this).hasClass("active")){
-	    		$(this).addClass("active");
-	    		$(this).siblings(".hdc-item").removeClass("active");
-	    		getSearch();
-    		}
     	})
     	
     }

@@ -98,6 +98,8 @@ define([
     }
     // 初始化分页器
     function initPagination(data){
+    	
+    	$("#pagination .pagination").show();
         $("#pagination .pagination").pagination({
             pageCount: data.totalPage,
             showData: pageConfig.limit,
