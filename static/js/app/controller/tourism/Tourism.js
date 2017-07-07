@@ -100,10 +100,18 @@ define([
 	//分页查询推荐线路
 	function getTourism(params){
 		return tourismCtr.getRecommend(params,true).then((data)=>{
-            
-            config.start == 1 && initPagination(data);
-			$("#tourismNavCon ul").empty();
-			$("#tourismNavCon ul").html(tourismTmpl({items: data.list}));
+			
+            if(data.list.length){
+            	$(".noData").addClass("hidden");
+            	config.start == 1 && initPagination(data);
+            	
+				$("#tourismNavCon ul").empty();
+				$("#tourismNavCon ul").html(tourismTmpl({items: data.list}));
+            }else{
+            	
+				$("#tourismNavCon ul").empty();
+            	$(".noData").removeClass("hidden");
+            }
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}

@@ -68,14 +68,47 @@ define([
 		},()=>{})
 	}
 	
+	// 初始化分页器
+    function initPagination(data){
+        $("#pagination .pagination").pagination({
+            pageCount: data.totalPage,
+            showData: config.limit,
+            jump: true,
+            coping: true,
+            prevContent: '<img src="/static/images/arrow---left.png" />',
+            nextContent: '<img src="/static/images/arrow---right.png" />',
+            keepShowPN: true,
+            totalData: data.totalCount,
+            jumpIptCls: 'pagination-ipt',
+            jumpBtnCls: 'pagination-btn',
+            jumpBtn: '确定',
+            isHide: true,
+            callback: function(_this){
+                if(_this.getCurrent() != config.start){
+    				_loadingSpin.removeClass("hidden");
+                    config.start = _this.getCurrent();
+                    getHotelPage(config);
+                }
+            }
+        });
+    }
+	
 	//分页查询酒店
 	function getHotelPage(params){
 		hotelCtr.getHotelPage(params,true).then((data)=>{
 			
-			$("#hotelList ul").empty();
-			$("#hotelList ul").html(hotelTmpl({items: data.list}));
-			
-			_loadingSpin.addClass("hidden");
+			if(data.list.length){
+            	$(".noData").addClass("hidden");
+            	config.start == 1 && initPagination(data);
+            	
+				$("#hotelList ul").empty();
+				$("#hotelList ul").html(hotelTmpl({items: data.list}));
+            }else{
+            	
+				$("#hotelList ul").empty();
+            	$(".noData").removeClass("hidden");
+            }
+    		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
 	

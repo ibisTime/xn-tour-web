@@ -1,7 +1,8 @@
 define([
     'Handlebars',
-    'app/util/ajax'
-], function( Handlebars, Ajax) {
+    'app/util/ajax',
+    'app/util/dict'
+], function( Handlebars, Ajax, Dict) {
     Handlebars.registerHelper('formatMoney', function(num, options){
         if(!num && num !== 0)
             return "--";
@@ -83,6 +84,15 @@ define([
                 ? cont.substring(0, 40) + "..."
                 : cont
             : "";
+    });
+    Handlebars.registerHelper('formatHotelRoomDescription', function(desc, options){
+    	var distData = Dict.get("hotelRoomDescription")
+    	var desc = desc.split(",");
+    	var val = ""
+    	desc.forEach(function(d,i){
+    		val += distData[d]+" "
+    	})
+    	return val;
     });
     
 

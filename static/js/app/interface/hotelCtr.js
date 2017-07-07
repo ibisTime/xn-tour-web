@@ -38,5 +38,18 @@ define([
         getHotelDetail: (code) => (
             Ajax.get("618012", {code,userId:base.getUserId()})
         ),
+        // 分页查询酒店房间
+        getPageHotelRoom: (params) => {
+        	params.start = params.start||'1';
+        	params.limit = params.limit||'4';
+
+            return Ajax.get("618030", params , true);
+        },
+        //立即预订
+        setOrder: (params) => {
+        	params.applyUser = base.getUserId()
+
+            return Ajax.get("618040", params , true);
+        },
     }
 });

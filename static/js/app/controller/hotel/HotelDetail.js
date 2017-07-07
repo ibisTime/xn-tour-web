@@ -13,9 +13,14 @@ define([
 		configCom = {
     		start: 1,
     		topCode: code,
+    	},
+		configRoom = {
+    		start: 1,
+    		hotalCode: code,
     	};
     
-	var	comTmpl = __inline('../../ui/comment_item.handlebars');
+	var	comTmpl = __inline('../../ui/comment_item.handlebars'),
+		roomTmpl = __inline('../../ui/hotel_home_list.handlebars');
 	
 	var _loadingSpin = $("#loadingSpin");
 	
@@ -27,11 +32,13 @@ define([
         _loadingSpin.removeClass("hidden");
         $.when(
         	getHotelDetail(),
-        	getPageCom(configCom)
+        	getPageCom(configCom),
+        	getPageHotelRoom(configRoom)
         )
         addListener();
     }
     
+    //酒店详情
     function getHotelDetail(){
     	return hotelCtr.getHotelDetail(code).then((res)=>{
     		var data = res.hotal;
@@ -40,19 +47,20 @@ define([
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
             });
             
+            $("#ban_pic1 ul").html(html);
+            $("#ban_num1 ul").html(html);
+            
             if(pic.length>1){
             	swiperPic()
             }
             
 			res.judge == "1" ? $(".dconTop-right .icon-star").addClass("active") : "";
 			
-            $("#ban_pic1 ul").html(html);
-            $("#ban_num1 ul").html(html);
             $("#NowName").html(data.name);
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .tel").html(data.telephone)
             $(".dconTop-right .joinPlace").html(data.province+data.city+data.area+" "+data.detail)
-            $(".dconTop-right .price p i").html("￥"+base.formatMoney(data.price));
+            $(".dconTop-right .lowPrice p i").html("￥"+base.formatMoney(data.lowPrice));
             
             // 名宿
             if(data.category == "4"){
@@ -116,7 +124,6 @@ define([
                     }, base.emptyFun);
                 return;
             }
-			
             submitOrder();
         	_loadingSpin.addClass("hidden");
 		},()=>{
@@ -129,10 +136,11 @@ define([
 	function submitOrder(){
         _loadingSpin.removeClass("hidden");
         var data = $("#submitForm").serializeObject();
-        data.lineCode = code;
+        data.hotalRoomCode = $("#confirm").attr("data-roomCode");
+        data.quantity =  $("#quantity").val();
         
-        tourismCtr.setOrder(data).then((d)=>{
-        	location.href = "../pay/pay.html?code="+d.code+"&type=0";
+        hotelCtr.setOrder(data).then((d)=>{
+//      	location.href = "../pay/pay.html?code="+d.code+"&type=0";
         },()=>{})
 	}
 	
@@ -161,7 +169,6 @@ define([
         });
     }
     
-	
 	//分页查评论
 	function getPageCom(params){
 		return generalCtr.getPageComment(params).then((data)=>{
@@ -169,6 +176,50 @@ define([
             configCom.start == 1 && initPaginationCom(data);
 			$("#commentList").empty();
 			$("#commentList").html(comTmpl({items: data.list}));
+    		_loadingSpin.addClass("hidden");
+		},()=>{})
+	}
+	
+	// 初始化房间分页器
+    function initPaginationRoom(data){
+        $("#paginationRoom .pagination").pagination({
+            pageCount: data.totalPage,
+            showData: configRoom.limit,
+            jump: true,
+            coping: true,
+            prevContent: '<img src="/static/images/arrow---left.png" />',
+            nextContent: '<img src="/static/images/arrow---right.png" />',
+            keepShowPN: true,
+            totalData: data.totalCount,
+            jumpIptCls: 'pagination-ipt',
+            jumpBtnCls: 'pagination-btn',
+            jumpBtn: '确定',
+            isHide: true,
+            callback: function(_this){
+                if(_this.getCurrent() != configRoom.start){
+    				_loadingSpin.removeClass("hidden");
+                    configRoom.start = _this.getCurrent();
+                    getPageHotelRoom(configRoom);
+                }
+            }
+        });
+    }
+	
+	//分页查询房间
+	function getPageHotelRoom(params){
+		return hotelCtr.getPageHotelRoom(params).then((data)=>{
+            
+        	configRoom.start == 1 && initPaginationRoom(data);
+        
+			$("#roomList ul").empty();
+			$("#roomList ul").html(roomTmpl({items: data.list}));
+            if(data.list.length>4){
+            	$("#paginationRoom").removeClass("hidden")
+            }else{
+            	
+            	$("#paginationRoom").addClass("hidden")
+            }
+            
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
@@ -208,5 +259,84 @@ define([
         	}
         	
         })
+        
+        //日期
+        setTimeout(() => {
+            var start = {
+				elem: '#startDate',
+				min: laydate.now(), //设定最小日期为当前日期
+				start:  laydate.now(),
+				choose: function(datas){
+			    	end.min = datas; //开始日选好后，重置结束日的最小日期
+			    	end.start = datas //将结束日的初始值设定为开始日
+				}
+			};
+			var end = {
+				elem: '#endDate',
+				min: laydate.now(+1),
+				start:  laydate.now(+1),
+				choose: function(datas){
+			    	start.max = datas; //结束日选好后，重置开始日的最大日期
+				}
+			};
+			laydate(start);
+			laydate(end);
+            
+            $("#startDate").val(laydate.now());
+            $("#endDate").val(laydate.now(+1));
+            
+        }, 1);
+        
+        //房间预订
+        //立即预订点击
+    	$("#roomList ul").on("click","li .subBtn",function(){
+    		var _this = $(this);
+    		
+    		$("#hotalRoomCode").val(_this.attr("data-roomName"));
+    		$("#quantity").val(_this.attr("data-quantity"));
+    		$("#confirm").attr("data-roomCode",_this.attr("data-roomCode"));
+        	$("#Dialog").removeClass("hidden");
+    	})
+    	
+    	$("#submitForm").validate({
+            'rules': {
+            	'hotalRoomCode':{
+            		required: true
+            	},
+            	'quantity':{
+            		required: true
+            	},
+            	'checkInName':{
+            		required: true
+            	},
+            	'checkInMobile':{
+            		required: true,
+            		mobile: true
+            	},
+                'applyNote': {
+                	isNotFace: true,
+                	maxlength: 255
+                }
+            },
+            onkeyup: false
+        });
+        
+    	
+    	//弹窗-取消
+        $("#Dialog #cancel").click(function(){
+        	$("#Dialog").addClass("hidden");
+        	$("#applyNote").val("");
+    		$("#confirm").attr("data-roomCode","");
+        })
+        
+    	//弹窗-提交订单
+        $("#Dialog #confirm").click(function(){
+        	if($("#submitForm").valid()){
+        		_loadingSpin.removeClass("hidden");
+                getUserInfo();
+        	}
+        })
+        
+        
     }
 });

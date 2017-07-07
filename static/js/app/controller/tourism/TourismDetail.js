@@ -52,12 +52,13 @@ define([
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
             });
             
+            $("#ban_pic1 ul").html(html);
+            $("#ban_num1 ul").html(html);
+            
             if(pic.length>1){
             	swiperPic()
             }
             
-            $("#ban_pic1 ul").html(html);
-            $("#ban_num1 ul").html(html);
             $("#NowName").html(data.name);
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .datetime").html("出行日期："+base.formatDate(data.outDateStart,"yyyy-MM-dd")+"~"+base.formatDate(data.outDateEnd,"yyyy-MM-dd"))

@@ -33,13 +33,13 @@ define([
 			}, settings || {});
 					
 			var picnum = $(settings.pic).find('ul li').length;
-			var picw = $(settings.pic).find('ul li').width();
-			var pich = $(settings.pic).find('ul li').height();
-			var poppicw = $(settings.pop_pic).find('ul li').width();
+			var picw = $(settings.pic).find('ul li').outerWidth(true);
+			var pich = $(settings.pic).find('ul li').outerHeight(true);
+			var poppicw = $(settings.pop_pic).find('ul li').outerWidth(true);
 			var picminnum = $(settings.pnum).find('ul li').length;
 			var picpopnum = $(settings.pop_pic).find('ul li').length;
-			var picminw = $(settings.pnum).find('ul li').width();
-			var picminh = $(settings.pnum).find('ul li').height();
+			var picminw = $(settings.pnum).find('ul li').outerWidth(true);
+			var picminh = $(settings.pnum).find('ul li').outerHeight(true);
 			var pictime;
 			var tpqhnum=0;
 			var xtqhnum=0;
