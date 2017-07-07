@@ -140,7 +140,7 @@ define([
         data.quantity =  $("#quantity").val();
         
         hotelCtr.setOrder(data).then((d)=>{
-//      	location.href = "../pay/pay.html?code="+d.code+"&type=0";
+        	location.href = "../pay/pay.html?code="+d.code+"&type=0";
         },()=>{})
 	}
 	
@@ -298,6 +298,21 @@ define([
         	$("#Dialog").removeClass("hidden");
     	})
     	
+    	$("#roomList ul").on("click","li .icon-sub",function(){
+    		var _num = parseInt($(this).siblings(".num").html());
+    		_num<=1?1:_num--;
+    		$(this).siblings(".num").html(_num);
+    		$(this).parent(".number").siblings(".btn-wrap").children(".subBtn").attr("data-quantity",_num)
+    	})
+    	
+    	$("#roomList ul").on("click","li .icon-add",function(){
+    		var _num = parseInt($(this).siblings(".num").html());
+    		var remain =$(this).siblings(".num").attr("data-remain")
+    		_num>=remain?remain:_num++;
+    		$(this).siblings(".num").html(_num);
+    		$(this).parent(".number").siblings(".btn-wrap").children(".subBtn").attr("data-quantity",_num)
+    	})
+    	
     	$("#submitForm").validate({
             'rules': {
             	'hotalRoomCode':{
@@ -321,7 +336,6 @@ define([
             onkeyup: false
         });
         
-    	
     	//弹窗-取消
         $("#Dialog #cancel").click(function(){
         	$("#Dialog").addClass("hidden");

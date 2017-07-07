@@ -106,6 +106,16 @@ define([
                     }else if(data.status !== currentStatus){
                         showSuccess();
                     }
+                }else if(type == 0){
+                	if(currentStatus == undefined){
+                        // 带支付
+                        if(data.hotalOrder.status == "0"){
+                            showPayQCode();
+                        }
+                        currentStatus = data.hotalOrder.status;
+                    }else if(data.hotalOrder.status !== currentStatus){
+                        showSuccess();
+                    }
                 }else {
                     if(currentStatus == undefined){
                         if(data.status == '0'){

@@ -29,7 +29,7 @@ define([
                     <p>${item.name}</p>
                     <p>${item.roomType}</p>
                     <p>
-                        ${base.formatMoney(item.startDate, "MM月dd号")} - ${base.formatDate(item.endDate, 'MM月dd号')}
+                        ${base.formatDate(item.startDate, "MM月dd号")} - ${base.formatDate(item.endDate, 'MM月dd号')}
                         <span class="pl4">${base.calculateDays(item.startDate, item.endDate) + '晚' + item.quantity + '间'}</span>
                     </p>
                     <p>¥${base.formatMoney(item.amount)}</p>
