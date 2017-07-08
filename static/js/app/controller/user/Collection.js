@@ -9,7 +9,7 @@ define([
     },
     _loadingSpin = $("#loadingSpin"),
     action = [getPageLineCollection, getPageHotelCollection, getPageGLCollection, getPageFoodCollection],
-    currentType = 1;
+    currentType = 0;
 
     init();
 
