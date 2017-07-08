@@ -19,34 +19,36 @@ define([
 
     function buildHtml(item){
         return `<li data-code="${item.code}" data-type="1">
-            <div class="top wp100 over-hide ptb10">
-                <div class="fl">订单编号：${item.code}</div>
-                <div class="fr">${base.formatDate(item.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
-            </div>
-            <div class="con wp100">
-                <div class="img fl"><a href="#"><img src="${base.getPic(item.line.pathPic)}"/></a></div>
-                <div class="txt fl">
-                    <p>${item.line.name}</p>
-                    <p>¥${base.formatMoney(item.amount)}</p>
-                </div>
-                <div class="status status0">${lineOrderStatus[item.status]}</div>
-                ${
-                    item.status == "0" || item.status == "1"
-                        ? `<div class="btn-wrap">
+                    <a href="./line-order.html?code=${item.code}">
+                        <div class="top wp100 over-hide ptb10">
+                            <div class="fl">订单编号：${item.code}</div>
+                            <div class="fr">${base.formatDate(item.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
+                        </div>
+                        <div class="con wp100">
+                            <div class="img fl"><img src="${base.getPic(item.line.pathPic)}"/></div>
+                            <div class="txt fl">
+                                <p>${item.line.name}</p>
+                                <p>¥${base.formatMoney(item.amount)}</p>
+                            </div>
+                            <div class="status status0">${lineOrderStatus[item.status]}</div>
                             ${
-                                item.status == "0"
-                                    ? `<input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
-                                    <input type="button" value="去付款" class="btn2 pay-order-btn"/>`
-                                    : `<input type="button" value="退款" class="btn1 refund-order-btn"/>`
+                                item.status == "0" || item.status == "1"
+                                    ? `<div class="btn-wrap">
+                                        ${
+                                            item.status == "0"
+                                                ? `<input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
+                                                <input type="button" value="去付款" class="btn2 pay-order-btn"/>`
+                                                : `<input type="button" value="退款" class="btn1 refund-order-btn"/>`
+                                        }
+                                    </div>`
+                                    : ""
                             }
-                        </div>`
-                        : ""
-                }
-            </div>
-        </li>`;
+                        </div>
+                    </a>
+                </li>`;
     }
     function cancelOrder(code, callback, ele) {
-        return base.confirm("确定取消订单吗？", 1)
+        return base.confirm("确定取消订单吗？")
             .then(() => {
                 ele.prop("disabled", true).val("取消中...");
                 tourismCtr.cancelTourismOrder([code])

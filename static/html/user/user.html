@@ -5,12 +5,12 @@
         <title>个人中心-来来旺旺</title>
         <!--SCRIPT_PLACEHOLDER-->
     </head>
-    
+
     <body>
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的资料</p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="fl user-left conStyle">
     			<link rel="import" href="./userLeft.html?__inline">
@@ -36,10 +36,15 @@
 	    					<p class="fl">我的地址</p>
 	    				</a>
 	    			</div>
+                    <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading">
+                        <div class="ant-spin-blur ant-spin-container">
+                            <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                        </div>
+                    </div>
 	    		</div>
 	    	</div>
     	</div>
-    	
+
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/user/User']);

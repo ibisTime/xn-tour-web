@@ -41,6 +41,10 @@ define([
                 userId: base.getUserId()
            })
         ),
+        // 详情查询线路订单
+        getTourismOrder: (code, refresh) => (
+            Ajax.get("618152", {code: code}, refresh)
+        ),
         // 取消线路订单
         cancelTourismOrder: (orderCodeList) => (
             Ajax.post("618141", {orderCodeList})

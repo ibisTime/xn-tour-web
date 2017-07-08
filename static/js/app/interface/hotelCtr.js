@@ -15,11 +15,15 @@ define([
          * 分页查询酒店订单
          * params: {start, limit, statusList, ...}
          */
-        getPageHotelOrders: (params) => (
+        getPageHotelOrders: (params, refresh) => (
             Ajax.get("618050", {
                 applyUser: base.getUserId(),
                 ...params
-            })
+            }, refresh)
+        ),
+        // 详情查询酒店订单
+        getHotelOrder: (code, refresh) => (
+            Ajax.get("618052", {code}, refresh)
         ),
         // 取消酒店订单
         cancelHotelOrder: (orderCodeList) => (
@@ -35,8 +39,15 @@ define([
             })
         ),
         // 酒店详情
-        getHotelDetail: (code) => (
-            Ajax.get("618012", {code,userId:base.getUserId()})
+        getHotelDetail: (code, refresh) => (
+            Ajax.get("618012", {
+                code,
+                userId: base.getUserId()
+            }, refresh)
+        ),
+        // 房间详情
+        getRoomDetail: (code, refresh) => (
+            Ajax.get("618032", {code}, refresh)
         ),
         // 分页查询酒店房间
         getPageHotelRoom: (params) => {

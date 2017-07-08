@@ -43,27 +43,20 @@ define([
                     data: param
                 });
             }
-            return new Promise(function(resolve, reject) {
-                cache[code][cache_url]
-                    .then(function(res) {
-                        if(res.errorCode == "0"){
-                            resolve(res.data);
-//                      } else if(res.errorCode == "4" || res.errorInfo.indexOf("token") != -1){
-//                          loading.hideLoading();
-//                          _showMsg("登录超时");
-//                          sessionStorage.setItem("login-return", encodeURIComponent(location.pathname + location.search));
-//                          setTimeout(function(){
-//                              location.href = "../user/redirect.html";
-//                          }, 1000);
-//                          reject(res.errorInfo);
-                        } else{
-                            showMsg(res.errorInfo);
-                            reject(res.errorInfo);
-                        }
-                    }, function(error) {
-                        showMsg(error);
-                        reject(error);
-                    });
+            return cache[code][cache_url].pipe(function(res) {
+                // if (res.errorCode == "4") {
+                //     // clearSessionUser();
+                //     sessionStorage.setItem("l-return", location.pathname + location.search);
+                //     // 登录
+                //     return $.Deferred().reject();
+                // }
+                if(res.errorCode != "0"){
+                    var d = showMsg(res.errorInfo);
+                    return $.Deferred().reject(res.errorInfo, d);
+                }
+                return res.data;
+            }).fail(function(error){
+                showMsg(JSON.stringify(error));
             });
         }
 

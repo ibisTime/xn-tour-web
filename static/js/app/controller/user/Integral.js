@@ -21,7 +21,7 @@ define([
             .then((data) => {
                 $.each(data, function(i, item){
                     if(item.currency == "XNB") {
-                        $("#enabledAmount").html(base.formatMoney(item.amount));
+                        $("#enabledAmount").html(base.fZeroMoney(item.amount));
                     }
                 });
                 console.log(data);
@@ -41,8 +41,8 @@ define([
                         html += `<li>
     		    				<p>${item.bizNote}${
                                     item.transAmount >= 0
-                                        ? `<i class="add">+${item.transAmount}</i>`
-                                        : `<i class="sub">${item.transAmount}</i>`
+                                        ? `<i class="add">+${base.fZeroMoney(item.transAmount)}</i>`
+                                        : `<i class="sub">${base.fZeroMoney(item.transAmount)}</i>`
                                 }</p>
     		    				<samp>${base.formatDate(item.createDatetime, "yyyy-MM-dd hh:mm:ss")}</samp>
     		    			</li>`;

@@ -13,6 +13,10 @@ define([
                 ...config
             }, refresh)
         ),
+        // 详情查询专线
+        getSpecialLine: (code, refresh) => (
+            Ajax.get("618172", {code})
+        ),
         /*
          * 分页查询专线订单
          * config: {start, limit, statusList, ...}
@@ -22,6 +26,10 @@ define([
                 applyUser: base.getUserId(),
                 ...config
             }, refresh)
+        ),
+        // 详情查询专线订单
+        getSpecialLineOrder: (code, refresh) => (
+            Ajax.get("618192", {code}, refresh)
         ),
         /*
          * 预定专线
@@ -84,6 +92,10 @@ define([
                 applyUser: base.getUserId(),
                 ...config
             }, refresh)
+        ),
+        // 详情查询拼车订单
+        getCarpoolOrder: (code, refresh) => (
+            Ajax.get("618255", {code}, refresh)
         ),
         // 取消拼车订单
         cancelCarpoolOrder: (orderCodeList) => (
