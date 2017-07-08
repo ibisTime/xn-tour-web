@@ -28,7 +28,7 @@ define([
                         <div class="top wp100 over-hide ptb10"></div>
                         <div class="con wp100" style="min-height: 30px;">
                             <div class="txt fl">
-                                <p>总积分：${base.fZeroMoney(data.amount1)}</p>
+                                <p>总积分：${base.formatMoney(data.amount1)}</p>
                             </div>
                             ${
                                 data.status == "0" || data.status == "1"
@@ -67,7 +67,7 @@ define([
                             <div class="img fl"><img src="${base.getPic(item.advPic)}"/></div>
                             <div class="txt fl">
                                 <p>${item.productName}</p>
-                                <p>${base.fZeroMoney(item.price1)}积分</p>
+                                <p>${base.formatMoney(item.price1)}积分</p>
                                 <span>x${item.quantity}</span>
                             </div>
                             ${index == 0 ? `<div class="status status0">${mallOrderStatus[data.status]}</div>` : ""}
