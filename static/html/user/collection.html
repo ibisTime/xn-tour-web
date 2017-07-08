@@ -3,20 +3,19 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>我的收藏-来来旺旺</title>
-        <!--SCRIPT_PLACEHOLDER-->
     </head>
-    
+
     <body>
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的订单</p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="fl user-left conStyle">
     			<link rel="import" href="./userLeft.html?__inline">
     		</div>
     		<div class="fr user-right plr27 conStyle ">
-	    		
+
 	    		<div class="collectionSearch wp100">
 	    			<ul>
 	    				<li class="active">线路</li>
@@ -25,34 +24,25 @@
 	    				<li>美食</li>
 	    			</ul>
 	    		</div>
-	    		
+
 	    		<div class="collectionList wp100">
 		    		<div class="conl-tourismList wp100">
-						<ul>
-							<li>
-								<a href="tourism-detail.html">
-									<div class="img"><img src="../images/图层-78.png"/></div>
-									<div class="title plr10 t-3dot">千岛湖景区＋梅峰岛＋梅峰岛＋梅峰岛日游2日游</div>
-									<div class="con plr10"><img class="fl" src="../images/时间.png"><p class="fl">2016-11-11</p></div>
-									<div class="price plr10"><p><i>￥2340</i>起</p></div>
-								</a>
-								<div class="btn-collection">
-									<img class="fl" src="../../images/收藏.png" />
-									<p class="fl">取消收藏</p>
-								</div>
-							</li>
-						</ul>
+						<ul id="content"></ul>
 					</div>
-    	
+                    <div id="loadingSpin" class="ant-spin-nested-loading">
+                        <div class="ant-spin-blur ant-spin-container">
+                            <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                        </div>
+                    </div>
 	    		</div>
-	    		
-				<div id="pagination" class="wp100 tc">
+
+				<div id="pagination" class="wp100 tc pagination-wrap">
 					<p class="pagination"></p>
 				</div>
-    			
+
     		</div>
     	</div>
-    	
+
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/user/Collection']);

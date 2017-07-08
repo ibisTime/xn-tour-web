@@ -85,5 +85,9 @@ define([
         	params.commer = base.getUserId();
             return Ajax.get("618310", params, true);
         },
+        // 分页查询资金流水
+        getPageCapitalFlow: (params, refresh) => (
+            Ajax.get("802520", params, refresh)
+        )
     }
 });

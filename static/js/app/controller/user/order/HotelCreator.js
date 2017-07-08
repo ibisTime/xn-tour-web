@@ -18,7 +18,7 @@ define([
     }
 
     function buildHtml(item){
-        return `<li data-code="${item.code}">
+        return `<li data-code="${item.code}" data-type="0">
             <div class="top wp100 over-hide ptb10">
                 <div class="fl">订单编号：${item.code}</div>
                 <div class="fr">${base.formatDate(item.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>

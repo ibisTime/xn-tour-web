@@ -866,18 +866,40 @@ select {
 
 .jfpay-wrap {
     padding-left: 30px;
-    .price{
+
+    .price {
         font-size: 22px;
         color: #FF9C00;
         padding: 10px 0 60px;
 
-        i{
+        i {
             font-size: 24px;
             font-style: normal;
             margin-left: 5px;
         }
     }
 }
+
 .userInfo-wrap {
+    position: relative;
+}
+
+.content-user .collectionList {
+    min-height: 100px;
+    position: relative;
+}
+
+.collectionList .star {
+    height: 16px;
+    &+p{
+        display: inline-block;
+        font-size: 16px;
+        line-height: 18px;
+        color: #a0a0a0;
+        padding-left: 5px;
+    }
+}
+
+.p-r {
     position: relative;
 }

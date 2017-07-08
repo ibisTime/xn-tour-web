@@ -222,7 +222,7 @@ define([
             $("#pagination").addClass("hidden");
             return;
         }
-        
+
     	$("#pagination .pagination").show();
         $("#pagination").removeClass("hidden")
             .find(".pagination").pagination({
@@ -281,6 +281,13 @@ define([
         $("#orderList").on("click", ".refund-order-btn", function(){
             var code = $(this).closest("[data-code]").attr("data-code");
             _modal.removeClass("hidden").data("code", code);
+        });
+        // 支付
+        $("#orderList").on("click", ".pay-order-btn", function(){
+            var _parent = $(this).closest("[data-code]"),
+                code = _parent.attr("data-code"),
+                type = _parent.attr("data-type");
+            location.href = "../pay/pay.html?code=" + code + "&type=" + type;
         });
 
         // 退款说明

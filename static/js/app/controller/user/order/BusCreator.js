@@ -18,7 +18,7 @@ define([
     }
 
     function buildHtml(item){
-        return `<li data-code="${item.code}">
+        return `<li data-code="${item.code}" data-type="3">
             <div class="top wp100 over-hide ptb10">
                 <div class="fl">订单编号：${item.code}</div>
                 <div class="fr">${base.formatDate(item.bookDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
@@ -71,7 +71,7 @@ define([
                 ele.prop("disabled", false).find("span").text("确认");
             });
     }
-    
+
     return {
         buildBus,
         cancelOrder,
