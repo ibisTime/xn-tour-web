@@ -32,7 +32,7 @@ define([
         _loadingSpin.addClass("hidden");
     }
     
-    //酒店详情
+    //美食详情
     function getFoodDetail(){
     	return foodCtr.getFoodDetail(code).then((res)=>{
     		var data = res.food;

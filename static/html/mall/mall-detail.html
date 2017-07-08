@@ -8,34 +8,41 @@
     
     <body class="mallDetail">
     	<div class="wrap position">
-    		<p>当前位置：<a href="../index.html">首页></a><a href="cate.html">积分商城></a>天堂伞</p>
+    		<p>当前位置：<a href="../index.html">首页></a><a href="cate.html">积分商城></a><samp id="NowName"></samp></p>
     	</div>
     	
     	<div class="dcon-top wrap">
     		
-    		<div class="dconTop-left"></div>
+    		<div class="dconTop-left">
+				<div class="ban-wrap" id="banqh1">
+					<div class="ban" id="ban_pic1">
+						<div class="prev" id="prev"><img src="../../images/con-left.png"/></div>
+						<ul></ul>
+						<div class="next" id="next"><img src="../../images/con-right.png"/></div>
+					</div>
+					<div class="min_pic">
+						<div class="num" id="ban_num1">
+							<ul></ul>
+						</div>
+					</div>
+				</div>
+    		</div>
     		
     		<div class="dconTop-right">
     			
     			<div class="title-wrap">
     				
-    				<h2 class="title">天堂伞</h2>
+    				<h2 class="title"></h2>
     				
-    				<div class="collect">
-    					<div class="icon-star"></div><div class="txt">收藏</div>
-    				</div>
     			</div>
     			
 				<div class="con wp100 mall-price">
 					<img class="fl mr5" src="../../images/积分.png">
-					<p class="fl p1 mr10"><i>20</i>积分</p>
-					<p class="fl p">价格：￥39.9</p>
+					<p class="fl p1"><i>20</i>积分</p>
 				</div>
-					
+				
 				<div class="description">
-					<p>杭州，简称“杭”，浙江省省会、副省级市，位于中国东南沿海、浙江省北部、钱塘江下游、京杭大运河南端，
-						是浙江省的政治、经济、文化、教育、交通和金融中心，长江三角洲城市群中心城市之一、长三角宁杭生态经济带节点城市、
-						[1]  中国重要的电子商务中心之一，新一线城市[1]  中国重要的电子商务中心之一，新一线城市[1]  中国重要的电子商务中心之一，新一线城市</p>
+					<p></p>
 				</div>
 				
 				<div class="booking-wrap">
@@ -50,7 +57,7 @@
 				</div>
     		</div>
     	</div>
-    	
+    		
     	<div class="dcon-nav wrap">
     		<ul>
     			<li class="active"><a href="#section1">介绍</a></li>
@@ -63,16 +70,15 @@
     			<div class="bg"><img src="../../images/介绍.png"/></div>
     			<p>介绍</p>
     		</div>
-    		<div class="con">
-    			<p>杭州，简称“杭”，浙江省省会、副省级市，位于中国东南沿海、浙江省北部、钱塘江下游、京杭大运河南端，
-						是浙江省的政治、经济、文化、教育、交通和金融中心，长江三角洲城市群中心城市之一、长三角宁杭生态经济带节点城市、
-						[1]  中国重要的电子商务中心之一，新一线城市</p>
-    			<p>杭州，简称“杭”，浙江省省会、副省级市，位于中国东南沿海、浙江省北部、钱塘江下游、京杭大运河南端，
-						是浙江省的政治、经济、文化、教育、交通和金融中心，长江三角洲城市群中心城市之一、长三角宁杭生态经济带节点城市、
-						[1]  中国重要的电子商务中心之一，新一线城市</p>
-    		</div>
+    		<div class="con" id="description"></div>
     	</div>
     	
+    	<!--加载动画-->
+    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
     	
     	<link rel="import" href="../footer.html?__inline">
         <script>

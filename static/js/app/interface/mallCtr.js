@@ -33,5 +33,9 @@ define([
 
             return Ajax.get("618420", params , true);
         },
+        // 商品详情
+        getMallDetail: (code) => (
+            Ajax.get("618422", {code,userId:base.getUserId()})
+        ),
     };
 });

@@ -2030,8 +2030,7 @@ select{
     padding-top: 20px;
     
 }
-.content-mall .conl-tourismList .mall-price,
-.mallDetail .mall-price{
+.content-mall .conl-tourismList .mall-price{
     padding-top: 5px;
     
     .p1{
@@ -2046,6 +2045,23 @@ select{
 
 /*mallDetail*/
 .mallDetail{
+    .mall-price{
+        padding-top: 15px;
+        
+        img{
+            height: 20px;
+        }
+        
+        .p1{
+            font-size: 20px !important;
+            color: #FF9C00 !important;
+            margin-left: 10px;
+            i{
+                font-style: normal;
+                padding-right: 5px;
+            }
+        }
+    }
     
     .booking-wrap{
         width: 100%;
