@@ -32,43 +32,47 @@ define([
     }
     function buildHtml(item){
         return `<li>
-                    <div class="top wp100 over-hide ptb10">
-                        <div class="fl">订单编号：${code}</div>
-                        <div class="fr">${base.formatDate(item.hotalOrder.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
-                    </div>
-                    <div class="con wp100">
-                        <div class="img fl"><img src="${base.getPic(item.hotalOrder.picture)}"/></div>
-                        <div class="txt fl">
-                            <p>${item.name}</p>
-                            <p>${item.roomType}</p>
-                            <p>
-                                ${base.formatDate(item.hotalOrder.startDate, "MM月dd号")} - ${base.formatDate(item.hotalOrder.endDate, 'MM月dd号')}
-                                <span class="pl4">${base.calculateDays(item.hotalOrder.startDate, item.hotalOrder.endDate) + '晚' + item.hotalOrder.quantity + '间'}</span>
-                            </p>
-                            <p>酒店地址：<label class="cur-pointer address-hotel td-under"></label></p>
-                            <p>¥${base.formatMoney(item.hotalOrder.amount)}</p>
+                    <a class="wp100" href="../hotel/hotel-detail.html?code=${item.hotalOrder.hotalCode}">
+                        <div class="top wp100 over-hide ptb10">
+                            <div class="fl">订单编号：${code}</div>
+                            <div class="fr">${base.formatDate(item.hotalOrder.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
                         </div>
-                        <div class="status status0">${hotelOrderStatus[item.hotalOrder.status]}</div>
-                        ${
-                            item.hotalOrder.status == "0" || item.hotalOrder.status == "1"
-                                ? `<div class="btn-wrap">
-                                    ${
-                                        item.hotalOrder.status == "0"
-                                            ? `<input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
-                                            <input type="button" value="去付款" class="btn2 pay-order-btn"/>`
-                                            : `<input type="button" value="退款" class="btn1 refund-order-btn"/>`
-                                    }
-                                </div>`
-                                : ""
-                        }
-                    </div>
+                        <div class="con wp100">
+                            <div class="img fl"><img src="${base.getPic(item.hotalOrder.picture)}"/></div>
+                            <div class="txt fl">
+                                <p>${item.name}</p>
+                                <p>${item.roomType}</p>
+                                <p>
+                                    ${base.formatDate(item.hotalOrder.startDate, "MM月dd号")} - ${base.formatDate(item.hotalOrder.endDate, 'MM月dd号')}
+                                    <span class="pl4">${base.calculateDays(item.hotalOrder.startDate, item.hotalOrder.endDate) + '晚' + item.hotalOrder.quantity + '间'}</span>
+                                </p>
+                                <p>酒店地址：<label class="cur-pointer address-hotel td-under"></label></p>
+                                <p>¥${base.formatMoney(item.hotalOrder.amount)}</p>
+                            </div>
+                            <div class="status status0">${hotelOrderStatus[item.hotalOrder.status]}</div>
+                            ${
+                                item.hotalOrder.status == "0" || item.hotalOrder.status == "1"
+                                    ? `<div class="btn-wrap">
+                                        ${
+                                            item.hotalOrder.status == "0"
+                                                ? `<input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
+                                                <input type="button" value="去付款" class="btn2 pay-order-btn"/>`
+                                                : `<input type="button" value="退款" class="btn1 refund-order-btn"/>`
+                                        }
+                                    </div>`
+                                    : ""
+                            }
+                        </div>
+                    </a>
                 </li>`;
     }
 
     function addListener() {
         var _mapModal = $("#map-modal");
         // 酒店地址
-        $("#content").on("click", ".address-hotel", function(){
+        $("#content").on("click", ".address-hotel", function(e){
+            e.stopPropagation();
+            e.preventDefault();
             showPoint();
             _mapModal.removeClass("hidden");
         });

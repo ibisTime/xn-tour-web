@@ -14,13 +14,37 @@ define([
     function init() {
         getMallOrder();
     }
-    // 获取酒店订单信息
+    // 获取商品订单信息
     function getMallOrder(refresh){
         $.when(
             generalCtr.getOrderDetail("618472", code),
             generalCtr.getDictList("wl_company")
         ).then((data, wlData) => {
-            $("#content").html(buildHtml(data))
+            var html = "";
+            $.each(data.productOrderList, function(index, product) {
+                html += buildHtml(index, product, data);
+            });
+            html += `<li>
+                        <div class="top wp100 over-hide ptb10"></div>
+                        <div class="con wp100" style="min-height: 30px;">
+                            <div class="txt fl">
+                                <p>总积分：${base.fZeroMoney(data.amount1)}</p>
+                            </div>
+                            ${
+                                data.status == "0" || data.status == "1"
+                                    ? `<div class="btn-wrap">
+                                        ${
+                                            data.status == "0"
+                                                ? `<input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
+                                                <input type="button" value="去付款" class="btn2 pay-order-btn"/>`
+                                                : `<input type="button" value="退款" class="btn1 refund-order-btn"/>`
+                                        }
+                                    </div>`
+                                    : ""
+                            }
+                        </div>
+                    </li>`
+            $("#content").html(html)
                 .append(buildAddrHtml(data))
                 .append(buildLogisticsHtml(data, wlData))
                 .append(buildApplyNoteHtml(data));
@@ -28,32 +52,26 @@ define([
         }, () => {})
     }
     // 生成商品html
-    function buildHtml(item){
+    function buildHtml(index, item, data){
         return `<li>
-                    <div class="top wp100 over-hide ptb10">
-                        <div class="fl">订单编号：${code}</div>
-                        <div class="fr">${base.formatDate(item.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
-                    </div>
+                    ${
+                        index == 0
+                            ? `<div class="top wp100 over-hide ptb10">
+                                <div class="fl">订单编号：${code}</div>
+                                <div class="fr">${base.formatDate(data.applyDatetime, "yyyy-MM-dd hh:mm:ss")}</div>
+                            </div>` : ""
+                    }
+
                     <div class="con wp100">
-                        <div class="img fl"><img src="${base.getPic(item.productOrderList[0].advPic)}"/></div>
-                        <div class="txt fl">
-                            <p>${item.productOrderList[0].productName}</p>
-                            <p>${base.fZeroMoney(item.amount1)}积分</p>
-                            <span>x${item.productOrderList[0].quantity}</span>
-                        </div>
-                        <div class="status status0">${mallOrderStatus[item.status]}</div>
-                        ${
-                            item.status == "0" || item.status == "1"
-                                ? `<div class="btn-wrap">
-                                    ${
-                                        item.status == "0"
-                                            ? `<input type="button" value="取消订单" class="btn1 cancel-order-btn"/>
-                                            <input type="button" value="去付款" class="btn2 pay-order-btn"/>`
-                                            : `<input type="button" value="退款" class="btn1 refund-order-btn"/>`
-                                    }
-                                </div>`
-                                : ""
-                        }
+                        <a href="../mall/mall-detail.html?code=${item.productCode}" class="wp100">
+                            <div class="img fl"><img src="${base.getPic(item.advPic)}"/></div>
+                            <div class="txt fl">
+                                <p>${item.productName}</p>
+                                <p>${base.fZeroMoney(item.price1)}积分</p>
+                                <span>x${item.quantity}</span>
+                            </div>
+                            ${index == 0 ? `<div class="status status0">${mallOrderStatus[data.status]}</div>` : ""}
+                        </a>
                     </div>
                 </li>`;
     }
