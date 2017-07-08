@@ -84,6 +84,7 @@ define([
                 $(".jfpay-wrap").removeClass("hidden");
                 $("#jfPrice").find('i').html(base.formatMoney(price));
             }else if(type == 4){
+                var str = "";
                 if(data.status == "0" || data.status == "97"){
                     str = "支付定金";
                     price = data.firstAmount;
@@ -143,7 +144,7 @@ define([
     }
     // 支付成功
     function showSuccess(){
-        $(".pay-wrap").addClass("hidden");
+        $(".show-wrap").addClass("hidden");
         $(".jfpay-wrap").addClass("hidden");
         $(".paySuccess").removeClass("hidden")
         _loadingSpin.addClass("hidden");

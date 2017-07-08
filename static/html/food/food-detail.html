@@ -5,14 +5,14 @@
         <title>美食小吃-来来旺旺</title>
         <!--SCRIPT_PLACEHOLDER-->
     </head>
-    
+
     <body class="hotelDetail">
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="../go/food-list.html">美食小吃></a><samp id="NowName"></samp></p>
     	</div>
-    	
+
     	<div class="dcon-top wrap">
-    		
+
     		<div class="dconTop-left">
 				<div class="ban-wrap" id="banqh1">
 					<div class="ban" id="ban_pic1">
@@ -27,37 +27,37 @@
 					</div>
 				</div>
     		</div>
-    		
+
     		<div class="dconTop-right">
-    			
+
     			<div class="title-wrap">
-    				
+
     				<h2 class="title"></h2>
-    				
+
     				<div class="collect">
     					<div class="icon-star"></div><div class="txt">收藏</div>
     				</div>
     			</div>
-    			
+
 				<div class="con"><div class="fl"><img src="../../images/那里出发.png"></div><p class="fl joinPlace"></p></div>
-				
+
 				<div class="description">
 					<p></p>
 				</div>
-				
+
 				<div class="price-wrap">
 					<div class="btn-booking lowPrice"><p><i></i>/起</p></div>
 				</div>
     		</div>
     	</div>
-    	
+
     	<div class="dcon-nav wrap">
     		<ul>
     			<li class="active"><a href="#section1">推荐理由</a></li>
     			<li><a href="#section2">评论</a></li>
     		</ul>
     	</div>
-    	
+
     	<!--介绍-->
     	<div class="dcon-wrap wrap" id="section1">
     		<div class="title">
@@ -66,7 +66,7 @@
     		</div>
     		<div class="con" id="recommend"></div>
     	</div>
-    	
+
     	<!--评论-->
     	<div class="dcon-wrap wrap" id="section2">
     		<div class="title">
@@ -75,35 +75,35 @@
     		</div>
     		<div class="dcon-comment">
     			<ul id="commentList"></ul>
-    			
+
     			<div id="paginationCom" class="wrap pagination-wrap tc">
 					<p class="pagination"></p>
 				</div>
-    			
+
     			<div class="icon">
     				<img class="fl" src="../../images/评论-单独.png"/>
     				<p class="fl" >评论</p>
     			</div>
-    			
+
     			<div class="form" id="commentForm">
     				<textarea id="commentCon" style="resize: 0;"></textarea>
     				<label class="error">&nbsp;</label>
     				<div class="wp100 over-hide mt10">
     					<input id="commentBtn" class="btn-comment fr" type="button" value="评论"/>
     				</div>
-    				
+
     			</div>
     		</div>
     	</div>
-    	
-    	
+
+
     	<!--加载动画-->
     	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
             <div class="ant-spin-blur ant-spin-container">
                 <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
             </div>
         </div>
-    	
+
     	<link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/food/FoodDetail']);

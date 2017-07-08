@@ -20,7 +20,7 @@ select{
     background: url("../images/down.png") no-repeat scroll right 8px center transparent;
 }
 
-//showMsg 
+//showMsg
 .ui-dialog-content{
     font-size: 16px;
 }
@@ -129,34 +129,34 @@ select{
     overflow: hidden;
     border-bottom: 1px solid #eee;
     line-height: 32px;
-    
+
     .head-top-fl{
         float: left;
         font-size: 14px;
         color: #585858;
     }
-    
+
     .WeChat-icon{
         height: 22px;
         margin-top: 5px;
         line-height: 1;
-        
+
         img{
             height: 100%;
         }
     }
-    
+
     .tel_icon{
         height: 15px;
         margin-top: 8px;
         margin-right: 6px;
         line-height: 1;
-        
+
         img{
             height: 100%;
         }
     }
-    
+
     #telephone{
         font-size: 18px;
         color: #ffba00;
@@ -167,20 +167,20 @@ select{
         line-height: 1;
         margin-top: 6px;
     }
-    
+
 }
 .head-middle{
     height: 100px;
-    
+
     .logo{
         width: 200px;
         margin-top: 22px;
-        
+
         img{
             width: 100%;
         }
     }
-    
+
     .img{
         width: 289px;
         margin-top: 6px;
@@ -188,13 +188,13 @@ select{
             width: 100%;
         }
     }
-    
+
     .search{
         float: left;
         margin-left: 130px;
         margin-top: 30px;
         overflow: hidden;
-        
+
         input[type="text"]{
             width: 460px;
             height: 38px;
@@ -203,7 +203,7 @@ select{
             border: 2px solid #00a997;
             float: left;
         }
-        
+
         input[type="button"]{
             width: 52px;
             height: 38px;
@@ -215,91 +215,91 @@ select{
             background-image: url("../images/搜索.png");
         }
     }
-    
+
 }
 .head-nav{
     overflow: hidden;
     background-color: #06cdb8;
     height: 40px;
     line-height: 40px;
-    
+
     ul{
         li{
             width: 100px;
             height: 40px;
             float: left;
             margin-right: 10px;
-            
+
             a{
                 display: inline-block;
                 width: 100%;
                 color: #fff;
                 font-size: 16px;
                 text-align: center;
-            
+
             }
         }
-        
+
         li:hover a,li.active a{
             background-color: #00A997;
             font-weight: bold;
         }
     }
-    
+
     .userInfo{
         width: 142px;
         height: 40px;
         background-color: #ffba00;
         color: #fff;
         font-size: 14px;
-        
+
         .user-icon{
             height: 20px;
-            margin: 10px;  
-            line-height: 1; 
+            margin: 10px;
+            line-height: 1;
         }
-        
+
         a{
-            
+
             color: #fff;
         }
-        
+
         a.gologin{
             padding-right: 5px;
         }
-        
+
         a.goregister{
             padding-left: 5px;
         }
-        
-        
+
+
     }
-        
+
 }
 /*footer*/
 #footer{
     height: 315px;
     background-image: url("../images/bg-页脚.png");
-    
+
     .footer-con{
         overflow: hidden;
-        
+
         .footer-wrap{
             float: left;
             margin-right: 70px;
             padding-top: 55px;
             color: #fff;
-            
+
             .footer-wrap-title{
                 width: 125px;
                 position: relative;
                 border-bottom: 1px solid #c3c3c3;
                 padding-bottom: 10px;
-                
+
                 h3{
                     font-size: 14px;
                 }
-                
+
                 samp{
                     display: inline-block;
                     width: 30px;
@@ -312,66 +312,66 @@ select{
             }
             ul{
                 margin-top: 18px;
-                
+
                 li{
                     padding: 7px 0;
-                    
+
                     a{
                         font-size: 13px;
                         color: #828282;
                     }
-                    
+
                     a:hover{
                         text-decoration: underline;
                     }
                 }
-            } 
-            
+            }
+
             .tel{
                 color: #fff;
                 margin-top: 18px;
-                
+
                 p{
                     font-size: 16px;
                     padding-top: 10px;
                 }
-                
+
                 h4{
                     font-size: 24px;
                     font-weight: bold;
                     line-height: 2;
                 }
             }
-            
+
         }
-        
-        
+
+
     }
-    
+
     .copyright{
         margin-top: 20px;
-        
+
         p{
             color: #fff;
             font-size: 13px;
         }
-    } 
-    
+    }
+
     .fr{
         .footer-wx{
             width: 145px;
             margin: 50px 0 18px;
         }
-        
+
         div{
             text-align: center;
-            
+
             samp{
                 font-size: 14px;
                 color: #fff;
                 margin-left: 5px;
             }
-            
+
         }
     }
 }
@@ -380,7 +380,7 @@ select{
 #swiper{
     height: 528px;
     overflow: hidden;
-    
+
     .swiper-slide{
         a{
             display: block;
@@ -391,25 +391,25 @@ select{
             background-position: center;
         }
     }
-    
+
     .swiper-pagination{
         .swiper-pagination-bullet{
             width: 30px;
             height: 10px;
             border-radius: 5px;
-            /* IE9 + etc...modern browsers */  
+            /* IE9 + etc...modern browsers */
             opacity: 0.3;
-            /* older safari/Chrome browsers */  
-            -webkit-opacity: 0.3;  
-            /* Netscape and Older than Firefox 0.9 */  
-            -moz-opacity: 0.3;  
-            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
-            -khtml-opacity: 0.3;  
-            /* IE 4-9 */  
-            filter:alpha(opacity=30);  
-            /*This works in IE 8 & 9 too*/  
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";  
-            /*IE4-IE9*/  
+            /* older safari/Chrome browsers */
+            -webkit-opacity: 0.3;
+            /* Netscape and Older than Firefox 0.9 */
+            -moz-opacity: 0.3;
+            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+            -khtml-opacity: 0.3;
+            /* IE 4-9 */
+            filter:alpha(opacity=30);
+            /*This works in IE 8 & 9 too*/
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            /*IE4-IE9*/
             filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
             transition: .5s;
             -o-transition: .5s;
@@ -417,26 +417,26 @@ select{
             -moz-transition: .5s;
             -webkit-transition: .5s;
         }
-        
+
         .swiper-pagination-bullet-active{
             background-color: #ffba00 !important;
-            /* IE9 + etc...modern browsers */  
+            /* IE9 + etc...modern browsers */
             opacity: 1;
-            /* older safari/Chrome browsers */  
-            -webkit-opacity: 1;  
-            /* Netscape and Older than Firefox 0.9 */  
-            -moz-opacity: 1;  
-            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
-            -khtml-opacity: 1;  
-            /* IE 4-9 */  
-            filter:alpha(opacity=100);  
-            /*This works in IE 8 & 9 too*/  
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";  
-            /*IE4-IE9*/  
-            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100); 
+            /* older safari/Chrome browsers */
+            -webkit-opacity: 1;
+            /* Netscape and Older than Firefox 0.9 */
+            -moz-opacity: 1;
+            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+            -khtml-opacity: 1;
+            /* IE 4-9 */
+            filter:alpha(opacity=100);
+            /*This works in IE 8 & 9 too*/
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            /*IE4-IE9*/
+            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
         }
     }
-    
+
 }
 
 .index-wrap {
@@ -445,19 +445,19 @@ select{
         border-bottom: 2px solid #f2f2f2;
         padding-top: 40px;
     }
-    
-    
+
+
     .index-tuijian{
         height: 343px;
     }
 }
 
 .index-wrap-title{
-        
+
     .title-wrap{
         border-bottom: 2px solid #ff7d1e;
         padding-bottom: 8px;
-        
+
         .title{
             font-size: 20px;
             font-weight: bold;
@@ -475,19 +475,19 @@ select{
         .icon-tuijian{
             background-image: url('../images/推荐线路.png');
         }
-        
+
         /*交通出行*/
         .icon-traffic{
             background-image: url('../images/交通出行.png');
         }
-        
+
         /*交通出行*/
         .icon-jiudian{
             background-image: url('../images/酒店住宿.png');
         }
-        
+
     }
-    
+
     .more a{
         font-size: 14px;
         color: #c9c9c9;
@@ -500,14 +500,14 @@ select{
 }
 
 .index-tuijian{
-    
+
     .index-nav{
         height: 64px;
         padding: 20px 0;
-        
+
         ul{
             overflow: hidden;
-            
+
             li{
                 float: left;
                 width: 68px;
@@ -533,43 +533,43 @@ select{
             }
         }
     }
-    
+
 }
 
 .conl-tourismList{
     ul{
         width: 1225px;
         overflow: hidden;
-        
+
         li{
             float: left;
             margin-right: 25px;
-            
+
             a{
                 display: block;
                 width: 280px;
-                
+
                 .img{
                     width: 100%;
                     height: 175px;
                     overflow: hidden;
-                    
+
                     img{
                         width: 100%;
                     }
-                } 
-                
+                }
+
                 .title{
                     font-size: 16px;
                     color: #000;
                     margin-top: 12px;
                 }
-                
+
                 .con {
                     width: 100%;
                     overflow: hidden;
                     margin-top: 10px;
-                    
+
                     img{
                         height: 18px;
                     }
@@ -581,15 +581,15 @@ select{
                         padding-left: 5px;
                     }
                 }
-                
+
                 .price{
                     margin-top: 10px;
                     text-align: right;
-                    
+
                     p{
                         font-size: 14px;
                         color: #787878;
-                        
+
                         i{
                             font-size: 20px;
                             font-style: normal;
@@ -600,10 +600,10 @@ select{
                     }
                 }
             }
-            
+
         }
     }
-    
+
 }
 
 .index-traffic{
@@ -613,34 +613,34 @@ select{
 #traffic{
     height: 235px;
     overflow: hidden;
-    
+
     .swiper-slide{
         text-align: center;
         padding-top: 50px;
-        
+
         a{
             width: 108px;
             display: inline-block;
-            
-            
+
+
             .title{
                 font-size: 15px;
                 color: #7a7a7a;
                 margin-top: 15px;
             }
-            
+
             .icon{
                 width: 108px;
                 height: 125px;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 100%;
-                
+
                 img{
                     width: 100%;
                 }
             }
-            
+
             .icon-lvyou{
                 background-image: url('../images/旅游专线-灰.png');
             }
@@ -668,14 +668,14 @@ select{
             .icon-gongjiao{
                 background-image: url('../images/公交查询-灰.png');
             }
-            
+
         }
-        
+
         a:hover{
             .title{
                 color: #484848;
             }
-            
+
             .icon-lvyou{
                 background-image: url('../images/旅游专线.png');
             }
@@ -704,10 +704,10 @@ select{
                 background-image: url('../images/公交查询.png');
             }
         }
-        
-    } 
-    
-    
+
+    }
+
+
     .swiper-button-prev,
     .swiper-button-next{
         width: 21px;
@@ -721,7 +721,7 @@ select{
         cursor: pointer;
         pointer-events: auto;
     }
-    
+
     .swiper-button-prev{
         left: 0;
         background-image: url('../images/left-灰.png');
@@ -736,8 +736,8 @@ select{
     .swiper-button-next:hover{
         background-image: url('../images/right.png');
     }
-    
-    
+
+
 }
 
 #hotel{
@@ -745,18 +745,18 @@ select{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    
+
     .index-wrap-title .more a{
         color: #fff;
     }
-    
+
     .index-hotel{
         height: 520px;
-        
+
         .index-nav{
             height: 84px;
             padding: 30px 0;
-            
+
             ul li{
                 width: 88px;
                 color: #fff;
@@ -765,10 +765,10 @@ select{
     }
     .conl-tourismList{
         padding-top: 20px;
-        
+
         ul li{
             background-color: #fff;
-            
+
             .title {
                 padding-bottom: 5px;
             }
@@ -781,7 +781,7 @@ select{
             }
         }
     }
-    
+
 }
 
 /*login.html*/
@@ -805,8 +805,8 @@ select{
         position: absolute;
         top: 50px;
         right: 0;
-        
-        
+
+
         .input-btn{
             width: 100%;
             height: 46px;
@@ -829,12 +829,12 @@ select{
     }
 }
 .loginForm{
-    
+
     .title{
         width: 100%;
         overflow: hidden;
         position: relative;
-        
+
         h3{
             font-size: 22px;
             color: #616161;
@@ -846,7 +846,7 @@ select{
             position: absolute;
             right: 0;
             bottom: 0;
-            
+
             img{
                 height: 16px;
                 margin-right: 4px;
@@ -855,7 +855,7 @@ select{
             }
         }
     }
-    
+
     .input-wrap{
         width: 100%;
         height: 46px;
@@ -864,7 +864,7 @@ select{
         margin-bottom: 20px;
         padding-top: 15px;
         background-color: #fff;
-        
+
         .icon{
             width: 46px;
             height: 16px;
@@ -873,13 +873,13 @@ select{
             left: 0;
             top: 15px;
             text-align: center;
-            
+
             img{
                 height: 100%;
             }
-            
+
         }
-        
+
         .input-text{
             width: 100%;
             height: 16px;
@@ -887,16 +887,16 @@ select{
             font-size: 14px;
             padding-left: 56px;
         }
-        
+
     }
-    
+
     .input-vfCode{
         width: 235px;
     }
     .input-telVfCode{
         width: 200px;
     }
-    
+
     .telVfCode{
         width: 120px;
         height: 46px;
@@ -910,11 +910,11 @@ select{
     .telVfCode:disabled{
         background-color: #ccc;
     }
-    
+
     .input-info{
         width: 100%;
         overflow: hidden;
-        
+
         .check{
             width: 17px;
             height: 17px;
@@ -927,18 +927,18 @@ select{
             background-image: url('../images/勾.png');
             background-size: 100% 100%;
         }
-        
+
         .txt{
             font-size: 14px;
             color: #6a6a6a;
             line-height: 17px;
         }
     }
-    
+
 }
 
 /*register.html*/
-    
+
 .register-bg{
     height: 600px;
     background-image: url('../images/registerBg.jpg');
@@ -948,30 +948,30 @@ select{
 }
 
 .nav{
-    
+
     .nav-class{
         width: 100%;
         padding-top: 50px;
         padding-bottom: 35px;
         overflow: hidden;
-        
+
         ul{
             width: 1279px;
             overflow: hidden;
-            
+
             li{
                 width: 80px;
                 float: left;
                 margin-right: 79px;
                 text-align: center;
                 cursor: pointer;
-                
+
                 p{
                     font-size: 14px;
                     color: #858585;
                     margin-top: 14px;
                 }
-                
+
                 .icon{
                     width: 80px;
                     height: 80px;
@@ -979,7 +979,7 @@ select{
                     background-repeat: no-repeat;
                     background-size: 100%;
                 }
-                
+
                 /*全域旅游*/
                 .icon-chunyou{
                     background-image: url('../images/春游.png');
@@ -1005,7 +1005,7 @@ select{
                 .icon-zhuti{
                     background-image: url('../images/主题游.png');
                 }
-                
+
                 /*酒店住宿*/
                 .icon-haohua{
                     background-image: url('../images/豪华酒店.png');
@@ -1031,7 +1031,7 @@ select{
                 .icon-sanxing{
                     background-image: url('../images/三星酒店.png');
                 }
-                
+
                 /*美食小吃*/
                 .icon-zizhu{
                     background-image: url('../images/自助餐未.png');
@@ -1057,7 +1057,7 @@ select{
                 .icon-xican{
                     background-image: url('../images/西餐未.png');
                 }
-                
+
                 /*交通出行*/
                .icon-lvyou{
                     background-image: url('../images/旅游专线-灰.png');
@@ -1086,14 +1086,14 @@ select{
                 .icon-gongjiao{
                     background-image: url('../images/公交查询-灰.png');
                 }
-                
+
             }
-            
+
             li.active{
                 p{
                     color: #06CDB8;
                 }
-                
+
                 /*全域旅游*/
                 .icon-chunyou{
                     background-image: url('../images/春游-点击.png');
@@ -1119,7 +1119,7 @@ select{
                 .icon-zhuti{
                     background-image: url('../images/主题游-点击.png');
                 }
-                
+
                 /*酒店住宿*/
                 .icon-haohua{
                     background-image: url('../images/豪华酒店-点击.png');
@@ -1145,8 +1145,8 @@ select{
                 .icon-sanxing{
                     background-image: url('../images/三星酒店-点击.png');
                 }
-                
-                
+
+
                 /*美食小吃*/
                 .icon-zizhu{
                     background-image: url('../images/自助餐.png');
@@ -1172,7 +1172,7 @@ select{
                 .icon-xican{
                     background-image: url('../images/西餐.png');
                 }
-                
+
                 /*交通出行*/
                 .icon-lvyou{
                     background-image: url('../images/旅游专线.png');
@@ -1204,11 +1204,11 @@ select{
             }
         }
     }
-    
+
     .navSearch-wrap{
         width: 100%;
         position: relative;
-        
+
         .tit{
             width: 60px;
             height: 24px;
@@ -1219,16 +1219,16 @@ select{
             top: 0;
             left: 0;
         }
-        
+
         .navSearch-list{
             width: 100%;
             min-height: 29px;
             padding-left: 60px;
-            
+
             ul{
                 width: 100%;
                 overflow: hidden;
-                
+
                 li{
                     height: 24px;
                     line-height: 24px;
@@ -1242,18 +1242,18 @@ select{
                     border-radius: 12px;
                     cursor: pointer;
                 }
-                
+
                 li:hover{
                     color: #06CDB8;
                 }
-                
+
                 li.active{
                     color: #fff;
                     background-color: #06CDB8;
                 }
             }
         }
-        
+
         .cityTit{
             line-height: 42px;
         }
@@ -1265,7 +1265,7 @@ select{
             font-size: 15px;
             color: #282828;
             margin-bottom: 20px;
-            
+
             select{
                 width: 100%;
                 height: 100%;
@@ -1273,16 +1273,16 @@ select{
                 color: #282828;
                 background-color: #f3f3f3;
                 padding: 0 10px;
-                
+
                 option{
                     font-size: 15px;
                     color: #282828;
                 }
             }
         }
-        
+
     }
-    
+
     .navSearch-wrap1{
         .tit{
             width: 90px;
@@ -1295,20 +1295,20 @@ select{
 
 .content{
     padding-bottom: 30px;
-    
+
     .conl-tourismList ul{
         width: 1235px;
         margin-left: -5px;
-        
+
         li{
             width: 290px;
             padding: 25px 5px 5px;
             margin-right: 15px;
-            
+
             a{
                 padding-bottom: 15px;
             }
-            
+
             a:hover{
                 box-shadow: 0 0 5px rgba(0,0,0,.3);
                 -ms-box-shadow: 0 0 5px rgba(0,0,0,.3);
@@ -1317,19 +1317,19 @@ select{
             }
         }
     }
-    
+
 }
 
 /*分页*/
 .pagination-wrap{
     padding: 20px 0 50px;
     overflow: hidden;
-    
+
     p{
         display: inline-block;
         overflow: hidden;
         height: 38px;
-        
+
         a,span{
             display: inline-block;
             width: 38px;
@@ -1343,7 +1343,7 @@ select{
             border-right: 1px solid #e7e7e7;
             float: left;
         }
-        
+
         samp{
             display: inline-block;
             line-height: 38px;
@@ -1352,21 +1352,21 @@ select{
             float: left;
             margin: 0 8px;
         }
-        
+
         .active{
             color: #fff;
             background-color: #06CDB8;
             border-top: 1px solid #06CDB8;
             border-bottom: 1px solid #06CDB8;
         }
-        
+
         .prev{
             border-left: 1px solid #e7e7e7;
         }
         .prev,
         .next{
             line-height: inherit;
-            
+
             img{
                 height: 14px;
                 margin-top: 12px;
@@ -1389,7 +1389,7 @@ select{
             text-align: center;
             background-color: transparent;
         }
-        
+
         a:hover,
         span:hover{
             color: #06CDB8;
@@ -1404,11 +1404,11 @@ select{
 
 .position{
     padding: 20px 0;
-    
+
     p{
         font-size: 15px;
         color: #c9c9c9;
-        
+
         a{
             color: #06CDB8;
         }
@@ -1424,13 +1424,13 @@ select{
 .dcon-top{
     margin-top: 10px;
     height: 372px;
-    
+
     .dconTop-left{
         width: 528px;
         height: 100%;
         overflow: hidden;
         float: left;
-        
+
         .swiper-container {
             width: 100%;
             height: 296px;
@@ -1458,9 +1458,9 @@ select{
         .gallery-thumbs .swiper-slide-active {
             opacity: 1;
         }
-        
+
     }
-    
+
     .dconTop-right{
         width: 639px;
         height: 100%;
@@ -1469,24 +1469,24 @@ select{
         background-color: #fff;
         padding: 18px;
         position: relative;
-        
+
         .title-wrap{
             width: 100%;
             position: relative;
             padding-bottom: 10px;
-            
+
             .title{
                 font-size: 22px;
                 color: #010101;
                 padding-right: 100px;
                 font-weight: normal;
             }
-            
+
             .collect{
                 position: absolute;
                 top: 0;
                 right: 10px;
-                
+
                 .icon-star{
                     width: 26px;
                     height: 26px;
@@ -1499,7 +1499,7 @@ select{
                 .icon-star.active{
                     background-image: url('../images/收藏.png') !important;
                 }
-                
+
                 .txt{
                     float: left;
                     font-size: 16px;
@@ -1509,18 +1509,18 @@ select{
                 }
             }
         }
-        
+
         .con{
             width: 100%;
             overflow: hidden;
             padding-bottom: 10px;
-            
+
             div{
                 width: 18px;
                 height: 18px;
                 text-align: center;
-                margin-right: 5px; 
-              
+                margin-right: 5px;
+
                 img{
                     height: 100%;
                 }
@@ -1531,7 +1531,7 @@ select{
                 line-height: 18px;
             }
         }
-        
+
         .description{
             height: 120px;
             font-size: 14px;
@@ -1540,7 +1540,7 @@ select{
             margin-top: 20px;
             overflow: hidden;
         }
-        
+
         .price-wrap{
             width: 100%;
             height: 40px;
@@ -1548,14 +1548,14 @@ select{
             bottom: 45px;
             left: 0;
             padding-left: 18px;
-            
+
             .price{
                 float: left;
-                
+
                 p{
                     font-size: 15pxpx;
                     color: #747474;
-                    
+
                     i{
                         font-size: 30px;
                         font-style: normal;
@@ -1565,7 +1565,7 @@ select{
                     }
                 }
             }
-            
+
             .btn-booking{
                 position: absolute;
                 bottom: -25px;
@@ -1578,12 +1578,12 @@ select{
                 background-size: 100%;
                 text-align: center;
                 cursor: pointer;
-                
+
                 p{
                     color: #fff;
                     font-size: 24px;
                     line-height: 84px;
-                    
+
                     i{
                         font-size: 30px;
                         font-style: normal;
@@ -1593,24 +1593,24 @@ select{
                 }
             }
         }
-        
+
     }
 }
 
 .dcon-nav{
     margin-top: 52px;
     border-bottom: 2px solid #06CDB8;
-    
+
     ul{
         overflow: hidden;
-        
+
         li{
             width: 88px;
             height: 30px;
             float: left;
             border-radius: 4px 4px 0 0;
             text-align: center;
-            
+
             a{
                 line-height: 30px;
                 font-size: 16px;
@@ -1630,23 +1630,23 @@ select{
     padding-top: 12px;
     margin-bottom: 15px;
     border: 1px solid #e7e7e7;
-   
+
     .title{
        width: 100%;
        height: 35px;
        position: relative;
-       
+
        .bg{
            height: 100%;
            position: absolute;
            top: 0;
            left: 0;
-           
+
             img{
                height: 100%;
             }
         }
-        
+
         p{
             display: inline-block;
             overflow: hidden;
@@ -1663,13 +1663,13 @@ select{
         font-size: 16px;
         color: #909090;
         line-height: 1.8;
-        
+
         img{
             max-width: 100%;
             margin: 10px 0;
         }
     }
-   
+
 }
 .con-ul{
     padding: 18px 6px 10px;
@@ -1677,29 +1677,29 @@ select{
 .ul-tourismList{
     width: 1200px;
     overflow: hidden;
-    
+
     li{
         width: 280px;
         float: left;
         margin: 0 8px 10px;
         padding-bottom: 10px;
         position: relative;
-        
+
         a{
             display: block;
             width: 280px;
-            
+
             .img{
                 width: 100%;
                 height: 175px;
                 overflow: hidden;
-                
+
                 img{
                     width: 100%;
                 }
-                
-            } 
-            
+
+            }
+
             .tit{
                 font-size: 16px;
                 color: #000;
@@ -1715,7 +1715,7 @@ select{
                 width: 100%;
                 overflow: hidden;
                 margin-top: 10px;
-                
+
                 img{
                     height: 18px;
                 }
@@ -1726,13 +1726,13 @@ select{
                     color: #a0a0a0;
                     padding-left: 5px;
                 }
-                
+
                 .star{
                     height: 16px;
                 }
             }
         }
-        
+
     }
 }
 
@@ -1740,17 +1740,17 @@ select{
 .dcon-comment{
     width: 100%;
     padding: 24px 16px 45px;
-    
+
     ul{
         width: 100%;
-        
+
         li{
             width: 100%;
             position: relative;
             border-bottom: 1px solid #f4f4f4;
             padding-bottom: 12px;
             margin-bottom: 24px;
-            
+
             .img{
                 width: 66px;
                 height: 66px;
@@ -1759,21 +1759,21 @@ select{
                 position: absolute;
                 top: 0;
                 left: 0;
-                
+
                 img{
                     width: 100%;
                 }
             }
-            
+
             .comment-wrap{
                 width: 100%;
                 padding-left: 88px;
-                
+
                 .name{
                     font-size: 16px;
                     color: #000;
                 }
-                
+
                 .txt{
                     width: 100%;
                     color: #010101;
@@ -1781,7 +1781,7 @@ select{
                     line-height: 1.5;
                     margin-top: 8px;
                 }
-                
+
                 .datetime{
                     color: #b2b2b2;
                     font-size: 14px;
@@ -1790,13 +1790,13 @@ select{
             }
         }
     }
-    
+
     .icon {
         width: 100%;
         overflow: hidden;
         margin-top: 10px;
         padding: 5px 10px 10px;
-        
+
         img{
             height: 18px;
         }
@@ -1808,13 +1808,13 @@ select{
             padding-left: 5px;
             font-weight: bold;
         }
-        
+
     }
-    
+
     .form{
         width: 100%;
         padding: 10px;
-        
+
         textarea{
             width: 100%;
             height: 112px;
@@ -1825,7 +1825,7 @@ select{
             line-height: 1.5;
             padding: 10px;
         }
-        
+
         label.error{
             display: inline-block;
             width: 100%;
@@ -1834,7 +1834,7 @@ select{
             font-size: 15px;
             color: #F14E4F;
         }
-        
+
         .btn-comment{
             width: 80px;
             height: 40px;
@@ -1849,7 +1849,7 @@ select{
 
 /*hotel.html*/
 .content-hotel{
-    
+
     .conl-tourismList ul li a{
         background-color: #fff;
         border: 1px solid #eee;
@@ -1865,7 +1865,7 @@ select{
 .hotel-booking{
     width: 100%;
     padding: 0 24px;
-    
+
     ul{
         li{
             width: 100%;
@@ -1873,42 +1873,42 @@ select{
             border-top: 1px solid #eaeaea;
             padding: 18px 0;
             position: relative;
-            
+
             .img{
                 width: 260px;
                 height: 145px;
                 overflow: hidden;
                 float: left;
-                
+
                 img{
                     width: 100%;
                 }
             }
-            
+
             .txt{
                 min-width: 200px;
                 height: 100%;
                 float: left;
                 margin-left: 16px;
                 position: relative;
-                
+
                 .name{
                     font-size: 18px;
                     color: #000;
                 }
-                
+
                 .service{
                     font-size: 14px;
                     color: #969696;
                     margin-top: 10px;
                 }
-                
+
                 .price-wrap{
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     color: #ffa200;
-                    
+
                     .price{
                         font-size: 24px;
                         position: relative;
@@ -1916,12 +1916,12 @@ select{
                         margin-bottom: 3px;
                     }
                 }
-                
+
             }
-            
+
         }
     }
-    
+
 }
 
 .booking-wrap{
@@ -1931,10 +1931,10 @@ select{
     position: absolute;
     top: 0;
     right: 0;
-    
+
     .number{
         float: left;
-        
+
         .icon{
             float: left;
             width: 36px;
@@ -1952,7 +1952,7 @@ select{
         .icon-add{
             background-image: url('../images/加.png');
         }
-        
+
         .num{
             float: left;
             width: 80px;
@@ -1962,13 +1962,13 @@ select{
             font-family: arial;
             color: #000;
         }
-       
+
     }
-    
+
     .btn-wrap{
         float: left;
         margin-left: 86px;
-        
+
         .btn-booking{
             width: 108px;
             height: 40px;
@@ -1978,7 +1978,7 @@ select{
             border-radius: 4px;
         }
     }
-    
+
 }
 
 /*mall.html*/
@@ -1988,7 +1988,7 @@ select{
     background-color: #f4fbfa;
     border: 1px solid #bdeee9;
     overflow: hidden;
-    
+
     .account{
         overflow: hidden;
         margin-top: 18px;
@@ -1997,7 +1997,7 @@ select{
             font-size: 14px;
             color: #9d9d9d;
             margin-left: 18px;
-            
+
         }
         samp{
             display: inline-block;
@@ -2007,13 +2007,13 @@ select{
             position: relative;
             top: 3px;
         }
-        
+
     }
-    
+
     .jfRule{
         cursor: pointer;
         margin-top: 25px;
-        
+
         img{
             height: 18px;
         }
@@ -2029,11 +2029,11 @@ select{
 
 .content-mall{
     padding-top: 20px;
-    
+
 }
 .content-mall .conl-tourismList .mall-price{
     padding-top: 5px;
-    
+
     .p1{
         font-size: 17px !important;
         color: #FF9C00 !important;
@@ -2048,11 +2048,11 @@ select{
 .mallDetail{
     .mall-price{
         padding-top: 15px;
-        
+
         img{
             height: 20px;
         }
-        
+
         .p1{
             font-size: 20px !important;
             color: #FF9C00 !important;
@@ -2063,20 +2063,20 @@ select{
             }
         }
     }
-    
+
     .booking-wrap{
         width: 100%;
         height: auto;
         top: auto;
         bottom: 55px;
         padding: 0 20px;
-        
+
         .btn-wrap{
             float: right;
         }
     }
-    
-    
+
+
 }
 
 /*个人中心*/
@@ -2086,23 +2086,23 @@ select{
     min-height: 450px;
     margin: 0 auto 50px;
     padding: 5px;
-    
+
     .user-left{
         width: 214px;
-        
+
         ul{
-            
+
             li{
                 width: 100%;
                 height: 50px;
                 border-top: 1px solid #eee;
-               
+
                 a{
                     display: inline-block;
                     width: 100%;
                     height: 100%;
                     text-align: center;
-                    
+
                     .icon{
                         display: inline-block;
                         width: 22px;
@@ -2112,7 +2112,7 @@ select{
                         background-position: center;
                         background-repeat: no-repeat;
                     }
-                    
+
                     .icon-ziliao{
                         background-image: url('../images/我的资料灰.png');
                     }
@@ -2128,7 +2128,7 @@ select{
                     .icon-jifen{
                         background-image: url('../images/我的积分灰.png');
                     }
-                    
+
                     p{
                         display: inline-block;
                         line-height: 50px;
@@ -2136,15 +2136,15 @@ select{
                         color: #bbb;
                         margin-left:8px;
                     }
-                    
-                    
+
+
                 }
             }
         }
         ul li:first-of-type{
            border: none;
         }
-        
+
         ul li.active{
             background-color: #f7fffe;
             background-image: url('../images/矩形-12.png');
@@ -2152,12 +2152,12 @@ select{
             background-size: auto 100%;
             background-repeat: no-repeat;
         }
-        
+
         ul li.active,
         ul li:hover{
-            
+
             a {
-                
+
                 .icon-ziliao{
                     background-image: url('../images/我的资料.png');
                 }
@@ -2173,20 +2173,20 @@ select{
                 .icon-jifen{
                     background-image: url('../images/我的积分.png');
                 }
-                
+
                 p{
                     color: #06CDB8;
                 }
             }
-            
+
         }
-        
+
     }
-    
+
     .user-right{
         width: 967px;
         min-height: 250px;
-        
+
         #pagination{
             padding: 50px 0 50px;
         }
@@ -2196,25 +2196,25 @@ select{
 .userInfo-wrap{
     overflow: hidden;
     padding: 30px 15px;
-    
+
     .myPic{
         width: 150px;
         height: 150px;
         overflow: hidden;
         border-radius: 50%;
-        
+
         img{
             width: 100%;
             vertical-align: middle;
         }
-        
+
     }
     .name{
         font-size: 18px;
         color: #2d2d2d;
         line-height: 2;
     }
-    
+
     .tel{
         font-size: 15px;
         color: #3c3c3c;
@@ -2224,39 +2224,39 @@ select{
             color: #06CDB8;
         }
     }
-    
+
     .userRevise .con{
         display: block;
         overflow: hidden;
         margin-bottom: 15px;
         margin-right: 15px;
-        
+
         .icon{
             width: 18px;
             height: 18px;
             text-align: center;
-            
+
             img{
                 height: 18px;
             }
         }
-        
+
         p{
           font-size: 15px;
           color: #06CDB8;
-          margin-left: 8px;  
+          margin-left: 8px;
         }
     }
-    
+
 }
 .revise-myPic{
-    
+
     .file{
         width: 70px;
         overflow: hidden;
         position: relative;
         margin: 12px auto 0;
-        
+
         p{
             display: inline-block;
             overflow: hidden;
@@ -2264,7 +2264,7 @@ select{
             color: #06CDB8;
             cursor: pointer;
         }
-        
+
         .input-file{
             display: inline-block;
             width: 100%;
@@ -2282,9 +2282,9 @@ select{
         font-size: 15px;
         color: #808080;
         text-align: right;
-        
+
     }
-    
+
     .input-text{
         width: 280px;
         height: 42px;
@@ -2295,7 +2295,7 @@ select{
         border: 1px solid #e9e9e9;
         background-color: #f3f3f3;
     }
-    
+
     label.error{
         float: left;
         line-height: 42px;
@@ -2303,7 +2303,7 @@ select{
         color: #F14E4F;
         font-size: 14px;
     }
-    
+
     .input-btn{
         width: 112px;
         height: 42px;
@@ -2335,7 +2335,7 @@ select{
 }
 .findPwd-wrap{
     padding: 50px 15px;
-    
+
     .findPwd-input{
         width: 330px;
     }
@@ -2345,7 +2345,7 @@ select{
     .input-wrap{
         margin-bottom: 30px;
     }
-    
+
     .input-btn{
         width: 112px;
         height: 42px;
@@ -2372,7 +2372,7 @@ select{
     width: 100%;
     overflow: hidden;
     padding: 24px 0;
-    
+
     .search-wrap{
         width: 200px;
         height: 42px;
@@ -2380,7 +2380,7 @@ select{
         border: 1px solid #e9e9e9;
         float: left;
         margin-right: 14px;
-        
+
         select{
             width: 100%;
             height: 100%;
@@ -2389,44 +2389,44 @@ select{
             padding: 8px 6px;
             background-color: #f3f3f3;
             background: url("../images/down.png") no-repeat scroll right 8px center transparent;
-            
+
             option{
                 display: inline-block;
                 font-size: 14px;
                 color: #9b9a9a;
             }
         }
-        
+
     }
-    
+
 }
 .orderList{
     width: 100%;
-    
+
     ul li{
         width: 100%;
         padding-bottom: 25px;
         border-top: 1px solid #eee;
-            
+
         .top div{
             font-size: 14px;
             color: #9B9A9A;
         }
-        
+
         .con{
             overflow: hidden;
             position: relative;
-            
+
             .img{
                 width: 280px;
                 height: 175px;
                 overflow: hidden;
-                
+
                 img{
                     width: 100%;
                 }
             }
-            
+
             .txt{
                 width: 615px;
                 margin-left: 18px;
@@ -2448,13 +2448,13 @@ select{
                     margin-top: 8px;
                 }
             }
-            
+
             .btn-wrap{
                 overflow: hidden;
                 position: absolute;
                 right: 0;
                 bottom: 0;
-                
+
                 input{
                     width: 89px;
                     height: 30px;
@@ -2462,7 +2462,7 @@ select{
                     border-radius: 3px;
                     cursor: pointer;
                 }
-                
+
                 .btn1{
                     color: #919191;
                     border: 1px solid #c7c7c7;
@@ -2475,9 +2475,9 @@ select{
                 }
             }
         }
-            
+
     }
-    
+
 }
 
 .status{
@@ -2499,10 +2499,10 @@ select{
 /*collection.html*/
 .collectionSearch{
     padding: 25px 0;
-    
+
     ul{
         overflow: hidden;
-        
+
         li{
             float: left;
             width: 50px;
@@ -2526,15 +2526,15 @@ select{
 .collectionList{
     .conl-tourismList ul{
         width: 939px;
-        
+
         li{
             margin-right: 33px;
             position: relative;
-            
+
             a{
                 padding-bottom: 20px;
             }
-            
+
             .btn-collection{
                 position: absolute;
                 top: 0;
@@ -2549,13 +2549,13 @@ select{
                 -moz-user-select: none; /* Firefox */
                 -ms-user-select: none; /* Internet Explorer/Edge */
                 user-select: none; /* Non-prefixed version, currently*/
-                
+
                 img{
                     height: 18px;
                     margin-top: 5px;
                     margin-left: 5px;
                 }
-                
+
                 p{
                     font-size: 14px;
                     line-height: 28px;
@@ -2565,13 +2565,13 @@ select{
             }
         }
     }
-    
+
 }
 
 .travelsAdd{
     padding: 20px 0;
     overflow: hidden;
-    
+
     .addTravels{
         float: right;
         width: 108px;
@@ -2579,7 +2579,7 @@ select{
         background-color: #06CDB8;
         border-radius: 3px;
         cursor: pointer;
-        
+
         img{
             height: 20px;
             margin-top: 8px;
@@ -2596,16 +2596,16 @@ select{
 .travelsList{
     ul li{
         padding-top: 18px;
-        
+
         .description{
             margin: 10px 0 20px;
             font-size: 14px;
             line-height: 1.8;
             color: #4b4b4b;
         }
-        
+
         .btn-wrap{
-                
+
             input{
                 width: 36px !important;
                 height: 36px !important;
@@ -2614,7 +2614,7 @@ select{
                 background-repeat: no-repeat;
                 background-size: 100%;
             }
-            
+
             .btn-edit{
                 background-image: url('../images/编辑.png');
             }
@@ -2632,17 +2632,17 @@ select{
 }
 .integralList{
     padding-top: 25px;
-    
+
     h4{
         font-size: 15px;
         color: #000;
     }
-    
+
     ul{
         width: 100%;
         margin-top: 28px;
         counter-reset: count;
-        
+
         li{
             width: 100%;
             overflow: hidden;
@@ -2650,12 +2650,12 @@ select{
             list-style: disc inside url('../images/椭圆-5.png');
             color: #06CDB8;
             position: relative;
-            
+
             p{
                 display: inline-block;
                 font-size: 15px;
                 color: #000;
-                
+
                 i{
                     font-size: 15px;
                     margin-left: 10px;
@@ -2668,7 +2668,7 @@ select{
                     color: #888;
                 }
             }
-            
+
             samp{
                 font-size: 15px;
                 color: #a8a8a8;
@@ -2678,28 +2678,28 @@ select{
             }
         }
     }
-    
+
 }
 .traffic-nav{
     .nav-class ul li{
         width: 90px;
         margin-right: 48px;
-        
+
         .icon{
             width: 90px;
             height: 106px;
         }
     }
-    
+
 }
 .traffic-search{
     overflow: hidden;
-    
+
     .trfSearch-wrap{
         float: left;
         overflow: hidden;
         margin-bottom: 30px;
-        
+
         .tit{
             font-size: 15px;
             color: #808080;
@@ -2713,7 +2713,7 @@ select{
             background-color: #f3f3f3;
             font-size: 15px;
             color: #282828;
-            
+
             select{
                 width: 100%;
                 height: 100%;
@@ -2721,21 +2721,21 @@ select{
                 color: #282828;
                 background-color: #f3f3f3;
                 padding: 0 10px;
-                
+
                 option{
                     font-size: 15px;
                     color: #282828;
                 }
             }
         }
-        
+
         .search-datetime{
             width: 148px;
             margin-right: 8px;
         }
-        
+
     }
-    
+
     .searchBtn{
         float: left;
         width: 112px;
@@ -2753,7 +2753,7 @@ select{
     text-align: center;
     thead{
         background-color: #efefef;
-        
+
         tr th{
             height: 36px;
             font-size: 15px;
@@ -2761,7 +2761,7 @@ select{
             font-weight: normal;
         }
     }
-    
+
     tbody{
         tr td{
             font-size: 14px;
@@ -2782,7 +2782,7 @@ select{
                 overflow: hidden;
                 font-size: 14px;
                 color: #000;
-                
+
                 samp{
                     display: inline-block;
                     width: 20px;
@@ -2799,14 +2799,14 @@ select{
                     background-color: #ff6767;
                 }
             }
-        
+
         }
-        
+
         .price{
             color: #ffa800;
             font-size: 18px;
         }
-        
+
         .trainNum{
             color: #000;
         }
@@ -2814,12 +2814,12 @@ select{
             text-align: left;
             padding-left: 30px;
         }
-        
+
         .purchase{
             .number{
                 float: left;
                 margin-left: 50px;
-                
+
                 .icon{
                     float: left;
                     width: 22px;
@@ -2837,7 +2837,7 @@ select{
                 .icon-add{
                     background-image: url('../images/加.png');
                 }
-                
+
                 .num{
                     float: left;
                     width: 38px;
@@ -2847,13 +2847,13 @@ select{
                     font-family: arial;
                     color: #000;
                 }
-               
+
             }
-            
+
             .btn-wrap{
                 float: left;
                 margin-left: 15px;
-                
+
                 .btn-booking{
                     width: 67px;
                     height: 28px;
@@ -2864,7 +2864,7 @@ select{
                 }
             }
         }
-        
+
     }
 }
 .bus-price{
@@ -2884,7 +2884,7 @@ select{
 .traffic-btn{
     text-align: center;
     padding: 60px 0;
-    
+
     input{
         width: 112px;
         height: 42px;
@@ -3108,7 +3108,7 @@ select{
 .identity-wrap{
     .title{
         padding: 10px 30px 40px;
-        
+
         h3{
             font-size: 22px;
             color: #616161;
@@ -3124,31 +3124,31 @@ select{
     margin: 0 auto;
     padding-bottom: 20px;
     text-align: center;
-    
+
     .qrcode{
         width: 240px;
         height: 240px;
         padding: 15px;
         border: 1px solid #45494C;
         border-radius: 5px;
-        
+
         #qrcode{
            width: 100%;
-           height: 100%; 
+           height: 100%;
         }
     }
-    
+
     .txt{
         font-size: 15px;
         color: #45494C;
         padding: 15px 0;
     }
-    
+
     .price{
         font-size: 22px;
         color: #FF9C00;
         padding: 10px 0 0;
-        
+
         i{
             font-size: 24px;
             font-style: normal;
@@ -3160,7 +3160,7 @@ select{
     text-align: center;
     padding-top: 30px;
     padding-bottom: 50px;
-    
+
     img{
         width: 80px;
     }
@@ -3169,7 +3169,7 @@ select{
         font-size: 20px;
         margin-top: 30px;
         a{
-            
+
             color: #06CDB8;
             font-size: 20px;
             margin-left: 5px;
@@ -3215,7 +3215,7 @@ select{
             max-width: 100%;
         }
     }
-    
+
     .description{
         margin-top: 15px;
         font-size: 15px;
@@ -3244,11 +3244,11 @@ select{
     width: 100%;
     padding: 50px 0 70px;
     text-align: center;
-    
+
     img{
         width: 100px;
     }
-    
+
     p{
         font-size: 18px;
         color: #c8c8c8;
@@ -3278,11 +3278,11 @@ select{
     min-height: 150px;
     position: relative;
     padding-bottom: 50px;
-    
+
     .no-address{
         text-align: center;
         padding: 20px 0;
-        
+
         p{
             margin-top: 20px;
         }
@@ -3291,7 +3291,7 @@ select{
             color: #06CDB8;
         }
     }
-    
+
     .address-bt{
         position: absolute;
         left: 0;
@@ -3312,24 +3312,24 @@ select{
             padding: 15px 8px !important;
         }
     }
-    
+
     tbody tr{
         &:hover{
             border-top: 1px solid #cdf5f1;
             border-bottom: 1px solid #cdf5f1;
             background: #e6faf8 !important;
-            
+
             .setDefault{
                 display: inline-block;
             }
-            
+
         }
         td{
             font-size: 15px;
             border-top: 1px solid #82e6db;
             padding: 15px 8px !important;
         }
-        
+
         .setDefault{
             display: none;
         }
@@ -3341,14 +3341,14 @@ select{
     margin-bottom: 20px;
     padding: 0 10px 10px;
     border-bottom: 2px solid #82e6db;
-    
+
     a{
         font-weight: normal;
         font-size: 15px;
         float: right;
         position: relative;
         top: 8px;
-        
+
         &:hover{
             color: #06CDB8;
             text-decoration: underline;
@@ -3357,7 +3357,7 @@ select{
 }
 .addressList{
     padding: 10px 30px 0;
-    
+
     .other{
         font-size: 16px;
         color: #06CDB8;
@@ -3365,17 +3365,18 @@ select{
         padding-left: 54px;
         cursor: pointer;
     }
-    
+
     ul{
         width: 100%;
-        
+
         li{
             width: 100%;
             padding: 10px 15px;
             border: 1px solid #fff;
             position: relative;
             overflow: hidden;
-            
+            cursor: pointer;
+
             .icon-address{
                 width: 24px;
                 height: 24px;
@@ -3399,15 +3400,15 @@ select{
                 border: 1px solid #82e6db;
                 background-color: #e6faf8;
                 box-shadow: 5px 5px 0 #F5F5F5;
-                
+
                 .addressCon{
                     font-size: 17px;
                     color: #000;
                     font-weight: bold;
                 }
-                
+
                 .icon-address{
-                    
+
                     background-image: url('../images/defaultAddress.png');
                 }
             }
@@ -3423,12 +3424,14 @@ select{
     }
     .input-btn{
         background-color: #06CDB8;
+        cursor: pointer;
+        margin-left: 110px;
     }
     .address-select{
         float: left;
         width: 180px !important;
     }
-    
+
     .address-table{
         .btn-edit,
         .btn-delete,
@@ -3437,9 +3440,9 @@ select{
             background-color: transparent;
             cursor: pointer;
         }
-        
+
         .btn-edit{
-            color: #FFAE00;   
+            color: #FFAE00;
             margin-right: 5px;
         }
         .btn-delete{
@@ -3450,11 +3453,11 @@ select{
             font-size: 15px;
             color: #999;
         }
-        
+
         .btn-defalut{
             color: #f30;
         }
-        
+
     }
     #city-group{
         overflow: hidden;
@@ -3471,7 +3474,7 @@ select{
         height: 175px;
         overflow: hidden;
     }
-    
+
     .txt{
         margin-left: 20px;
         p{
@@ -3482,17 +3485,17 @@ select{
         samp{
             font-size: 17px;
             color: #FFA200;
-            
+
             i{
                 font-style: normal;
                 margin-left: 5px;
             }
         }
-        
+
         .amount{
             margin-top: 50px;
             font-size: 20px;
-            
+
             i{
                 font-size: 24px;
                 color: #FFA200;
@@ -3503,7 +3506,7 @@ select{
             }
         }
     }
-    
+
     .applyNote-wrap{
         p{
             font-size: 16px;
@@ -3519,11 +3522,11 @@ select{
             margin-left: 15px;
         }
     }
-    
+
     .amount-wrap{
         margin-top: 50px;
         text-align: center;
-        
+
         .btn-sub{
             width: 160px;
             height: 42px;

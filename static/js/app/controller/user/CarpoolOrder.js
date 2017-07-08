@@ -93,11 +93,15 @@ define([
         initMap();
         /*modal end*/
         // 取消订单
-        $(".cancel-order-btn").click(function(){
+        $(".cancel-order-btn").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
             cancelOrder();
         });
         // 立即支付
-        $(".pay-order-btn").click(function(){
+        $(".pay-order-btn").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
             location.href = "../pay/pay.html?code=" + code + "&type=4";
         });
     }

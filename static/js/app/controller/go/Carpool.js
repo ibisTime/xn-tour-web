@@ -98,7 +98,7 @@ define([
     }
     // 初始化分页器
     function initPagination(data){
-    	
+
     	$("#pagination .pagination").show();
         $("#pagination .pagination").pagination({
             pageCount: data.totalPage,
@@ -326,8 +326,7 @@ define([
             .then((data) => {
                 base.confirm("拼车申请提交成功，总价为：" + base.formatMoney(data.distancePrice) + "元。<br/>点击确认前往支付定金")
                     .then(function () {
-//                      alert("进入支付页面（未实现）");
-                        // location.href = "../pay/pay.html?code=" + orderCode + "&type=4";
+                        location.href = "../pay/pay.html?code=" + orderCode + "&type=4";
                     }, function () {
                         location.reload(true);
                         unDisabledButton();

@@ -268,7 +268,9 @@ define([
             pageActions[currentType].call(null);
         });
         // 取消订单
-        $("#orderList").on("click", ".cancel-order-btn", function(){
+        $("#orderList").on("click", ".cancel-order-btn", function(e){
+            e.stopPropagation();
+            e.preventDefault();
             var _this = $(this),
                 code = _this.closest("[data-code]").attr("data-code");
             cancelActions[currentType].call(null, code, _this);
@@ -278,12 +280,16 @@ define([
             _refundArea = $("#refundArea"),
             _modal = $("#modal");
         // 退款
-        $("#orderList").on("click", ".refund-order-btn", function(){
+        $("#orderList").on("click", ".refund-order-btn", function(e){
+            e.stopPropagation();
+            e.preventDefault();
             var code = $(this).closest("[data-code]").attr("data-code");
             _modal.removeClass("hidden").data("code", code);
         });
         // 支付
-        $("#orderList").on("click", ".pay-order-btn", function(){
+        $("#orderList").on("click", ".pay-order-btn", function(e){
+            e.stopPropagation();
+            e.preventDefault();
             var _parent = $(this).closest("[data-code]"),
                 code = _parent.attr("data-code"),
                 type = _parent.attr("data-type");

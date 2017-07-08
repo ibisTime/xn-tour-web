@@ -157,11 +157,15 @@ define([
         initMap();
         /*modal end*/
         // 取消订单
-        $(".cancel-order-btn").click(function(){
+        $(".cancel-order-btn").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
             cancelOrder();
         });
         // 立即支付
-        $(".pay-order-btn").click(function(){
+        $(".pay-order-btn").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
             location.href = "../pay/pay.html?code=" + code + "&type=1";
         });
         var _errorSpan = $("#error-span"),
@@ -169,7 +173,9 @@ define([
             _refundArea = $("#refundArea"),
             _refundModal = $("#refund-modal");
         // 退款
-        $(".refund-order-btn").click(function(){
+        $(".refund-order-btn").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
             _refundModal.removeClass("hidden");
         });
         // 退款说明
@@ -198,7 +204,7 @@ define([
             _confirmBtn.prop("disabled", true).find("span").text("确认");
         });
         // 关闭modal的按钮
-        _refundModal.find(".ant-modal-close-x").click(function(){
+        _refundModal.find("#ant-modal-close").click(function(){
             _refundModal.addClass("hidden");
             _errorSpan.empty();
             _refundArea.val("").removeClass("area-error");
