@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>线路订单-来来旺旺</title>
+    </head>
+
+    <body>
+    	<div class="content-user order-detail-wrap">
+	    	<div class="userInfo-wrap conStyle noteCon-wrap">
+                <div class="orderList">
+    				<ul id="content"></ul>
+                </div>
+	    	</div>
+    	</div>
+
+        <div id="map-modal" class="ant-modal-wraper hidden">
+            <div class="ant-modal-mask"></div>
+            <div tabindex="-1" class="ant-modal-wrap">
+                <div role="document" class="ant-modal" style="width: 540px;">
+                    <div class="ant-modal-content">
+                        <button aria-label="Close" class="ant-modal-close">
+                            <span class="ant-modal-close-x"></span>
+                        </button>
+                        <div class="ant-modal-header">
+                            <div class="ant-modal-title">酒店地址</div>
+                        </div>
+                        <div class="ant-modal-body">
+                            <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading hidden">
+                                <div class="ant-spin-blur ant-spin-container">
+                                    <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                                </div>
+                            </div>
+                            <div id="J_SearchMapCont" style="height:400px;"></div>
+                        </div>
+                        <div class="ant-modal-footer">
+                            <button type="button" class="ant-btn ant-btn-primary ant-btn-lg ant-modal-confirm-btn">
+                                <span>确认</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="refund-modal" class="ant-modal-wraper hidden">
+            <div class="ant-modal-mask"></div>
+            <div tabindex="-1" class="ant-modal-wrap">
+                <div role="document" class="ant-modal" style="width: 540px;">
+                    <div class="ant-modal-content">
+                        <button aria-label="Close" class="ant-modal-close">
+                            <span class="ant-modal-close-x"></span>
+                        </button>
+                        <div class="ant-modal-header">
+                            <div class="ant-modal-title">退款理由</div>
+                        </div>
+                        <div class="ant-modal-body">
+                            <div class="modal-place-wrap">
+                                <textarea id="refundArea" type="textarea" rows="4" class="ant-input" placeholder="请填写退款理由"></textarea>
+                            </div>
+                            <span id="error-span"></span>
+                            <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading hidden">
+                                <div class="ant-spin-blur ant-spin-container">
+                                    <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ant-modal-footer">
+                            <button type="button" class="ant-btn ant-btn-lg" id="ant-modal-close">
+                                <span>关闭</span>
+                            </button>
+                            <button type="button" class="ant-btn ant-btn-primary ant-btn-lg" disabled id="ant-modal-confirm">
+                                <span>确认</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <link rel="import" href="../footer.html?__inline">
+        <script src="//api.map.baidu.com/api?v=2.0&ak=GtNrG008U04GONzKSDHiW70GxurUUhlU&s=1"></script>
+        <script>
+            require(['app/controller/user/LineOrder']);
+        </script>
+    </body>
+</html>

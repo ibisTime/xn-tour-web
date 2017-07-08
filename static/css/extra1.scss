@@ -903,3 +903,25 @@ select {
 .p-r {
     position: relative;
 }
+
+.order-detail-wrap {
+    padding-top: 40px;
+
+    .orderList ul li {
+        &:first-child {
+            border-top: none;
+        }
+
+        .status {
+            width: auto;
+            height: auto;
+            line-height: inherit;
+            border-radius: 20px;
+            padding: 4px 10px;
+        }
+    }
+}
+
+.td-under{
+    text-decoration: underline;
+}
