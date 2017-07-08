@@ -89,6 +89,24 @@ define([
             params.idKind = 1;
             params.userId = base.getUserId();
             return Ajax.post("805193", params);
-        }
+        },
+        // 用户收货地址
+        getAddressList: (refresh) => (
+            Ajax.get("805165", {userId: base.getUserId()}, refresh)
+        ),
+        // 新增收货地址,
+        getAddressAdd: (params) => {
+            params.userId = base.getUserId();
+            params.isDefault = 1;
+            return Ajax.post("805160", params);
+        },
+        // 设置默认收货地址
+        getAddressDefault: (code) => (
+            Ajax.get("805163", {userId: base.getUserId(),code:code}, true)
+        ),
+        // 删除收货地址
+        getAddressDelete: (code) => (
+            Ajax.get("805161", {code}, true)
+        ),
     }
 });

@@ -40,8 +40,8 @@ define([
         if(type == 5){
             $(".title").find("h3").text("积分支付");
         }
-        addListener();
         getOrderDetail();
+        addListener();
     }
     // 微信二维码支付
     function payWeChat(){
@@ -129,6 +129,8 @@ define([
                     }
                 }
                 getOrderDetail.timer = setTimeout(getOrderDetail, 3000);
+            }else{
+        		_loadingSpin.addClass("hidden");
             }
 		},()=>{
         	_loadingSpin.addClass("hidden");
@@ -157,9 +159,6 @@ define([
             _mallPay.prop("disabled", true).find("span").text("支付中...");
             _loadingSpin.removeClass("hidden");
             normalPay();
-        }, () => {
-            _mallPay.prop("disabled", false).find("span").text("立即支付");
-            _loadingSpin.addClass("hidden");
         });
     }
 });

@@ -30,6 +30,7 @@ define([
         getPageMallList: (params) => {
         	params.start = params.start||'1';
         	params.limit = params.limit||'12';
+        	params.status = '3';
 
             return Ajax.get("618420", params , true);
         },
@@ -37,5 +38,11 @@ define([
         getMallDetail: (code) => (
             Ajax.get("618422", {code,userId:base.getUserId()})
         ),
+        //分页查询商品
+        getSubmitOrder: (params) => {
+        	params.applyUser = base.getUserId();
+
+            return Ajax.get("618450", params , true);
+        },
     };
 });

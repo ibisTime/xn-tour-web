@@ -63,7 +63,7 @@ define([
         // 普通支付
         normalPay: (bizType, params) => (
             Ajax.post(bizType, {
-                payType: "2",
+                payType: "1",
                 ...params
             }, true)
         ),

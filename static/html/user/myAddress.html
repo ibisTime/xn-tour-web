@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>我的地址-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body class="mallDetail">
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a><samp>我的地址</samp></p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="userInfo-wrap conStyle revise-pwd identity-wrap addressWrap">
+    			
+    			<h4 class="address-title">新增收货地址</h4>
+    			<form id="addressForm">
+    				<div class="over-hide">
+    					<div class="txt fl">收货人姓名</div>
+    					<input type="text" name="addressee" id="addressee" class="input-text fl" placeholder="请输入货人姓名" />
+    				</div>
+    				<div class="over-hide mt20">
+    					<div class="txt fl">手机号</div>
+    					<input type="text" name="mobile" id="mobile" class="input-text fl" placeholder="请输入手机号" />
+    				</div>
+    				<div class="over-hide mt20">
+    					<div class="txt fl">所在地</div>
+    					<div id="city-group">
+    						<select id="province" name="province" class="input-text address-select prov"></select>
+                    		<select id="city" name="city" class="input-text address-select city" style="display: none;"></select>
+                    		<select id="district" name="district" class="input-text address-select dist" style="display: none;"></select>
+    					</div>
+    				</div>
+    				<div class="over-hide mt20">
+    					<div class="txt fl">详细地址</div>
+    					<textarea type="text" name="detailAddress" id="detailAddress" class="textarea fl" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息" ></textarea>
+    				</div>
+    				<div class="mt50">
+    					<input type="button" id="subBtn" class="input-btn" value="保存地址" />
+    				</div>
+    			</form>
+    			
+    			
+    			<h4 class="address-title mt40">管理收货地址</h4>
+    			<!--确认地址-->
+    			
+    			<div class="plr10">
+    				<table id="addressTable" class="traffic-table wp100 carpool-table address-table" border="0" cellpadding="0" cellspacing="0">
+		    			<thead>
+		    				<tr>
+		    					<th>收货人</th>
+		    					<th>手机号</th>
+		    					<th>所在地区</th>
+		    					<th>详细地址</th>
+		    					<th>操作</th>
+		    					<th></th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				<!--<tr>
+		    					<td>胡莎莎</td>
+		    					<td>15761663457</td>
+		    					<td>浙江省 杭州市 余杭区</td>
+		    					<td>梦想小镇天使村8幢1楼橙袋科技</td>
+		    					<td><input class="btn-edit" type="button" value="修改"/><samp>|</samp><input class="btn-delete" type="button" value="删除"/></td>
+		    					<td><input class="btn-defalut setDefault" type="button" value="设为默认"/></td>
+		    				</tr>--></tbody>
+		    		</table>
+    			</div>
+    		</div>
+    	</div>
+    	
+    	<!--加载动画-->
+    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+    	
+    	<link rel="import" href="../footer.html?__inline">
+    	<script src="../../js/lib/jquery.cityselect.js"></script>
+        <script>
+            require(['app/controller/user/MyAddress']);
+        </script>
+    </body>
+</html>

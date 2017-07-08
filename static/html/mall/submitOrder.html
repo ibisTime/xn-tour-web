@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>提交订单-来来旺旺</title>
+        <!--SCRIPT_PLACEHOLDER-->
+    </head>
+    
+    <body class="mallDetail">
+    	<div class="wrap position">
+    		<p>当前位置：<a href="../index.html">首页></a><a href="mall.html">积分商城></a><a href="" id="NowName"></a>><samp>提交订单</samp></p>
+    	</div>
+    	
+    	<div class="content-user">
+    		<div class="userInfo-wrap conStyle submitOrder-wrap">
+    			<!--确认地址-->
+    			<div class="address-wrap">
+    				<!--我的地址-->
+    				<h4 class="address-title">确认收货地址
+    					<a href="../user/myAddress.html?isReturn=1">管理收货地址</a>
+    				</h4>
+    				<div class="addressList" id="addressList">
+    					<ul>
+    						<li class="active">
+    							<div class="icon-address fl"></div>
+    							<div class="addressCon fl">浙江省 杭州市 余杭区 仓溢绿苑58幢3单元1001（胡莎莎 收）15700092384</div>
+    							<div class="isDefault hidden fl">默认地址</div>
+    						</li>
+    					</ul>
+    				</div>
+    				<!--添加地址-->
+    				<div class="no-address hidden">
+    					<img src="../../images/no-address.png" />
+    					<p><a href="../user/myAddress.html?isReturn=1">添加地址</a></p>
+    				</div>
+    				
+    				<div class="address-bt"></div>
+    			</div>
+    			
+    		</div>
+    		
+    		<div class="userInfo-wrap conStyle mt30">
+				<!--订单信息-->
+				<h4 class="address-title">确认订单信息</h4>
+				<div class="submitProduct">
+					<div class="con wp100 over-hide">
+						<div class="img fl"><a id="pic" href="#"></a></div>
+						<div class="txt fl">
+							<p id="name"></p>
+							<samp>价格:<i id="price"></i>积分</samp><br />
+							<samp>数量:<i id="quantity">2</i></samp>
+							<p class="amount">合计:<i id="amount"></i>积分</p>
+						</div>
+					</div>
+					<div class="wp100 over-hide mt20 applyNote-wrap">
+						<p class="fl">备注: </p>
+						<input class="applyNote" id="applyNote" type="text fl" placeholder="" />
+					</div>
+					<div class="amount-wrap">
+						<input id="subBtn" class="btn-sub" type="button" value="提交订单" />
+					</div>
+				</div>
+    		</div>
+    	</div>
+    	
+    	
+    	<!--加载动画-->
+    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
+            <div class="ant-spin-blur ant-spin-container">
+                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+            </div>
+        </div>
+    	
+    	<link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/mall/SubmitOrder']);
+        </script>
+    </body>
+</html>

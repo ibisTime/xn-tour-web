@@ -27,7 +27,7 @@ define([
                 <div class="img fl"><a href="#"><img src="${base.getPic(item.productOrderList[0].advPic)}"/></a></div>
                 <div class="txt fl">
                     <p>${item.productOrderList[0].productName}</p>
-                    <p>${base.fZeroMoney(item.amount1)}积分</p>
+                    <p>${base.formatMoney(item.amount1)}积分</p>
                     <span>x${item.productOrderList[0].quantity}</span>
                 </div>
                 <div class="status status0">${mallOrderStatus[item.status]}</div>
