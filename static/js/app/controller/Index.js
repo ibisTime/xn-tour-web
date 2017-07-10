@@ -41,7 +41,6 @@ define([
             'pagination': '#swiper',
             'pagination' : '#swiper .swiper-pagination',
             'paginationClickable' :true,
-            'autoplayDisableOnInteraction': false,
             'preventClicksPropagation': true,
             'loop' : true,
         });

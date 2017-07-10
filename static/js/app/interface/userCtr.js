@@ -108,5 +108,15 @@ define([
         getAddressDelete: (code) => (
             Ajax.get("805161", {code}, true)
         ),
+        // 设置默认收货地址
+        getAddressEdit: (params) => {
+        	params.userId = base.getUserId()
+        	
+            return Ajax.get("805162", params, true)
+        },
+        // 收货地址详情
+        getAddressDetail: (code) => (
+            Ajax.get("805166", {code}, true)
+        ),
     }
 });

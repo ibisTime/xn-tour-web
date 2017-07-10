@@ -51,7 +51,7 @@ define([
 			$(".title").html(data.name);
 			$(".updateDatetime").html(base.formatDate(data.publishDatetime,"yyyy-MM-dd hh:mm:ss"));
 			$(".description").html(data.description);
-			if(data.isCollect){
+			if(data.isCollect&&data.isCollect!="0"){
 				$(".icon-collection").addClass("active");
 				$(".icon-collection").html("取消收藏")
 			}else{
@@ -65,6 +65,10 @@ define([
     function addListener() {
 
     	$(".icon-collection").click(function(){
+    		if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
         	_loadingSpin.removeClass("hidden");
     		getCollectTravel()
     	})

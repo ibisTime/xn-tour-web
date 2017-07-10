@@ -80,7 +80,7 @@
     	</div>
     	
     	<!--预订弹窗-->
-    	<div class="detail-chose-dialog editAddressDialog" id="Dialog">
+    	<div class="detail-chose-dialog editAddressDialog hidden" id="Dialog">
 	        <div class="am-modal-mask"></div>
 	        <div class="am-modal-wrap">
 	            <div role="document" class="am-modal am-modal-operation am-modal-transparent">
@@ -93,27 +93,27 @@
 		                    	<div class="wp100 over-hide">
 		                    		<div class="title fl">收货人姓名:</div>
 					    			<div class="am-input-wrap fl">
-				                        <input class="input-text" name="addressee1" id="addressee1" />
+				                        <input class="input-text" name="addressee" id="addressee1" />
 					    			</div>
 		                    	</div>
 			    				<div class="wp100 over-hide mt20">
 			    					<div class="title fl">手机号:</div>
 					    			<div class="am-input-wrap fl">
-				                        <input type="text" name="mobile1" id="mobile1" class="input-text" />
+				                        <input type="text" name="mobile" id="mobile1" class="input-text" />
 					    			</div>
 			    				</div>
 			    				<div class="wp100 over-hide mt20">
 			    					<div class="title fl">所在地:</div>
-			    					<div id="city-group" class="am-select">
-			    						<select id="province" name="province" class="address-select fl prov"></select>
-			                    		<select id="city" name="city" class="address-select fl city" style="display: none;"></select>
-			                    		<select id="district" name="district" class="address-select fl dist" style="display: none;"></select>
+			    					<div id="city-group1" class="am-select re">
+			    						<select id="province1" name="province" class="address-select fl prov"></select>
+			                    		<select id="city1" name="city" class="address-select fl ml10 city"></select>
+			                    		<select id="district1" name="district" class="address-select fl ml10 dist"></select>
 			    					</div>
 			    				</div>
-		                    	<div class="wp100 over-hide mt10">
+		                    	<div class="wp100 over-hide">
 		                    		<div class="title fl">详细地址:</div>
 					    			<div class="am-textarea-wrap fl">
-					    				<textarea id="detailAddress1" name="detailAddress1" style="resize: 0;"></textarea>
+					    				<textarea id="detailAddress1" name="detailAddress" style="resize: 0;"></textarea>
 					    			</div>
 		                    	</div>
 	                    	</form>

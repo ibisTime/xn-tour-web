@@ -278,6 +278,11 @@ define([
     	})
     	
     	$(".dconTop-right .icon-star").click(function(){
+    		if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
+    		
         	_loadingSpin.removeClass("hidden");
     		getCollectTravel()
     	})
