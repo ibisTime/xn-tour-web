@@ -189,6 +189,10 @@ define([
         });
         // 立即预定
         $("#body").on("click", ".spl-booking", function(){
+            if(!base.isLogin()){
+                base.goLogin();
+                return;
+            }
             var _this = $(this),
                 _tr = _this.closest("tr[data-code]"),
                 specialLineCode = _tr.attr("data-code"),
