@@ -5,24 +5,24 @@ define([
     'app/interface/mallCtr'
 ], function(base, Banqh, generalCtr, mallCtr) {
 	var code = base.getUrlParam("code");
-	
+
 	var _loadingSpin = $("#loadingSpin");
-	
+
     init();
-    
+
     // 初始化页面
     function init() {
         $("#nav li").eq(8).addClass("active");
-        
+
         _loadingSpin.removeClass("hidden");
         $.when(
         	getMallDetail(),
         )
         addListener();
-        
+
         _loadingSpin.addClass("hidden");
     }
-	
+
 	//商品详情
     function getMallDetail(){
     	return mallCtr.getMallDetail(code).then((res)=>{
@@ -31,27 +31,27 @@ define([
             $.each(pic, function(i, p){
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
             });
-            
+
             $("#ban_pic1 ul").html(html);
             $("#ban_num1 ul").html(html);
-            
+
             if(pic.length>1){
             	swiperPic()
             }
-			
+
             $("#NowName").html(data.name);
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .joinPlace").html(data.province+data.city+data.area+" "+data.detail)
             $(".dconTop-right #lowPrice").html(base.formatMoney(data.price1));
-            
+
 			$("#description").html(data.description);
 			$(".num").attr("data-quantity",data.quantity>0?data.quantity:0)
 			$(".subBtn").attr("data-quantity",data.quantity>0?1:0)
-			
+
         	_loadingSpin.addClass("hidden");
 		},()=>{})
     }
-	
+
 	//图片
 	function swiperPic(){
 		Banqh.banqh({
@@ -70,36 +70,36 @@ define([
 			pop_up:false//大图是否有弹出框
 		})
 	}
-	
+
 	//点赞
 	function getCollect(){
 		return generalCtr.getCollect(code,4,true).then((data)=>{
 			var _collect = $(".dconTop-right .icon-star");
-			
+
 				_collect.toggleClass("active")
         		_loadingSpin.addClass("hidden");
 		},()=>{
         	_loadingSpin.addClass("hidden");
 		})
 	}
-	
+
     function addListener() {
-    	
+
     	$(".icon-star").click(function(){
     		if($(this).hasClass("active")){
     			$(this).removeClass("active");
     		}else{
     			$(this).addClass("active");
     		}
-    	})
-    	
+    	});
+
     	$(".booking-wrap").on("click",".icon-sub",function(){
     		var _num = parseInt($(this).siblings(".num").html());
     		_num<=1?1:_num--;
     		$(this).siblings(".num").html(_num);
     		$(this).parent(".number").siblings(".btn-wrap").children(".subBtn").attr("data-quantity",_num)
-    	})
-    	
+    	});
+
     	$(".booking-wrap").on("click",".icon-add",function(){
     		var _num = parseInt($(this).siblings(".num").html());
     		var remain =$(this).siblings(".num").attr("data-quantity")
@@ -108,15 +108,19 @@ define([
 	    		$(this).siblings(".num").html(_num);
 	    		$(this).parent(".number").siblings(".btn-wrap").children(".subBtn").attr("data-quantity",_num)
     		}
-    	})
-    	
+    	});
+
     	$(".subBtn").click(function(){
-    		var _num = $(this).attr("data-quantity")
-    		if(_num&&_num>=1){
-    			location.href = "submitOrder.html?code="+code+"&quantity="+_num;
-    		}else{
-    			base.showMsg("当前商品不能购买")
-    		}
-    	})
+            if(base.isLogin()){
+                var _num = $(this).attr("data-quantity");
+        		if(_num && _num >= 1){
+        			location.href = "submitOrder.html?code=" + code + "&quantity=" + _num;
+        		}else{
+        			base.showMsg("当前商品不能购买")
+        		}
+            }else {
+                base.showMsg("您还未登录，无法购买");
+            }
+    	});
     }
 });

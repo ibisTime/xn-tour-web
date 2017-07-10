@@ -12,7 +12,7 @@ define([
         ),
         // 获取首页banner
         getIndexBanner: (refresh) => (
-            menuCtr.getBanner("index_banner", refresh)
+            menuCtr.getBanner("pc_index_banner", refresh)
         ),
          // 获取模块
         getModules: (location, refresh) => (
