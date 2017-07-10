@@ -48,15 +48,14 @@ define([
                 //     // clearSessionUser();
                 //     sessionStorage.setItem("l-return", location.pathname + location.search);
                 //     // 登录
-                //     return $.Deferred().reject();
+                //     return $.Deferred().reject("登录超时，请重新登录");
                 // }
                 if(res.errorCode != "0"){
-                    var d = showMsg(res.errorInfo);
-                    return $.Deferred().reject(res.errorInfo, d);
+                    return $.Deferred().reject(res.errorInfo);
                 }
                 return res.data;
             }).fail(function(error){
-                showMsg(JSON.stringify(error));
+                showMsg(error);
             });
         }
 
