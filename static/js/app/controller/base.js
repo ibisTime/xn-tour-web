@@ -212,7 +212,6 @@ define([
             return !!CookieUtil.get("userId");
         },
         goLogin: function(){
-            loading.hideLoading();
             sessionStorage.setItem("l-return", location.pathname + location.search);
             location.href = "../user/login.html";
         },

@@ -46,6 +46,7 @@ define([
 					"loginPwd": pwd,
 					"kind": "f1"
 				}).then((data)=>{
+					var returnUrl = sessionStorage.getItem("l-return")
 					
 					if($("#isRem").hasClass("active")){
 						base.setSessionUser(data,true)
@@ -54,7 +55,7 @@ define([
 					}
 					
 					base.hideLoading();
-					location.href = '../index.html';
+					location.href = returnUrl || "../index.html";
 				},()=>{
 					base.hideLoading();
 				})

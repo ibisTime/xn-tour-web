@@ -30,6 +30,7 @@ define([
 	    					<td>${d.province} ${d.city} ${d.district}</td>
 	    					<td>${d.detailAddress}</td>
 	    					<td>
+	    						<input class="btn-edit" type="button"  data-code="${d.code}" value="修改"/><samp>|</samp>
 	    						<input class="btn-delete" type="button"  data-code="${d.code}" value="删除"/></td>
 	    					<td><input class="btn-defalut ${d.isDefault==0?'setDefault':''}" data-code="${d.code}" type="button" value=" ${d.isDefault==0?'设为默认':'默认地址'}"/></td>
 	    				</tr>`;

@@ -15,10 +15,10 @@ define([
 	function getUserInfo(){
 		userCtr.getUserInfo(true)
             .then((data) => {
-                _loadingSpin.addClass("hidden");
     			$(".myPic").html("<img src='"+base.getAvatar(data.userExt.photo)+"'/>")
     			$(".name").html(data.nickname)
     			$(".tel i").html(data.mobile)
+                _loadingSpin.addClass("hidden");
     		},() => {
                 _loadingSpin.addClass("hidden");
             });

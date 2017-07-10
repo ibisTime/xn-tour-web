@@ -284,7 +284,12 @@ define([
     	
     	//立即预订点击
     	$("#bookingBtn").click(function(){
-        	$("#Dialog").removeClass("hidden");
+    		
+    		if(base.isLogin()){
+        		$("#Dialog").removeClass("hidden");
+    		}else{
+    			base.goLogin();
+    		}
     	})
     	
     	$("#submitForm").validate({
@@ -318,11 +323,15 @@ define([
         
         //评论
         $("#commentBtn").click(function(){
+        	if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
+        	
         	var _commentCon = $("#commentCon");
         	var content = _commentCon.val()
         	
         	if(content){
-        		
         		_commentCon.siblings(".error").html("&nbsp;")
         		var params = {
 	        		type: "2",

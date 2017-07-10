@@ -6,13 +6,15 @@ define([
     'app/module/qiniu'
 ], function(base, userCtr, generalCtr,  Validate, QiniuUpdata) {
 	var dimgSrc ,dname, dmobile, token;
+    var _loadingSpin = $("#loadingSpin");
 
     init();
     
     // 初始化页面
     function init() {
         $("#userNav li").eq(0).addClass("active");
-        base.showLoading();
+        
+		_loadingSpin.removeClass("hidden");;
         $.when(
         	getUserInfo(),
         	getQiniuToken()
@@ -31,7 +33,8 @@ define([
 			dimgSrc = data.userExt.photo;
 			dname = data.nickname;
 			dmobile = data.mobile;
-        	base.hideLoading();
+        	
+			_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
 	
@@ -39,16 +42,19 @@ define([
 	function getQiniuToken(){
 		generalCtr.getQiniuToken().then((data)=>{
 			token = data.uploadToken;
-			base.showLoading();
+			
+			_loadingSpin.removeClass("hidden");;
 			QiniuUpdata.uploadInit({
 	        	btnId:'photoFile',
 	        	containerId:'photoFile-wrap',
 	        	starBtnId: 'subBtn',
 	        	token: token
 	        })
-        	base.hideLoading();
+        	
+			_loadingSpin.addClass("hidden");
 		},()=>{
-        	base.hideLoading();
+        	
+			_loadingSpin.addClass("hidden");
 		})
 	}
 	
@@ -57,10 +63,10 @@ define([
 			userCtr.setNickName($(".name").val()),
 			userCtr.setPhoto($(".myPic img").attr("data-src"))
 		).then(()=>{
-        	base.showLoading("修改成功");
+        	base.showMsg("修改成功");
+			_loadingSpin.addClass("hidden");
         	
         	setTimeout(function(){
-        		base.hideLoading();
         		location.href = "./user.html"
         	},1000)
 		})
@@ -106,7 +112,8 @@ define([
         
         $("#subBtn").click(function(){
         	if($("#editInfo").valid()){
-        		base.showLoading();
+        		
+				_loadingSpin.removeClass("hidden");;
         		setUserInfo();
         	}
         })

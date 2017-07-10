@@ -111,16 +111,18 @@ define([
     	});
 
     	$(".subBtn").click(function(){
-            if(base.isLogin()){
-                var _num = $(this).attr("data-quantity");
-        		if(_num && _num >= 1){
-        			location.href = "submitOrder.html?code=" + code + "&quantity=" + _num;
-        		}else{
-        			base.showMsg("当前商品不能购买")
-        		}
-            }else {
-                base.showMsg("您还未登录，无法购买");
-            }
+    		
+    		if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
+    		
+            var _num = $(this).attr("data-quantity");
+    		if(_num && _num >= 1){
+    			location.href = "submitOrder.html?code=" + code + "&quantity=" + _num;
+    		}else{
+    			base.showMsg("当前商品不能购买")
+    		}
     	});
     }
 });

@@ -3,16 +3,17 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>我的地址-来来旺旺</title>
-        <!--SCRIPT_PLACEHOLDER-->
+         
     </head>
     
     <body class="mallDetail">
+        <link rel="import" href="../top.html?__inline">
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a><samp>我的地址</samp></p>
     	</div>
     	
     	<div class="content-user">
-    		<div class="userInfo-wrap conStyle revise-pwd identity-wrap addressWrap">
+    		<div class="userInfo-wrap conStyle revise-pwd identity-wrap addressWrap re">
     			
     			<h4 class="address-title">新增收货地址</h4>
     			<form id="addressForm">
@@ -68,15 +69,65 @@
 		    				</tr>--></tbody>
 		    		</table>
     			</div>
+    		
+    			<!--加载动画-->
+		    	<div id="loadingSpin" class="ant-spin-nested-loading">
+		            <div class="ant-spin-blur ant-spin-container">
+		                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+		            </div>
+		        </div>
     		</div>
     	</div>
     	
-    	<!--加载动画-->
-    	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
-            <div class="ant-spin-blur ant-spin-container">
-                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
-            </div>
-        </div>
+    	<!--预订弹窗-->
+    	<div class="detail-chose-dialog editAddressDialog" id="Dialog">
+	        <div class="am-modal-mask"></div>
+	        <div class="am-modal-wrap">
+	            <div role="document" class="am-modal am-modal-operation am-modal-transparent">
+	                <div class="am-modal-content">
+	                	<div class="am-modal-head">
+	                		<div class="am-modal-title">修改地址</div>
+	                	</div>
+	                    <div class="am-modal-body">
+	                    	<form id="submitForm">
+		                    	<div class="wp100 over-hide">
+		                    		<div class="title fl">收货人姓名:</div>
+					    			<div class="am-input-wrap fl">
+				                        <input class="input-text" name="addressee1" id="addressee1" />
+					    			</div>
+		                    	</div>
+			    				<div class="wp100 over-hide mt20">
+			    					<div class="title fl">手机号:</div>
+					    			<div class="am-input-wrap fl">
+				                        <input type="text" name="mobile1" id="mobile1" class="input-text" />
+					    			</div>
+			    				</div>
+			    				<div class="wp100 over-hide mt20">
+			    					<div class="title fl">所在地:</div>
+			    					<div id="city-group" class="am-select">
+			    						<select id="province" name="province" class="address-select fl prov"></select>
+			                    		<select id="city" name="city" class="address-select fl city" style="display: none;"></select>
+			                    		<select id="district" name="district" class="address-select fl dist" style="display: none;"></select>
+			    					</div>
+			    				</div>
+		                    	<div class="wp100 over-hide mt10">
+		                    		<div class="title fl">详细地址:</div>
+					    			<div class="am-textarea-wrap fl">
+					    				<textarea id="detailAddress1" name="detailAddress1" style="resize: 0;"></textarea>
+					    			</div>
+		                    	</div>
+	                    	</form>
+	                    </div>
+	                    <div class="am-modal-footer">
+	                        <div class="am-modal-button-group">
+	                            <input class="am-modal-button am-modal-button-ca" id="cancel" type="button" value="取消"/>
+	                            <input class="am-modal-button am-modal-button-co" id="confirm" type="button" value="保存地址"/>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
     	
     	<link rel="import" href="../footer.html?__inline">
     	<script src="../../js/lib/jquery.cityselect.js"></script>

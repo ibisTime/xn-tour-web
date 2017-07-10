@@ -241,6 +241,11 @@ define([
     	
     	//评论
         $("#commentBtn").click(function(){
+        	if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
+        	
         	var _commentCon = $("#commentCon");
         	var content = _commentCon.val()
         	
@@ -298,6 +303,11 @@ define([
         //房间预订
         //立即预订点击
     	$("#roomList ul").on("click","li .subBtn",function(){
+    		if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
+    		
     		var _this = $(this);
     		
     		$("#hotalRoomCode").val(_this.attr("data-roomName"));

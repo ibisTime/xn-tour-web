@@ -140,6 +140,11 @@ define([
     	
     	//评论
         $("#commentBtn").click(function(){
+        	if(!base.isLogin()){
+    			base.goLogin();
+    			return ;
+    		}
+        	
         	var _commentCon = $("#commentCon");
         	var content = _commentCon.val()
         	

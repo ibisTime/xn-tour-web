@@ -2194,6 +2194,7 @@ select{
 }
 
 .userInfo-wrap{
+    width: 100%;
     overflow: hidden;
     padding: 30px 15px;
 
@@ -3088,6 +3089,15 @@ select{
     color: #F14E4F;
     text-align: left;
 }
+.am-select select{
+    width: 90px;
+    height: 40px;
+    padding-top: 4px;
+    border: 1px solid #e9e9e9;
+    background-color: #f3f3f3;
+    background: url("../images/down.png") no-repeat scroll right 8px center transparent;
+    position: relative;
+}
 
 //日期
 .mylaydate{
@@ -3242,7 +3252,7 @@ select{
 }
 .noData{
     width: 100%;
-    padding: 50px 0 70px;
+    padding: 70px 0 0;
     text-align: center;
 
     img{
@@ -3535,4 +3545,14 @@ select{
             background-color: #06CDB8;
         }
     }
+}
+.editAddressDialog{
+    .title {
+        line-height: 40px;
+    }
+    .am-input-wrap{
+        height: 40px;
+        background-color: #fff;
+    }
+    
 }
