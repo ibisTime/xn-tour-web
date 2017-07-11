@@ -25,5 +25,21 @@ define([
     		base.hideLoading();
     		location.href = "./login.html"
     	})
+    	
+    	$("#topSearchTxt").focus(function(){
+    		var _topSearchTxt = $(this)
+    		 $(document).keyup(function(event){
+				if(event.keyCode==13){
+					if($("#topSearchTxt").val()&&$("#topSearchTxt").val()!=""){
+						
+						location.href = "../travel/search.html?search="+$("#topSearchTxt").val();
+					}
+				}
+			}); 
+    	})
+    	$("#topSearchTxt").blur(function(){
+				if (window.event.keyCode==13) window.event.keyCode=0 ;
+    	})
     }
+    
 });
