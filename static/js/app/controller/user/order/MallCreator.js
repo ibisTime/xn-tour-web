@@ -28,8 +28,8 @@ define([
                             <div class="img fl"><img src="${base.getPic(item.productOrderList[0].advPic)}"/></div>
                             <div class="txt fl">
                                 <p>${item.productOrderList[0].productName}</p>
-                                <p>${base.formatMoney(item.amount1)}积分</p>
                                 <span>x${item.productOrderList[0].quantity}</span>
+                                <p>${base.formatMoney(item.amount1)}积分</p>
                             </div>
                             <div class="status ${item.status == '0' ? 'status0' : ''}">${mallOrderStatus[item.status]}</div>
                             ${

@@ -25,6 +25,19 @@ define([
             params.status = 1;
             return Ajax.get("804040", params, refresh);
         },
+        // 列表查询签到记录
+        getSignInList: (refresh) => (
+            Ajax.get("805102", {
+                userId: base.getUserId()
+            }, refresh)
+        ),
+        // 签到
+        signIn: (addr) => (
+            Ajax.post("618921", {
+                userId: base.getUserId(),
+                location: addr || "中国"
+            })
+        ),
         // 获取数据字典
         getDictList: (type, refresh) => (
             Ajax.get("807706", {
@@ -56,10 +69,12 @@ define([
             }, refresh)
         ),
         // 微信支付
-        payWeChat: (bizType,params) => {
-        	params.payType = "3";
-            return Ajax.post(bizType, params)
-        },
+        payWeChat: (bizType,params) => (
+            Ajax.post(bizType, {
+                payType: "3",
+                ...params
+            })
+        ),
         // 普通支付
         normalPay: (bizType, params) => (
             Ajax.post(bizType, {
@@ -80,7 +95,7 @@ define([
             params.status = 1;
             return Ajax.get("618315", params, true);
         },
-        // 分页查询评论
+        // 评论
         getCommentPull: (params) => {
         	params.commer = base.getUserId();
             return Ajax.get("618310", params, true);
@@ -88,7 +103,7 @@ define([
         // 分页查询资金流水
         getPageCapitalFlow: (params, refresh) => {
         	params.userId = base.getUserId()
-        	
+
            return Ajax.get("802520", params, refresh)
         }
     }

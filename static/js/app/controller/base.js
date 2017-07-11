@@ -208,6 +208,11 @@ define([
         goBack: function() {
             window.history.back();
         },
+        goReturn: function() {
+            var returnUrl = sessionStorage.getItem("l-return");
+            sessionStorage.removeItem("l-return");
+        	location.href = returnUrl || "../index.html";
+        },
         isLogin: function() {
             return !!CookieUtil.get("userId");
         },

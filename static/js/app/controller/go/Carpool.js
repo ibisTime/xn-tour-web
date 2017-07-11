@@ -176,7 +176,8 @@ define([
                             unDisabledButton();
                             base.confirm("您还未实名认证，点击确认前往实名认证")
                                 .then(function () {
-                                    location.href = "../user/identity.html"
+                                    sessionStorage.setItem("l-return", location.pathname + location.search);
+                                    location.href = "../user/identity.html";
                                 }, base.emptyFun);
                             return;
                         }

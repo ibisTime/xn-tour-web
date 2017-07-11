@@ -4,12 +4,12 @@ define([
 ], function(base, Ajax) {
     return {
         // 分页查询线路
-        getRecommend: (params) => {
-        	params.start = params.start||'1';
-        	params.limit = params.limit||'12';
+        getRecommend: (params, refresh) => {
+        	params.start = params.start || '1';
+        	params.limit = params.limit || '12';
         	params.status = 1;
 
-            return Ajax.get("618100", params , true);
+            return Ajax.get("618100", params, refresh);
         },
         // 线路详情
         getTourismDetail: (code) => (
@@ -83,7 +83,10 @@ define([
         },
         // 游记详情
         getDetailYJ: (code) => (
-            Ajax.get("618132", {code})
+            Ajax.get("618132", {
+                code,
+                userId: base.getUserId()
+            })
         ),
         /*
          * 发表游记

@@ -3,15 +3,15 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>实名认证-大元云</title>
-         
+
     </head>
-    
+
     <body>
         <link rel="import" href="../top.html?__inline">
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>实名认证</p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="userInfo-wrap conStyle revise-pwd identity-wrap">
     			<div class="title">
@@ -30,9 +30,14 @@
     					<input type="button" id="subBtn" class="input-btn" value="提交" />
     				</div>
     			</form>
+                <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading hidden">
+                    <div class="ant-spin-blur ant-spin-container">
+                        <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                    </div>
+                </div>
     		</div>
     	</div>
-    	
+
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/user/Identity']);

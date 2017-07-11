@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <link rel="import" href="../head.html?__inline">
-        <title>支付-大元云</title>
-         
-    </head>
 
-    <body>
-        <link rel="import" href="../top.html?__inline">
-    	<div class="wrap position">
-    		<p>当前位置：<a href="../index.html">首页></a><a href="../user/user.html">个人中心></a>支付</p>
-    	</div>
+<head>
+    <link rel="import" href="../head.html?__inline">
+    <title>支付-大元云</title>
 
-    	<div class="content-user">
-    		<div class="userInfo-wrap conStyle identity-wrap">
-    			<div class="title">
-    				<h3>微信支付</h3>
-    			</div>
+</head>
 
-    			<div class="show-wrap">
-    				<div class="pay-wrap hidden">
-	    				<div class="qrcode"><div id="qrcode"></div></div>
-	    				<div class="txt">请打开微信扫码支付</div>
-	    				<div id="price" class="price">支付金额：<i></i></div>
-	    			</div>
-    			</div>
-                <div class="jfpay-wrap hidden">
-                    <div id="jfPrice" class="price">支付积分：<i></i></div>
-                    <button id="mallPay" class="ant-btn ant-btn-primary ant-btn-lg">
-                        <span>立即支付</span>
-                    </button>
-                </div>
-                <div class="paySuccess hidden">
-                    <img src="../../images/paySuccess.png" />
-                    <p>已支付成功三秒后跳转<a href="../user/order.html">订单中心...</a></p>
-                </div>
-                <!--加载动画-->
-                <div id="loadingSpin" class="ant-spin-nested-loading">
-                    <div class="ant-spin-blur ant-spin-container">
-                        <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+<body>
+    <link rel="import" href="../top.html?__inline">
+    <div class="wrap position">
+        <p>当前位置：<a href="../index.html">首页></a><a href="../user/user.html">个人中心></a>支付</p>
+    </div>
+
+    <div class="content-user">
+        <div class="userInfo-wrap conStyle identity-wrap">
+            <div class="normal-pay-wrap hidden" id="jfPayWrap">
+                <div id="jfPrice" class="price">支付积分：<i></i></div>
+                <button id="mallPay" class="ant-btn ant-btn-primary ant-btn-lg">
+                    <span>立即支付</span>
+                </button>
+            </div>
+            <div id="paySuccess" class="paySuccess hidden">
+                <img src="../../images/paySuccess.png" />
+                <p>已支付成功三秒后跳转<a href="../user/order.html">订单中心...</a></p>
+            </div>
+            <div id="ant-tabs" class="ant-tabs ant-tabs-top ant-tabs-card">
+                <div role="tablist" class="ant-tabs-bar" tabindex="0">
+                    <div class="ant-tabs-nav-container">
+                        <div class="ant-tabs-nav-wrap">
+                            <div class="ant-tabs-nav-scroll">
+                                <div class="ant-tabs-nav ant-tabs-nav-animated">
+                                    <div class="ant-tabs-tab-active ant-tabs-tab">微信支付</div>
+                                    <div class="ant-tabs-tab">余额支付</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-        	</div>
-    	</div>
+                <div class="ant-tabs-content ant-tabs-content-no-animated">
+                    <div class="ant-tabs-tabpane ant-tabs-tabpane-active">
+                        <div class="show-wrap">
+                            <div class="pay-wrap">
+                                <div class="qrcode">
+                                    <div id="qrcode"></div>
+                                </div>
+                                <div class="txt">请打开微信扫码支付</div>
+                                <div id="price" class="price">支付金额：<i></i></div>
+                            </div>
+                        </div>
+                        <!--加载动画-->
+                        <div id="loadingSpin" class="ant-spin-nested-loading">
+                            <div class="ant-spin-blur ant-spin-container">
+                                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ant-tabs-tabpane ant-tabs-tabpane-inactive">
+                        <div class="normal-pay-wrap">
+                            <div id="yePrice" class="price">支付金额：<i></i></div>
+                            <button id="yePay" class="ant-btn ant-btn-primary ant-btn-lg">
+                                <span>立即支付</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-        <link rel="import" href="../footer.html?__inline">
-		<script src="../../js/lib/qrcode.js"></script>
-        <script>
-            require(['app/controller/pay/Pay']);
-        </script>
-    </body>
+    <link rel="import" href="../footer.html?__inline">
+    <script src="../../js/lib/qrcode.js"></script>
+    <script>
+        require(['app/controller/pay/Pay']);
+    </script>
+</body>
+
 </html>

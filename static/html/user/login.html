@@ -3,11 +3,11 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>登录-大元云</title>
-         
+
     </head>
-    
+
     <body>
-    	
+
         <link rel="import" href="../top.html?__inline">
     	<div class="wp100 login-bg">
     		<div class="loginForm-wrap wrap hp100 re">
@@ -16,7 +16,7 @@
 	    				<h3>用户登录</h3>
 	    				<a href="register.html"><img src="../../images/立即注册.png"/>立即注册</a>
 	    			</div>
-	    			
+
 	    			<div class="wp100 pt45">
 	    				<div class="input-wrap">
 		    				<div class="icon"><img src="../../images/手机号.png"/></div>
@@ -27,18 +27,23 @@
 		    				<input id="password"  name="password" class="input-text" type="password" placeholder="请输入密码" />
 		    			</div>
 	    			</div>
-	    			
+
 	    			<div class="input-info">
 	    				<div id="isRem" class="check active fl"></div>
 	    				<div class="txt fl">记住我</div>
 	    				<div class="txt fr"><a href="findpwd.html">忘记密码？</a></div>
 	    			</div>
-	    			
+
 	    			<input id="loginBtn" class="input-btn mt80" type="button" value="立即登录" />
-	    		</form>	
+                    <div id="loadingSpin" class="ant-spin-nested-loading hidden">
+                        <div class="ant-spin-blur ant-spin-container">
+                            <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                        </div>
+                    </div>
+	    		</form>
     		</div>
     	</div>
-    	
+
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/user/Login']);

@@ -4,12 +4,12 @@ define([
 ], function(base, Ajax) {
     return {
         // 分页查询酒店
-        getHotelPage: (params) => {
-        	params.start = params.start||'1';
-        	params.limit = params.limit||'12';
+        getHotelPage: (params, refresh) => {
+        	params.start = params.start || '1';
+        	params.limit = params.limit || '12';
         	params.status = 1;
 
-            return Ajax.get("618010", params , true);
+            return Ajax.get("618010", params, refresh);
         },
         /*
          * 分页查询酒店订单

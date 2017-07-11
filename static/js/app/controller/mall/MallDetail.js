@@ -14,13 +14,8 @@ define([
     function init() {
         $("#nav li").eq(8).addClass("active");
 
-        _loadingSpin.removeClass("hidden");
-        $.when(
-        	getMallDetail(),
-        )
+    	getMallDetail();
         addListener();
-
-        _loadingSpin.addClass("hidden");
     }
 
 	//商品详情
@@ -43,7 +38,7 @@ define([
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .joinPlace").html(data.province+data.city+data.area+" "+data.detail)
             $(".dconTop-right #lowPrice").html(base.formatMoney(data.price1));
-
+            $(".quantity-span").html("库存：" + data.quantity);
 			$("#description").html(data.description);
 			$(".num").attr("data-quantity",data.quantity>0?data.quantity:0)
 			$(".subBtn").attr("data-quantity",data.quantity>0?1:0)
@@ -111,12 +106,12 @@ define([
     	});
 
     	$(".subBtn").click(function(){
-    		
+
     		if(!base.isLogin()){
     			base.goLogin();
     			return ;
     		}
-    		
+
             var _num = $(this).attr("data-quantity");
     		if(_num && _num >= 1){
     			location.href = "submitOrder.html?code=" + code + "&quantity=" + _num;

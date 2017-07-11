@@ -3,15 +3,15 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>提交订单-大元云</title>
-         
+
     </head>
-    
+
     <body class="mallDetail">
         <link rel="import" href="../top.html?__inline">
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="mall.html">积分商城></a><a href="" id="NowName"></a>><samp>提交订单</samp></p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="userInfo-wrap conStyle submitOrder-wrap">
     			<!--确认地址-->
@@ -21,25 +21,19 @@
     					<a href="../user/myAddress.html?isReturn=1">管理收货地址</a>
     				</h4>
     				<div class="addressList" id="addressList">
-    					<ul>
-    						<li class="active">
-    							<div class="icon-address fl"></div>
-    							<div class="addressCon fl">浙江省 杭州市 余杭区 仓溢绿苑58幢3单元1001（胡莎莎 收）15700092384</div>
-    							<div class="isDefault hidden fl">默认地址</div>
-    						</li>
-    					</ul>
+    					<ul></ul>
     				</div>
     				<!--添加地址-->
     				<div class="no-address hidden">
     					<img src="../../images/no-address.png" />
     					<p><a href="../user/myAddress.html?isReturn=1">添加地址</a></p>
     				</div>
-    				
+
     				<div class="address-bt"></div>
     			</div>
-    			
+
     		</div>
-    		
+
     		<div class="userInfo-wrap conStyle mt30">
 				<!--订单信息-->
 				<h4 class="address-title">确认订单信息</h4>
@@ -63,15 +57,15 @@
 				</div>
     		</div>
     	</div>
-    	
-    	
+
+
     	<!--加载动画-->
     	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
             <div class="ant-spin-blur ant-spin-container">
                 <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
             </div>
         </div>
-    	
+
     	<link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/mall/SubmitOrder']);

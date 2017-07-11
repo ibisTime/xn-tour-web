@@ -5,14 +5,14 @@ define([
 ], function(base, Validate, userCtr) {
 
     init();
-    
+
     // 初始化页面
     function init() {
         addListener();
     }
 
     function addListener() {
-		
+
 		$("#identityForm").validate({
             'rules': {
                 "realName": {
@@ -26,30 +26,33 @@ define([
             },
             onkeyup: false
         });
-		
+		var _loadingSpin = $("#loadingSpin");
 		$("#subBtn").click(function(){
 			var realName = $("#realName").val();
 			var idNo = $("#idNo").val();
-			
+
 			if($("#identityForm").valid()){
-				base.showLoading("认证中...");
-			
+                _loadingSpin.removeClass("hidden");
 		        userCtr.identity({
 		            realName: realName,
 		            idNo: idNo
 		        }).then(function(){
-		            base.hideLoading();
-					base.showLoading("认证成功");
-					
+		            _loadingSpin.addClass("hidden");
+					base.showMsg("认证成功");
 					setTimeout(function(){
-		            	base.hideLoading();
-						base.goBack();
-					},500)
-		        }, function(msg){
-		            base.showMsg(msg || "实名认证失败");
+                        var returnUrl = sessionStorage.getItem("l-return");
+                        sessionStorage.removeItem("l-return");
+                        if(returnUrl) {
+                            location.href = returnUrl
+                        }else {
+                            window.history.back();
+                        }
+					}, 500);
+		        }, function(){
+		            _loadingSpin.addClass("hidden");
 		        });
 			}
 		})
-		
+
     }
 });

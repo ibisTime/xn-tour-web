@@ -41,8 +41,8 @@ define([
     // 生成table到html
     function buildHtml(data){
         return `<li data-code="${data.code}">
-                    <div class="con wp100">
-                        <div class="img fl"><a href="#"><img src="${base.getPic(data.pic)}"/></a></div>
+                    <a href="../travel/tourism-note-yj.html?code=${data.code}" class="con wp100">
+                        <div class="img fl"><img src="${base.getPic(data.pic)}"/></div>
                         <div class="txt fl">
                             <p>${data.name}</p>
                             <div class="description">${
@@ -56,12 +56,12 @@ define([
                         <div class="btn-wrap">
                             <input type="button" value="" class="btn-delete" />
                         </div>
-                    </div>
+                    </a>
                 </li>`;
     }
     // 初始化分页器
     function initPagination(data){
-    	
+
     	$("#pagination .pagination").show();
         $("#pagination .pagination").pagination({
             pageCount: data.totalPage,

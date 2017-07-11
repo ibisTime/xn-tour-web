@@ -1,154 +1,183 @@
-.wrap{
+.wrap {
     width: 1200px;
     margin: 0 auto;
 }
-body{
+
+body {
     min-width: 1200px;
 }
-a{
-    transition: .5s;
-    -o-transition: .5s;
-    -ms-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s;
+
+a {
+    transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
 }
-img{
+
+img {
     vertical-align: bottom;
 }
 
-select{
+select {
     background: url("../images/down.png") no-repeat scroll right 8px center transparent;
 }
-
 //showMsg
-.ui-dialog-content{
+
+.ui-dialog-content {
     font-size: 16px;
 }
 
-.fs12{
+.fs12 {
     font-size: 12px;
 }
-.fs13{
+
+.fs13 {
     font-size: 13px;
 }
-.fs14{
+
+.fs14 {
     font-size: 14px;
 }
-.fs15{
+
+.fs15 {
     font-size: 15px;
 }
-.fs16{
+
+.fs16 {
     font-size: 16px;
 }
-.fs17{
+
+.fs17 {
     font-size: 17px;
 }
-.fs18{
+
+.fs18 {
     font-size: 18px;
 }
-.fs19{
+
+.fs19 {
     font-size: 19px;
 }
-.fs20{
+
+.fs20 {
     font-size: 20px;
 }
-.fs24{
+
+.fs24 {
     font-size: 24px;
 }
 
-.mt5{
+.mt5 {
     margin-top: 5px;
 }
-.mt10{
+
+.mt10 {
     margin-top: 10px;
 }
-.mt20{
+
+.mt20 {
     margin-top: 20px;
 }
-.mt30{
+
+.mt30 {
     margin-top: 30px;
 }
-.mt40{
+
+.mt40 {
     margin-top: 40px;
 }
-.mt50{
+
+.mt50 {
     margin-top: 50px;
 }
-.mt80{
+
+.mt80 {
     margin-top: 80px;
 }
-.mb10{
+
+.mb10 {
     margin-bottom: 10px;
 }
-.mr5{
+
+.mr5 {
     margin-right: 5px;
 }
-.mr10{
+
+.mr10 {
     margin-right: 10px;
 }
-.mr60{
+
+.mr60 {
     margin-right: 60px;
 }
-.ml10{
+
+.ml10 {
     margin-left: 10px;
 }
-.ml30{
+
+.ml30 {
     margin-left: 30px;
 }
-.pt25{
+
+.pt25 {
     padding-top: 25px;
 }
-.pt45{
+
+.pt45 {
     padding-top: 45px;
 }
-.ptb10{
+
+.ptb10 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.pl30{
+
+.pl30 {
     padding-left: 30px;
 }
-.plr10{
+
+.plr10 {
     padding-left: 10px;
     padding-right: 10px;
 }
-.plr27{
+
+.plr27 {
     padding-left: 27px;
     padding-right: 27px;
 }
 
-.conStyle{
+.conStyle {
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,.2);
     -ms-box-shadow: 0 1px 3px rgba(0,0,0,.2);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.2);
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
-
 /*header*/
-.head-top{
+.head-top {
     height: 32px;
     background-color: #f6f6f6;
     border-bottom: 1px solid #eee;
     line-height: 32px;
 
-    .head-top-fl{
+    .head-top-fl {
         float: left;
         font-size: 14px;
         color: #585858;
     }
 
-    .WeChat-icon{
+    .WeChat-icon {
         height: 22px;
         margin-top: 5px;
         line-height: 1;
         position: relative;
 
-        img{
+        img {
             height: 100%;
         }
-        
-        .WeChatImg{
+
+        .WeChatImg {
             width: 0;
             height: 0;
             overflow: hidden;
@@ -158,16 +187,16 @@ select{
             top: 22px;
             left: 50%;
             z-index: 99;
-            transition: .6s;
+            transition: 0.6s;
             opacity: 0;
-            
-            img{
+
+            img {
                 width: 100%;
             }
         }
     }
-    
-    .WeChat-icon:hover .WeChatImg{
+
+    .WeChat-icon:hover .WeChatImg {
         opacity: 1;
         width: 150px;
         height: 150px;
@@ -175,18 +204,18 @@ select{
         margin-left: -75px;
     }
 
-    .tel_icon{
+    .tel_icon {
         height: 15px;
         margin-top: 8px;
         margin-right: 6px;
         line-height: 1;
 
-        img{
+        img {
             height: 100%;
         }
     }
 
-    #telephone{
+    #telephone {
         font-size: 18px;
         color: #ffba00;
         font-weight: bold;
@@ -196,35 +225,36 @@ select{
         line-height: 1;
         margin-top: 6px;
     }
-
 }
-.head-middle{
+
+.head-middle {
     height: 100px;
 
-    .logo{
+    .logo {
         width: 200px;
         margin-top: 22px;
 
-        img{
+        img {
             width: 100%;
         }
     }
 
-    .img{
+    .img {
         width: 289px;
         margin-top: 6px;
-        img{
+
+        img {
             width: 100%;
         }
     }
 
-    .search{
+    .search {
         float: left;
         margin-left: 130px;
         margin-top: 30px;
         overflow: hidden;
 
-        input[type="text"]{
+        input[type="text"] {
             width: 460px;
             height: 38px;
             padding: 0 12px;
@@ -233,7 +263,7 @@ select{
             float: left;
         }
 
-        input[type="button"]{
+        input[type="button"] {
             width: 52px;
             height: 38px;
             background-color: #00a997;
@@ -244,92 +274,88 @@ select{
             background-image: url("../images/搜索.png");
         }
     }
-
 }
-.head-nav{
+
+.head-nav {
     overflow: hidden;
     background-color: #06cdb8;
     height: 40px;
     line-height: 40px;
 
-    ul{
-        li{
+    ul {
+        li {
             width: 100px;
             height: 40px;
             float: left;
             margin-right: 10px;
 
-            a{
+            a {
                 display: inline-block;
                 width: 100%;
                 color: #fff;
                 font-size: 16px;
                 text-align: center;
-
             }
         }
 
-        li:hover a,li.active a{
+        li.active a,
+        li:hover a {
             background-color: #00A997;
             font-weight: bold;
         }
     }
 
-    .userInfo{
+    .userInfo {
         width: 142px;
         height: 40px;
         background-color: #ffba00;
         color: #fff;
         font-size: 14px;
 
-        .user-icon{
+        .user-icon {
             height: 20px;
             margin: 10px;
             line-height: 1;
         }
 
-        a{
-
+        a {
             color: #fff;
         }
 
-        a.gologin{
+        a.gologin {
             padding-right: 5px;
         }
 
-        a.goregister{
+        a.goregister {
             padding-left: 5px;
         }
-
-
     }
-
 }
 /*footer*/
-#footer{
+#footer {
     height: 315px;
     background-image: url("../images/bg-页脚.png");
 
-    .footer-con{
+    .footer-con {
         overflow: hidden;
 
-        .footer-wrap{
+        .footer-wrap {
             float: left;
             margin-right: 70px;
             padding-top: 55px;
             color: #fff;
 
-            .footer-wrap-title{
+            .footer-wrap-title {
                 width: 125px;
                 position: relative;
                 border-bottom: 1px solid #c3c3c3;
                 padding-bottom: 10px;
 
-                h3{
+                h3 {
                     font-size: 14px;
                 }
 
-                samp{
+                samp {
                     display: inline-block;
                     width: 30px;
                     height: 3px;
@@ -339,79 +365,75 @@ select{
                     left: 0;
                 }
             }
-            ul{
+
+            ul {
                 margin-top: 18px;
 
-                li{
+                li {
                     padding: 7px 0;
 
-                    a{
+                    a {
                         font-size: 13px;
                         color: #828282;
                     }
 
-                    a:hover{
+                    a:hover {
                         text-decoration: underline;
                     }
                 }
             }
 
-            .tel{
+            .tel {
                 color: #fff;
                 margin-top: 18px;
 
-                p{
+                p {
                     font-size: 16px;
                     padding-top: 10px;
                 }
 
-                h4{
+                h4 {
                     font-size: 24px;
                     font-weight: bold;
                     line-height: 2;
                 }
             }
-
         }
-
-
     }
 
-    .copyright{
+    .copyright {
         margin-top: 20px;
 
-        p{
+        p {
             color: #fff;
             font-size: 13px;
         }
     }
 
-    .fr{
-        .footer-wx{
+    .fr {
+        .footer-wx {
             width: 145px;
             margin: 50px 0 18px;
         }
 
-        div{
+        div {
             text-align: center;
 
-            samp{
+            samp {
                 font-size: 14px;
                 color: #fff;
                 margin-left: 5px;
             }
-
         }
     }
 }
-
 /*index.html*/
-#swiper{
+#swiper {
     height: 528px;
     overflow: hidden;
 
-    .swiper-slide{
-        a{
+    .swiper-slide {
+        a {
             display: block;
             width: 100%;
             height: 100%;
@@ -421,8 +443,8 @@ select{
         }
     }
 
-    .swiper-pagination{
-        .swiper-pagination-bullet{
+    .swiper-pagination {
+        .swiper-pagination-bullet {
             width: 30px;
             height: 10px;
             border-radius: 5px;
@@ -437,17 +459,17 @@ select{
             /* IE 4-9 */
             filter:alpha(opacity=30);
             /*This works in IE 8 & 9 too*/
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
             /*IE4-IE9*/
             filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
-            transition: .5s;
-            -o-transition: .5s;
-            -ms-transition: .5s;
-            -moz-transition: .5s;
-            -webkit-transition: .5s;
+            transition: 0.5s;
+            -o-transition: 0.5s;
+            -ms-transition: 0.5s;
+            -moz-transition: 0.5s;
+            -webkit-transition: 0.5s;
         }
 
-        .swiper-pagination-bullet-active{
+        .swiper-pagination-bullet-active {
             background-color: #ffba00 !important;
             /* IE9 + etc...modern browsers */
             opacity: 1;
@@ -460,84 +482,79 @@ select{
             /* IE 4-9 */
             filter:alpha(opacity=100);
             /*This works in IE 8 & 9 too*/
-            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
             /*IE4-IE9*/
             filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
         }
     }
-
 }
 
 .index-wrap {
-    .index-wrap-title{
+    .index-wrap-title {
         height: 80px;
         border-bottom: 2px solid #f2f2f2;
         padding-top: 40px;
     }
 
-
-    .index-tuijian{
+    .index-tuijian {
         height: 343px;
     }
 }
 
-.index-wrap-title{
-
-    .title-wrap{
+.index-wrap-title {
+    .title-wrap {
         border-bottom: 2px solid #ff7d1e;
         padding-bottom: 8px;
 
-        .title{
+        .title {
             font-size: 20px;
             font-weight: bold;
             margin-left: 10px;
             line-height: 30px;
             color: #FF7D1E;
         }
-        .index-icon{
+
+        .index-icon {
             width: 30px;
             height: 30px;
             background-size: 100%;
             background-repeat: no-repeat;
         }
         /*推荐路线*/
-        .icon-tuijian{
+        .icon-tuijian {
             background-image: url('../images/推荐线路.png');
         }
-
         /*交通出行*/
-        .icon-traffic{
+        .icon-traffic {
             background-image: url('../images/交通出行.png');
         }
-
         /*交通出行*/
-        .icon-jiudian{
+        .icon-jiudian {
             background-image: url('../images/酒店住宿.png');
         }
-
     }
 
-    .more a{
+    .more a {
         font-size: 14px;
         color: #c9c9c9;
         line-height: 40px;
     }
-    .more a:hover{
+
+    .more a:hover {
         color: #999;
         text-decoration: underline;
     }
 }
 
-.index-tuijian{
-
-    .index-nav{
+.index-tuijian {
+    .index-nav {
         height: 64px;
         padding: 20px 0;
 
-        ul{
+        ul {
             overflow: hidden;
 
-            li{
+            li {
                 float: left;
                 width: 68px;
                 height: 24px;
@@ -546,49 +563,51 @@ select{
                 color: #a0a0a0;
                 font-size: 15px;
                 margin-right: 20px;
-                transition: .5s;
-                -o-transition: .5s;
-                -ms-transition: .5s;
-                -moz-transition: .5s;
-                -webkit-transition: .5s;
+                transition: 0.5s;
+                -o-transition: 0.5s;
+                -ms-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -webkit-transition: 0.5s;
             }
-            li:hover{
+
+            li:hover {
                 cursor: pointer;
             }
-            li.active,li:hover{
+
+            li.active,
+            li:hover {
                 border-radius: 12px;
                 background-color: #06cdb8;
                 color: #fff;
             }
         }
     }
-
 }
 
-.conl-tourismList{
-    ul{
+.conl-tourismList {
+    ul {
         width: 1225px;
         overflow: hidden;
 
-        li{
+        li {
             float: left;
             margin-right: 25px;
 
-            a{
+            a {
                 display: block;
                 width: 280px;
 
-                .img{
+                .img {
                     width: 100%;
                     height: 175px;
                     overflow: hidden;
 
-                    img{
+                    img {
                         width: 100%;
                     }
                 }
 
-                .title{
+                .title {
                     font-size: 16px;
                     color: #000;
                     margin-top: 12px;
@@ -599,11 +618,12 @@ select{
                     overflow: hidden;
                     margin-top: 10px;
 
-                    img{
+                    img {
                         height: 18px;
+                        margin-right: 5px;
                     }
-                    p{
-                        display: inline-block;
+
+                    p {
                         font-size: 16px;
                         line-height: 18px;
                         color: #a0a0a0;
@@ -611,15 +631,15 @@ select{
                     }
                 }
 
-                .price{
+                .price {
                     margin-top: 10px;
                     text-align: right;
 
-                    p{
+                    p {
                         font-size: 14px;
                         color: #787878;
 
-                        i{
+                        i {
                             font-size: 20px;
                             font-style: normal;
                             color: #ff9c00;
@@ -629,200 +649,214 @@ select{
                     }
                 }
             }
-
         }
     }
-
 }
 
-.index-traffic{
+.index-traffic {
     height: 294px;
 }
 
-#traffic{
+#traffic {
     height: 235px;
     overflow: hidden;
 
-    .swiper-slide{
+    .swiper-slide {
         text-align: center;
         padding-top: 50px;
 
-        a{
+        a {
             width: 108px;
             display: inline-block;
 
-
-            .title{
+            .title {
                 font-size: 15px;
                 color: #7a7a7a;
                 margin-top: 15px;
             }
 
-            .icon{
+            .icon {
                 width: 108px;
                 height: 125px;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 100%;
 
-                img{
+                img {
                     width: 100%;
                 }
             }
 
-            .icon-lvyou{
+            .icon-lvyou {
                 background-image: url('../images/旅游专线-灰.png');
             }
-            .icon-jichang{
+
+            .icon-jichang {
                 background-image: url('../images/机场专线-灰.png');
             }
-            .icon-changtu{
+
+            .icon-changtu {
                 background-image: url('../images/长途班车-灰.png');
             }
-            .icon-daba{
+
+            .icon-daba {
                 background-image: url('../images/大巴预订-灰.png');
             }
-            .icon-fabu{
+
+            .icon-fabu {
                 background-image: url('../images/发布拼车-灰.png');
             }
-            .icon-canyu{
+
+            .icon-canyu {
                 background-image: url('../images/参与拼车-灰.png');
             }
-            .icon-feiji{
+
+            .icon-feiji {
                 background-image: url('../images/飞机查询-灰.png');
             }
-            .icon-huoche{
+
+            .icon-huoche {
                 background-image: url('../images/火车查询-灰.png');
             }
-            .icon-gongjiao{
+
+            .icon-gongjiao {
                 background-image: url('../images/公交查询-灰.png');
             }
-
         }
 
-        a:hover{
-            .title{
+        a:hover {
+            .title {
                 color: #484848;
             }
 
-            .icon-lvyou{
+            .icon-lvyou {
                 background-image: url('../images/旅游专线.png');
             }
-            .icon-jichang{
+
+            .icon-jichang {
                 background-image: url('../images/机场专线.png');
             }
-            .icon-changtu{
+
+            .icon-changtu {
                 background-image: url('../images/长途班车.png');
             }
-            .icon-daba{
+
+            .icon-daba {
                 background-image: url('../images/大巴预订.png');
             }
-            .icon-fabu{
+
+            .icon-fabu {
                 background-image: url('../images/发布拼车.png');
             }
-            .icon-canyu{
+
+            .icon-canyu {
                 background-image: url('../images/参与拼车.png');
             }
-            .icon-feiji{
+
+            .icon-feiji {
                 background-image: url('../images/飞机查询.png');
             }
-            .icon-huoche{
+
+            .icon-huoche {
                 background-image: url('../images/火车查询.png');
             }
-            .icon-gongjiao{
+
+            .icon-gongjiao {
                 background-image: url('../images/公交查询.png');
             }
         }
-
     }
 
-
-    .swiper-button-prev,
-    .swiper-button-next{
+    .swiper-button-next,
+    .swiper-button-prev {
         width: 21px;
         height: 33px;
         background-size: inherit;
         z-index: 999;
     }
-    .swiper-button-prev.swiper-button-disabled,
-    .swiper-button-next.swiper-button-disabled{
+
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
         opacity: 1;
         cursor: pointer;
         pointer-events: auto;
     }
 
-    .swiper-button-prev{
+    .swiper-button-prev {
         left: 0;
         background-image: url('../images/left-灰.png');
     }
-    .swiper-button-prev:hover{
+
+    .swiper-button-prev:hover {
         background-image: url('../images/left.png');
     }
-    .swiper-button-next{
+
+    .swiper-button-next {
         right: 0;
         background-image: url('../images/right-灰.png');
     }
-    .swiper-button-next:hover{
+
+    .swiper-button-next:hover {
         background-image: url('../images/right.png');
     }
-
-
 }
 
-#hotel{
+#hotel {
     background-image: url('../images/bg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    .index-wrap-title .more a{
+    .index-wrap-title .more a {
         color: #fff;
     }
 
-    .index-hotel{
+    .index-hotel {
         height: 520px;
 
-        .index-nav{
+        .index-nav {
             height: 84px;
             padding: 30px 0;
 
-            ul li{
+            ul li {
                 width: 88px;
                 color: #fff;
             }
         }
     }
-    .conl-tourismList{
+
+    .conl-tourismList {
         padding-top: 20px;
 
-        ul li{
+        ul li {
             background-color: #fff;
 
             .title {
                 padding-bottom: 5px;
             }
+
             .price {
                 margin-top: 18px;
                 padding-bottom: 15px;
             }
-            .con p{
+
+            .con p {
                 font-size: 15px;
             }
         }
     }
-
 }
-
 /*login.html*/
-.login-bg{
+.login-bg {
     height: 600px;
     background-image: url('../images/loginBg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.loginForm-wrap{
-    .loginForm{
+
+.loginForm-wrap {
+    .loginForm {
         width: 415px;
         height: 456px;
         padding: 40px;
@@ -835,8 +869,7 @@ select{
         top: 50px;
         right: 0;
 
-
-        .input-btn{
+        .input-btn {
             width: 100%;
             height: 46px;
             font-size: 16px;
@@ -844,7 +877,8 @@ select{
             background-color: #06CDB8;
             cursor: pointer;
         }
-        label.error{
+
+        label.error {
             color: #F14E4F;
             font-size: 13px;
             line-height: 1;
@@ -857,18 +891,19 @@ select{
         }
     }
 }
-.loginForm{
 
-    .title{
+.loginForm {
+    .title {
         width: 100%;
         overflow: hidden;
         position: relative;
 
-        h3{
+        h3 {
             font-size: 22px;
             color: #616161;
         }
-        a{
+
+        a {
             font-size: 14px;
             color: #06cdb8;
             display: inline-block;
@@ -876,7 +911,7 @@ select{
             right: 0;
             bottom: 0;
 
-            img{
+            img {
                 height: 16px;
                 margin-right: 4px;
                 position: relative;
@@ -885,7 +920,7 @@ select{
         }
     }
 
-    .input-wrap{
+    .input-wrap {
         width: 100%;
         height: 46px;
         border: 1px solid #e3e3e3;
@@ -894,7 +929,7 @@ select{
         padding-top: 15px;
         background-color: #fff;
 
-        .icon{
+        .icon {
             width: 46px;
             height: 16px;
             border-right: 1px solid #e3e3e3;
@@ -903,30 +938,29 @@ select{
             top: 15px;
             text-align: center;
 
-            img{
+            img {
                 height: 100%;
             }
-
         }
 
-        .input-text{
+        .input-text {
             width: 100%;
             height: 16px;
             line-height: 16px;
             font-size: 14px;
             padding-left: 56px;
         }
-
     }
 
-    .input-vfCode{
+    .input-vfCode {
         width: 235px;
     }
-    .input-telVfCode{
+
+    .input-telVfCode {
         width: 200px;
     }
 
-    .telVfCode{
+    .telVfCode {
         width: 120px;
         height: 46px;
         line-height: 46px;
@@ -936,39 +970,38 @@ select{
         background-color: #ffba00;
         cursor: pointer;
     }
-    .telVfCode:disabled{
+
+    .telVfCode:disabled {
         background-color: #ccc;
     }
 
-    .input-info{
+    .input-info {
         width: 100%;
         overflow: hidden;
 
-        .check{
+        .check {
             width: 17px;
             height: 17px;
             border: 1px solid #e3e3e3;
             margin-right: 8px;
         }
-        .check.active{
+
+        .check.active {
             border: 1px solid #fff;
             background-repeat: no-repeat;
             background-image: url('../images/勾.png');
             background-size: 100% 100%;
         }
 
-        .txt{
+        .txt {
             font-size: 14px;
             color: #6a6a6a;
             line-height: 17px;
         }
     }
-
 }
-
 /*register.html*/
-
-.register-bg{
+.register-bg {
     height: 600px;
     background-image: url('../images/registerBg.jpg');
     background-position: center;
@@ -976,269 +1009,317 @@ select{
     background-size: cover;
 }
 
-.nav{
-
-    .nav-class{
+.nav {
+    .nav-class {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 35px;
         overflow: hidden;
 
-        ul{
+        ul {
             width: 1279px;
             overflow: hidden;
 
-            li{
+            li {
                 width: 80px;
                 float: left;
                 margin-right: 79px;
                 text-align: center;
                 cursor: pointer;
 
-                p{
+                p {
                     font-size: 14px;
                     color: #858585;
                     margin-top: 14px;
                 }
 
-                .icon{
+                .icon {
                     width: 80px;
                     height: 80px;
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: 100%;
                 }
-
                 /*全域旅游*/
-                .icon-chunyou{
+                .icon-chunyou {
                     background-image: url('../images/春游.png');
                 }
-                .icon-qiuyou{
+
+                .icon-qiuyou {
                     background-image: url('../images/秋游.png');
                 }
-                .icon-guonei{
+
+                .icon-guonei {
                     background-image: url('../images/国内游.png');
                 }
-                .icon-jingwai{
+
+                .icon-jingwai {
                     background-image: url('../images/境外游.png');
                 }
-                .icon-qinzi{
+
+                .icon-qinzi {
                     background-image: url('../images/亲子游.png');
                 }
-                .icon-sheying{
+
+                .icon-sheying {
                     background-image: url('../images/摄影游.png');
                 }
-                .icon-zhoubian{
+
+                .icon-zhoubian {
                     background-image: url('../images/周边游.png');
                 }
-                .icon-zhuti{
+
+                .icon-zhuti {
                     background-image: url('../images/主题游.png');
                 }
-
                 /*酒店住宿*/
-                .icon-haohua{
+                .icon-haohua {
                     background-image: url('../images/豪华酒店.png');
                 }
-                .icon-shushi{
+
+                .icon-shushi {
                     background-image: url('../images/舒适酒店.png');
                 }
-                .icon-jngji{
+
+                .icon-jngji {
                     background-image: url('../images/经济酒店.png');
                 }
-                .icon-zhuti{
+
+                .icon-zhuti {
                     background-image: url('../images/主题酒店.png');
                 }
-                .icon-minsu{
+
+                .icon-minsu {
                     background-image: url('../images/民宿.png');
                 }
-                .icon-wuxing{
+
+                .icon-wuxing {
                     background-image: url('../images/五星酒店.png');
                 }
-                .icon-sixing{
+
+                .icon-sixing {
                     background-image: url('../images/四星酒店.png');
                 }
-                .icon-sanxing{
+
+                .icon-sanxing {
                     background-image: url('../images/三星酒店.png');
                 }
-
                 /*美食小吃*/
-                .icon-zizhu{
+                .icon-zizhu {
                     background-image: url('../images/自助餐未.png');
                 }
-                .icon-tiandian{
+
+                .icon-tiandian {
                     background-image: url('../images/甜点饮品未.png');
                 }
-                .icon-xiaochi{
+
+                .icon-xiaochi {
                     background-image: url('../images/小吃快餐未.png');
                 }
-                .icon-liaoli{
+
+                .icon-liaoli {
                     background-image: url('../images/日韩料理未.png');
                 }
-                .icon-huoguo{
+
+                .icon-huoguo {
                     background-image: url('../images/火锅未.png');
                 }
-                .icon-shaokao{
+
+                .icon-shaokao {
                     background-image: url('../images/烧烤烤肉未.png');
                 }
-                .icon-waimai{
+
+                .icon-waimai {
                     background-image: url('../images/外卖未.png');
                 }
-                .icon-xican{
+
+                .icon-xican {
                     background-image: url('../images/西餐未.png');
                 }
-
                 /*交通出行*/
-               .icon-lvyou{
+                .icon-lvyou {
                     background-image: url('../images/旅游专线-灰.png');
                 }
-                .icon-jichang{
+
+                .icon-jichang {
                     background-image: url('../images/机场专线-灰.png');
                 }
-                .icon-changtu{
+
+                .icon-changtu {
                     background-image: url('../images/长途班车-灰.png');
                 }
-                .icon-daba{
+
+                .icon-daba {
                     background-image: url('../images/大巴预订-灰.png');
                 }
-                .icon-fabu{
+
+                .icon-fabu {
                     background-image: url('../images/发布拼车-灰.png');
                 }
-                .icon-canyu{
+
+                .icon-canyu {
                     background-image: url('../images/参与拼车-灰.png');
                 }
-                .icon-feiji{
+
+                .icon-feiji {
                     background-image: url('../images/飞机查询-灰.png');
                 }
-                .icon-huoche{
+
+                .icon-huoche {
                     background-image: url('../images/火车查询-灰.png');
                 }
-                .icon-gongjiao{
+
+                .icon-gongjiao {
                     background-image: url('../images/公交查询-灰.png');
                 }
-
             }
 
-            li.active{
-                p{
+            li.active {
+                p {
                     color: #06CDB8;
+                    font-weight: 600;
                 }
-
                 /*全域旅游*/
-                .icon-chunyou{
+                .icon-chunyou {
                     background-image: url('../images/春游-点击.png');
                 }
-                .icon-qiuyou{
+
+                .icon-qiuyou {
                     background-image: url('../images/秋游-点击.png');
                 }
-                .icon-guonei{
+
+                .icon-guonei {
                     background-image: url('../images/国内游-点击.png');
                 }
-                .icon-jingwai{
+
+                .icon-jingwai {
                     background-image: url('../images/境外游-点击.png');
                 }
-                .icon-qinzi{
+
+                .icon-qinzi {
                     background-image: url('../images/亲子游-点击.png');
                 }
-                .icon-sheying{
+
+                .icon-sheying {
                     background-image: url('../images/摄影游-点击.png');
                 }
-                .icon-zhoubian{
+
+                .icon-zhoubian {
                     background-image: url('../images/周边游-点击.png');
                 }
-                .icon-zhuti{
+
+                .icon-zhuti {
                     background-image: url('../images/主题游-点击.png');
                 }
-
                 /*酒店住宿*/
-                .icon-haohua{
+                .icon-haohua {
                     background-image: url('../images/豪华酒店-点击.png');
                 }
-                .icon-shushi{
+
+                .icon-shushi {
                     background-image: url('../images/舒适酒店-点击.png');
                 }
-                .icon-jngji{
+
+                .icon-jngji {
                     background-image: url('../images/经济酒店-点击.png');
                 }
-                .icon-zhuti{
+
+                .icon-zhuti {
                     background-image: url('../images/主题酒店-点击.png');
                 }
-                .icon-minsu{
+
+                .icon-minsu {
                     background-image: url('../images/民宿-点击.png');
                 }
-                .icon-wuxing{
+
+                .icon-wuxing {
                     background-image: url('../images/五星酒店-点击.png');
                 }
-                .icon-sixing{
+
+                .icon-sixing {
                     background-image: url('../images/四星酒店-点击.png');
                 }
-                .icon-sanxing{
+
+                .icon-sanxing {
                     background-image: url('../images/三星酒店-点击.png');
                 }
-
-
                 /*美食小吃*/
-                .icon-zizhu{
+                .icon-zizhu {
                     background-image: url('../images/自助餐.png');
                 }
-                .icon-tiandian{
+
+                .icon-tiandian {
                     background-image: url('../images/甜点饮品.png');
                 }
-                .icon-xiaochi{
+
+                .icon-xiaochi {
                     background-image: url('../images/小吃快餐.png');
                 }
-                .icon-liaoli{
+
+                .icon-liaoli {
                     background-image: url('../images/日韩料理.png');
                 }
-                .icon-huoguo{
+
+                .icon-huoguo {
                     background-image: url('../images/火锅.png');
                 }
-                .icon-shaokao{
+
+                .icon-shaokao {
                     background-image: url('../images/烧烤烤肉.png');
                 }
-                .icon-waimai{
+
+                .icon-waimai {
                     background-image: url('../images/外卖.png');
                 }
-                .icon-xican{
+
+                .icon-xican {
                     background-image: url('../images/西餐.png');
                 }
-
                 /*交通出行*/
-                .icon-lvyou{
+                .icon-lvyou {
                     background-image: url('../images/旅游专线.png');
                 }
-                .icon-jichang{
+
+                .icon-jichang {
                     background-image: url('../images/机场专线.png');
                 }
-                .icon-changtu{
+
+                .icon-changtu {
                     background-image: url('../images/长途班车.png');
                 }
-                .icon-daba{
+
+                .icon-daba {
                     background-image: url('../images/大巴预订.png');
                 }
-                .icon-fabu{
+
+                .icon-fabu {
                     background-image: url('../images/发布拼车.png');
                 }
-                .icon-canyu{
+
+                .icon-canyu {
                     background-image: url('../images/参与拼车.png');
                 }
-                .icon-feiji{
+
+                .icon-feiji {
                     background-image: url('../images/飞机查询.png');
                 }
-                .icon-huoche{
+
+                .icon-huoche {
                     background-image: url('../images/火车查询.png');
                 }
-                .icon-gongjiao{
+
+                .icon-gongjiao {
                     background-image: url('../images/公交查询.png');
                 }
             }
         }
     }
 
-    .navSearch-wrap{
+    .navSearch-wrap {
         width: 100%;
         position: relative;
 
-        .tit{
+        .tit {
             width: 60px;
             height: 24px;
             line-height: 24px;
@@ -1249,16 +1330,16 @@ select{
             left: 0;
         }
 
-        .navSearch-list{
+        .navSearch-list {
             width: 100%;
             min-height: 29px;
             padding-left: 60px;
 
-            ul{
+            ul {
                 width: 100%;
                 overflow: hidden;
 
-                li{
+                li {
                     height: 24px;
                     line-height: 24px;
                     overflow: hidden;
@@ -1272,21 +1353,22 @@ select{
                     cursor: pointer;
                 }
 
-                li:hover{
+                li:hover {
                     color: #06CDB8;
                 }
 
-                li.active{
+                li.active {
                     color: #fff;
                     background-color: #06CDB8;
                 }
             }
         }
 
-        .cityTit{
+        .cityTit {
             line-height: 42px;
         }
-        .search-txt{
+
+        .search-txt {
             width: 240px;
             height: 42px;
             border: 1px solid #e9e9e9;
@@ -1295,7 +1377,7 @@ select{
             color: #282828;
             margin-bottom: 20px;
 
-            select{
+            select {
                 width: 100%;
                 height: 100%;
                 font-size: 15px;
@@ -1303,42 +1385,42 @@ select{
                 background-color: #f3f3f3;
                 padding: 0 10px;
 
-                option{
+                option {
                     font-size: 15px;
                     color: #282828;
                 }
             }
         }
-
     }
 
-    .navSearch-wrap1{
-        .tit{
+    .navSearch-wrap1 {
+        .tit {
             width: 90px;
         }
-        .navSearch-list{
+
+        .navSearch-list {
             padding-left: 90px;
         }
     }
 }
 
-.content{
+.content {
     padding-bottom: 30px;
 
-    .conl-tourismList ul{
+    .conl-tourismList ul {
         width: 1235px;
         margin-left: -5px;
 
-        li{
+        li {
             width: 290px;
             padding: 25px 5px 5px;
             margin-right: 15px;
 
-            a{
+            a {
                 padding-bottom: 15px;
             }
 
-            a:hover{
+            a:hover {
                 box-shadow: 0 0 5px rgba(0,0,0,.3);
                 -ms-box-shadow: 0 0 5px rgba(0,0,0,.3);
                 -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
@@ -1346,20 +1428,19 @@ select{
             }
         }
     }
-
 }
-
 /*分页*/
-.pagination-wrap{
+.pagination-wrap {
     padding: 20px 0 50px;
     overflow: hidden;
 
-    p{
+    p {
         display: inline-block;
         overflow: hidden;
         height: 38px;
 
-        a,span{
+        a,
+        span {
             display: inline-block;
             width: 38px;
             height: 38px;
@@ -1373,7 +1454,7 @@ select{
             float: left;
         }
 
-        samp{
+        samp {
             display: inline-block;
             line-height: 38px;
             font-size: 15px;
@@ -1382,26 +1463,28 @@ select{
             margin: 0 8px;
         }
 
-        .active{
+        .active {
             color: #fff;
             background-color: #06CDB8;
             border-top: 1px solid #06CDB8;
             border-bottom: 1px solid #06CDB8;
         }
 
-        .prev{
+        .prev {
             border-left: 1px solid #e7e7e7;
         }
-        .prev,
-        .next{
+
+        .next,
+        .prev {
             line-height: inherit;
 
-            img{
+            img {
                 height: 14px;
                 margin-top: 12px;
             }
         }
-        .pagination-btn{
+
+        .pagination-btn {
             width: 60px;
             border: 1px solid #15ba92;
             font-size: 16px;
@@ -1409,7 +1492,8 @@ select{
             background-color: #06CDB8;
             border-radius: 3px;
         }
-        .pagination-ipt{
+
+        .pagination-ipt {
             width: 66px;
             height: 38px;
             float: left;
@@ -1420,41 +1504,41 @@ select{
         }
 
         a:hover,
-        span:hover{
+        span:hover {
             color: #06CDB8;
         }
+
         .active:hover,
-        .pagination-btn:hover{
+        .pagination-btn:hover {
             cursor: pointer;
             color: #fff !important;
         }
     }
 }
 
-.position{
+.position {
     padding: 20px 0;
 
-    p{
+    p {
         font-size: 15px;
         color: #c9c9c9;
 
-        a{
+        a {
             color: #06CDB8;
         }
-        samp{
+
+        samp {
             font-size: 15px;
             color: #c9c9c9;
         }
     }
 }
-
-
 /*详情页*/
-.dcon-top{
+.dcon-top {
     margin-top: 10px;
     height: 372px;
 
-    .dconTop-left{
+    .dconTop-left {
         width: 528px;
         height: 100%;
         overflow: hidden;
@@ -1466,31 +1550,35 @@ select{
             margin-left: auto;
             margin-right: auto;
         }
+
         .swiper-slide {
             background-size: cover;
             background-position: center;
         }
+
         .gallery-top {
             height: 80%;
             width: 100%;
         }
+
         .gallery-thumbs {
             height: 20%;
             box-sizing: border-box;
             padding: 10px 0;
         }
+
         .gallery-thumbs .swiper-slide {
             width: 25%;
             height: 100%;
             opacity: 0.4;
         }
+
         .gallery-thumbs .swiper-slide-active {
             opacity: 1;
         }
-
     }
 
-    .dconTop-right{
+    .dconTop-right {
         width: 639px;
         height: 100%;
         float: left;
@@ -1499,24 +1587,24 @@ select{
         padding: 18px;
         position: relative;
 
-        .title-wrap{
+        .title-wrap {
             width: 100%;
             position: relative;
             padding-bottom: 10px;
 
-            .title{
+            .title {
                 font-size: 22px;
                 color: #010101;
                 padding-right: 100px;
                 font-weight: normal;
             }
 
-            .collect{
+            .collect {
                 position: absolute;
                 top: 0;
                 right: 10px;
 
-                .icon-star{
+                .icon-star {
                     width: 26px;
                     height: 26px;
                     float: left;
@@ -1525,11 +1613,12 @@ select{
                     background-position: center;
                     cursor: pointer;
                 }
-                .icon-star.active{
+
+                .icon-star.active {
                     background-image: url('../images/收藏.png') !important;
                 }
 
-                .txt{
+                .txt {
                     float: left;
                     font-size: 16px;
                     color: #7a7a7a;
@@ -1539,29 +1628,37 @@ select{
             }
         }
 
-        .con{
+        .con {
             width: 100%;
             overflow: hidden;
             padding-bottom: 10px;
 
-            div{
+            div {
                 width: 18px;
                 height: 18px;
                 text-align: center;
                 margin-right: 5px;
 
-                img{
+                img {
                     height: 100%;
                 }
             }
-            p{
+
+            p {
                 font-size: 15px;
                 color: #a0a0a0;
                 line-height: 18px;
             }
         }
 
-        .description{
+        .quantity-span {
+            display: block;
+            font-size: 14px;
+            color: #b5b5b5;
+            margin-top: 8px;
+        }
+
+        .description {
             height: 120px;
             font-size: 14px;
             color: #a0a0a0;
@@ -1570,7 +1667,7 @@ select{
             overflow: hidden;
         }
 
-        .price-wrap{
+        .price-wrap {
             width: 100%;
             height: 40px;
             position: absolute;
@@ -1578,14 +1675,14 @@ select{
             left: 0;
             padding-left: 18px;
 
-            .price{
+            .price {
                 float: left;
 
-                p{
+                p {
                     font-size: 15pxpx;
                     color: #747474;
 
-                    i{
+                    i {
                         font-size: 30px;
                         font-style: normal;
                         color: #ffba00;
@@ -1595,7 +1692,7 @@ select{
                 }
             }
 
-            .btn-booking{
+            .btn-booking {
                 position: absolute;
                 bottom: -25px;
                 right: -21px;
@@ -1608,12 +1705,16 @@ select{
                 text-align: center;
                 cursor: pointer;
 
-                p{
+                &.no-pointer {
+                    cursor: default;
+                }
+
+                p {
                     color: #fff;
                     font-size: 24px;
                     line-height: 84px;
 
-                    i{
+                    i {
                         font-size: 30px;
                         font-style: normal;
                         display: inline-block;
@@ -1622,61 +1723,64 @@ select{
                 }
             }
         }
-
     }
 }
 
-.dcon-nav{
+.dcon-nav {
     margin-top: 52px;
     border-bottom: 2px solid #06CDB8;
 
-    ul{
+    ul {
         overflow: hidden;
 
-        li{
+        li {
             width: 88px;
             height: 30px;
             float: left;
             border-radius: 4px 4px 0 0;
             text-align: center;
 
-            a{
+            a {
                 line-height: 30px;
                 font-size: 16px;
                 color: #010101;
             }
         }
-        li.active,li:hover{
+
+        li.active,
+        li:hover {
             background-color: #06CDB8;
-            a{
+
+            a {
                 color: #fff;
             }
         }
     }
 }
-.dcon-wrap{
+
+.dcon-wrap {
     background-color: #fff;
     padding-top: 12px;
     margin-bottom: 15px;
     border: 1px solid #e7e7e7;
 
-    .title{
-       width: 100%;
-       height: 35px;
-       position: relative;
+    .title {
+        width: 100%;
+        height: 35px;
+        position: relative;
 
-       .bg{
-           height: 100%;
-           position: absolute;
-           top: 0;
-           left: 0;
+        .bg {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
 
-            img{
-               height: 100%;
+            img {
+                height: 100%;
             }
         }
 
-        p{
+        p {
             display: inline-block;
             overflow: hidden;
             font-size: 16px;
@@ -1687,68 +1791,72 @@ select{
             z-index: 9;
         }
     }
-    .con{
+
+    .con {
         padding: 20px 15px 25px;
         font-size: 16px;
         color: #909090;
         line-height: 1.8;
 
-        img{
+        img {
             max-width: 100%;
             margin: 10px 0;
         }
     }
-
 }
-.con-ul{
+
+.con-ul {
     padding: 18px 6px 10px;
 }
-.ul-tourismList{
+
+.ul-tourismList {
     width: 1200px;
     overflow: hidden;
 
-    li{
+    li {
         width: 280px;
         float: left;
         margin: 0 8px 10px;
         padding-bottom: 10px;
         position: relative;
 
-        a{
+        a {
             display: block;
             width: 280px;
 
-            .img{
+            .img {
                 width: 100%;
                 height: 175px;
                 overflow: hidden;
 
-                img{
+                img {
                     width: 100%;
                 }
-
             }
 
-            .tit{
+            .tit {
                 font-size: 16px;
                 color: #000;
                 margin-top: 12px;
             }
-            .slogan{
+
+            .slogan {
                 font-size: 14px;
                 color: #808080;
                 line-height: 1.5;
                 margin-top: 5px;
             }
+
             .icon {
                 width: 100%;
                 overflow: hidden;
                 margin-top: 10px;
 
-                img{
+                img {
                     height: 18px;
                 }
-                p{
+
+                p {
                     display: inline-block;
                     font-size: 16px;
                     line-height: 18px;
@@ -1756,31 +1864,29 @@ select{
                     padding-left: 5px;
                 }
 
-                .star{
+                .star {
                     height: 16px;
                 }
             }
         }
-
     }
 }
-
 /*评论*/
-.dcon-comment{
+.dcon-comment {
     width: 100%;
     padding: 24px 16px 45px;
 
-    ul{
+    ul {
         width: 100%;
 
-        li{
+        li {
             width: 100%;
             position: relative;
             border-bottom: 1px solid #f4f4f4;
             padding-bottom: 12px;
             margin-bottom: 24px;
 
-            .img{
+            .img {
                 width: 66px;
                 height: 66px;
                 border-radius: 50%;
@@ -1789,21 +1895,21 @@ select{
                 top: 0;
                 left: 0;
 
-                img{
+                img {
                     width: 100%;
                 }
             }
 
-            .comment-wrap{
+            .comment-wrap {
                 width: 100%;
                 padding-left: 88px;
 
-                .name{
+                .name {
                     font-size: 16px;
                     color: #000;
                 }
 
-                .txt{
+                .txt {
                     width: 100%;
                     color: #010101;
                     font-size: 14px;
@@ -1811,7 +1917,7 @@ select{
                     margin-top: 8px;
                 }
 
-                .datetime{
+                .datetime {
                     color: #b2b2b2;
                     font-size: 14px;
                     margin-top: 8px;
@@ -1826,10 +1932,11 @@ select{
         margin-top: 10px;
         padding: 5px 10px 10px;
 
-        img{
+        img {
             height: 18px;
         }
-        p{
+
+        p {
             display: inline-block;
             font-size: 16px;
             line-height: 18px;
@@ -1837,14 +1944,13 @@ select{
             padding-left: 5px;
             font-weight: bold;
         }
-
     }
 
-    .form{
+    .form {
         width: 100%;
         padding: 10px;
 
-        textarea{
+        textarea {
             width: 100%;
             height: 112px;
             background-color: #f9f9f9;
@@ -1855,7 +1961,7 @@ select{
             padding: 10px;
         }
 
-        label.error{
+        label.error {
             display: inline-block;
             width: 100%;
             height: 20px;
@@ -1864,7 +1970,7 @@ select{
             color: #F14E4F;
         }
 
-        .btn-comment{
+        .btn-comment {
             width: 80px;
             height: 40px;
             line-height: 30px;
@@ -1872,88 +1978,84 @@ select{
             background-color: #06CDB8;
             border-radius: 3px;
             font-size: 16px;
+            cursor: pointer;
         }
     }
 }
-
 /*hotel.html*/
-.content-hotel{
-
-    .conl-tourismList ul li a{
+.content-hotel {
+    .conl-tourismList ul li a {
         background-color: #fff;
         border: 1px solid #eee;
     }
 }
-
 /*hotel-detail.html*/
-.hotelDetail{
+.hotelDetail {
     .price-wrap .btn-booking p {
         font-size: 15px !important;
     }
 }
-.hotel-booking{
+
+.hotel-booking {
     width: 100%;
     padding: 0 24px;
 
-    ul{
-        li{
+    ul {
+        li {
             width: 100%;
             height: 182px;
             border-top: 1px solid #eaeaea;
             padding: 18px 0;
             position: relative;
 
-            .img{
+            .img {
                 width: 260px;
                 height: 145px;
                 overflow: hidden;
                 float: left;
 
-                img{
+                img {
                     width: 100%;
                 }
             }
 
-            .txt{
+            .txt {
                 min-width: 200px;
                 height: 100%;
                 float: left;
                 margin-left: 16px;
                 position: relative;
 
-                .name{
+                .name {
                     font-size: 18px;
                     color: #000;
                 }
 
-                .service{
+                .service {
                     font-size: 14px;
                     color: #969696;
                     margin-top: 10px;
                 }
 
-                .price-wrap{
+                .price-wrap {
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     color: #ffa200;
 
-                    .price{
+                    .price {
                         font-size: 24px;
                         position: relative;
                         left: -5px;
                         margin-bottom: 3px;
                     }
                 }
-
             }
-
         }
     }
-
 }
 
-.booking-wrap{
+.booking-wrap {
     height: 182px;
     overflow: hidden;
     padding-top: 73px;
@@ -1961,10 +2063,10 @@ select{
     top: 0;
     right: 0;
 
-    .number{
+    .number {
         float: left;
 
-        .icon{
+        .icon {
             float: left;
             width: 36px;
             height: 36px;
@@ -1972,17 +2074,20 @@ select{
             background-repeat: no-repeat;
             background-size: 100%;
         }
-        .icon-sub{
+
+        .icon-sub {
             background-image: url('../images/减.png');
         }
-        .icon-sub.active{
+
+        .icon-sub.active {
             background-image: url('../images/减-颜色.png');
         }
-        .icon-add{
+
+        .icon-add {
             background-image: url('../images/加.png');
         }
 
-        .num{
+        .num {
             float: left;
             width: 80px;
             line-height: 36px;
@@ -1991,44 +2096,43 @@ select{
             font-family: arial;
             color: #000;
         }
-
     }
 
-    .btn-wrap{
+    .btn-wrap {
         float: left;
         margin-left: 86px;
 
-        .btn-booking{
+        .btn-booking {
             width: 108px;
             height: 40px;
             color: #fff;
             font-size: 16px;
             background-color: #FFBA00;
             border-radius: 4px;
+            cursor: pointer;
         }
     }
-
 }
-
 /*mall.html*/
-.mall-top{
+.mall-top {
     height: 68px;
     margin-top: 37px;
     background-color: #f4fbfa;
     border: 1px solid #bdeee9;
     overflow: hidden;
 
-    .account{
+    .account {
         overflow: hidden;
         margin-top: 18px;
-        p{
+
+        p {
             display: inline-block;
             font-size: 14px;
             color: #9d9d9d;
             margin-left: 18px;
-
         }
-        samp{
+
+        samp {
             display: inline-block;
             font-size: 20px;
             color: #ffa800;
@@ -2036,17 +2140,17 @@ select{
             position: relative;
             top: 3px;
         }
-
     }
 
-    .jfRule{
+    .jfRule {
         cursor: pointer;
         margin-top: 25px;
 
-        img{
+        img {
             height: 18px;
         }
-        p{
+
+        p {
             font-size: 14px;
             line-height: 18px;
             color: #0cceba;
@@ -2056,83 +2160,80 @@ select{
     }
 }
 
-.content-mall{
+.content-mall {
     padding-top: 20px;
-
 }
-.content-mall .conl-tourismList .mall-price{
+
+.content-mall .conl-tourismList .mall-price {
     padding-top: 5px;
 
-    .p1{
+    .p1 {
         font-size: 17px !important;
         color: #FF9C00 !important;
-        i{
+
+        i {
             font-style: normal;
             padding-right: 5px;
         }
     }
 }
-
 /*mallDetail*/
-.mallDetail{
-    .mall-price{
+.mallDetail {
+    .mall-price {
         padding-top: 15px;
 
-        img{
+        img {
             height: 20px;
         }
 
-        .p1{
+        .p1 {
             font-size: 20px !important;
             color: #FF9C00 !important;
             margin-left: 10px;
-            i{
+
+            i {
                 font-style: normal;
                 padding-right: 5px;
             }
         }
     }
 
-    .booking-wrap{
+    .booking-wrap {
         width: 100%;
         height: auto;
         top: auto;
         bottom: 55px;
         padding: 0 20px;
 
-        .btn-wrap{
+        .btn-wrap {
             float: right;
         }
     }
-
-
 }
-
 /*个人中心*/
-.content-user{
+.content-user {
     width: 1210px;
     overflow: hidden;
     min-height: 450px;
     margin: 0 auto 50px;
     padding: 5px;
 
-    .user-left{
+    .user-left {
         width: 214px;
 
-        ul{
-
-            li{
+        ul {
+            li {
                 width: 100%;
                 height: 50px;
                 border-top: 1px solid #eee;
 
-                a{
+                a {
                     display: inline-block;
                     width: 100%;
                     height: 100%;
                     text-align: center;
 
-                    .icon{
+                    .icon {
                         display: inline-block;
                         width: 22px;
                         height: 22px;
@@ -2142,39 +2243,42 @@ select{
                         background-repeat: no-repeat;
                     }
 
-                    .icon-ziliao{
+                    .icon-ziliao {
                         background-image: url('../images/我的资料灰.png');
                     }
-                    .icon-order{
+
+                    .icon-order {
                         background-image: url('../images/我的订单灰.png');
                     }
-                    .icon-shoucang{
+
+                    .icon-shoucang {
                         background-image: url('../images/我的收藏灰.png');
                     }
-                    .icon-youji{
+
+                    .icon-youji {
                         background-image: url('../images/我的游记灰.png');
                     }
-                    .icon-jifen{
+
+                    .icon-jifen {
                         background-image: url('../images/我的积分灰.png');
                     }
 
-                    p{
+                    p {
                         display: inline-block;
                         line-height: 50px;
                         font-size: 15px;
                         color: #bbb;
-                        margin-left:8px;
+                        margin-left: 8px;
                     }
-
-
                 }
             }
         }
-        ul li:first-of-type{
-           border: none;
+
+        ul li:first-of-type {
+            border: none;
         }
 
-        ul li.active{
+        ul li.active {
             background-color: #f7fffe;
             background-image: url('../images/矩形-12.png');
             background-position: left 0;
@@ -2183,111 +2287,125 @@ select{
         }
 
         ul li.active,
-        ul li:hover{
-
+        ul li:hover {
             a {
-
-                .icon-ziliao{
+                .icon-ziliao {
                     background-image: url('../images/我的资料.png');
                 }
-                .icon-order{
+
+                .icon-order {
                     background-image: url('../images/我的订单.png');
                 }
-                .icon-shoucang{
+
+                .icon-shoucang {
                     background-image: url('../images/我的收藏.png');
                 }
-                .icon-youji{
+
+                .icon-youji {
                     background-image: url('../images/我的游记.png');
                 }
-                .icon-jifen{
+
+                .icon-jifen {
                     background-image: url('../images/我的积分.png');
                 }
 
-                p{
+                p {
                     color: #06CDB8;
                 }
             }
-
         }
-
     }
 
-    .user-right{
+    .user-right {
         width: 967px;
         min-height: 250px;
 
-        #pagination{
-            padding: 50px 0 50px;
+        #pagination {
+            padding: 50px 0;
         }
     }
 }
 
-.userInfo-wrap{
+.userInfo-wrap {
     width: 100%;
     overflow: hidden;
     padding: 30px 15px;
 
-    .myPic{
+    .myPic {
         width: 150px;
         height: 150px;
         overflow: hidden;
         border-radius: 50%;
 
-        img{
+        img {
             width: 100%;
             vertical-align: middle;
         }
-
     }
-    .name{
+
+    .name {
         font-size: 18px;
         color: #2d2d2d;
         line-height: 2;
     }
 
-    .tel{
+    .tel {
         font-size: 15px;
         color: #3c3c3c;
         margin-top: 5px;
-        i{
+
+        i {
             font-style: normal;
             color: #06CDB8;
         }
     }
 
-    .userRevise .con{
+    .signin-wrap {
+        margin-top: 10px;
+
+        .ant-btn {
+            padding: 0 25px;
+            font-size: 14px;
+            height: 30px;
+        }
+    }
+
+    .userRevise .con {
         display: block;
         overflow: hidden;
         margin-bottom: 15px;
         margin-right: 15px;
 
-        .icon{
+        &.identity-inactive {
+            cursor: default;
+        }
+
+        .icon {
             width: 18px;
             height: 18px;
             text-align: center;
 
-            img{
+            img {
                 height: 18px;
             }
         }
 
-        p{
-          font-size: 15px;
-          color: #06CDB8;
-          margin-left: 8px;
+        p {
+            font-size: 15px;
+            color: #06CDB8;
+            margin-left: 8px;
         }
     }
-
 }
-.revise-myPic{
 
-    .file{
+.revise-myPic {
+    .file {
         width: 70px;
         overflow: hidden;
         position: relative;
         margin: 12px auto 0;
 
-        p{
+        p {
             display: inline-block;
             overflow: hidden;
             font-size: 14px;
@@ -2295,7 +2413,7 @@ select{
             cursor: pointer;
         }
 
-        .input-file{
+        .input-file {
             display: inline-block;
             width: 100%;
             position: absolute;
@@ -2305,17 +2423,18 @@ select{
         }
     }
 }
-.revise-info,.revise-pwd{
-    .txt{
+
+.revise-info,
+.revise-pwd {
+    .txt {
         width: 70px;
         line-height: 42px;
         font-size: 15px;
         color: #808080;
         text-align: right;
-
     }
 
-    .input-text{
+    .input-text {
         width: 280px;
         height: 42px;
         padding: 0 10px;
@@ -2326,7 +2445,7 @@ select{
         background-color: #f3f3f3;
     }
 
-    label.error{
+    label.error {
         float: left;
         line-height: 42px;
         margin-left: 10px;
@@ -2334,7 +2453,7 @@ select{
         font-size: 14px;
     }
 
-    .input-btn{
+    .input-btn {
         width: 112px;
         height: 42px;
         color: #fff;
@@ -2342,8 +2461,10 @@ select{
         border-radius: 3px;
         background-color: #ffae00;
         margin-left: 80px;
+        cursor: pointer;
     }
-    .textarea{
+
+    .textarea {
         width: 280px;
         height: 150px;
         padding: 10px;
@@ -2355,28 +2476,33 @@ select{
         background-color: #fff;
     }
 }
-.revise-pwd{
-    .txt{
+
+.revise-pwd {
+    .txt {
         width: 90px;
     }
-    .input-btn{
+
+    .input-btn {
         margin-left: 100px;
     }
 }
-.findPwd-wrap{
+
+.findPwd-wrap {
     padding: 50px 15px;
 
-    .findPwd-input{
+    .findPwd-input {
         width: 330px;
     }
-    .telVfCode{
+
+    .telVfCode {
         width: 110px;
     }
-    .input-wrap{
+
+    .input-wrap {
         margin-bottom: 30px;
     }
 
-    .input-btn{
+    .input-btn {
         width: 112px;
         height: 42px;
         font-size: 16px;
@@ -2384,7 +2510,8 @@ select{
         background-color: #06CDB8;
         border-radius: 3px;
     }
-    label.error{
+
+    label.error {
         display: inline-block;
         width: 330px;
         color: #F14E4F;
@@ -2396,14 +2523,13 @@ select{
         bottom: -20px;
     }
 }
-
 /*order.html*/
-.orderSearch{
+.orderSearch {
     width: 100%;
     overflow: hidden;
     padding: 24px 0;
 
-    .search-wrap{
+    .search-wrap {
         width: 200px;
         height: 42px;
         background-color: #f3f3f3;
@@ -2411,7 +2537,7 @@ select{
         float: left;
         margin-right: 14px;
 
-        select{
+        select {
             width: 100%;
             height: 100%;
             font-size: 14px;
@@ -2420,58 +2546,60 @@ select{
             background-color: #f3f3f3;
             background: url("../images/down.png") no-repeat scroll right 8px center transparent;
 
-            option{
+            option {
                 display: inline-block;
                 font-size: 14px;
                 color: #9b9a9a;
             }
         }
-
     }
-
 }
-.orderList{
+
+.orderList {
     width: 100%;
 
-    ul li{
+    ul li {
         width: 100%;
         padding-bottom: 25px;
         border-top: 1px solid #eee;
 
-        .top div{
+        .top div {
             font-size: 14px;
             color: #9B9A9A;
         }
 
-        .con{
+        .con {
             overflow: hidden;
             position: relative;
 
-            .img{
+            .img {
                 width: 280px;
                 height: 175px;
                 overflow: hidden;
 
-                img{
+                img {
                     width: 100%;
                 }
             }
 
-            .txt{
+            .txt {
                 width: 615px;
                 margin-left: 18px;
-                p{
+
+                p {
                     font-size: 16px;
                     color: #000;
                     line-height: 1.8;
                 }
-                span{
+
+                span {
                     display: block;
                     font-size: 14px;
                     color: #b5b5b5;
                     margin-top: 8px;
                 }
-                samp{
+
+                samp {
                     display: block;
                     font-size: 14px;
                     color: #000;
@@ -2479,13 +2607,13 @@ select{
                 }
             }
 
-            .btn-wrap{
+            .btn-wrap {
                 overflow: hidden;
                 position: absolute;
                 right: 0;
                 bottom: 0;
 
-                input{
+                input {
                     width: 89px;
                     height: 30px;
                     font-size: 14px;
@@ -2493,24 +2621,23 @@ select{
                     cursor: pointer;
                 }
 
-                .btn1{
+                .btn1 {
                     color: #919191;
                     border: 1px solid #c7c7c7;
                     background-color: #fff;
                 }
-                .btn2{
+
+                .btn2 {
                     color: #fff;
                     background-color: #06CDB8;
                     margin-left: 5px;
                 }
             }
         }
-
     }
-
 }
 
-.status{
+.status {
     width: 60px;
     height: 26px;
     line-height: 26px;
@@ -2522,18 +2649,19 @@ select{
     top: 3px;
     right: 3px;
 }
-.status0{//待支付
+
+.status0 {
+    //待支付
     background-color: #ff4747;
 }
-
 /*collection.html*/
-.collectionSearch{
+.collectionSearch {
     padding: 25px 0;
 
-    ul{
+    ul {
         overflow: hidden;
 
-        li{
+        li {
             float: left;
             width: 50px;
             padding-bottom: 9px;
@@ -2543,29 +2671,32 @@ select{
             border-bottom: 2px solid #fff;
             margin-right: 34px;
         }
-        li.active{
+
+        li.active {
             color: #06CDB8;
             border-bottom: 2px solid #06CDB8;
         }
-        li:hover{
+
+        li:hover {
             color: #06CDB8;
             cursor: pointer;
         }
     }
 }
-.collectionList{
-    .conl-tourismList ul{
+
+.collectionList {
+    .conl-tourismList ul {
         width: 939px;
 
-        li{
+        li {
             margin-right: 33px;
             position: relative;
 
-            a{
+            a {
                 padding-bottom: 20px;
             }
 
-            .btn-collection{
+            .btn-collection {
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -2573,20 +2704,25 @@ select{
                 height: 28px;
                 background-color: rgba(0,0,0,.3);
                 cursor: pointer;
-                -webkit-touch-callout: none; /* iOS Safari */
-                -webkit-user-select: none; /* Chrome/Safari/Opera */
-                -khtml-user-select: none; /* Konqueror */
-                -moz-user-select: none; /* Firefox */
-                -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* Non-prefixed version, currently*/
-
-                img{
+                -webkit-touch-callout: none;
+                /* iOS Safari */
+                -webkit-user-select: none;
+                /* Chrome/Safari/Opera */
+                -khtml-user-select: none;
+                /* Konqueror */
+                -moz-user-select: none;
+                /* Firefox */
+                -ms-user-select: none;
+                /* Internet Explorer/Edge */
+                user-select: none;
+                /* Non-prefixed version, currently*/
+                img {
                     height: 18px;
                     margin-top: 5px;
                     margin-left: 5px;
                 }
 
-                p{
+                p {
                     font-size: 14px;
                     line-height: 28px;
                     color: #ffcc00;
@@ -2595,14 +2731,13 @@ select{
             }
         }
     }
-
 }
 
-.travelsAdd{
+.travelsAdd {
     padding: 20px 0;
     overflow: hidden;
 
-    .addTravels{
+    .addTravels {
         float: right;
         width: 108px;
         height: 36px;
@@ -2610,12 +2745,13 @@ select{
         border-radius: 3px;
         cursor: pointer;
 
-        img{
+        img {
             height: 20px;
             margin-top: 8px;
             margin-left: 13px;
         }
-        p{
+
+        p {
             color: #fff;
             font-size: 14px;
             line-height: 36px;
@@ -2623,20 +2759,20 @@ select{
         }
     }
 }
-.travelsList{
-    ul li{
+
+.travelsList {
+    ul li {
         padding-top: 18px;
 
-        .description{
+        .description {
             margin: 10px 0 20px;
             font-size: 14px;
             line-height: 1.8;
             color: #4b4b4b;
         }
 
-        .btn-wrap{
-
-            input{
+        .btn-wrap {
+            input {
                 width: 36px !important;
                 height: 36px !important;
                 border-radius: 50% !important;
@@ -2645,35 +2781,36 @@ select{
                 background-size: 100%;
             }
 
-            .btn-edit{
+            .btn-edit {
                 background-image: url('../images/编辑.png');
             }
-            .btn-delete{
+
+            .btn-delete {
                 background-image: url('../images/删除.png');
                 margin-left: 5px;
             }
         }
     }
 }
-
 /*integral.html*/
-.user-right .mall-top{
+.user-right .mall-top {
     margin-top: 0;
 }
-.integralList{
+
+.integralList {
     padding-top: 25px;
 
-    h4{
+    h4 {
         font-size: 15px;
         color: #000;
     }
 
-    ul{
+    ul {
         width: 100%;
         margin-top: 28px;
         counter-reset: count;
 
-        li{
+        li {
             width: 100%;
             overflow: hidden;
             margin-bottom: 15px;
@@ -2681,25 +2818,27 @@ select{
             color: #06CDB8;
             position: relative;
 
-            p{
+            p {
                 display: inline-block;
                 font-size: 15px;
                 color: #000;
 
-                i{
+                i {
                     font-size: 15px;
                     margin-left: 10px;
                     font-style: normal;
                 }
-                i.add{
+
+                i.add {
                     color: #ffcc00;
                 }
-                i.sub{
+
+                i.sub {
                     color: #888;
                 }
             }
 
-            samp{
+            samp {
                 font-size: 15px;
                 color: #a8a8a8;
                 position: absolute;
@@ -2708,35 +2847,36 @@ select{
             }
         }
     }
-
 }
-.traffic-nav{
-    .nav-class ul li{
+
+.traffic-nav {
+    .nav-class ul li {
         width: 90px;
         margin-right: 48px;
 
-        .icon{
+        .icon {
             width: 90px;
             height: 106px;
         }
     }
-
 }
-.traffic-search{
+
+.traffic-search {
     overflow: hidden;
 
-    .trfSearch-wrap{
+    .trfSearch-wrap {
         float: left;
         overflow: hidden;
         margin-bottom: 30px;
 
-        .tit{
+        .tit {
             font-size: 15px;
             color: #808080;
             margin-right: 10px;
             line-height: 42px;
         }
-        .search-txt{
+
+        .search-txt {
             width: 240px;
             height: 42px;
             border: 1px solid #e9e9e9;
@@ -2744,7 +2884,7 @@ select{
             font-size: 15px;
             color: #282828;
 
-            select{
+            select {
                 width: 100%;
                 height: 100%;
                 font-size: 15px;
@@ -2752,21 +2892,20 @@ select{
                 background-color: #f3f3f3;
                 padding: 0 10px;
 
-                option{
+                option {
                     font-size: 15px;
                     color: #282828;
                 }
             }
         }
 
-        .search-datetime{
+        .search-datetime {
             width: 148px;
             margin-right: 8px;
         }
-
     }
 
-    .searchBtn{
+    .searchBtn {
         float: left;
         width: 112px;
         height: 42px;
@@ -2779,12 +2918,14 @@ select{
         margin-left: 12px;
     }
 }
-.traffic-table{
+
+.traffic-table {
     text-align: center;
-    thead{
+
+    thead {
         background-color: #efefef;
 
-        tr th{
+        tr th {
             height: 36px;
             font-size: 15px;
             color: #282828;
@@ -2792,28 +2933,32 @@ select{
         }
     }
 
-    tbody{
-        tr td{
+    tbody {
+        tr td {
             font-size: 14px;
             color: #000;
         }
-        .time{
+
+        .time {
             font-size: 18px;
             color: #000;
         }
-        .beginEnd{
+
+        .beginEnd {
             padding: 15px 0 0;
-            div{
+
+            div {
                 width: 100%;
                 overflow: hidden;
                 text-align: center;
             }
-            p{
+
+            p {
                 overflow: hidden;
                 font-size: 14px;
                 color: #000;
 
-                samp{
+                samp {
                     display: inline-block;
                     width: 20px;
                     height: 20px;
@@ -2822,35 +2967,37 @@ select{
                     border-radius: 50%;
                     margin-right: 5px;
                 }
-                .begin{
+
+                .begin {
                     background-color: #06cdb8;
                 }
-                .end{
+
+                .end {
                     background-color: #ff6767;
                 }
             }
-
         }
 
-        .price{
+        .price {
             color: #ffa800;
             font-size: 18px;
         }
 
-        .trainNum{
+        .trainNum {
             color: #000;
         }
-        .remainNum{
+
+        .remainNum {
             text-align: left;
             padding-left: 30px;
         }
 
-        .purchase{
-            .number{
+        .purchase {
+            .number {
                 float: left;
                 margin-left: 50px;
 
-                .icon{
+                .icon {
                     float: left;
                     width: 22px;
                     height: 22px;
@@ -2858,17 +3005,20 @@ select{
                     background-repeat: no-repeat;
                     background-size: 100%;
                 }
-                .icon-sub{
+
+                .icon-sub {
                     background-image: url('../images/减.png');
                 }
-                .icon-sub.active{
+
+                .icon-sub.active {
                     background-image: url('../images/减-颜色.png');
                 }
-                .icon-add{
+
+                .icon-add {
                     background-image: url('../images/加.png');
                 }
 
-                .num{
+                .num {
                     float: left;
                     width: 38px;
                     line-height: 22px;
@@ -2877,32 +3027,33 @@ select{
                     font-family: arial;
                     color: #000;
                 }
-
             }
 
-            .btn-wrap{
+            .btn-wrap {
                 float: left;
                 margin-left: 15px;
 
-                .btn-booking{
+                .btn-booking {
                     width: 67px;
                     height: 28px;
                     color: #fff;
                     font-size: 14px;
                     background-color: #FFBA00;
                     border-radius: 4px;
+                    cursor: pointer;
                 }
             }
         }
-
     }
 }
-.bus-price{
-    samp{
+
+.bus-price {
+    samp {
         font-size: 15px;
         color: #808080;
     }
-    i{
+
+    i {
         font-style: normal;
         font-size: 30px;
         color: #ffba00;
@@ -2911,11 +3062,12 @@ select{
         top: 3px;
     }
 }
-.traffic-btn{
+
+.traffic-btn {
     text-align: center;
     padding: 60px 0;
 
-    input{
+    input {
         width: 112px;
         height: 42px;
         font-size: 18px;
@@ -2926,6 +3078,7 @@ select{
     }
 }
 //弹窗
+
 .am-modal-mask {
     position: fixed;
     top: 0;
@@ -2983,14 +3136,17 @@ select{
     height: auto;
     padding-top: 0;
 }
-.am-modal-head{
+
+.am-modal-head {
     border-bottom: 1px solid #eee;
 }
-.am-modal-title{
+
+.am-modal-title {
     text-align: left;
     padding: 20px 30px;
     font-size: 16px;
 }
+
 .am-modal-close {
     cursor: pointer;
     border: 0;
@@ -3021,6 +3177,7 @@ select{
         background: url("../images/close.png") no-repeat center;
     }
 }
+
 .am-modal-body {
     font-size: 15px;
     color: #484848;
@@ -3028,7 +3185,8 @@ select{
     overflow: auto;
     padding: 20px 70px 0;
 }
-.am-modal-body .title{
+
+.am-modal-body .title {
     width: 90px;
     text-align: right;
     font-size: 16px;
@@ -3037,7 +3195,7 @@ select{
     margin-right: 25px;
 }
 
-.am-input-wrap{
+.am-input-wrap {
     width: 245px;
     height: 44px;
     padding-top: 7px;
@@ -3045,7 +3203,8 @@ select{
     background-color: #f3f3f3;
     position: relative;
 }
-.am-input-wrap label.error{
+
+.am-input-wrap label.error {
     position: absolute;
     right: 10px;
     top: 0;
@@ -3054,27 +3213,32 @@ select{
     line-height: 44px;
     z-index: 1;
 }
-.am-input-wrap .input-text{
+
+.am-input-wrap .input-text {
     width: 100%;
     height: 30px;
     font-size: 14px;
     padding: 0 15px;
+    background: transparent;
 }
-.am-input-wrap.disabled{
+
+.am-input-wrap.disabled {
     background-color: transparent;
     border: 1px solid transparent;
 }
-.am-input-wrap .input-text:disabled{
+
+.am-input-wrap .input-text:disabled {
     font-size: 16px;
     background-color: transparent;
     border: 1px solid transparent;
     color: #484848;
 }
 
-.am-modal-button-group{
+.am-modal-button-group {
     min-height: 44px;
     padding: 20px 0 30px;
 }
+
 .am-modal-button-group .am-modal-button {
     -webkit-touch-callout: none;
     box-sizing: border-box;
@@ -3088,22 +3252,26 @@ select{
     height: 40px;
     line-height: 40px;
     font-size: 15px;
+    cursor: pointer;
 }
-.am-modal-button-group .am-modal-button-co{
+
+.am-modal-button-group .am-modal-button-co {
     background-color: #FFA200;
     margin-left: 80px;
 }
-.am-modal-button-group .am-modal-button-ca{
+
+.am-modal-button-group .am-modal-button-ca {
     background-color: #ccc;
 }
 
-.am-textarea-wrap{
+.am-textarea-wrap {
     width: 245px;
     height: 210px;
     padding-bottom: 25px;
     position: relative;
 }
-.am-textarea-wrap textarea{
+
+.am-textarea-wrap textarea {
     width: 100%;
     height: 100%;
     border: 1px solid #e9e9e9;
@@ -3113,19 +3281,23 @@ select{
     text-align: left;
     padding: 10px;
 }
-.am-textarea-wrap textarea.error{
+
+.am-textarea-wrap textarea.error {
     border: 1px solid #F14E4F;
 }
-.am-textarea-wrap  label.error{
+
+.am-textarea-wrap label.error {
     color: #F14E4F;
     text-align: left;
     z-index: 1;
 }
-.am-select{
+
+.am-select {
     padding-bottom: 20px;
     height: 64px;
 }
-.am-select select{
+
+.am-select select {
     width: 95px;
     height: 44px;
     font-size: 14px;
@@ -3137,7 +3309,8 @@ select{
     padding: 0 10px;
     z-index: 10;
 }
-.am-select label.error{
+
+.am-select label.error {
     position: absolute;
     left: 120px;
     top: 40px;
@@ -3146,11 +3319,10 @@ select{
     line-height: 20px;
     z-index: 1;
 }
-
-
 //日期
-.mylaydate{
-    .icon-laydate{
+
+.mylaydate {
+    .icon-laydate {
         width: 40px;
         height: 100%;
         position: absolute;
@@ -3162,83 +3334,87 @@ select{
         background-image: url('../images/calendar.png');
     }
 }
-
 /*实名认证*/
-.identity-wrap{
-    .title{
+.identity-wrap {
+    .title {
         padding: 10px 30px 40px;
 
-        h3{
+        h3 {
             font-size: 22px;
             color: #616161;
         }
     }
 }
 
-.show-wrap{
-    min-height: 240px;;
+.show-wrap {
+    min-height: 240px;
 }
-.pay-wrap{
+
+.pay-wrap {
     width: 240px;
     margin: 0 auto;
     padding-bottom: 20px;
     text-align: center;
 
-    .qrcode{
+    .qrcode {
         width: 240px;
         height: 240px;
         padding: 15px;
         border: 1px solid #45494C;
         border-radius: 5px;
 
-        #qrcode{
-           width: 100%;
-           height: 100%;
+        #qrcode {
+            width: 100%;
+            height: 100%;
         }
     }
 
-    .txt{
+    .txt {
         font-size: 15px;
         color: #45494C;
         padding: 15px 0;
     }
 
-    .price{
+    .price {
         font-size: 22px;
         color: #FF9C00;
         padding: 10px 0 0;
 
-        i{
+        i {
             font-size: 24px;
             font-style: normal;
             margin-left: 5px;
         }
     }
 }
-.paySuccess{
+
+.paySuccess {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 50px;
 
-    img{
+    img {
         width: 80px;
     }
-    p{
+
+    p {
         color: #06CDB8;
         font-size: 20px;
         margin-top: 30px;
-        a{
 
+        a {
             color: #06CDB8;
             font-size: 20px;
             margin-left: 5px;
         }
     }
 }
-.payBtn{
+
+.payBtn {
     padding-top: 20px;
     text-align: center;
-    input{
+
+    input {
         height: 40px;
         padding: 0 30px;
         background-color: #06CDB8;
@@ -3247,41 +3423,48 @@ select{
         border-radius: 5px;
     }
 }
-.noteCon-wrap{
+
+.noteCon-wrap {
     padding: 30px;
-    .title{
+
+    .title {
         font-size: 22px;
         font-weight: bold;
     }
-    .updateDatetime{
+
+    .updateDatetime {
         font-size: 15px;
         color: #999999;
         overflow: hidden;
         line-height: 34px;
     }
-    .note-icon{
+
+    .note-icon {
         width: 100%;
         height: 40px;
         overflow: hidden;
         padding-top: 6px;
         margin-top: 5px;
-        border-bottom: 1px  solid #eee;
+        border-bottom: 1px solid #eee;
     }
-    .pic{
+
+    .pic {
         width: 100%;
         margin-top: 15px;
-        img{
+
+        img {
             max-width: 100%;
         }
     }
 
-    .description{
+    .description {
         margin-top: 15px;
         font-size: 15px;
         line-height: 1.8;
     }
 }
-.icon-collection{
+
+.icon-collection {
     height: 20px;
     background-image: url('../images/我的收藏灰.png');
     background-position: right;
@@ -3296,62 +3479,70 @@ select{
     padding-right: 30px;
     color: #999999;
 }
-.icon-collection.active{
+
+.icon-collection.active {
     background-image: url('../images/点赞.png') !important;
 }
-.noData{
+
+.noData {
     width: 100%;
     padding: 70px 0 0;
     text-align: center;
 
-    img{
+    img {
         width: 100px;
     }
 
-    p{
+    p {
         font-size: 18px;
         color: #c8c8c8;
         margin-top: 20px;
     }
 }
-.hotelRoomDialog{
-    .am-textarea-wrap{
+
+.hotelRoomDialog {
+    .am-textarea-wrap {
         height: 120px;
     }
 }
-.mallRuleDialog{
-    .am-modal-title{
+
+.mallRuleDialog {
+    .am-modal-title {
         padding: 15px 30px;
     }
-    .am-modal-body{
+
+    .am-modal-body {
         padding: 20px 30px 30px;
-        .am-modal-div{
+
+        .am-modal-div {
             max-height: 500px;
             overflow-y: auto;
             text-align: initial;
         }
     }
 }
-.address-wrap{
+
+.address-wrap {
     width: 100%;
     min-height: 150px;
     position: relative;
     padding-bottom: 50px;
 
-    .no-address{
+    .no-address {
         text-align: center;
         padding: 20px 0;
 
-        p{
+        p {
             margin-top: 20px;
         }
-        a{
+
+        a {
             font-size: 18px;
             color: #06CDB8;
         }
     }
 
-    .address-bt{
+    .address-bt {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -3362,62 +3553,67 @@ select{
         margin-top: 15px;
     }
 }
-.address-table{
+
+.address-table {
     min-height: 50px !important;
     border: 1px solid #82e6db;
+
     thead {
         background-color: #e6faf8;
-        th{
+
+        th {
             padding: 15px 8px !important;
         }
     }
 
-    tbody tr{
-        &:hover{
+    tbody tr {
+        &:hover {
             border-top: 1px solid #cdf5f1;
             border-bottom: 1px solid #cdf5f1;
             background: #e6faf8 !important;
 
-            .setDefault{
+            .setDefault {
                 display: inline-block;
             }
-
         }
-        td{
+
+        td {
             font-size: 15px;
             border-top: 1px solid #82e6db;
             padding: 15px 8px !important;
         }
 
-        .setDefault{
+        .setDefault {
             display: none;
         }
     }
 }
-.address-title{
+
+.address-title {
     font-size: 18px;
     line-height: 1.8;
     margin-bottom: 20px;
     padding: 0 10px 10px;
     border-bottom: 2px solid #82e6db;
 
-    a{
+    a {
         font-weight: normal;
         font-size: 15px;
         float: right;
         position: relative;
         top: 8px;
 
-        &:hover{
+        &:hover {
             color: #06CDB8;
             text-decoration: underline;
         }
     }
 }
-.addressList{
+
+.addressList {
     padding: 10px 30px 0;
 
-    .other{
+    .other {
         font-size: 16px;
         color: #06CDB8;
         line-height: 30px;
@@ -3425,10 +3621,10 @@ select{
         cursor: pointer;
     }
 
-    ul{
+    ul {
         width: 100%;
 
-        li{
+        li {
             width: 100%;
             padding: 10px 15px;
             border: 1px solid #fff;
@@ -3436,126 +3632,139 @@ select{
             overflow: hidden;
             cursor: pointer;
 
-            .icon-address{
+            .icon-address {
                 width: 24px;
                 height: 24px;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: 24px;
             }
-            .addressCon{
+
+            .addressCon {
                 font-size: 15px;
                 line-height: 24px;
                 margin-left: 15px;
             }
-            .isDefault{
+
+            .isDefault {
                 font-size: 15px;
                 line-height: 24px;
                 margin-left: 15px;
                 color: #999;
             }
-            &.active{
+
+            &.active {
                 margin: 5px 0;
                 border: 1px solid #82e6db;
                 background-color: #e6faf8;
                 box-shadow: 5px 5px 0 #F5F5F5;
 
-                .addressCon{
+                .addressCon {
                     font-size: 17px;
                     color: #000;
                     font-weight: bold;
                 }
 
-                .icon-address{
-
+                .icon-address {
                     background-image: url('../images/defaultAddress.png');
                 }
             }
         }
     }
 }
-.addressWrap{
-    .txt{
+
+.addressWrap {
+    .txt {
         margin-right: 10px;
     }
-    .input-text{
+
+    .input-text {
         background-color: #fff;
     }
-    .input-btn{
+
+    .input-btn {
         background-color: #06CDB8;
         cursor: pointer;
         margin-left: 110px;
     }
-    .address-select{
+
+    .address-select {
         float: left;
         width: 180px !important;
     }
 
-    .address-table{
-        .btn-edit,
+    .address-table {
+        .btn-defalut,
         .btn-delete,
-        .btn-defalut{
+        .btn-edit {
             font-size: 15px;
             background-color: transparent;
             cursor: pointer;
         }
 
-        .btn-edit{
+        .btn-edit {
             color: #FFAE00;
             margin-right: 5px;
         }
-        .btn-delete{
+
+        .btn-delete {
             color: #F14E4F;
             margin-left: 5px;
         }
-        samp{
+
+        samp {
             font-size: 15px;
             color: #999;
         }
 
-        .btn-defalut{
+        .btn-defalut {
             color: #f30;
         }
-
     }
-    #city-group{
+
+    #city-group {
         overflow: hidden;
         position: relative;
     }
 }
-.submitOrder-wrap{
+
+.submitOrder-wrap {
     padding: 30px 15px 0;
 }
-.submitProduct{
+
+.submitProduct {
     padding: 0 15px;
-    .img{
+
+    .img {
         width: 280px;
         height: 175px;
         overflow: hidden;
     }
 
-    .txt{
+    .txt {
         margin-left: 20px;
-        p{
+
+        p {
             color: #000;
             font-size: 18px;
             margin-bottom: 15px;
         }
-        samp{
+
+        samp {
             font-size: 17px;
             color: #FFA200;
 
-            i{
+            i {
                 font-style: normal;
                 margin-left: 5px;
             }
         }
 
-        .amount{
+        .amount {
             margin-top: 50px;
             font-size: 20px;
 
-            i{
+            i {
                 font-size: 24px;
                 color: #FFA200;
                 font-style: normal;
@@ -3566,12 +3775,13 @@ select{
         }
     }
 
-    .applyNote-wrap{
-        p{
+    .applyNote-wrap {
+        p {
             font-size: 16px;
             line-height: 42px;
         }
-        .applyNote{
+
+        .applyNote {
             width: 300px;
             height: 42px;
             border: 1px solid #eee;
@@ -3582,32 +3792,36 @@ select{
         }
     }
 
-    .amount-wrap{
+    .amount-wrap {
         margin-top: 50px;
         text-align: center;
 
-        .btn-sub{
+        .btn-sub {
             width: 160px;
             height: 42px;
             color: #fff;
             font-size: 18px;
             background-color: #06CDB8;
+            cursor: pointer;
         }
     }
 }
-.editAddressDialog{
-    .am-modal-body{
+
+.editAddressDialog {
+    .am-modal-body {
         padding: 20px 50px 0;
     }
-    .am-input-wrap{
+
+    .am-input-wrap {
         background-color: #fff;
         padding-top: 6px;
     }
-    .am-textarea-wrap{
-        height: 110px; 
-        
+
+    .am-textarea-wrap {
+        height: 110px;
+
         textarea {
-            background-color: #fff; 
+            background-color: #fff;
         }
     }
 }

@@ -138,7 +138,9 @@ define([
                 trafficCtr.cancelSpecialLineOrder([code])
                     .then(() => {
                         base.showMsg("取消成功");
-                        getSpecialLineOrder(true);
+                        getSpecialLineOrder(true).then((data) => {
+                            $("#content").html(buildHtml(data));
+                        });
                     }, () => {
                         ele.prop("disabled", false).val("取消订单");
                     });
@@ -150,7 +152,9 @@ define([
         trafficCtr.refundSpecialLineOrder(code, remark)
             .then(() => {
                 base.showMsg("退款成功");
-                getSpecialLineOrder(true);
+                getSpecialLineOrder(true).then((data) => {
+                    $("#content").html(buildHtml(data));
+                });
                 $("#refund-modal").addClass("hidden");
             }, () => {
                 ele.prop("disabled", false).find("span").text("确认");

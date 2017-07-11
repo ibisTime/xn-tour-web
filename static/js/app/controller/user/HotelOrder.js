@@ -18,7 +18,9 @@ define([
     function getHotelOrder(refresh){
         hotelCtr.getHotelOrder(code, refresh)
             .then((data) => {
-                $("#content").html(buildHtml(data));
+                $("#content").html(buildHtml(data))
+                    .append(buildCheckInHtml(data))
+                    .append(buildApplyNoteHtml(data));
                 hotelCtr.getHotelDetail(data.hotalOrder.hotalCode)
                     .then((data) => {
                         var addr = getAddress(data.hotal);
@@ -65,6 +67,34 @@ define([
                         </div>
                     </a>
                 </li>`;
+    }
+    // 生成入住信息
+    function buildCheckInHtml(item) {
+        return `<li>
+                    <div class="top wp100 over-hide ptb10">
+                        <div class="fl">预定信息</div>
+                    </div>
+                    <div class="con wp100">
+                        <div class="txt fl">
+                            <p>入住人：${item.hotalOrder.checkInName}</p>
+                            <p>手机号：${item.hotalOrder.checkInMobile}</p>
+                        </div>
+                    </div>
+                </li>`;
+    }
+
+    // 生成备注的html
+    function buildApplyNoteHtml(item) {
+        return `<li>
+                    <div class="top wp100 over-hide ptb10">
+                        <div class="fl">买家嘱托</div>
+                    </div>
+                    <div class="con wp100">
+                        <div class="txt fl">
+                            <p>${item.applyNote || "无"}</p>
+                        </div>
+                    </div>
+                </li>`
     }
 
     function addListener() {
@@ -223,6 +253,6 @@ define([
         if(province == city){
             province = "";
         }
-        return province + city + area + " " + address;
+        return province + city + area + address;
     }
 });

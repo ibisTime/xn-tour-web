@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <link rel="import" href="../head.html?__inline">
-        <title>个人中心-大元云</title>
-         
-    </head>
 
-    <body>
-        <link rel="import" href="../top.html?__inline">
-    	<div class="wrap position">
-    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的资料</p>
-    	</div>
+<head>
+    <link rel="import" href="../head.html?__inline">
+    <title>个人中心-大元云</title>
 
-    	<div class="content-user">
-    		<div class="fl user-left conStyle">
-    			<link rel="import" href="./userLeft.html?__inline">
-    		</div>
-    		<div class="fr user-right conStyle">
-	    		<div class="userInfo-wrap">
-	    			<div class="myPic fl"></div>
-	    			<div class="fl ml30">
-	    				<div class="name"></div>
-	    				<div class="tel">手机号：<i></i></div>
-	    			</div>
-	    			<div class="fr userRevise">
-	    				<a class="con" href="revise-Info.html">
-	    					<div class="icon fl"><img src="../../images/修改资料.png"/></div>
-	    					<p class="fl">修改资料</p>
-	    				</a>
-	    				<a class="con" href="revise-pwd.html">
-	    					<div class="icon fl"><img src="../../images/修改密码.png"/></div>
-	    					<p class="fl">修改密码</p>
-	    				</a>
-	    				<a class="con" href="myAddress.html">
-	    					<div class="icon fl"><img src="../../images/我的地址.png"/></div>
-	    					<p class="fl">我的地址</p>
-	    				</a>
-	    			</div>
-                    <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading">
-                        <div class="ant-spin-blur ant-spin-container">
-                            <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
-                        </div>
+</head>
+
+<body>
+    <link rel="import" href="../top.html?__inline">
+    <div class="wrap position">
+        <p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的资料</p>
+    </div>
+
+    <div class="content-user">
+        <div class="fl user-left conStyle">
+            <link rel="import" href="./userLeft.html?__inline">
+        </div>
+        <div class="fr user-right conStyle">
+            <div class="userInfo-wrap">
+                <div class="myPic fl"></div>
+                <div class="fl ml30">
+                    <div class="name"></div>
+                    <div class="tel">手机号：<i></i></div>
+                    <div class="signin-wrap">
+                        <button type="button" id="signIn" class="ant-btn ant-btn-primary">
+                            <span>签到</span>
+                        </button>
                     </div>
-	    		</div>
-	    	</div>
-    	</div>
+                </div>
+                <div class="fr userRevise" id="userRevise">
+                    <a class="con" href="revise-Info.html">
+                        <div class="icon fl"><img src="../../images/修改资料.png" /></div>
+                        <p class="fl">修改资料</p>
+                    </a>
+                    <a class="con" href="revise-pwd.html">
+                        <div class="icon fl"><img src="../../images/修改密码.png" /></div>
+                        <p class="fl">修改密码</p>
+                    </a>
+                    <a class="con" href="myAddress.html">
+                        <div class="icon fl"><img src="../../images/我的地址.png" /></div>
+                        <p class="fl">我的地址</p>
+                    </a>
+                    <a class="con" href="javascript:void(0)" id="identity">
+                        <div class="icon fl"><img src="../../images/smrz.png" /></div>
+                        <p class="fl">实名认证</p>
+                    </a>
+                </div>
+                <div id="loadingSpin" class="ant-spin-nested-loading modal-map-ant-spin-loading">
+                    <div class="ant-spin-blur ant-spin-container">
+                        <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <link rel="import" href="../footer.html?__inline">
-        <script>
-            require(['app/controller/user/User']);
-        </script>
-    </body>
+    <link rel="import" href="../footer.html?__inline">
+    <script>
+        require(['app/controller/user/User']);
+    </script>
+</body>
+
 </html>

@@ -57,8 +57,7 @@ define([
     function normalPay(){
         generalCtr.normalPay(payBizType, config)
             .then(showSuccess, function() {
-    			_loadingSpin.addClass("hidden");
-                $("#mallPay").prop("disabled", false).find("span").text("立即支付");
+                $("#mallPay, #yePay").prop("disabled", false).find("span").text("立即支付");
             });
     }
 
@@ -81,8 +80,8 @@ define([
             }
             // 商品是积分支付
             if(type == 5){
-                $(".show-wrap").addClass("hidden");
-                $(".jfpay-wrap").removeClass("hidden");
+                $("#jfPayWrap").removeClass("hidden");
+                $("#ant-tabs").addClass("hidden");
                 $("#jfPrice").find('i').html(base.formatMoney(price));
             }else if(type == 4){
                 var str = "";
@@ -95,9 +94,9 @@ define([
                     price = data.secondAmount;
                     payBizType = "618246";
                 }
-                $("#price").html(`${str}：<i>￥${base.formatMoney(price)}</i>`);
+                $("#price, #yePrice").html(`${str}：<i>￥${base.formatMoney(price)}</i>`);
             }else {
-                $("#price").find('i').html(`￥${base.formatMoney(price)}`);
+                $("#price, #yePrice").find('i').html(`￥${base.formatMoney(price)}`);
             }
             if(type != 5){
                 if(type == 4) {
@@ -140,14 +139,12 @@ define([
     }
     // 线上支付二维码
     function showPayQCode(){
-        $(".pay-wrap").removeClass("hidden");
         currentStatus == undefined && payWeChat();
     }
     // 支付成功
     function showSuccess(){
-        $(".show-wrap").addClass("hidden");
-        $(".jfpay-wrap").addClass("hidden");
-        $(".paySuccess").removeClass("hidden")
+        $("#ant-tabs, #jfPayWrap").addClass("hidden");
+        $("#paySuccess").removeClass("hidden")
         _loadingSpin.addClass("hidden");
         setTimeout(function(){
             location.href="../user/order.html";
@@ -155,11 +152,24 @@ define([
     }
 
     function addListener() {
-        var _mallPay = $("#mallPay");
-        _mallPay.click(function(){
-            _loadingSpin.removeClass("hidden")
-            _mallPay.prop("disabled", true).find("span").text("支付中...");
-            _loadingSpin.removeClass("hidden");
+        $("#mallPay").click(function(){
+            $(this).prop("disabled", true).find("span").text("支付中...");
+            normalPay();
+        });
+
+        var _antTabs = $("#ant-tabs");
+        _antTabs.on("click", ".ant-tabs-tab", function(){
+            var _this = $(this),
+                index = _this.index();
+            _this.addClass("ant-tabs-tab-active").siblings(".ant-tabs-tab-active").removeClass("ant-tabs-tab-active");
+            var tabpane = _antTabs.find(".ant-tabs-tabpane").eq(index);
+            tabpane.removeClass("ant-tabs-tabpane-inactive").addClass("ant-tabs-tabpane-active")
+                .siblings(".ant-tabs-tabpane-active")
+                    .removeClass("ant-tabs-tabpane-active").addClass("ant-tabs-tabpane-inactive")
+        });
+
+        $("#yePay").click(function(){
+            $(this).prop("disabled", true).find("span").text("支付中...");
             normalPay();
         });
     }

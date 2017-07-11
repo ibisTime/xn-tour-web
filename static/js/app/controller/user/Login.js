@@ -5,7 +5,7 @@ define([
 ], function(base, Validate, userCtr) {
 
     init();
-    
+
     // 初始化页面
     function init() {
         addListener();
@@ -19,7 +19,7 @@ define([
 				$(this).addClass("active")
 			}
 		})
-		
+
 		$("#loginForm").validate({
             'rules': {
                 "password": {
@@ -33,35 +33,31 @@ define([
             },
             onkeyup: false
         });
-		
+		var _loadingSpin = $("#loadingSpin");
 		$("#loginBtn").click(function(){
 			var loginName = $("#loginName").val();
 			var pwd = $("#password").val();
-			
+
 			if($("#loginForm").valid()){
-				base.showLoading();
-			
+				_loadingSpin.removeClass("hidden");
 				userCtr.login({
 					"loginName": loginName,
 					"loginPwd": pwd,
 					"kind": "f1"
-				}).then((data)=>{
-					var returnUrl = sessionStorage.getItem("l-return")
-					
+				}).then((data) => {
 					if($("#isRem").hasClass("active")){
-						base.setSessionUser(data,true)
+						base.setSessionUser(data, true);
 					}else{
-						base.setSessionUser(data)
+						base.setSessionUser(data);
 					}
-					
-					base.hideLoading();
-					location.href = returnUrl || "../index.html";
-				},()=>{
-					base.hideLoading();
-				})
+					_loadingSpin.addClass("hidden");
+                    base.goReturn();
+				},() => {
+                    _loadingSpin.addClass("hidden");
+				});
 			}
-			
+
 		})
-		
+
     }
 });

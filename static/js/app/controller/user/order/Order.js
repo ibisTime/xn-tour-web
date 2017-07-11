@@ -18,15 +18,16 @@ define([
     var config = {
             start: 1,
             limit: 10
-        }, statusList = {      // 每种订单状态对应的statusList
+        },
+        statusList = {      // 每种订单状态对应的statusList
             0: [null, [0], [1], [2, 31, 94]],
             1: [null, [0], [1], [2, 31, 94]],
             2: [null, [0], [1], [2, 31, 94]],
             3: [null, [0], [1], [2, 31, 94]],
             4: [null, [0], [1], [2, 31, 94]],
             5: [null, [0, 2, 97], [3]]
-        }, currentType = 0,     // 当前选中的订单类型
-        currentStatusIndex = 0, // 当前选中的订单状态下标
+        }, currentType,     // 当前选中的订单类型
+        currentStatusIndex, // 当前选中的订单状态下标
         specialModule;          // 专线类型的数据字典
     var _loadingSpin = $("#loadingSpin"),
         pageActions = [ getPageMallOrders, getPageLineOrders, getPageHotelOrders,
@@ -42,6 +43,11 @@ define([
     function init() {
         $("#userNav li").eq(1).addClass("active");
         addListener();
+        var searchs = JSON.parse(sessionStorage.getItem('listSearchs') || '{}')[location.pathname] || {};
+        currentType = searchs.orderType || 0;
+        currentStatusIndex = searchs.orderStatus || 0;
+        $("#orderType").val(currentType);
+        $("#orderStatus").val(currentStatusIndex);
         pageActions[currentType].call(null);
     }
     // 分页查询商品订单
@@ -266,6 +272,7 @@ define([
         $("#searchBtn").click(function(){
             config.start = 1;
             pageActions[currentType].call(null);
+            updateListSearch();
         });
         // 取消订单
         $("#orderList").on("click", ".cancel-order-btn", function(e){
@@ -334,5 +341,16 @@ define([
                 refundActions[currentType].call(null, _modal.data("code"), _refundArea.val(), _confirmBtn);
             }
         });
+    }
+
+    function updateListSearch() {
+    	var searchs = JSON.parse(sessionStorage.getItem('listSearchs') || '{}');
+    	var pathName = location.pathname;
+        var params = {
+            "orderType": $("#orderType").val(),
+            "orderStatus": $("#orderStatus").val()
+        };
+    	searchs[pathName] = params;
+    	sessionStorage.setItem('listSearchs', JSON.stringify(searchs));
     }
 });

@@ -11,27 +11,27 @@ define([
     		start: 1,
     		topCode: code,
     	};
-    
+
 	var	comTmpl = __inline('../../ui/comment_item.handlebars');
-	
+
 	var _loadingSpin = $("#loadingSpin");
 
     init();
-    
+
     // 初始化页面
     function init() {
         $("#nav li").eq(7).addClass("active");
-        
+
         _loadingSpin.removeClass("hidden");
         $.when(
         	getFoodDetail(),
         	getPageCom(configCom),
         )
         addListener();
-        
+
         _loadingSpin.addClass("hidden");
     }
-    
+
     //美食详情
     function getFoodDetail(){
     	return foodCtr.getFoodDetail(code).then((res)=>{
@@ -40,28 +40,28 @@ define([
             $.each(pic, function(i, p){
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
             });
-            
+
             $("#ban_pic1 ul").html(html);
             $("#ban_num1 ul").html(html);
-            
+
             if(pic.length>1){
             	swiperPic()
             }
-            
+
 			res.isCollect == "1" ? $(".dconTop-right .icon-star").addClass("active") : "";
-			
+
             $("#NowName").html(data.name);
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .joinPlace").html(data.province+data.city+data.area+" "+data.detail)
             $(".dconTop-right .lowPrice p i").html("￥"+data.price);
-            
-            
+
+
 			$("#recommend").html(data.recommend);
-			
+
         	_loadingSpin.addClass("hidden");
 		},()=>{})
     }
-	
+
 	//图片
 	function swiperPic(){
 		Banqh.banqh({
@@ -80,22 +80,22 @@ define([
 			pop_up:false//大图是否有弹出框
 		})
 	}
-	
+
 	//点赞
 	function getCollect(){
 		return generalCtr.getCollect(code,4,true).then((data)=>{
 			var _collect = $(".dconTop-right .icon-star");
-			
+
 				_collect.toggleClass("active")
         		_loadingSpin.addClass("hidden");
 		},()=>{
         	_loadingSpin.addClass("hidden");
 		})
 	}
-	
+
 	// 初始化评论分页器
     function initPaginationCom(data){
-    	
+
     	$("#paginationCom .pagination").show();
         $("#paginationCom .pagination").pagination({
             pageCount: data.totalPage,
@@ -119,11 +119,11 @@ define([
             }
         });
     }
-	
+
 	//分页查评论
 	function getPageCom(params){
 		return generalCtr.getPageComment(params).then((data)=>{
-            
+
             configCom.start == 1 && initPaginationCom(data);
 			$("#commentList").empty();
 			$("#commentList").html(comTmpl({items: data.list}));
@@ -141,40 +141,35 @@ define([
         	_loadingSpin.removeClass("hidden");
     		getCollect()
     	})
-    	
+
     	//评论
         $("#commentBtn").click(function(){
         	if(!base.isLogin()){
     			base.goLogin();
     			return ;
     		}
-        	
         	var _commentCon = $("#commentCon");
         	var content = _commentCon.val()
-        	
         	if(content){
-        		
         		_commentCon.siblings(".error").html("&nbsp;")
         		var params = {
-	        		type: "2",
+	        		type: "3",
         			content: content,
 				    parentCode: code,
 					topCode: code
 	        	}
-        		
         		_loadingSpin.removeClass("hidden");
 	        	generalCtr.getCommentPull(params).then(()=>{
 	        		getPageCom(configCom);
         			_loadingSpin.addClass("hidden");
 	        	},()=>{
-	        		
         			_loadingSpin.addClass("hidden");
 	        	})
         	}else{
         		_commentCon.siblings(".error").html("不能为空")
         	}
-        	
+
         })
-        
+
     }
 });

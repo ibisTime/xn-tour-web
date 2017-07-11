@@ -293,6 +293,6 @@ define([
         if(province == city){
             province = "";
         }
-        return province + city + area + " " + address;
+        return province + city + area + address;
     }
 });

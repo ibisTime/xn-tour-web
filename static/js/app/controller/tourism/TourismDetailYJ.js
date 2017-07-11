@@ -1,30 +1,24 @@
 define([
     'app/controller/base',
     'app/interface/generalCtr',
-    'app/interface/tourismCtr',
-], function(base, generalCtr,tourismCtr) {
+    'app/interface/tourismCtr'
+], function(base, generalCtr, tourismCtr) {
 	var code = base.getUrlParam("code");
 	var price;
-
     var _loadingSpin = $("#loadingSpin");
 
     init();
 
     // 初始化页面
     function init() {
-        _loadingSpin.removeClass("hidden");
-        $.when(
-        	getDetailYJ()
-        )
+        getDetailYJ();
         addListener();
-        _loadingSpin.addClass("hidden");
     }
 
 	//点赞
 	function getCollectTravel(){
 		return generalCtr.getCollect(code, 5, true).then((data)=>{
 			var _collect = $(".icon-collection");
-
 				if(_collect.hasClass("active")){
 					_collect.removeClass("active");
 					_collect.html("收藏")
@@ -41,7 +35,6 @@ define([
 	//详情
 	function getDetailYJ(){
 		return tourismCtr.getDetailYJ(code).then((data)=>{
-
 			var pic = data.pic.split(/\|\|/), html = "";
             $.each(pic, function(i, p){
                 html += `<div class="wp100"><img src="${base.getPic(p)}"/></div></li>`
@@ -59,7 +52,9 @@ define([
 				$(".icon-collection").html("收藏")
 			}
     		_loadingSpin.addClass("hidden");
-		},()=>{})
+		}, () => {
+            _loadingSpin.addClass("hidden");
+        });
 	}
 
     function addListener() {

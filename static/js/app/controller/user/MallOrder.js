@@ -17,7 +17,7 @@ define([
     // 获取商品订单信息
     function getMallOrder(refresh){
         $.when(
-            generalCtr.getOrderDetail("618472", code),
+            generalCtr.getOrderDetail("618472", code, refresh),
             generalCtr.getDictList("wl_company")
         ).then((data, wlData) => {
             var html = "";
@@ -67,8 +67,8 @@ define([
                             <div class="img fl"><img src="${base.getPic(item.advPic)}"/></div>
                             <div class="txt fl">
                                 <p>${item.productName}</p>
-                                <p>${base.formatMoney(item.price1)}积分</p>
                                 <span>x${item.quantity}</span>
+                                <p>${base.formatMoney(item.price1)}积分</p>
                             </div>
                             ${index == 0 ? `<div class="status ${data.status == '0' ? 'status0' : ''}">${mallOrderStatus[data.status]}</div>` : ""}
                         </a>
@@ -85,7 +85,7 @@ define([
                         <div class="txt fl">
                             <p>收件人：${item.receiver}</p>
                             <p>收件人手机：${item.reMobile}</p>
-                            <span>收件地址：${item.reAddress}</span>
+                            <p>收件地址：${item.reAddress}</p>
                         </div>
                     </div>
                 </li>`;
@@ -115,7 +115,7 @@ define([
                             <p>${item.applyNote || "无"}</p>
                         </div>
                     </div>
-                </li>`
+                </li>`;
     }
     function addListener() {
         // 取消订单

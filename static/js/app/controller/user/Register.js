@@ -6,14 +6,14 @@ define([
 ], function(base, Validate, smsCaptcha, userCtr) {
 
     init();
-    
+
     // 初始化页面
     function init() {
         addListener();
     }
 
     function addListener() {
-    	
+
     	$("#registerForm").validate({
             'rules': {
                 "smsCode": {
@@ -39,27 +39,23 @@ define([
             id: "getSmsCode",
             mobile: "loginName"
         });
-        
+        var _loadingSpin = $("#loadingSpin");
         $("#regsBtn").click(function(){
         	if($("#registerForm").valid()){
-        		base.showLoading();
-        		
+                _loadingSpin.removeClass("hidden");
         		userCtr.register({
         			"mobile": $("#loginName").val(),
         			"loginPwd": $("#password").val(),
         			"smsCaptcha": $("#smsCode").val()
-        		}).then((data)=>{
-        			
+        		}).then((data) => {
+                    _loadingSpin.addClass("hidden");
         			base.setSessionUser(data);
 		        	base.showLoading("注册成功");
-		        	
 		        	setTimeout(function(){
-		        		base.hideLoading();
-						location.href = './login.html';
-		        	},1000)
-        			
-        		},()=>{
-        			base.hideLoading();
+                        base.goReturn();
+		        	},1000);
+        		},() => {
+        			_loadingSpin.addClass("hidden");
         		})
         	}
         })

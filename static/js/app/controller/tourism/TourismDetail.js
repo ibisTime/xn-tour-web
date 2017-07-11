@@ -10,11 +10,11 @@ define([
 ], function(base, pagination, Handlebars, validate, Banqh, tourismCtr, generalCtr, userCtr) {
 	var code = base.getUrlParam("code");
 	var isIdentity;
-	
+
 	var glTmpl = __inline('../../ui/tourism_gl.handlebars'),
 		yjTmpl = __inline('../../ui/tourism_yj.handlebars'),
 		comTmpl = __inline('../../ui/comment_item.handlebars');
-	
+
     var _loadingSpin = $("#loadingSpin");
     var configGL = {
     		start: 1,
@@ -30,20 +30,16 @@ define([
     	};
 
     init();
-    
+
     // 初始化页面
     function init() {
         $("#nav li").eq(1).addClass("active");
-        _loadingSpin.removeClass("hidden");
-        $.when(
-        	getTourismDetail(),
-        	getPageGL(configGL),
-        	getPageYJ(configYJ),
-        	getPageCom(configCom)
-        )
-        addListener();
+    	getTourismDetail();
+    	getPageGL(configGL);
+    	getPageYJ(configYJ);
+    	getPageCom(configCom);
     }
-	
+
 	//获取线路详情
 	function getTourismDetail(){
 		return tourismCtr.getTourismDetail(code).then((data)=>{
@@ -51,25 +47,25 @@ define([
             $.each(pic, function(i, p){
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
             });
-            
+
             $("#ban_pic1 ul").html(html);
             $("#ban_num1 ul").html(html);
-            
+
             if(pic.length>1){
-            	swiperPic()
+            	swiperPic();
             }
-            
+
             $("#NowName").html(data.name);
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .datetime").html("出行日期："+base.formatDate(data.outDateStart,"yyyy-MM-dd")+"~"+base.formatDate(data.outDateEnd,"yyyy-MM-dd"))
-            $(".dconTop-right .joinPlace").html(data.joinPlace+"出发")
+            $(".dconTop-right .joinPlace").html("集合地：" + data.joinPlace)
             $(".dconTop-right .price p i").html("￥"+base.formatMoney(data.price));
-            
+
             if(data.groupName){
                 $(".groupName").html("组团社名："+data.groupName);
-                $(".groupMobile").html("组团电话："+data.groupMobile);
+                $(".groupMobile").html("组团社电话："+data.groupMobile);
             }
-            
+
             if(data.lineTabList){
             	var lineTabList = data.lineTabList;
                 // 1 亮点 2行程 3费用 4 须知
@@ -77,13 +73,14 @@ define([
                     $("#section" + lineTabList[i].type+" .con").html(lineTabList[i].description);
                 }
             }
-			
+            $(".outPlace").html("目的地：" + getAddress(data));
 			data.isCollect == "1" ? $(".dconTop-right .icon-star").addClass("active") : "";
-			
+
         	_loadingSpin.addClass("hidden");
+            addListener(data);
 		},()=>{})
 	}
-	
+
 	//图片
 	function swiperPic(){
 		Banqh.banqh({
@@ -102,27 +99,23 @@ define([
 			pop_up:false//大图是否有弹出框
 		})
 	}
-	
+
 	//点赞
 	function getCollectTravel(){
 		return generalCtr.getCollect(code,1,true).then((data)=>{
 			var _collect = $(".dconTop-right .icon-star");
-			
-				_collect.toggleClass("active")
-        		_loadingSpin.addClass("hidden");
+			_collect.toggleClass("active")
+    		_loadingSpin.addClass("hidden");
 		},()=>{
         	_loadingSpin.addClass("hidden");
 		})
 	}
-	
+
 	//获取用户信息
 	function getUserInfo(){
-		userCtr.getUserInfo().then((data)=>{
-			
+		userCtr.getUserInfo().then((data) => {
            	isIdentity = !!data.realName;
-			
 			if(!isIdentity){
-				
         		_loadingSpin.addClass("hidden");
                 base.confirm("您还未实名认证，点击确认前往实名认证")
                     .then(function () {
@@ -130,31 +123,30 @@ define([
                     }, base.emptyFun);
                 return;
             }
-			
             submitOrder();
         	_loadingSpin.addClass("hidden");
 		},()=>{
-			
+
         	_loadingSpin.addClass("hidden");
 		})
 	}
-	
+
 	//提交订单
 	function submitOrder(){
         _loadingSpin.removeClass("hidden");
         var data = $("#submitForm").serializeObject();
         data.lineCode = code;
-        
+
         tourismCtr.setOrder(data).then((d)=>{
         	location.href = "../pay/pay.html?code="+d.code+"&type=1";
         },()=>{
     		_loadingSpin.addClass("hidden");
         })
 	}
-	
+
 	// 初始化攻略分页器
     function initPaginationGL(data){
-    	
+
     	$("#paginationGL .pagination").show();
         $("#paginationGL .pagination").pagination({
             pageCount: data.totalPage,
@@ -178,18 +170,18 @@ define([
             }
         });
     }
-    
+
 	//分页查攻略
 	function getPageGL(params){
 		return tourismCtr.getPageGL(params,true).then((data)=>{
-            
+
             configGL.start == 1 && initPaginationGL(data);
 			$("#tourismListGL").empty();
 			$("#tourismListGL").html(glTmpl({items: data.list}));
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
-	
+
 	// 初始化游记分页器
     function initPaginationYJ(data){
         $("#paginationYJ .pagination").pagination({
@@ -214,19 +206,19 @@ define([
             }
         });
     }
-    
+
 	//分页查游记
 	function getPageYJ(params){
 		return tourismCtr.getPageYJ(params,true).then((data)=>{
-            
+
             configYJ.start == 1 && initPaginationYJ(data);
 			$("#tourismListYJ").empty();
 			$("#tourismListYJ").html(yjTmpl({items: data.list}));
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
-	
-	
+
+
 	// 初始化评论分页器
     function initPaginationCom(data){
         $("#paginationCom .pagination").pagination({
@@ -251,52 +243,69 @@ define([
             }
         });
     }
-    
+
 	//分页查评论
 	function getPageCom(params){
 		return generalCtr.getPageComment(params).then((data)=>{
-            
+
             configCom.start == 1 && initPaginationCom(data);
 			$("#commentList").empty();
 			$("#commentList").html(comTmpl({items: data.list}));
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
-	
-	
-    function addListener() {
+    // 获取地址信息
+    function getAddress(data) {
+        var province = data.province,
+            city = data.city,
+            area = data.area,
+            address = data.detail;
+        if(province == city){
+            province = "";
+        }
+        return province + city + area + address;
+    }
+
+    function addListener(data) {
+        var nowDate = laydate.now(),
+            endDate = new Date(data.outDateEnd).format("yyyy-MM-dd");
     	setTimeout(() => {
             laydate({
                 elem: '#outDate',
-                min: laydate.now()
+                min: nowDate,
+                max: endDate
             });
             $("#outDate").val(laydate.now());
         }, 1);
-    	
+
     	$(".ul-tourismList").on("click","li .icon-collection",function(){
     		$(this).toggleClass("active");
     	})
-    	
+
     	$(".dconTop-right .icon-star").click(function(){
     		if(!base.isLogin()){
     			base.goLogin();
     			return ;
     		}
-    		
+
         	_loadingSpin.removeClass("hidden");
     		getCollectTravel()
     	})
-    	
+        var nowDateTimes = new Date(nowDate).getTime(),
+            endDateTimes = new Date(endDate).getTime();
     	//立即预订点击
     	$("#bookingBtn").click(function(){
-    		
     		if(base.isLogin()){
+                if(nowDateTimes > endDateTimes) {
+                    base.showMsg("非常抱歉，该线路已经过了预定时间");
+                    return;
+                }
         		$("#Dialog").removeClass("hidden");
     		}else{
     			base.goLogin();
     		}
     	})
-    	
+
     	$("#submitForm").validate({
             'rules': {
             	'outDate':{
@@ -309,15 +318,15 @@ define([
             },
             onkeyup: false
         });
-        
-        
-    	
+
+
+
     	//弹窗-取消
         $("#Dialog #cancel").click(function(){
         	$("#Dialog").addClass("hidden");
         	$("#applyNote").val("")
         })
-        
+
     	//弹窗-提交订单
         $("#Dialog #confirm").click(function(){
         	if($("#submitForm").valid()){
@@ -325,17 +334,17 @@ define([
                 getUserInfo();
         	}
         })
-        
+
         //评论
         $("#commentBtn").click(function(){
         	if(!base.isLogin()){
     			base.goLogin();
     			return ;
     		}
-        	
+
         	var _commentCon = $("#commentCon");
         	var content = _commentCon.val()
-        	
+
         	if(content){
         		_commentCon.siblings(".error").html("&nbsp;")
         		var params = {
@@ -344,21 +353,20 @@ define([
 				    parentCode: code,
 					topCode: code
 	        	}
-        		
+
         		_loadingSpin.removeClass("hidden");
 	        	generalCtr.getCommentPull(params).then(()=>{
+                    _commentCon.val("");
 	        		getPageCom(configCom);
         			_loadingSpin.addClass("hidden");
 	        	},()=>{
-	        		
+
         			_loadingSpin.addClass("hidden");
 	        	})
         	}else{
         		_commentCon.siblings(".error").html("不能为空")
         	}
-        	
-        })
-        
-        
+
+        });
     }
 });

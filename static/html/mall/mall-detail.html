@@ -3,17 +3,17 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>积分商城-大元云</title>
-         
+
     </head>
-    
+
     <body class="mallDetail">
         <link rel="import" href="../top.html?__inline">
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="cate.html">积分商城></a><samp id="NowName"></samp></p>
     	</div>
-    	
+
     	<div class="dcon-top wrap">
-    		
+
     		<div class="dconTop-left">
 				<div class="ban-wrap" id="banqh1">
 					<div class="ban" id="ban_pic1">
@@ -28,24 +28,24 @@
 					</div>
 				</div>
     		</div>
-    		
+
     		<div class="dconTop-right">
-    			
+
     			<div class="title-wrap">
-    				
+
     				<h2 class="title"></h2>
-    				
+
     			</div>
-    			
+
 				<div class="con wp100 mall-price">
 					<img class="fl mr5" src="../../images/积分.png">
 					<p class="fl p1"><i id="lowPrice"></i>积分</p>
 				</div>
-				
+				<span class="quantity-span"></span>
 				<div class="description">
 					<p></p>
 				</div>
-				
+
 				<div class="booking-wrap">
 					<div class="number">
 						<div class="icon icon-sub"></div>
@@ -58,13 +58,13 @@
 				</div>
     		</div>
     	</div>
-    		
+
     	<div class="dcon-nav wrap">
     		<ul>
     			<li class="active"><a href="#section1">介绍</a></li>
     		</ul>
     	</div>
-    	
+
     	<!--介绍-->
     	<div class="dcon-wrap wrap" id="section1">
     		<div class="title">
@@ -73,14 +73,14 @@
     		</div>
     		<div class="con" id="description"></div>
     	</div>
-    	
+
     	<!--加载动画-->
     	<div id="loadingSpin" class="ant-spin-nested-loading fixed_i">
             <div class="ant-spin-blur ant-spin-container">
                 <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
             </div>
         </div>
-    	
+
     	<link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/mall/MallDetail']);
