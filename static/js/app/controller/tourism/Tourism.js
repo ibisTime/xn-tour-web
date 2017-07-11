@@ -110,18 +110,14 @@ define([
 	//分页查询推荐线路
 	function getTourism(params){
 		return tourismCtr.getRecommend(params).then((data)=>{
-
+            config.start == 1 && initPagination(data);
             if(data.list.length){
             	$(".noData").addClass("hidden");
-            	config.start == 1 && initPagination(data);
-
 				$("#tourismNavCon ul").empty();
 				$("#tourismNavCon ul").html(tourismTmpl({items: data.list}));
-
             }else{
 				$("#tourismNavCon ul").empty();
             	$(".noData").removeClass("hidden");
-            	initPagination(data);
             }
     		_loadingSpin.addClass("hidden");
 		},()=>{})
@@ -140,7 +136,6 @@ define([
 				}else{
 					html+=`<option value="${prov.p}">${prov.p}</option>`
 				}
-
             });
             $("#cityList select").html(html);
 
@@ -149,28 +144,28 @@ define([
 
 	// 初始化分页器
     function initPagination(data){
-    	$("#pagination .pagination").show();
-        $("#pagination .pagination").pagination({
-            pageCount: data.totalPage,
-            showData: config.limit,
-            jump: true,
-            coping: true,
-            prevContent: '<img src="/static/images/arrow---left.png" />',
-            nextContent: '<img src="/static/images/arrow---right.png" />',
-            keepShowPN: true,
-            totalData: data.totalCount,
-            jumpIptCls: 'pagination-ipt',
-            jumpBtnCls: 'pagination-btn',
-            jumpBtn: '确定',
-            isHide: true,
-            callback: function(_this){
-                if(_this.getCurrent() != config.start){
-    				_loadingSpin.removeClass("hidden");
-                    config.start = _this.getCurrent();
-                    getTourism(config);
+    	$("#pagination .pagination").show()
+            .pagination({
+                pageCount: data.totalPage,
+                showData: config.limit,
+                jump: true,
+                coping: true,
+                prevContent: '<img src="/static/images/arrow---left.png" />',
+                nextContent: '<img src="/static/images/arrow---right.png" />',
+                keepShowPN: true,
+                totalData: data.totalCount,
+                jumpIptCls: 'pagination-ipt',
+                jumpBtnCls: 'pagination-btn',
+                jumpBtn: '确定',
+                isHide: true,
+                callback: function(_this){
+                    if(_this.getCurrent() != config.start){
+        				_loadingSpin.removeClass("hidden");
+                        config.start = _this.getCurrent();
+                        getTourism(config);
+                    }
                 }
-            }
-        });
+            });
     }
 
 	//根据搜索条件获取数据
@@ -188,14 +183,13 @@ define([
 
     	$(".navSearch-list ul").on("click","li",function(){
 			if(!$(this).hasClass("active")){
-
 				$(this).addClass("active").siblings("li").removeClass("active");
 				getSearch();
 			}
-    	})
+    	});
 
     	$("#cityList select").bind("change",function(){
     		getSearch();
-    	})
+    	});
     }
 });

@@ -8,6 +8,8 @@ define([
         	params.start = params.start||'1';
         	params.limit = params.limit||'12';
         	params.status = 1;
+            params.orderDir = "asc";
+            params.orderColumn = "order_no";
 
             return Ajax.get("618070", params , true);
         },

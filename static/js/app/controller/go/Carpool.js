@@ -78,7 +78,7 @@ define([
                         html += buildHtml(d);
                     });
                 } else {
-                    html = '<tr><td colspan="6">暂无数据</td></tr>';
+                    html = '<tr><td colspan="6" class="tc">暂无数据</td></tr>';
                 }
                 $("#body").html(html);
             }, () => {
@@ -186,7 +186,7 @@ define([
             }
         });
         // 点击tr拼车详情
-        $("#body").on("click", "tr", function(){
+        $("#body").on("click", "tr[data-code]", function(){
             window.open("./carpool-detail.html?code=" + $(this).attr("data-code"));
         });
         $(window).scroll(function(e){

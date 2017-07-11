@@ -3,13 +3,13 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>积分商城-大元云</title>
-         
+
     </head>
-    
+
     <body>
         <link rel="import" href="../top.html?__inline">
     	<div class="mall-top wrap">
-    		<div class="fl account"><p>当前可用余额:</p><samp id="amount"></samp></div>
+    		<div class="fl account"><p>当前可用积分:</p><samp id="amount"></samp></div>
     		<div class="fr jfRule" id="mallRuleShow">
     			<img class="fl" src="../../images/积分规则.png" />
     			<p class="fl">积分规则</p>
@@ -17,18 +17,9 @@
     	</div>
     	<div class="content wrap content-mall">
     		<div class="conl-tourismList wp100" id="mallList">
-				<ul>
-					<!--<li><a href="mall-detail.html">
-						<div class="img"><img src="../images/酒店.png"/></div>
-						<div class="title t-3dot plr10">天堂伞</div>
-						<div class="con wp100 plr10 mall-price">
-							<img class="fl" src="../../images/积分.png">
-							<p class="fl p1"><i>20</i>积分</p>
-							<p class="fl p">价格：￥39.9</p></div>
-					</a></li>-->
-				</ul>
+				<ul></ul>
 			</div>
-			
+
 	    	<div class="noData hidden">
 				<img src="../../images/noData.png" />
 				<p>暂无数据...</p>
@@ -40,12 +31,12 @@
 	            </div>
 	        </div>
     	</div>
-    	
+
 		<div id="pagination" class="wrap pagination-wrap tc">
 			<p class="pagination"></p>
 		</div>
-		
-        
+
+
         <!--预订弹窗-->
     	<div class="detail-chose-dialog mallRuleDialog hidden" id="Dialog">
 	        <div class="am-modal-mask"></div>
@@ -65,7 +56,7 @@
 	            </div>
 	        </div>
 	    </div>
-		
+
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/mall/Mall']);

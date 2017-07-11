@@ -8,6 +8,8 @@ define([
         	params.start = params.start || '1';
         	params.limit = params.limit || '12';
         	params.status = 1;
+            params.orderDir = "asc";
+            params.orderColumn = "order_no";
 
             return Ajax.get("618100", params, refresh);
         },
@@ -78,7 +80,8 @@ define([
         	params.start = params.start||'1';
         	params.limit = params.limit||'8';
         	params.status = params.status == undefined ? 1 : params.status;
-
+            params.orderDir = "desc";
+            params.orderColumn = "location";
             return Ajax.get("618130", params , refresh);
         },
         // 游记详情

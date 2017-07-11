@@ -69,8 +69,7 @@ define([
 	// 初始化分页器
     function initPagination(data){
 
-    	$("#pagination .pagination").show();
-        $("#pagination .pagination").pagination({
+    	$("#pagination .pagination").show().pagination({
             pageCount: data.totalPage,
             showData: config.limit,
             jump: true,
@@ -96,7 +95,6 @@ define([
 	//分页查询酒店
 	function getHotelPage(params){
 		hotelCtr.getHotelPage(params).then((data)=>{
-
 			if(data.list.length){
             	$(".noData").addClass("hidden");
             	config.start == 1 && initPagination(data);
