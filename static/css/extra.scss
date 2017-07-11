@@ -1536,6 +1536,7 @@ select {
 /*详情页*/
 .dcon-top {
     margin-top: 10px;
+    margin-bottom: 50px;
     height: 372px;
 
     .dconTop-left {
@@ -1727,8 +1728,8 @@ select {
 }
 
 .dcon-nav {
-    margin-top: 52px;
     border-bottom: 2px solid #06CDB8;
+    transition: .5s;
 
     ul {
         overflow: hidden;
@@ -3504,6 +3505,20 @@ select {
     .am-textarea-wrap {
         height: 120px;
     }
+    
+    .booking-wrap{
+        height: auto;
+        padding-top: 7px;
+        right: auto;
+        left: 0;
+    }
+    .booking-wrap .number .icon{
+        width: 30px;
+        height: 30px;
+    }
+    .booking-wrap .number .num{
+        line-height: 30px;
+    }
 }
 
 .mallRuleDialog {
@@ -3824,4 +3839,12 @@ select {
             background-color: #fff;
         }
     }
+}
+.fixednav{
+    position:fixed;
+    top:1px;
+    left:50%;
+    z-index: 99;
+    margin-left: -600px;
+    background-color: #fff;
 }

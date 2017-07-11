@@ -208,16 +208,16 @@
 
 .ui-dialog-footer button.ui-dialog-autofocus {
     color: #ffffff;
-    background-color: #428bca;
-    border-color: #357ebd;
+    background-color: #FFA200;
+    border-color: #FFA200;
 }
 
 .ui-dialog-footer button.ui-dialog-autofocus:hover,
 .ui-dialog-footer button.ui-dialog-autofocus:focus,
 .ui-dialog-footer button.ui-dialog-autofocus:active {
     color: #ffffff;
-    background-color: #3276b1;
-    border-color: #285e8e;
+    background-color: #FFA200;
+    border-color: #FFA200;
 }
 
 .ui-dialog-footer button.ui-dialog-autofocus:active {

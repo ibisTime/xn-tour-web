@@ -139,7 +139,7 @@ define([
         _loadingSpin.removeClass("hidden");
         var data = $("#submitForm").serializeObject();
         data.hotalRoomCode = $("#confirm").attr("data-roomCode");
-        data.quantity =  $("#quantity").val();
+        data.quantity =  $("#quantity").html();
         
         hotelCtr.setOrder(data).then((d)=>{
         	location.href = "../pay/pay.html?code="+d.code+"&type=0";
@@ -317,7 +317,7 @@ define([
     		var _this = $(this);
     		
     		$("#hotalRoomCode").val(_this.attr("data-roomName"));
-    		$("#quantity").val(_this.attr("data-quantity"));
+    		$("#quantity").html(_this.attr("data-quantity")).attr("data-remain",_this.parent(".btn-wrap").siblings(".number").children(".num").attr("data-remain"));
     		$("#confirm").attr("data-roomCode",_this.attr("data-roomCode"));
         	$("#Dialog").removeClass("hidden");
     	})
@@ -367,6 +367,20 @@ define([
     		$("#confirm").attr("data-roomCode","");
         })
         
+    	$("#Dialog").on("click",".icon-sub",function(){
+    		var _num = $("#quantity").html();
+    		_num<=1?1:_num--;
+    		$("#quantity").html(_num);
+    	})
+    	
+    	$("#Dialog").on("click",".icon-add",function(){
+    		var _num = $("#quantity").html();
+    		var remain =$("#quantity").attr("data-remain")
+    		_num>=remain?remain:_num++;
+    		
+    		$("#quantity").html(_num);
+    	})
+    	
     	//弹窗-提交订单
         $("#Dialog #confirm").click(function(){
         	if($("#submitForm").valid()){
@@ -376,5 +390,17 @@ define([
         })
         
         
+        $(window).scroll(function(){
+        	var _dconNav = $(".dcon-nav")
+        	var sc = $(document)
+        	
+        	if(sc.scrollTop()>=600){
+
+		    	_dconNav.addClass("fixednav"); 
+			}else{
+		
+				_dconNav.removeClass("fixednav");
+			}
+        })
     }
 });

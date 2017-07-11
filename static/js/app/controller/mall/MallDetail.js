@@ -119,5 +119,19 @@ define([
     			base.showMsg("当前商品不能购买")
     		}
     	});
+    	
+    	
+        $(window).scroll(function(){
+        	var _dconNav = $(".dcon-nav")
+        	var sc = $(document)
+        	
+        	if(sc.scrollTop()>=600){
+
+		    	_dconNav.addClass("fixednav"); 
+			}else{
+		
+				_dconNav.removeClass("fixednav");
+			}
+        })
     }
 });
