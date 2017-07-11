@@ -3,47 +3,48 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>全域旅游-大元云</title>
-         
+        <link rel="stylesheet" href="../../css/chosen.css" />
+        <link rel="stylesheet" href="../../css/material-design-iconic-font.css" />
     </head>
-    
+
     <body>
         <link rel="import" href="../top.html?__inline">
     	<div class="nav wrap">
     		<div class="nav-class" id="tourismClass">
     			<ul></ul>
     		</div>
-    		
+
     		<div class="nav-search wp100">
     			<div class="navSearch-wrap trfSearch-wrap">
 	    			<div class="tit cityTit">地域：</div>
 	    			<div class="navSearch-list" id="cityList">
-	    				<div class="search-txt">
-		    				<select></select>
+	    				<div class="" style="margin-bottom:20px;">
+		    				<select style="width: 240px;height: 32px;line-height: 32px;"></select>
 		    			</div>
 	    			</div>
     			</div>
-    			
+
     			<div class="navSearch-wrap">
 	    			<div class="tit">类别：</div>
 	    			<div class="navSearch-list" id="typeList">
 	    				<ul></ul>
 	    			</div>
     			</div>
-    			
+
     			<div class="navSearch-wrap">
 	    			<div class="tit">时间：</div>
 	    			<div class="navSearch-list" id="travelTimeList">
 	    				<ul></ul>
 	    			</div>
     			</div>
-    			
+
     			<div class="navSearch-wrap">
 	    			<div class="tit">形式：</div>
 	    			<div class="navSearch-list" id="styleList">
 	    				<ul></ul>
 	    			</div>
     			</div>
-    			
+
     			<!--<div class="navSearch-wrap navSearch-wrap1">
 	    			<div class="tit">组团线路：</div>
 	    			<div class="navSearch-list" id="teamList">
@@ -52,31 +53,31 @@
     			</div>
     			-->
     		</div>
-    		
+
     	</div>
-    	
+
     	<div class="content wrap re">
     		<div class="conl-tourismList wp100" id="tourismNavCon">
 				<ul></ul>
 			</div>
-			
+
 			<!--加载动画-->
 			<div id="loadingSpin" class="ant-spin-nested-loading">
 	            <div class="ant-spin-blur ant-spin-container">
 	                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
 	            </div>
 	        </div>
-	        
+
 	    	<div class="noData hidden">
 				<img src="../../images/noData.png" />
 				<p>暂无数据...</p>
 			</div>
     	</div>
-    	
+
 		<div id="pagination" class="wrap tc pagination-wrap">
 			<p class="pagination"></p>
 		</div>
-		
+
         <link rel="import" href="../footer.html?__inline">
         <script>
             require(['app/controller/tourism/Tourism']);

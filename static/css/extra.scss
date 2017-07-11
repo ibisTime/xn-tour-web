@@ -1319,6 +1319,14 @@ select {
         width: 100%;
         position: relative;
 
+        .chosen-container {
+            background: #fff;
+
+            .chosen-single > span {
+                line-height: 1;
+            }
+        }
+
         .tit {
             width: 60px;
             height: 24px;
@@ -1335,7 +1343,7 @@ select {
             min-height: 29px;
             padding-left: 60px;
 
-            ul {
+            > ul {
                 width: 100%;
                 overflow: hidden;
 
@@ -1365,7 +1373,7 @@ select {
         }
 
         .cityTit {
-            line-height: 42px;
+            line-height: 32px;
         }
 
         .search-txt {
