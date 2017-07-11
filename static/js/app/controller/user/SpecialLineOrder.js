@@ -50,7 +50,7 @@ define([
                             <samp>票数：${item.quantity}张</samp>
                             <samp>¥${base.formatMoney(item.amount)}</samp>
                         </div>
-                        <div class="status status0">${specialLineOrderStatus[item.status]}</div>
+                        <div class="status ${item.status == '0' ? 'status0' : ''}">${specialLineOrderStatus[item.status]}</div>
                         ${
                             item.status == "0" || item.status == "1"
                                 ? `<div class="btn-wrap">

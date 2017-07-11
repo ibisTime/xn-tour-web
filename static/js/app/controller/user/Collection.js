@@ -61,7 +61,7 @@ define([
                 if(data.list.length){
                     $.each(data.list, function(i, item) {
                         html += `<li>
-                            <a href="../tourism-note-gl.html?code=${item.guide.code}">
+                            <a href="../travel/tourism-note-gl.html?code=${item.guide.code}">
                                 <div class="img"><img src="${base.getPic(item.guide.pic)}"/></div>
                                 <div class="title plr10 t-3dot">${item.guide.title}</div>
                                 <div class="con plr10"><img class="fl" src="/static/images/时间.png"><p class="fl">${base.formatDate(item.guide.updateDatetime, "yyyy-MM-dd")}</p></div>
@@ -126,11 +126,11 @@ define([
                 if(data.list.length){
                     $.each(data.list, function(i, item) {
                         html += `<li>
-                            <a href="#">
+                            <a href="../food/food-detail.html?code=${item.food.code}">
                                 <div class="img"><img src="${base.getPic(item.food.pic)}"/></div>
                                 <div class="title plr10 t-3dot">${item.food.name}</div>
-                                <div class="con plr10"><img class="fl" src="/static/images/地址.png"><p class="fl">${getAddress(item.food)}</p></div>
-                                <div class="price plr10"><p><i>￥${base.formatMoney(item.food.price)}</i></p></div>
+                                <div class="con plr10"><img class="fl" src="/static/images/地址.png"><p class="dis-inline">${getAddress(item.food)}</p></div>
+                                <div class="price plr10"><p><i>￥${item.food.price}</i></p></div>
                             </a>
                             <div class="btn-collection" data-code="${item.food.code}" data-type="4">
                                 <img class="fl" src="/static/images/收藏.png" />

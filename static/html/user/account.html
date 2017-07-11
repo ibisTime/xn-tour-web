@@ -2,14 +2,14 @@
 <html lang="zh-CN">
     <head>
         <link rel="import" href="../head.html?__inline">
-        <title>我的积分-来来旺旺</title>
+        <title>我的余额-来来旺旺</title>
 
     </head>
 
     <body>
         <link rel="import" href="../top.html?__inline">
     	<div class="wrap position">
-    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的积分</p>
+    		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a>我的余额</p>
     	</div>
 
     	<div class="content-user">
@@ -18,10 +18,10 @@
     		</div>
     		<div class="fr user-right conStyle p-r">
 	    		<div class="mall-top wp100">
-		    		<div class="fl account"><p>当前可用积分:</p><samp id="enabledAmount"></samp></div>
+		    		<div class="fl account"><p>当前可用余额:</p><samp id="enabledAmount"></samp></div>
 		    	</div>
 		    	<div class="integralList plr27">
-		    		<h4>积分明细</h4>
+		    		<h4>余额明细</h4>
 		    		<ul id="integralList"></ul>
 		    	</div>
 				<div id="pagination" class="wp100 tc pagination-wrap">
@@ -37,7 +37,7 @@
 
         <link rel="import" href="../footer.html?__inline">
         <script>
-            require(['app/controller/user/Integral']);
+            require(['app/controller/user/Account']);
         </script>
     </body>
 </html>

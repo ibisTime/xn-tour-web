@@ -58,6 +58,7 @@ define([
         generalCtr.normalPay(payBizType, config)
             .then(showSuccess, function() {
     			_loadingSpin.addClass("hidden");
+                $("#mallPay").prop("disabled", false).find("span").text("立即支付");
             });
     }
 

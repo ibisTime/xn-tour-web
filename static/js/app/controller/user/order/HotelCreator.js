@@ -35,7 +35,7 @@ define([
                                 </p>
                                 <p>¥${base.formatMoney(item.amount)}</p>
                             </div>
-                            <div class="status status0">${hotelOrderStatus[item.status]}</div>
+                            <div class="status ${item.status == '0' ? 'status0' : ''}">${hotelOrderStatus[item.status]}</div>
                             ${
                                 item.status == "0" || item.status == "1"
                                     ? `<div class="btn-wrap">

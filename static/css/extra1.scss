@@ -891,7 +891,8 @@ select {
 
 .collectionList .star {
     height: 16px;
-    &+p{
+
+    &+p {
         display: inline-block;
         font-size: 16px;
         line-height: 18px;
@@ -918,10 +919,49 @@ select {
             line-height: inherit;
             border-radius: 20px;
             padding: 4px 10px;
+
+            &.status0 {
+                color: #ff4747;
+                background-color: transparent;
+            }
         }
     }
 }
 
-.td-under{
+.orderList {
+    .status {
+        width: auto;
+        height: auto;
+        line-height: inherit;
+        border-radius: 20px;
+        padding: 4px 10px;
+        color: #d4d40b;
+
+        &.status0 {
+            color: #ff4747;
+            background-color: transparent;
+        }
+    }
+}
+
+.td-under {
     text-decoration: underline;
+}
+
+.dis-inline {
+    display: inline !important;
+}
+
+.content-user {
+    ul li {
+        .icon-yue {
+            background-image: url('../images/我的余额灰.png');
+        }
+
+        &.active {
+            .icon-yue {
+                background-image: url('../images/我的余额.png');
+            }
+        }
+    }
 }

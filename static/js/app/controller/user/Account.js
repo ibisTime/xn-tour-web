@@ -5,7 +5,7 @@ define([
     'pagination'
 ], function(base, generalCtr, userCtr, pagination) {
     var config = {
-        currency: "XNB",
+        currency: "CNY",
         start: 1,
         limit: 15,
         status: "effect_all"
@@ -15,12 +15,12 @@ define([
 
     // 初始化页面
     function init() {
-        $("#userNav li").eq(4).addClass("active");
+        $("#userNav li").eq(5).addClass("active");
         getPageCapitalFlow();
         userCtr.getUserAccount()
             .then((data) => {
                 $.each(data, function(i, item){
-                    if(item.currency == "XNB") {
+                    if(item.currency == "CNY") {
                         $("#enabledAmount").html(base.fZeroMoney(item.amount));
                     }
                 });
@@ -46,7 +46,7 @@ define([
     		    			</li>`;
                     });
                 }else{
-                    html = "<li class='tc wp100'>暂无积分流水</li>";
+                    html = "<li class='tc wp100'>暂无余额流水</li>";
                 }
                 $("#integralList").html(html);
             }, () => {

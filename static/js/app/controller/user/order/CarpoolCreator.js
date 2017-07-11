@@ -33,7 +33,10 @@ define([
                         <samp>定金：¥${base.formatMoney(item.firstAmount)}</samp>
                         <samp>尾款：¥${base.formatMoney(item.secondAmount)}</samp>
                     </div>
-                    <div class="status status0">${carpoolOrderStatus[item.status]}</div>
+                    <div class="status ${
+                        item.status == '0' || item.status == '2' || item.status == '97'
+                            ? 'status0' : ''
+                    }">${carpoolOrderStatus[item.status]}</div>
                     ${
                         item.status == "0" || item.status == "2" || item.status == "97"
                             ? `<div class="btn-wrap">

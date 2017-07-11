@@ -22,7 +22,7 @@ define([
 
 	//点赞
 	function getCollectTravel(){
-		return generalCtr.getCollect(code,2,true).then((data)=>{
+		return generalCtr.getCollect(code, 5, true).then((data)=>{
 			var _collect = $(".icon-collection");
 
 				if(_collect.hasClass("active")){

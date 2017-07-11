@@ -49,7 +49,7 @@ define([
                             <samp>人数：${item.totalNum}人</samp>
                             <samp>金额：¥${base.formatMoney(item.distancePrice)}</samp>
                         </div>
-                        <div class="status status0">${busOrderStatus[item.status]}</div>
+                        <div class="status ${item.status == '0' ? 'status0' : ''}">${busOrderStatus[item.status]}</div>
                         ${
                             item.status == "0" || item.status == "1"
                                 ? `<div class="btn-wrap">

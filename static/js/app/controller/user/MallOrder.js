@@ -70,7 +70,7 @@ define([
                                 <p>${base.formatMoney(item.price1)}积分</p>
                                 <span>x${item.quantity}</span>
                             </div>
-                            ${index == 0 ? `<div class="status status0">${mallOrderStatus[data.status]}</div>` : ""}
+                            ${index == 0 ? `<div class="status ${data.status == '0' ? 'status0' : ''}">${mallOrderStatus[data.status]}</div>` : ""}
                         </a>
                     </div>
                 </li>`;
@@ -98,24 +98,24 @@ define([
                     </div>
                     <div class="con wp100">
                         <div class="txt fl">
-                            <p>物流单号：${data.logisticsCode}</p>
                             <p>物流公司：${base.findObj(wlData, "dkey", data.logisticsCompany)['dvalue']}</p>
+                            <p>物流单号：${data.logisticsCode}</p>
                         </div>
                     </div>
                 </li>` : "";
     }
     // 生成备注的html
     function buildApplyNoteHtml(item) {
-        return item.applyNote ? `<li>
+        return `<li>
                     <div class="top wp100 over-hide ptb10">
-                        <div class="fl">备注</div>
+                        <div class="fl">买家嘱托</div>
                     </div>
                     <div class="con wp100">
                         <div class="txt fl">
-                            <p>${item.applyNote}</p>
+                            <p>${item.applyNote || "无"}</p>
                         </div>
                     </div>
-                </li>` : "无"
+                </li>`
     }
     function addListener() {
         // 取消订单

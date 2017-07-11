@@ -24,7 +24,7 @@ define([
                     });
                     $("#lineCode").html(html).trigger("change");
                 }else{
-                    base.showMsg("您还为购买过线路，无法发表游记");
+                    base.showMsg("您还未购买过线路，无法发表游记");
                 }
             }, () => {});
     }
@@ -166,7 +166,7 @@ define([
             .then(function(data){
                 base.showMsg("发表成功");
                 setTimeout(() => {
-                    location.href = '../tourism/tourism-note-yj.html?code=' + data.code || data;
+                    location.href = '../travel/tourism-note-yj.html?code=' + data.code || data;
                 }, 1000);
             }, function(){
                 _publish.prop("disabled", false).find("span").text("发表游记");

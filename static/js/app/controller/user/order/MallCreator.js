@@ -31,7 +31,7 @@ define([
                                 <p>${base.formatMoney(item.amount1)}积分</p>
                                 <span>x${item.productOrderList[0].quantity}</span>
                             </div>
-                            <div class="status status0">${mallOrderStatus[item.status]}</div>
+                            <div class="status ${item.status == '0' ? 'status0' : ''}">${mallOrderStatus[item.status]}</div>
                             ${
                                 item.status == "0" || item.status == "1"
                                     ? `<div class="btn-wrap">

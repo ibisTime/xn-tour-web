@@ -68,7 +68,10 @@ define([
         },
         // 攻略详情
         getDetailGL: (code) => (
-            Ajax.get("618116", {code})
+            Ajax.get("618116", {
+                code,
+                userId: base.getUserId()
+            })
         ),
         // 分页查询游记
         getPageYJ: (params, refresh) => {

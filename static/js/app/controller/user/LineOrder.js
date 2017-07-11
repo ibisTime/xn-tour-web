@@ -44,9 +44,11 @@ define([
                             <div class="img fl"><img src="${base.getPic(item.line.pathPic)}"/></div>
                             <div class="txt fl">
                                 <p>${item.line.name}</p>
+                                <p>${item.line.joinPlace} 出发</p>
+                                <p>${base.formatDate(item.outDate, "yyyy-MM-dd hh:mm")}</p>
                                 <p>¥${base.formatMoney(item.amount)}</p>
                             </div>
-                            <div class="status status0">${lineOrderStatus[item.status]}</div>
+                            <div class="status ${item.status == '0' ? 'status0' : ''}">${lineOrderStatus[item.status]}</div>
                             ${
                                 item.status == "0" || item.status == "1"
                                     ? `<div class="btn-wrap">

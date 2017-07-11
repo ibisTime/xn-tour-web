@@ -3,23 +3,23 @@
     <head>
         <link rel="import" href="../head.html?__inline">
         <title>我的地址-来来旺旺</title>
-         
+
     </head>
-    
+
     <body class="mallDetail">
         <link rel="import" href="../top.html?__inline">
     	<div class="wrap position">
     		<p>当前位置：<a href="../index.html">首页></a><a href="user.html">个人中心></a><samp>我的地址</samp></p>
     	</div>
-    	
+
     	<div class="content-user">
     		<div class="userInfo-wrap conStyle revise-pwd identity-wrap addressWrap re">
-    			
+
     			<h4 class="address-title">新增收货地址</h4>
     			<form id="addressForm">
     				<div class="over-hide">
     					<div class="txt fl">收货人姓名</div>
-    					<input type="text" name="addressee" id="addressee" class="input-text fl" placeholder="请输入货人姓名" />
+    					<input type="text" name="addressee" id="addressee" class="input-text fl" placeholder="请输入收货人姓名" />
     				</div>
     				<div class="over-hide mt20">
     					<div class="txt fl">手机号</div>
@@ -41,11 +41,11 @@
     					<input type="button" id="subBtn" class="input-btn" value="保存地址" />
     				</div>
     			</form>
-    			
-    			
+
+
     			<h4 class="address-title mt40">管理收货地址</h4>
     			<!--确认地址-->
-    			
+
     			<div class="plr10">
     				<table id="addressTable" class="traffic-table wp100 carpool-table address-table" border="0" cellpadding="0" cellspacing="0">
 		    			<thead>
@@ -58,18 +58,10 @@
 		    					<th></th>
 		    				</tr>
 		    			</thead>
-		    			<tbody>
-		    				<!--<tr>
-		    					<td>胡莎莎</td>
-		    					<td>15761663457</td>
-		    					<td>浙江省 杭州市 余杭区</td>
-		    					<td>梦想小镇天使村8幢1楼橙袋科技</td>
-		    					<td><input class="btn-edit" type="button" value="修改"/><samp>|</samp><input class="btn-delete" type="button" value="删除"/></td>
-		    					<td><input class="btn-defalut setDefault" type="button" value="设为默认"/></td>
-		    				</tr>--></tbody>
+		    			<tbody></tbody>
 		    		</table>
     			</div>
-    		
+
     			<!--加载动画-->
 		    	<div id="loadingSpin" class="ant-spin-nested-loading">
 		            <div class="ant-spin-blur ant-spin-container">
@@ -78,7 +70,7 @@
 		        </div>
     		</div>
     	</div>
-    	
+
     	<!--预订弹窗-->
     	<div class="detail-chose-dialog editAddressDialog hidden" id="Dialog">
 	        <div class="am-modal-mask"></div>
@@ -128,7 +120,7 @@
 	            </div>
 	        </div>
 	    </div>
-    	
+
     	<link rel="import" href="../footer.html?__inline">
     	<script src="../../js/lib/jquery.cityselect.js"></script>
         <script>

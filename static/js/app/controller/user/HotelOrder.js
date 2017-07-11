@@ -49,7 +49,7 @@ define([
                                 <p>酒店地址：<label class="cur-pointer address-hotel td-under"></label></p>
                                 <p>¥${base.formatMoney(item.hotalOrder.amount)}</p>
                             </div>
-                            <div class="status status0">${hotelOrderStatus[item.hotalOrder.status]}</div>
+                            <div class="status ${item.hotalOrder.status == '0' ? 'status0' : ''}">${hotelOrderStatus[item.hotalOrder.status]}</div>
                             ${
                                 item.hotalOrder.status == "0" || item.hotalOrder.status == "1"
                                     ? `<div class="btn-wrap">
