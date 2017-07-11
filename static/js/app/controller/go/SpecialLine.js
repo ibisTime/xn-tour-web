@@ -97,7 +97,7 @@ define([
                         html += buildHtml(d);
                     });
                 } else {
-                    html = '<tr><td colspan="6" class="tc">暂无数据</td></tr>';
+                    html = '<tr><td colspan="7" class="tc">暂无数据</td></tr>';
                 }
                 $("#body").html(html);
             }, () => {
@@ -113,6 +113,7 @@ define([
                         <div class="mt10"><p><samp class="end">达</samp>${base.findObj(endSelectArr, "dkey", data.endSite)["dvalue"]}</p></div>
                     </td>
                     <td class="trainNum">${data.name}</td>
+                    <td class="trainNum">${data.address}</td>
                     <td class="price">￥${base.formatMoney(data.price)}</td>
                     <td class="remainNum">${data.remainNum}张</td>
                     <td class="purchase">

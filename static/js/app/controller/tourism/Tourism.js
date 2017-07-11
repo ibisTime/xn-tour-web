@@ -5,7 +5,8 @@ define([
     'app/interface/menuCtr',
     'app/interface/tourismCtr',
     'app/interface/generalCtr',
-], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr) {
+    'Chosen'
+], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr, Chosen) {
 
     var topSearchTxtVal = base.getUrlParam("search") || "";
     var category = base.getUrlParam("category") || 17;
@@ -137,7 +138,8 @@ define([
 					html+=`<option value="${prov.p}">${prov.p}</option>`
 				}
             });
-            $("#cityList select").html(html);
+            $("#cityList select").html(html)
+                .chosen({ search_contains: true, allow_single_deselect: true });
 
 		},()=>{})
 	}
