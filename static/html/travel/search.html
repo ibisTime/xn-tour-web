@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="import" href="../head.html?__inline">
+        <title>搜索-大元云</title>
+         
+    </head>
+    
+    <body>
+        <link rel="import" href="../top.html?__inline">
+    	<div class="content wrap re">
+    		<div class="conl-tourismList wp100" id="tourismNavCon">
+				<ul></ul>
+			</div>
+			
+			<!--加载动画-->
+			<div id="loadingSpin" class="ant-spin-nested-loading">
+	            <div class="ant-spin-blur ant-spin-container">
+	                <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
+	            </div>
+	        </div>
+	        
+	    	<div class="noData hidden">
+				<img src="../../images/noData.png" />
+				<p>暂无数据...</p>
+			</div>
+    	</div>
+    	
+		<div id="pagination" class="wrap tc pagination-wrap">
+			<p class="pagination"></p>
+		</div>
+		
+        <link rel="import" href="../footer.html?__inline">
+        <script>
+            require(['app/controller/tourism/Tourism']);
+        </script>
+    </body>
+</html>

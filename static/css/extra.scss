@@ -129,7 +129,6 @@ select{
 .head-top{
     height: 32px;
     background-color: #f6f6f6;
-    overflow: hidden;
     border-bottom: 1px solid #eee;
     line-height: 32px;
 
@@ -143,10 +142,37 @@ select{
         height: 22px;
         margin-top: 5px;
         line-height: 1;
+        position: relative;
 
         img{
             height: 100%;
         }
+        
+        .WeChatImg{
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 5px;
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            z-index: 99;
+            transition: .6s;
+            opacity: 0;
+            
+            img{
+                width: 100%;
+            }
+        }
+    }
+    
+    .WeChat-icon:hover .WeChatImg{
+        opacity: 1;
+        width: 150px;
+        height: 150px;
+        border: 1px solid #82E6DB;
+        margin-left: -75px;
     }
 
     .tel_icon{

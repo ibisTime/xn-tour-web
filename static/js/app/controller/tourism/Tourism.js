@@ -7,6 +7,7 @@ define([
     'app/interface/generalCtr',
 ], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr) {
 	
+    var topSearchTxtVal = base.getUrlParam("search") || "";
     var category = base.getUrlParam("category") || 17;
     var tourismTmpl = __inline('../../ui/tourism_item.handlebars');
     var totalPage=1;
@@ -15,8 +16,17 @@ define([
 	}
 	
     var _loadingSpin = $("#loadingSpin");
-
-    init();
+	
+	if(topSearchTxtVal){
+		_loadingSpin.removeClass("hidden");
+		
+		config.name = topSearchTxtVal;
+		getTourism(config);
+		addListener();
+		_loadingSpin.addClass("hidden");
+	}else{
+    	init();
+	}
     
     // 初始化页面
     function init() {
