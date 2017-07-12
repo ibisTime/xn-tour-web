@@ -5,8 +5,9 @@ define([
     'app/interface/menuCtr',
     'app/interface/tourismCtr',
     'app/interface/generalCtr',
-    'Chosen'
-], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr, Chosen) {
+    'Chosen',
+    'app/module/validate'
+], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr, Chosen, validate) {
 
     var topSearchTxtVal = base.getUrlParam("search") || "";
     var category = base.getUrlParam("category") || 17;

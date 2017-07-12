@@ -97,7 +97,6 @@ define([
         // 新增收货地址,
         getAddressAdd: (params) => {
             params.userId = base.getUserId();
-            params.isDefault = 1;
             return Ajax.post("805160", params);
         },
         // 设置默认收货地址

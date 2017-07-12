@@ -5,7 +5,7 @@ define([
     'app/interface/userCtr',
 ], function(base, Validate, generalCtr, userCtr) {
 	var isReturn = base.getUrlParam("isReturn"),
-		configEdit={};
+		configEdit={},configAdd={};
 
 	var _loadingSpin = $("#loadingSpin");
 
@@ -24,6 +24,7 @@ define([
     	return userCtr.getAddressList(true).then((data)=>{
     		var html = "";
     		if(data.length){
+            	configAdd.isDefault = 0;
                 $.each(data, function(i, d){
                     html +=`<tr>
 	    					<td>${d.addressee}</td>
@@ -37,6 +38,7 @@ define([
 	    				</tr>`;
                 });
             } else {
+            	configAdd.isDefault = 1;
                 html = '<tr><td colspan="6" class="tc">暂无数据</td></tr>';
             }
 
@@ -107,6 +109,25 @@ define([
         })
 	}
 	
+	//新增
+	function getAddressAdd(params){
+		userCtr.getAddressAdd(params).then((data)=>{
+
+			_loadingSpin.addClass("hidden");
+			base.showMsg("保存成功")
+			setTimeout(function(){
+				if(isReturn){
+					base.goBack()
+				}else{
+					location.reload(true);
+				}
+			},800)
+		},()=>{
+
+			_loadingSpin.addClass("hidden");
+		})
+	}
+	
     function addListener() {
     	$("#city-group").citySelect({
 	        required: false
@@ -140,27 +161,14 @@ define([
 	    //保存地址
 	    $("#subBtn").click(function(){
 	    	if($("#addressForm").valid()){
-	    		var params = $("#addressForm").serializeObject();
-	    		if(!params.district){
-	    			params.district = params.city;
-	    			params.city = params.province;
+	    		var data = $("#addressForm").serializeObject();
+	    		data.isDefault = configAdd.isDefault;
+	    		if(!data.district){
+	    			data.district = data.city;
+	    			data.city = data.province;
 	    		}
         		_loadingSpin.removeClass("hidden");
-	    		userCtr.getAddressAdd(params).then((data)=>{
-
-        			_loadingSpin.addClass("hidden");
-	    			base.showMsg("保存成功")
-	    			setTimeout(function(){
-	    				if(isReturn){
-	    					base.goBack()
-	    				}else{
-	    					location.reload(true);
-	    				}
-	    			},800)
-	    		},()=>{
-
-        			_loadingSpin.addClass("hidden");
-	    		})
+	    		getAddressAdd(data)
 	    	}
 	    })
 

@@ -40,6 +40,13 @@ define([
     	$("#topSearchTxt").blur(function(){
 				if (window.event.keyCode==13) window.event.keyCode=0 ;
     	})
+    	
+    	$("#topSearchBtn").click(function(){
+			if($("#topSearchTxt").val()&&$("#topSearchTxt").val()!=""){
+				
+				location.href = "../travel/search.html?search="+$("#topSearchTxt").val();
+			}
+    	})
     }
     
 });

@@ -3862,3 +3862,23 @@ select {
     margin-left: -600px;
     background-color: #fff;
 }
+.icon-dianzan {
+    min-width: 20px;
+    height: 20px;
+    background-image: url('../images/点赞-灰.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    position: relative;
+    top: 6px;
+    font-size: 15px;
+    line-height: 20px;
+    padding-right: 30px;
+    color: #999999;
+}
+
+.icon-dianzan.active {
+    background-image: url('../images/点赞-绿.png') !important;
+}

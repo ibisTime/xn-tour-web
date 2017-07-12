@@ -17,14 +17,12 @@ define([
 
 	//点赞
 	function getCollectTravel(){
-		return generalCtr.getCollect(code, 5, true).then((data)=>{
-			var _collect = $(".icon-collection");
+		return generalCtr.getCollect(code, 5, true, 3).then((data)=>{
+			var _collect = $(".icon-dianzan");
 				if(_collect.hasClass("active")){
 					_collect.removeClass("active");
-					_collect.html("收藏")
 				}else{
 					_collect.addClass("active");
-					_collect.html("取消收藏")
 				}
         		_loadingSpin.addClass("hidden");
 		},()=>{
@@ -44,12 +42,10 @@ define([
 			$(".title").html(data.name);
 			$(".updateDatetime").html(base.formatDate(data.publishDatetime,"yyyy-MM-dd hh:mm:ss"));
 			$(".description").html(data.description);
-			if(data.isCollect&&data.isCollect!="0"){
-				$(".icon-collection").addClass("active");
-				$(".icon-collection").html("取消收藏")
+			if(data.isLike&&data.isLike!="0"){
+				$(".icon-dianzan").addClass("active");
 			}else{
-				$(".icon-collection").removeClass("active");
-				$(".icon-collection").html("收藏")
+				$(".icon-dianzan").removeClass("active");
 			}
     		_loadingSpin.addClass("hidden");
 		}, () => {
@@ -59,7 +55,7 @@ define([
 
     function addListener() {
 
-    	$(".icon-collection").click(function(){
+    	$(".icon-dianzan").click(function(){
     		if(!base.isLogin()){
     			base.goLogin();
     			return ;

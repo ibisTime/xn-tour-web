@@ -60,11 +60,11 @@ define([
         ),
         // 收藏
         //1 线路,2 攻略,3 酒店,4 美食
-        getCollect: (code,toType, refresh) => (
+        getCollect: (code,toType, refresh, type) => (
             Ajax.get("618320", {
         		toEntity: code,
                 toType: toType,
-                type: 2,
+                type: type||2,
                 interacter: base.getUserId()
             }, refresh)
         ),

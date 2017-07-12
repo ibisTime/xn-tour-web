@@ -319,7 +319,14 @@ define([
             onkeyup: false
         });
 
-
+    	$("#trfSearch-wrap").validate({
+            'rules': {
+            	'trfSearchName':{
+            		required: true
+            	}
+            },
+            onkeyup: false
+        });
 
     	//弹窗-取消
         $("#Dialog #cancel").click(function(){
