@@ -45,7 +45,7 @@ define([
                             <div class="txt fl">
                                 <p>${item.line.name}</p>
                                 <p>${item.line.joinPlace} 出发</p>
-                                <p>${base.formatDate(item.outDate, "yyyy-MM-dd hh:mm")}</p>
+                                <p>${base.formatDate(item.outDate, "yyyy-MM-dd")}</p>
                                 <p>¥${base.formatMoney(item.amount)}</p>
                             </div>
                             <div class="status ${item.status == '0' ? 'status0' : ''}">${lineOrderStatus[item.status]}</div>

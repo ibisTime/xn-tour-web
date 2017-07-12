@@ -18,14 +18,14 @@ define([
     		start: 1,
     		hotalCode: code,
     	};
-    
+
 	var	comTmpl = __inline('../../ui/comment_item.handlebars'),
 		roomTmpl = __inline('../../ui/hotel_home_list.handlebars');
-	
+
 	var _loadingSpin = $("#loadingSpin");
-	
+
     init();
-    
+
     // 初始化页面
     function init() {
         $("#nav li").eq(2).addClass("active");
@@ -36,10 +36,10 @@ define([
         	getPageHotelRoom(configRoom)
         )
         addListener();
-        
+
         _loadingSpin.addClass("hidden");
     }
-    
+
     //酒店详情
     function getHotelDetail(){
     	return hotelCtr.getHotelDetail(code).then((res)=>{
@@ -48,22 +48,22 @@ define([
             $.each(pic, function(i, p){
                 html += `<li><a href="javascript:;"><img src="${base.getPic(p)}"/></a></li>`
             });
-            
+
             $("#ban_pic1 ul").html(html);
             $("#ban_num1 ul").html(html);
-            
+
             if(pic.length>1){
             	swiperPic()
             }
-            
+
 			res.judge == "1" ? $(".dconTop-right .icon-star").addClass("active") : "";
-			
+
             $("#NowName").html(data.name);
             $(".dconTop-right .title-wrap .title").html(data.name);
             $(".dconTop-right .tel").html(data.telephone)
             $(".dconTop-right .joinPlace").html(data.province+data.city+data.area+" "+data.detail)
             $(".dconTop-right .lowPrice p i").html("￥"+base.formatMoney(data.lowPrice));
-            
+
             // 名宿
             if(data.category == "4"){
                 $(".nav-li-1").html("民宿特色");
@@ -72,14 +72,14 @@ define([
                 $(".nav-li-1").html("酒店特色");
                 $(".nav-li-2").html("酒店美食");
             }
-            
+
 			$("#specialDesc").html(data.specialDesc);
 			$("#foodDesc").html(data.foodDesc);
-			
+
         	_loadingSpin.addClass("hidden");
 		},()=>{})
     }
-    
+
     //图片
 	function swiperPic(){
 		Banqh.banqh({
@@ -98,27 +98,27 @@ define([
 			pop_up:false//大图是否有弹出框
 		})
 	}
-	
+
 	//点赞
 	function getCollect(){
 		return generalCtr.getCollect(code,3,true).then((data)=>{
 			var _collect = $(".dconTop-right .icon-star");
-			
+
 				_collect.toggleClass("active")
         		_loadingSpin.addClass("hidden");
 		},()=>{
         	_loadingSpin.addClass("hidden");
 		})
 	}
-	
+
 	//获取用户信息
 	function getUserInfo(){
 		userCtr.getUserInfo().then((data)=>{
-			
+
            	isIdentity = !!data.realName;
-			
+
 			if(!isIdentity){
-				
+
         		_loadingSpin.addClass("hidden");
                 base.confirm("您还未实名认证，点击确认前往实名认证")
                     .then(function () {
@@ -129,28 +129,28 @@ define([
             submitOrder();
         	_loadingSpin.addClass("hidden");
 		},()=>{
-			
+
         	_loadingSpin.addClass("hidden");
 		})
 	}
-	
+
 	//立即预订
 	function submitOrder(){
         _loadingSpin.removeClass("hidden");
         var data = $("#submitForm").serializeObject();
         data.hotalRoomCode = $("#confirm").attr("data-roomCode");
         data.quantity =  $("#quantity").html();
-        
+
         hotelCtr.setOrder(data).then((d)=>{
         	location.href = "../pay/pay.html?code="+d.code+"&type=0";
         },()=>{
     		_loadingSpin.addClass("hidden");
         })
 	}
-	
+
 	// 初始化评论分页器
     function initPaginationCom(data){
-    	
+
     	$("#paginationCom .pagination").show();
         $("#paginationCom .pagination").pagination({
             pageCount: data.totalPage,
@@ -174,21 +174,21 @@ define([
             }
         });
     }
-    
+
 	//分页查评论
 	function getPageCom(params){
 		return generalCtr.getPageComment(params).then((data)=>{
-            
+
             configCom.start == 1 && initPaginationCom(data);
 			$("#commentList").empty();
 			$("#commentList").html(comTmpl({items: data.list}));
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
-	
+
 	// 初始化房间分页器
     function initPaginationRoom(data){
-    	
+
     	$("#paginationRoom .pagination").show();
         $("#paginationRoom .pagination").pagination({
             pageCount: data.totalPage,
@@ -212,73 +212,74 @@ define([
             }
         });
     }
-	
+
 	//分页查询房间
 	function getPageHotelRoom(params){
 		return hotelCtr.getPageHotelRoom(params).then((data)=>{
-            
+
         	configRoom.start == 1 && initPaginationRoom(data);
-        
+
 			$("#roomList ul").empty();
 			$("#roomList ul").html(roomTmpl({items: data.list}));
             if(data.totalPage>1){
             	$("#paginationRoom").removeClass("hidden")
             }else{
-            	
+
             	$("#paginationRoom").addClass("hidden")
             }
-            
+
     		_loadingSpin.addClass("hidden");
 		},()=>{})
 	}
-	
+
     function addListener() {
     	//收藏
     	$(".dconTop-right .icon-star").click(function(){
-    		
+
     		if(!base.isLogin()){
     			base.goLogin();
     			return ;
     		}
-    		
+
         	_loadingSpin.removeClass("hidden");
     		getCollect()
     	})
-    	
+
     	//评论
         $("#commentBtn").click(function(){
         	if(!base.isLogin()){
     			base.goLogin();
     			return ;
     		}
-        	
+
         	var _commentCon = $("#commentCon");
         	var content = _commentCon.val()
-        	
+
         	if(content){
-        		
+
         		_commentCon.siblings(".error").html("&nbsp;")
         		var params = {
-	        		type: "2",
+	        		type: "1",
         			content: content,
 				    parentCode: code,
 					topCode: code
 	        	}
-        		
+
         		_loadingSpin.removeClass("hidden");
 	        	generalCtr.getCommentPull(params).then(()=>{
+                    _commentCon.val("");
 	        		getPageCom(configCom);
         			_loadingSpin.addClass("hidden");
 	        	},()=>{
-	        		
+
         			_loadingSpin.addClass("hidden");
 	        	})
         	}else{
         		_commentCon.siblings(".error").html("不能为空")
         	}
-        	
+
         })
-        
+
         //日期
         setTimeout(() => {
             var start = {
@@ -300,12 +301,12 @@ define([
 			};
 			laydate(start);
 			laydate(end);
-            
+
             $("#startDate").val(laydate.now());
             $("#endDate").val(laydate.now(+1));
-            
+
         }, 1);
-        
+
         //房间预订
         //立即预订点击
     	$("#roomList ul").on("click","li .subBtn",function(){
@@ -313,22 +314,22 @@ define([
     			base.goLogin();
     			return ;
     		}
-    		
+
     		var _this = $(this);
-    		
+
     		$("#hotalRoomCode").val(_this.attr("data-roomName"));
     		$("#quantity").html(_this.attr("data-quantity")).attr("data-remain",_this.parent(".btn-wrap").siblings(".number").children(".num").attr("data-remain"));
     		$("#confirm").attr("data-roomCode",_this.attr("data-roomCode"));
         	$("#Dialog").removeClass("hidden");
     	})
-    	
+
     	$("#roomList ul").on("click","li .icon-sub",function(){
     		var _num = parseInt($(this).siblings(".num").html());
     		_num<=1?1:_num--;
     		$(this).siblings(".num").html(_num);
     		$(this).parent(".number").siblings(".btn-wrap").children(".subBtn").attr("data-quantity",_num)
     	})
-    	
+
     	$("#roomList ul").on("click","li .icon-add",function(){
     		var _num = parseInt($(this).siblings(".num").html());
     		var remain =$(this).siblings(".num").attr("data-remain")
@@ -336,7 +337,7 @@ define([
     		$(this).siblings(".num").html(_num);
     		$(this).parent(".number").siblings(".btn-wrap").children(".subBtn").attr("data-quantity",_num)
     	})
-    	
+
     	$("#submitForm").validate({
             'rules': {
             	'hotalRoomCode':{
@@ -359,28 +360,28 @@ define([
             },
             onkeyup: false
         });
-        
+
     	//弹窗-取消
         $("#Dialog #cancel").click(function(){
         	$("#Dialog").addClass("hidden");
         	$("#applyNote").val("");
     		$("#confirm").attr("data-roomCode","");
         })
-        
+
     	$("#Dialog").on("click",".icon-sub",function(){
     		var _num = $("#quantity").html();
     		_num<=1?1:_num--;
     		$("#quantity").html(_num);
     	})
-    	
+
     	$("#Dialog").on("click",".icon-add",function(){
     		var _num = $("#quantity").html();
     		var remain =$("#quantity").attr("data-remain")
     		_num>=remain?remain:_num++;
-    		
+
     		$("#quantity").html(_num);
     	})
-    	
+
     	//弹窗-提交订单
         $("#Dialog #confirm").click(function(){
         	if($("#submitForm").valid()){
@@ -388,17 +389,17 @@ define([
                 getUserInfo();
         	}
         })
-        
-        
+
+
         $(window).scroll(function(){
         	var _dconNav = $(".dcon-nav")
         	var sc = $(document)
-        	
+
         	if(sc.scrollTop()>=600){
 
-		    	_dconNav.addClass("fixednav"); 
+		    	_dconNav.addClass("fixednav");
 			}else{
-		
+
 				_dconNav.removeClass("fixednav");
 			}
         })

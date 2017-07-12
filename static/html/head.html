@@ -4,8 +4,57 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=no">
 <link rel="shortcut icon" href="../images/favicon.ico" />
+<!--[if lt IE 9]>
+        <style type="text/css">
+            .ant-alert {
+                position: relative;
+                padding: 8px 48px 8px 38px;
+                border-radius: 4px;
+                font-size: 12px;
+                line-height: 16px;
+                margin-bottom: 10px;
+                color: #464646;
+            }
+            .ant-alert-warning {
+                border: 1px solid #fff3cf;
+                background-color: #fffaeb;
+            }
+            .ant-alert-with-description {
+                padding: 16px 16px 16px 60px;
+                position: relative;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                color: rgba(0,0,0,.65);
+                line-height: 1.5;
+            }
+            .ant-alert-with-description.ant-alert-no-icon {
+                padding: 16px;
+            }
+            .ant-alert-with-description .ant-alert-message {
+                font-size: 14px;
+                color: rgba(0,0,0,.85);
+                display: block;
+                margin-bottom: 4px;
+            }
+            .ant-alert-description {
+                font-size: 12px;
+                line-height: 21px;
+                display: none;
+            }
+            .ant-alert-with-description .ant-alert-description {
+                display: block;
+            }
+        </style>
+        <script type="text/javascript">
+            var header = document.getElementById("head");
+            var newNode = document.createElement("div");
+            newNode.innerHTML = '<div class="ant-alert ant-alert-warning ant-alert-with-description ant-alert-no-icon">'+
+                '<span class="ant-alert-message">大元云提醒您</span>'+
+                '<span class="ant-alert-description">您使用的浏览器版本过低，请尽快升级您的浏览器到最新版本。</span></div>';
+            document.getElementsByTagName("body")[0].insertBefore(newNode, header);
+        </script>
+    <![endif]-->
 <link rel="stylesheet" href="../css/base.css" />
 <link rel="stylesheet" href="../css/extra.scss" />
 <link rel="stylesheet" href="../css/extra1.scss" />
 <script data-loader src="../js/app/config.js"></script>
-

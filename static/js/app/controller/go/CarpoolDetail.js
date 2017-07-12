@@ -114,7 +114,7 @@ define([
             .then((data) => {
                 base.confirm("申请提交成功，点击确认前往支付")
                     .then(function () {
-//                         location.href = "../pay/pay.html?code=" + orderCode + "&p="+data.distancePrice;
+                        location.href = "../pay/pay.html?code=" + data.code + "&type=4";
                     }, function () {
                         location.href = "./carpool.html";
                     })
