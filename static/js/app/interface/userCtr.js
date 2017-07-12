@@ -13,7 +13,7 @@ define([
         	params.loginPwdStrength = base.calculateSecurityLevel(params.loginPwd);
         	params.isRegHx = 0;
         	params.kind = 'f1';
-        	return Ajax.post("805041", params);
+        	return Ajax.post("618922", params);
         },
         // 找回密码
         findPwd: (params) => {

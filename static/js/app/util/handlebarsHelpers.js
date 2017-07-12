@@ -41,6 +41,16 @@ define([
         }
         return pic;
     });
+    Handlebars.registerHelper('formatImageAvatar', function(pic, isAvatar, options){
+        var defaultAvatar = __inline("../images/default-avatar.png");
+        if(pic){
+            pic = pic.split(/\|\|/)[0];
+        }
+        if(!/^http/i.test(pic)){
+            pic = pic ? (PIC_PREFIX + pic + PHOTO_SUFFIX) :defaultAvatar;
+        }
+        return pic;
+    });
     Handlebars.registerHelper('formatListImage', function(pic, options){
     	var defaultImg = "";
         if(!pic)

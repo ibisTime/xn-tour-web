@@ -1364,7 +1364,7 @@ select {
                     margin-right: 10px;
                     margin-bottom: 15px;
                     border-radius: 12px;
-                    cursor: pointer;
+                    cursor: default;
                 }
 
                 li:hover {
@@ -3879,6 +3879,6 @@ select {
     color: #999999;
 }
 
-.icon-dianzan.active {
+.icon-collection.active {
     background-image: url('../images/点赞-绿.png') !important;
 }
