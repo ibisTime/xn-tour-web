@@ -1320,10 +1320,16 @@ select {
         position: relative;
 
         .chosen-container {
-            background: #fff;
+            background: #f3f3f3;
 
-            .chosen-single > span {
-                line-height: 1;
+            .chosen-single {
+                > span {
+                    line-height: 1;
+                }
+
+                > .search-choice-close:before {
+                    background: #f3f3f3;
+                }
             }
         }
 
@@ -3513,7 +3519,7 @@ select {
     .am-textarea-wrap {
         height: 120px;
     }
-    
+
     .booking-wrap{
         height: auto;
         padding-top: 7px;
