@@ -1247,7 +1247,7 @@
           });
         }
         //this.container.next().val(this.form_field.options[item.options_index].value);
-        this.form_field_jq.valid();
+        this.form_field_jq.valid && this.form_field_jq.valid();
         this.current_selectedIndex = this.form_field.selectedIndex;
         evt.preventDefault();
         return this.search_field_scale();
