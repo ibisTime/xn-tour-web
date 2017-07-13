@@ -32,7 +32,7 @@ define([
 
 	//获取积分余额
 	function getUserAccount(){
-		userCtr.getUserAccount(true).then((data)=>{
+		userCtr.getUserAccount("XNB",true).then((data)=>{
 			$("#amount").html(base.formatMoney(data[0].amount));
         	_loadingSpin.addClass("hidden");
 		})

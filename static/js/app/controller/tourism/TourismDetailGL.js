@@ -48,6 +48,7 @@ define([
             });
 			
 			$(".pic").html(html)
+			$("#NowName").html(data.title);
 			$(".title").html(data.title);
 			$(".updateDatetime").html(base.formatDate(data.updateDatetime,"yyyy-MM-dd hh:mm:ss"));
 			$(".description").html(data.description);

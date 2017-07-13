@@ -57,10 +57,10 @@ define([
             Ajax.get("805256", {userId: userId}, refresh)
         ),
         // 获取用户虚拟币账户信息
-        getUserAccount: (refresh) => (
+        getUserAccount: (currency, refresh) => (
             Ajax.get("802503", {
                 userId: base.getUserId(),
-                currency:"XNB"
+                currency:currency||"XNB"
             }, refresh)
         ),
         // 修改用户昵称

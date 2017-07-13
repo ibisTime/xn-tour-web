@@ -17,7 +17,7 @@ define([
     function init() {
         $("#userNav li").eq(5).addClass("active");
         getPageCapitalFlow();
-        userCtr.getUserAccount()
+        userCtr.getUserAccount("CNY")
             .then((data) => {
                 $.each(data, function(i, item){
                     if(item.currency == "CNY") {
