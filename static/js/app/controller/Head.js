@@ -4,14 +4,28 @@ define([
 ], function(base, generalCtr) {
 
     init();
+    
+    function getTelephone(){
+    	generalCtr.getSysConfig("telephone",true)
+		.then((data)=>{
+			$("#telephone").text(data.note);
+			$("#telephone1").text(data.note);
+			
+		},()=>{})
+    }
+    
+    function getCopyright(){
+    	generalCtr.getSysConfig("put_on_info",true)
+		.then((data)=>{
+			$("#Copyright").text(data.note);
+		},()=>{})
+    }
     // 初始化页面
     function init() {
-    	generalCtr.getSysConfig("telephone",true)
-    		.then((data)=>{
-    			$("#telephone").text(data.note);
-    			$("#telephone1").text(data.note);
-    			
-    		},()=>{})
+    	$.when(
+    		getTelephone(),
+    		getCopyright()
+    	)
     		
     	if(base.isLogin()){
     		$("#goUser").removeClass("hidden")
@@ -50,6 +64,7 @@ define([
 				location.href = "../travel/search.html?search="+$("#topSearchTxt").val();
 			}
     	})
+    	
     }
     
 });
