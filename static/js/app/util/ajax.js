@@ -44,18 +44,23 @@ define([
                 });
             }
             return cache[code][cache_url].pipe(function(res) {
-                // if (res.errorCode == "4") {
-                //     // clearSessionUser();
-                //     sessionStorage.setItem("l-return", location.pathname + location.search);
-                //     // 登录
-                //     return $.Deferred().reject("登录超时，请重新登录");
-                // }
+            	if (res.errorCode == "4") {
+                   // clearSessionUser();
+                	sessionStorage.setItem("l-return", location.pathname + location.search);
+                   // 登录
+                	return $.Deferred().reject("登录超时，请重新登录",res.errorCode);
+            	}
                 if(res.errorCode != "0"){
                     return $.Deferred().reject(res.errorInfo);
                 }
                 return res.data;
-            }).fail(function(error){
+            }).fail(function(error,eCode){
                 showMsg(error);
+                if(eCode&&eCode== "4"){
+                	setTimeout(function(){
+                		location.href = "../user/login.html"
+                	},1000)
+                }
             });
         }
 

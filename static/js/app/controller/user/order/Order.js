@@ -243,6 +243,7 @@ define([
                 jumpIptCls: 'pagination-ipt',
                 jumpBtnCls: 'pagination-btn',
                 jumpBtn: '确定',
+                isHide: true,
                 callback: function(_this){
                     if(_this.getCurrent() != config.start){
                         config.start = _this.getCurrent();

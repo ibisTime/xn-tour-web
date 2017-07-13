@@ -267,6 +267,13 @@ define([
     }
 
     function addListener(data) {
+    	
+    	$("ul li a").click(function(){
+	        var hr = $(this).attr("href");
+	        var anh = $(hr).offset().top;
+	        $("html,body").stop().animate({scrollTop:anh},2000);
+	    })
+    	
         var nowDate = laydate.now(),
             endDate = new Date(data.outDateEnd).format("yyyy-MM-dd");
     	setTimeout(() => {
@@ -388,5 +395,18 @@ define([
 				_dconNav.removeClass("fixednav");
 			}
         })
+        
+        $(".dcon-nav li").click(function(){
+        	$(this).addClass("active").siblings("li").removeClass("active");
+	        var hr = $(this).children("a").attr("href");
+	        
+	        if($(".dcon-nav").hasClass("fixednav")){
+	        	var anh = $(hr).position().top-40;
+	        }else{
+	        	var anh = $(hr).position().top-75;
+	        }
+	        $("html,body").stop().animate({scrollTop:anh},500);
+	    })
+        
     }
 });

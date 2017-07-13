@@ -2,12 +2,14 @@ define([
     'app/controller/base',
     'app/interface/trafficCtr',
     'app/interface/menuCtr',
+    'app/interface/generalCtr',
     'app/util/dict'
-], function(base, trafficCtr, menuCtr, Dict) {
+], function(base, trafficCtr, menuCtr, generalCtr, Dict) {
 
     var specialLineOrderStatus = Dict.get("specialLineOrderStatus"),
         code = base.getUrlParam("code"),
-        specialModule;
+        specialModule,
+        startSelectArr, endSelectArr;
 
     init();
 
@@ -15,6 +17,8 @@ define([
     function init() {
         $.when(
             getSpecialLineOrder(),
+        	getZeroType(),
+            getDestinationType(),
             getSDict()
         ).then((data) => {
             $("#content").html(buildHtml(data));
@@ -31,6 +35,21 @@ define([
                 });
             }, function() {});
     }
+    
+    // 查询出发地
+    function getZeroType() {
+        return generalCtr.getDictList("zero_type")
+            .then((data) => {
+                startSelectArr = data;
+            });
+    }
+    // 查询目的地
+    function getDestinationType() {
+        return generalCtr.getDictList("destination_type")
+            .then((data) => {
+                endSelectArr = data;
+            });
+    }
     // 获取专线订单信息
     function getSpecialLineOrder(refresh){
         return trafficCtr.getSpecialLineOrder(code, refresh);
@@ -46,6 +65,7 @@ define([
                         <div class="txt fl">
                             <p>${specialModule[item.specialLine.type]}</p>
                             <p>上车地点：${item.specialLine.address}</p>
+                            <samp>出发/达到站：${base.findObj(startSelectArr, "dkey", item.specialLine.startSite)["dvalue"]}/${base.findObj(endSelectArr, "dkey", item.specialLine.endSite)["dvalue"]}</samp>
                             <span>发车时间：${base.formatDate(item.specialLine.outDatetime, 'yyyy-MM-dd hh:mm')}</span>
                             <samp>票数：${item.quantity}张</samp>
                             <samp>¥${base.formatMoney(item.amount)}</samp>

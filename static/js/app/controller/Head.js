@@ -26,6 +26,9 @@ define([
     		location.href = "./login.html"
     	})
     	
+    	var topSearchVal = base.getUrlParam("search")||"";
+    	$("#topSearchTxt").val(topSearchVal)
+    	
     	$("#topSearchTxt").focus(function(){
     		var _topSearchTxt = $(this)
     		 $(document).keyup(function(event){
