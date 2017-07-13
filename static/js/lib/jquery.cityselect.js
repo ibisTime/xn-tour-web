@@ -18,7 +18,7 @@ required:必选项
 
 		// 默认值
 		settings=$.extend({
-			url:__uri('../js/lib/city.min.json'),
+			url:__uri('../js/lib/city.min.js'),
 			prov:null,
 			city:null,
 			dist:null,

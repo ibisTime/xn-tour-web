@@ -88,7 +88,7 @@ define([
         	var city = data.city;
         	var dist = data.district;
         	
-        	if(prov==city){
+        	if(prov==city.slice(0,city.length-1)){
         		city=dist;
         	}
         	
@@ -165,7 +165,7 @@ define([
 	    		data.isDefault = configAdd.isDefault;
 	    		if(!data.district){
 	    			data.district = data.city;
-	    			data.city = data.province;
+	    			data.city = data.province+"市";
 	    		}
         		_loadingSpin.removeClass("hidden");
 	    		getAddressAdd(data)
