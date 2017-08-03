@@ -338,16 +338,30 @@ define([
     	//弹窗-取消
         $("#Dialog #cancel").click(function(){
         	$("#Dialog").addClass("hidden");
+			$(".check").removeClass("active")
+			$("#confirm").removeClass("confirmBtn")
         	$("#applyNote").val("")
         })
 
     	//弹窗-提交订单
-        $("#Dialog #confirm").click(function(){
+        $("#Dialog").on("click",'.confirmBtn',function(){
         	if($("#submitForm").valid()){
         		_loadingSpin.removeClass("hidden");
                 getUserInfo();
         	}
         })
+        
+        
+        //勾选协议
+		$(".check").click(function(){
+			if($(this).hasClass("active")){
+				$(this).removeClass("active")
+				$("#confirm").removeClass("confirmBtn")
+			}else{
+				$(this).addClass("active");
+				$("#confirm").addClass("confirmBtn");
+			}
+		})
 
         //评论
         $("#commentBtn").click(function(){
@@ -399,7 +413,7 @@ define([
         $(".dcon-nav li").click(function(){
         	$(this).addClass("active").siblings("li").removeClass("active");
 	        var hr = $(this).children("a").attr("href");
-	        
+	        confirm
 	        if($(".dcon-nav").hasClass("fixednav")){
 	        	var anh = $(hr).position().top-40;
 	        }else{
@@ -407,6 +421,7 @@ define([
 	        }
 	        $("html,body").stop().animate({scrollTop:anh},500);
 	    })
+        
         
     }
 });

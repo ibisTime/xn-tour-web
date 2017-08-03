@@ -858,7 +858,7 @@ select {
 .loginForm-wrap {
     .loginForm {
         width: 415px;
-        height: 456px;
+        height: 476px;
         padding: 40px;
         background-color: #fff;
         box-shadow: 0 3px 10px rgba(0,0,0,.3);
@@ -979,26 +979,26 @@ select {
         width: 100%;
         overflow: hidden;
 
-        .check {
-            width: 17px;
-            height: 17px;
-            border: 1px solid #e3e3e3;
-            margin-right: 8px;
-        }
-
-        .check.active {
-            border: 1px solid #fff;
-            background-repeat: no-repeat;
-            background-image: url('../images/勾.png');
-            background-size: 100% 100%;
-        }
-
         .txt {
             font-size: 14px;
             color: #6a6a6a;
             line-height: 17px;
         }
     }
+}
+
+.check {
+    width: 17px;
+    height: 17px;
+    border: 1px solid #e3e3e3;
+    margin-right: 8px;
+}
+
+.check.active {
+    border: 1px solid #fff;
+    background-repeat: no-repeat;
+    background-image: url('../images/勾.png');
+    background-size: 100% 100%;
 }
 /*register.html*/
 .register-bg {
@@ -1012,20 +1012,23 @@ select {
 .nav {
     .nav-class {
         width: 100%;
-        padding-top: 50px;
-        padding-bottom: 35px;
+        padding-top: 40px;
+        padding-bottom: 25px;
         overflow: hidden;
 
         ul {
             width: 1279px;
+            height: 135px;
             overflow: hidden;
 
             li {
-                width: 80px;
+                width: 100px;
                 float: left;
-                margin-right: 79px;
+                margin-right: 57px;
                 text-align: center;
                 cursor: pointer;
+                border: 1px solid transparent;
+                padding: 10px;
 
                 p {
                     font-size: 14px;
@@ -1175,8 +1178,11 @@ select {
             }
 
             li.active {
+                background-color: #E6FAF8;
+                border: 1px solid #0CCEBA;
+                
                 p {
-                    color: #06CDB8;
+                    color: #ffba00;
                     font-weight: 600;
                 }
                 /*全域旅游*/
@@ -3203,6 +3209,7 @@ select {
 
 .am-modal-body .title {
     width: 90px;
+    height: 44px;
     text-align: right;
     font-size: 16px;
     line-height: 44px;
@@ -3268,15 +3275,15 @@ select {
     line-height: 40px;
     font-size: 15px;
     cursor: pointer;
+    background-color: #ccc;
 }
 
 .am-modal-button-group .am-modal-button-co {
-    background-color: #FFA200;
     margin-left: 80px;
 }
 
-.am-modal-button-group .am-modal-button-ca {
-    background-color: #ccc;
+.am-modal-button-group .confirmBtn{
+    background-color: #FFA200 !important;
 }
 
 .am-textarea-wrap {
@@ -3881,4 +3888,49 @@ select {
 
 .icon-dianzan.active {
     background-image: url('../images/点赞-绿.png') !important;
+}
+
+.agreementWrap{
+    .check{
+        margin-top: 3px;
+    }
+    p{
+        a{
+            color: #06CDB8;
+        }
+    }
+}
+.login-bg .loginForm-wrap .loginForm{
+    padding: 40px 40px 30px;
+}
+.login_container{
+    width: 415px;
+    height: 476px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: none;
+    z-index: 99;
+    iframe{
+        position: absolute;
+        top: 20px;
+        left: 50px;
+    }
+    
+}
+.mobileLogin{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: bold;
+    color: #06CDB8;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    text-decoration: underline;
 }

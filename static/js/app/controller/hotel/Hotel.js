@@ -6,7 +6,8 @@ define([
     'app/interface/generalCtr',
     'app/interface/hotelCtr'
 ], function(base, Handlebars, pagination, menuCtr, generalCtr, hotelCtr) {
-    var category = base.getUrlParam("category") || 1,
+    var category = base.getUrlParam("category"),
+    	categoryData = category.split(","),
     	totalPage = 1,
 		config = {
 	        start: 1
@@ -45,10 +46,17 @@ define([
                         url = url + ".html";
                     }
                 }
-                html += `<li class="${d.code == category ? "active" : ''}">
-                		<a class="wp100 show" href="${url}">
+                html += `<li data-category="`+base.getUrlParam('category','?'+url.split("?")[1])+`"`;
+                $.each(categoryData, function(j, c){
+                	if(d.code == c){
+                		html += `class="active"`;
+                		return false;
+                	}
+                })
+                
+                html += `>
                 		<div class="icon"><img src="${base.getPic(d.pic)}"/></div>
-                        <p>${d.name}</p></a></li>`;
+                        <p>${d.name}</p></li>`;
             });
 
 			$("#hotelClass ul").html(html);
@@ -127,6 +135,18 @@ define([
 	}
 
     function addListener() {
+    	
+    	$(".nav-class ul").on("click","li",function(){
+			$(this).toggleClass("active");
+			var categoryArray=[];
+			$(".nav-class ul li").each(function(i, d){
+				if($(this).hasClass("active")){
+					categoryArray.push($(this).attr("data-category"))
+				}
+			})
+			location.href="/go/hotel-list.html?category="+categoryArray
+    	});
+    	
     	$("#hotelPrice ul li").click(function(){
 			if(!$(this).hasClass("active")){
 

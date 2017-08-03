@@ -6,7 +6,7 @@ define([
     'app/interface/generalCtr',
     'app/interface/foodCtr',
 ], function(base, Handlebars, pagination, menuCtr, generalCtr, foodCtr) {
-	var category = base.getUrlParam("category") || 9,
+	var category = base.getUrlParam("category"),
 		totalPage=1,
 		config = {
 	        start: 1,

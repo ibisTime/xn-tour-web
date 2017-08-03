@@ -361,13 +361,6 @@ define([
             onkeyup: false
         });
 
-    	//弹窗-取消
-        $("#Dialog #cancel").click(function(){
-        	$("#Dialog").addClass("hidden");
-        	$("#applyNote").val("");
-    		$("#confirm").attr("data-roomCode","");
-        })
-
     	$("#Dialog").on("click",".icon-sub",function(){
     		var _num = $("#quantity").html();
     		_num<=1?1:_num--;
@@ -383,13 +376,32 @@ define([
     	})
 
     	//弹窗-提交订单
-        $("#Dialog #confirm").click(function(){
+        $("#Dialog").on("click",'.confirmBtn',function(){
         	if($("#submitForm").valid()){
         		_loadingSpin.removeClass("hidden");
                 getUserInfo();
         	}
         })
+        
+    	//弹窗-取消
+        $("#Dialog #cancel").click(function(){
+        	$("#Dialog").addClass("hidden");
+			$(".check").removeClass("active")
+			$("#confirm").removeClass("confirmBtn")
+        	$("#applyNote").val("")
+    		$("#confirm").attr("data-roomCode","");
+        })
 
+        //勾选协议
+		$(".check").click(function(){
+			if($(this).hasClass("active")){
+				$(this).removeClass("active")
+				$("#confirm").removeClass("confirmBtn")
+			}else{
+				$(this).addClass("active");
+				$("#confirm").addClass("confirmBtn");
+			}
+		})
 
         $(window).scroll(function(){
         	var _dconNav = $(".dcon-nav")

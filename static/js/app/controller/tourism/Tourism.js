@@ -10,7 +10,8 @@ define([
 ], function(base, Handlebars, pagination, menuCtr, tourismCtr, generalCtr, Chosen, validate) {
 
     var topSearchTxtVal = base.getUrlParam("search") || "";
-    var category = base.getUrlParam("category") || 17;
+    var category = base.getUrlParam("category");
+    var categoryData = category.split(",");
     var tourismTmpl = __inline('../../ui/tourism_item.handlebars');
     var totalPage=1;
 	var config = {
@@ -60,10 +61,17 @@ define([
                         url = url + ".html";
                     }
                 }
-                html += `<li class="${d.code == category ? "active" : ''}">
-                		<a class="wp100 show" href="${url}">
+                html += `<li data-category="`+base.getUrlParam('category','?'+url.split("?")[1])+`"`;
+                $.each(categoryData, function(j, c){
+                	if(d.code == c){
+                		html += `class="active"`;
+                		return false;
+                	}
+                })
+                
+                html += `>
                 		<div class="icon"><img src="${base.getPic(d.pic)}"/></div>
-                        <p>${d.name}</p></a></li>`;
+                        <p>${d.name}</p></li>`;
             });
 			$("#tourismClass ul").html(html);
 
@@ -176,13 +184,24 @@ define([
 		_loadingSpin.removeClass("hidden");
 		config.category = category;
 		config.type = $("#typeList ul li.active").attr("data-code");
-		config.name = $("#cityList select option:selected").attr("value");
+		config.city = $("#cityList select option:selected").attr("value");
 		config.travelTime = $("#travelTimeList ul li.active").attr("data-code");
 		config.style = $("#styleList ul li.active").attr("data-code");
 		getTourism(config);
 	}
 
     function addListener() {
+    	
+    	$(".nav-class ul").on("click","li",function(){
+			$(this).toggleClass("active");
+			var categoryArray=[];
+			$(".nav-class ul li").each(function(i, d){
+				if($(this).hasClass("active")){
+					categoryArray.push($(this).attr("data-category"))
+				}
+			})
+			location.href="../travel/travel-list.html?category="+categoryArray
+    	});
 
     	$(".navSearch-list ul").on("click","li",function(){
 			if(!$(this).hasClass("active")){

@@ -85,6 +85,27 @@ define([
     	$("#password").blur(function(){
 			if (window.event.keyCode==13) window.event.keyCode=0 ;
     	})
-
+    	
+    	$("#wechatLogin").click(function(){
+    		
+			var obj = new WxLogin({
+	            id:"login_container", 
+	            appid: "wxbdc5610cc59c1631", 
+	            scope: "snsapi_login", 
+	            redirect_uri: "https%3A%2F%2Fpassport.yhd.com%2Fwechat%2Fcallback.do",
+	            state: "",
+	            style: "",
+	            href: ""
+	        });
+    		$(".mobileLogin").show();
+    		$("#login_container").show();
+    	})
+    	
+    	
+    	$(".mobileLogin").click(function(){
+    		$(".mobileLogin").hide();
+    		$("#login_container").hide();
+    	})
+		
     }
 });

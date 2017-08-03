@@ -14,7 +14,6 @@
 	    		<form class="loginForm" id="loginForm">
 	    			<div class="title">
 	    				<h3>用户登录</h3>
-	    				<a href="register.html"><img src="../../images/立即注册.png"/>立即注册</a>
 	    			</div>
 
 	    			<div class="wp100 pt45">
@@ -34,7 +33,17 @@
 	    				<div class="txt fr"><a href="findpwd.html">忘记密码？</a></div>
 	    			</div>
 
-	    			<input id="loginBtn" class="input-btn mt80" type="button" value="立即登录" />
+	    			<input id="loginBtn" class="input-btn mt30" type="button" value="立即登录" />
+	    			
+	    			<p class="mt20">更多合作网站账号登录</p>
+	    			<div class="mt20">
+	    				<div class="tc"><img id="wechatLogin" src="../../images/微信.png"></div>
+	    			</div>
+	    			
+	    			<div class="login_container" id="login_container">
+	    			</div>
+	    			<div class="mobileLogin">点击前往账号登录</div>
+	    			
                     <div id="loadingSpin" class="ant-spin-nested-loading hidden">
                         <div class="ant-spin-blur ant-spin-container">
                             <span class="ant-spin-dot"><i></i><i></i><i></i><i></i></span>
@@ -45,6 +54,7 @@
     	</div>
 
         <link rel="import" href="../footer.html?__inline">
+        <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
         <script>
             require(['app/controller/user/Login']);
         </script>
