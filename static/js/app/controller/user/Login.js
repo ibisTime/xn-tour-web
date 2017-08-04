@@ -1,17 +1,28 @@
 define([
     'app/controller/base',
     'app/module/validate/validate',
-    'app/interface/userCtr'
-], function(base, Validate, userCtr) {
+    'app/interface/userCtr',
+    'app/interface/generalCtr'
+], function(base, Validate, userCtr, generalCtr) {
+    var code = base.getUrlParam("code");
 
     var _loadingSpin = $("#loadingSpin");
+        
     init();
 
     // 初始化页面
     function init() {
+    	if(code){
+    		if (!base.isLogin()) {  // 未登录
+	            wxLogin({
+	                code: code,
+	            });
+	        }
+    	}
         addListener();
     }
     
+    //手机号登录
     function getGoLogin(){
     	var loginName = $("#loginName").val();
 		var pwd = $("#password").val();
@@ -34,6 +45,17 @@ define([
                 _loadingSpin.addClass("hidden");
 			});
 		}
+    }
+    
+    //微信登录
+    function wxLogin(param) {
+    	userCtr.wechatlogin(param).then((data) => {
+			base.setSessionUser(data);
+			_loadingSpin.addClass("hidden");
+            base.goReturn();
+		},() => {
+            _loadingSpin.addClass("hidden");
+		});
     }
 
     function addListener() {
@@ -88,19 +110,32 @@ define([
     	
     	$("#wechatLogin").click(function(){
     		
-			var obj = new WxLogin({
-	            id:"login_container", 
-	            appid: "wxbdc5610cc59c1631", 
-	            scope: "snsapi_login", 
-	            redirect_uri: "https%3A%2F%2Fpassport.yhd.com%2Fwechat%2Fcallback.do",
-	            state: "",
-	            style: "",
-	            href: ""
-	        });
-    		$(".mobileLogin").show();
-    		$("#login_container").show();
+			_loadingSpin.removeClass("hidden");
+			
+			//获取appid
+    		generalCtr.getAppID().then((data) => {
+                var appid = data[0].password;
+                var redirect_uri = base.getDomain() + "/user/login.html";
+                
+                var obj = new WxLogin({
+		            id:"login_container", 
+		            appid: "wxbdc5610cc59c1631",
+		            scope: "snsapi_login", 
+		            redirect_uri: "https%3A%2F%2Fpassport.yhd.com%2Fwechat%2Fcallback.do",
+		            state: "",
+		            style: "",
+		            href: ""
+		        });
+		        
+	    		$(".mobileLogin").show();
+	    		$("#login_container").show();
+	    		
+				_loadingSpin.addClass("hidden");
+			},() => {
+	            _loadingSpin.addClass("hidden");
+			});
+    		
     	})
-    	
     	
     	$(".mobileLogin").click(function(){
     		$(".mobileLogin").hide();

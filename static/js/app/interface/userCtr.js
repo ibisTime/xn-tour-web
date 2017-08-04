@@ -8,6 +8,12 @@ define([
             params.kind = "f1";
             return Ajax.post("805043", params);
         },
+        // 微信登录
+        wechatlogin: (params) => {
+            params.companyCode=SYSTEM_CODE;
+            
+            return Ajax.post("618920", params);
+        },
         // 注册
         register: (params) => {
         	params.loginPwdStrength = base.calculateSecurityLevel(params.loginPwd);

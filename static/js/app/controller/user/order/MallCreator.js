@@ -62,10 +62,10 @@ define([
             }, () => {});
     }
     function refund(code, callback, remark, ele) {
-        ele.prop("disabled", true).find("span").text("退款中...");
+        ele.prop("disabled", true).find("span").text("操作中...");
         mallCtr.refundMallOrder(code, remark)
             .then(() => {
-                base.showMsg("退款成功");
+                base.showMsg("操作成功");
                 callback.call(null);
                 $("#modal").data("code", "").addClass("hidden");
             }, () => {

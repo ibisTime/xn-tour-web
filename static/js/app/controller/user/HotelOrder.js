@@ -234,10 +234,10 @@ define([
     }
     // 退款
     function refundOrder(remark, ele) {
-        ele.prop("disabled", true).find("span").text("退款中...");
+        ele.prop("disabled", true).find("span").text("操作中...");
         hotelCtr.refundHotelOrder(code, remark)
             .then(() => {
-                base.showMsg("退款成功");
+                base.showMsg("操作成功");
                 getHotelOrder(true);
                 $("#refund-modal").addClass("hidden");
             }, () => {

@@ -148,7 +148,8 @@ define([
                             url = url + ".html";
                         }
                     }
-                    html += `<li class="swiper-slide"><a href="${url}">
+                    
+                    html += `<li class="swiper-slide"><a href="${url}" target="${d.code == 33||d.code == 37||d.code == 36||d.code == 32 ? '_blank' : '_self'}">
                             <div class="icon"><img src="${base.getPic(d.pic)}"/></div>
                             <p class="title">${d.name}</p></a></li>`;
                 });

@@ -55,7 +55,7 @@ define([
                         }
                     }
                     html += `<li class="${d.url == "page:go/carpool" ? "active" : ''}">
-                        <a class="wp100 show" href="${url}" target="${d.code == 33||d.code == 33||d.code == 32 ? '_blank' : '_self'}">
+                        <a class="wp100 show" href="${url}" target="${d.code == 33||d.code == 37||d.code == 36||d.code == 32 ? '_blank' : '_self'}">
                             <img src="${base.getPic(d.pic)}"/>
                             <p>${d.name}</p>
                         </a>

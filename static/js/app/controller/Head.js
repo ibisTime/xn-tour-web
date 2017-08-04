@@ -65,6 +65,9 @@ define([
 			}
     	})
     	
+    	$("#goLogin").click(function(){
+    		base.goLogin()
+    	})
     }
     
 });
